@@ -1,0 +1,19 @@
+split,disease_label,count,pct_of_split,pct_of_total_images
+train,Basal Cell Carcinoma,586,36.49,69.89
+train,Actinic Keratosis,513,31.94,69.89
+train,Nevus,167,10.4,69.89
+train,Seborrheic Keratosis,167,10.4,69.89
+train,Squamous Cell Carcinoma,135,8.41,69.89
+train,Melanoma,38,2.37,69.89
+val,Basal Cell Carcinoma,126,37.28,14.71
+val,Actinic Keratosis,108,31.95,14.71
+val,Nevus,42,12.43,14.71
+val,Seborrheic Keratosis,31,9.17,14.71
+val,Squamous Cell Carcinoma,25,7.4,14.71
+val,Melanoma,6,1.78,14.71
+test,Basal Cell Carcinoma,133,37.57,15.4
+test,Actinic Keratosis,109,30.79,15.4
+test,Seborrheic Keratosis,37,10.45,15.4
+test,Nevus,35,9.89,15.4
+test,Squamous Cell Carcinoma,32,9.04,15.4
+test,Melanoma,8,2.26,15.4

@@ -1,0 +1,8 @@
+column,description,dtype,n_unique,missing_count,missing_pct,sample_values
+lesion_id,Identifier for the lesion; not unique per row - a lesion may have multiple images (2-6) taken from different angles/times.,str,7470,0,0.0,"HAM_0000118, HAM_0002730, HAM_0001466, HAM_0002761, HAM_0005132"
+image_id,"Unique identifier for the image (bare ISIC id, no file extension); the corresponding file is f'{image_id}.jpg'.",str,10015,0,0.0,"ISIC_0027419, ISIC_0025030, ISIC_0026769, ISIC_0025661, ISIC_0031633"
+dx,"Diagnostic label / target class (bkl, nv, df, mel, vasc, bcc, akiec).",str,7,0,0.0,"bkl, nv, df, mel, vasc"
+dx_type,"How the diagnosis was confirmed: 'histo' (histopathology, gold standard), 'follow_up' (clinical follow-up), 'consensus' (expert consensus), 'confocal' (confocal microscopy). Lower-confidence confirmation types mean some labels are less certain than others.",str,4,0,0.0,"histo, consensus, confocal, follow_up"
+age,Patient age in years.,float64,18,57,0.57,"80.0, 75.0, 60.0, 70.0, 55.0"
+sex,"Patient sex (male/female); 'unknown' is used as a literal string for missing values, not NaN.",str,3,0,0.0,"male, female, unknown"
+localization,"Anatomical location of the lesion; 'unknown' is used as a literal string for missing values, not NaN.",str,15,0,0.0,"scalp, ear, face, back, trunk"

@@ -1,0 +1,10 @@
+disease_label,train,val,test
+Nevus,9011,1930,1932
+Melanoma,3165,678,679
+Basal Cell Carcinoma,2324,499,500
+Seborrheic Keratosis,921,197,198
+Pigmented Benign Keratosis,767,166,166
+Actinic Keratosis,603,133,131
+Squamous Cell Carcinoma,435,98,95
+Dermatofibroma,167,34,38
+Solar Lentigo,142,34,33

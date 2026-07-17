@@ -1,0 +1,37 @@
+2026-07-07 22:57:17 | INFO     | ham10000_cleaning | ======================================================================
+2026-07-07 22:57:17 | INFO     | ham10000_cleaning | HAM10000 DATA CLEANING - START
+2026-07-07 22:57:17 | INFO     | ham10000_cleaning | ======================================================================
+2026-07-07 22:57:17 | INFO     | ham10000_cleaning | --- Step 1: Column standardization ---
+2026-07-07 22:57:17 | INFO     | ham10000_cleaning | Loaded raw metadata: 10015 rows x 7 columns
+2026-07-07 22:57:17 | INFO     | ham10000_cleaning | Renamed columns: {'dx': 'diagnostic_code', 'dx_type': 'diagnosis_confirm_type', 'localization': 'anatomical_site'}
+2026-07-07 22:57:17 | INFO     | ham10000_cleaning |   sex: 57 'unknown' values mapped to NA (hidden missingness not caught by the audit's isna() check)
+2026-07-07 22:57:17 | INFO     | ham10000_cleaning |   anatomical_site: 234 'unknown' values mapped to NA (hidden missingness not caught by the audit's isna() check)
+2026-07-07 22:57:18 | INFO     | ham10000_cleaning | All 10015 image_id values resolved to a file under data/raw/
+2026-07-07 22:57:18 | INFO     | ham10000_cleaning | Saved -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\data\interim\HAM10000\metadata_standardized.csv
+2026-07-07 22:57:18 | INFO     | ham10000_cleaning | --- Step 2: Value validation ---
+2026-07-07 22:57:18 | INFO     | ham10000_cleaning | Value validation: no anomalies flagged
+2026-07-07 22:57:18 | INFO     | ham10000_cleaning | Saved -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\data\interim\HAM10000\value_validation_report.csv
+2026-07-07 22:57:18 | INFO     | ham10000_cleaning | --- Step 3: Label standardization ---
+2026-07-07 22:57:18 | INFO     | ham10000_cleaning | Label standardization applied: 7 codes -> 7 standardized labels
+2026-07-07 22:57:18 | INFO     | ham10000_cleaning | Saved -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\data\processed\HAM10000\label_mapping.csv
+2026-07-07 22:57:18 | INFO     | ham10000_cleaning | Updated -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\data\interim\HAM10000\metadata_standardized.csv
+2026-07-07 22:57:18 | INFO     | ham10000_cleaning | --- Step 4: Lesion-wise split ---
+2026-07-07 22:57:19 | INFO     | ham10000_cleaning | train: 7004 images, 5247 lesions
+2026-07-07 22:57:19 | INFO     | ham10000_cleaning | val: 1501 images, 1114 lesions
+2026-07-07 22:57:19 | INFO     | ham10000_cleaning | test: 1510 images, 1109 lesions
+2026-07-07 22:57:19 | INFO     | ham10000_cleaning | Split seed: 42 | Target ratios: {'train': 0.7, 'val': 0.15, 'test': 0.15}
+2026-07-07 22:57:19 | INFO     | ham10000_cleaning | Saved -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\data\processed\HAM10000\lesion_split_assignment.csv
+2026-07-07 22:57:19 | INFO     | ham10000_cleaning | Saved -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\data\processed\HAM10000\metadata_train.csv
+2026-07-07 22:57:19 | INFO     | ham10000_cleaning | Saved -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\data\processed\HAM10000\metadata_val.csv
+2026-07-07 22:57:19 | INFO     | ham10000_cleaning | Saved -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\data\processed\HAM10000\metadata_test.csv
+2026-07-07 22:57:19 | INFO     | ham10000_cleaning | --- Step 5: Split quality report ---
+2026-07-07 22:57:19 | INFO     | ham10000_cleaning | No lesion_id overlap between train/val/test - split is leakage-free
+2026-07-07 22:57:19 | INFO     | ham10000_cleaning | train: 7004 images (69.9% of total), 5247 lesions
+2026-07-07 22:57:19 | INFO     | ham10000_cleaning | val: 1501 images (15.0% of total), 1114 lesions
+2026-07-07 22:57:19 | INFO     | ham10000_cleaning | test: 1510 images (15.1% of total), 1109 lesions
+2026-07-07 22:57:19 | INFO     | ham10000_cleaning | Saved -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\data\processed\HAM10000\split_quality_report.csv
+2026-07-07 22:57:19 | INFO     | ham10000_cleaning | --- Step 6: Dataset description ---
+2026-07-07 22:57:19 | INFO     | ham10000_cleaning | Dataset description written -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\data\processed\HAM10000\dataset_description.md
+2026-07-07 22:57:19 | INFO     | ham10000_cleaning | ======================================================================
+2026-07-07 22:57:19 | INFO     | ham10000_cleaning | HAM10000 DATA CLEANING - COMPLETE
+2026-07-07 22:57:19 | INFO     | ham10000_cleaning | ======================================================================

@@ -1,0 +1,8 @@
+metric,value
+n_unique_lesions,7470.0
+n_total_images,10015.0
+images_per_lesion_min,1.0
+images_per_lesion_max,6.0
+images_per_lesion_mean,1.34
+images_per_lesion_median,1.0
+lesions_with_multiple_images,1956.0

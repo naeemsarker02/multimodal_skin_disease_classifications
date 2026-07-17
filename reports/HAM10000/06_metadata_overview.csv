@@ -1,0 +1,8 @@
+column,dtype,n_unique,n_missing
+lesion_id,str,7470,0
+image_id,str,10015,0
+dx,str,7,0
+dx_type,str,4,0
+age,float64,18,57
+sex,str,3,0
+localization,str,15,0

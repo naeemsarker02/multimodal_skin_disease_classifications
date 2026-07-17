@@ -1,0 +1,14 @@
+2026-07-07 20:06:05 | INFO     | pad_ufes20_cleaning | ======================================================================
+2026-07-07 20:06:05 | INFO     | pad_ufes20_cleaning | PAD-UFES-20 DATA CLEANING - START
+2026-07-07 20:06:05 | INFO     | pad_ufes20_cleaning | ======================================================================
+2026-07-07 20:06:05 | INFO     | pad_ufes20_cleaning | --- Step 1: Column standardization ---
+2026-07-07 20:06:05 | INFO     | pad_ufes20_cleaning | Loaded raw metadata: 2298 rows x 26 columns
+2026-07-07 20:06:05 | INFO     | pad_ufes20_cleaning | Renamed columns: {'gender': 'sex', 'region': 'anatomical_site', 'img_id': 'image_id', 'diagnostic': 'diagnostic_code'}
+2026-07-07 20:06:05 | ERROR    | pad_ufes20_cleaning | Cleaning pipeline failed
+Traceback (most recent call last):
+  File "D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\src\data_cleaning\run_cleaning_pad_ufes20.py", line 43, in main
+    df = c01_column_standardization.run(logger)
+  File "D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\src\data_cleaning\pad_ufes20\c01_column_standardization.py", line 100, in run
+    assert before_na == after_na, f"Missingness changed while casting {col}"
+           ^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Missingness changed while casting itch

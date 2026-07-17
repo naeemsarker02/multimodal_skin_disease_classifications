@@ -1,0 +1,293 @@
+image_id,filename,class_label,image_path,dataset_source,disease_label
+ISIC_0031228,ISIC_0031228.jpg,actinic keratosis,data/raw/ISIC_Archive_1/Train/actinic keratosis/ISIC_0031228.jpg,ISIC_Archive_1,Actinic Keratosis
+ISIC_0029900,ISIC_0029900.jpg,actinic keratosis,data/raw/ISIC_Archive_1/Train/actinic keratosis/ISIC_0029900.jpg,ISIC_Archive_1,Actinic Keratosis
+ISIC_0033456,ISIC_0033456.jpg,actinic keratosis,data/raw/ISIC_Archive_1/Train/actinic keratosis/ISIC_0033456.jpg,ISIC_Archive_1,Actinic Keratosis
+ISIC_0032199,ISIC_0032199.jpg,actinic keratosis,data/raw/ISIC_Archive_1/Train/actinic keratosis/ISIC_0032199.jpg,ISIC_Archive_1,Actinic Keratosis
+ISIC_0033866,ISIC_0033866.jpg,actinic keratosis,data/raw/ISIC_Archive_1/Train/actinic keratosis/ISIC_0033866.jpg,ISIC_Archive_1,Actinic Keratosis
+ISIC_0030463,ISIC_0030463.jpg,actinic keratosis,data/raw/ISIC_Archive_1/Train/actinic keratosis/ISIC_0030463.jpg,ISIC_Archive_1,Actinic Keratosis
+ISIC_0029830,ISIC_0029830.jpg,actinic keratosis,data/raw/ISIC_Archive_1/Train/actinic keratosis/ISIC_0029830.jpg,ISIC_Archive_1,Actinic Keratosis
+ISIC_0033705,ISIC_0033705.jpg,actinic keratosis,data/raw/ISIC_Archive_1/Train/actinic keratosis/ISIC_0033705.jpg,ISIC_Archive_1,Actinic Keratosis
+ISIC_0025700,ISIC_0025700.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0025700.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0029805,ISIC_0029805.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0029805.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0031569,ISIC_0031569.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0031569.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0028653,ISIC_0028653.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0028653.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0025285,ISIC_0025285.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0025285.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0024504,ISIC_0024504.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0024504.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0029831,ISIC_0029831.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0029831.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0031266,ISIC_0031266.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0031266.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0026154,ISIC_0026154.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0026154.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0026324,ISIC_0026324.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0026324.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0025530,ISIC_0025530.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0025530.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0027425,ISIC_0027425.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0027425.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0031009,ISIC_0031009.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0031009.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0028303,ISIC_0028303.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0028303.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0027976,ISIC_0027976.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0027976.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0026978,ISIC_0026978.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0026978.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0026337,ISIC_0026337.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0026337.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0029341,ISIC_0029341.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0029341.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0027297,ISIC_0027297.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0027297.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0025557,ISIC_0025557.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0025557.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0029372,ISIC_0029372.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0029372.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0030528,ISIC_0030528.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0030528.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0028107,ISIC_0028107.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0028107.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0029564,ISIC_0029564.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0029564.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0030915,ISIC_0030915.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0030915.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0028937,ISIC_0028937.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0028937.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0031225,ISIC_0031225.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0031225.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0030800,ISIC_0030800.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0030800.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0025650,ISIC_0025650.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0025650.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0030177,ISIC_0030177.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0030177.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0026952,ISIC_0026952.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0026952.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0026829,ISIC_0026829.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0026829.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0024848,ISIC_0024848.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0024848.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0028238,ISIC_0028238.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0028238.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0028079,ISIC_0028079.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0028079.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0030659,ISIC_0030659.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0030659.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0024787,ISIC_0024787.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0024787.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0027544,ISIC_0027544.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0027544.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0028739,ISIC_0028739.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0028739.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0030114,ISIC_0030114.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0030114.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0031063,ISIC_0031063.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0031063.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0031095,ISIC_0031095.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0031095.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0025019,ISIC_0025019.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0025019.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0029647,ISIC_0029647.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0029647.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0024550,ISIC_0024550.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0024550.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0031351,ISIC_0031351.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0031351.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0028577,ISIC_0028577.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0028577.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0030737,ISIC_0030737.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0030737.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0030778,ISIC_0030778.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0030778.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0029501,ISIC_0029501.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0029501.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0028147,ISIC_0028147.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0028147.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0027744,ISIC_0027744.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0027744.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0029192,ISIC_0029192.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0029192.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0027175,ISIC_0027175.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0027175.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0029082,ISIC_0029082.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0029082.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0025793,ISIC_0025793.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Train/basal cell carcinoma/ISIC_0025793.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0033554,ISIC_0033554.jpg,dermatofibroma,data/raw/ISIC_Archive_1/Train/dermatofibroma/ISIC_0033554.jpg,ISIC_Archive_1,Dermatofibroma
+ISIC_0025504,ISIC_0025504.jpg,dermatofibroma,data/raw/ISIC_Archive_1/Train/dermatofibroma/ISIC_0025504.jpg,ISIC_Archive_1,Dermatofibroma
+ISIC_0029824,ISIC_0029824.jpg,dermatofibroma,data/raw/ISIC_Archive_1/Train/dermatofibroma/ISIC_0029824.jpg,ISIC_Archive_1,Dermatofibroma
+ISIC_0034135,ISIC_0034135.jpg,dermatofibroma,data/raw/ISIC_Archive_1/Train/dermatofibroma/ISIC_0034135.jpg,ISIC_Archive_1,Dermatofibroma
+ISIC_0029783,ISIC_0029783.jpg,dermatofibroma,data/raw/ISIC_Archive_1/Train/dermatofibroma/ISIC_0029783.jpg,ISIC_Archive_1,Dermatofibroma
+ISIC_0027216,ISIC_0027216.jpg,dermatofibroma,data/raw/ISIC_Archive_1/Train/dermatofibroma/ISIC_0027216.jpg,ISIC_Archive_1,Dermatofibroma
+ISIC_0028880,ISIC_0028880.jpg,dermatofibroma,data/raw/ISIC_Archive_1/Train/dermatofibroma/ISIC_0028880.jpg,ISIC_Archive_1,Dermatofibroma
+ISIC_0028735,ISIC_0028735.jpg,dermatofibroma,data/raw/ISIC_Archive_1/Train/dermatofibroma/ISIC_0028735.jpg,ISIC_Archive_1,Dermatofibroma
+ISIC_0026629,ISIC_0026629.jpg,dermatofibroma,data/raw/ISIC_Archive_1/Train/dermatofibroma/ISIC_0026629.jpg,ISIC_Archive_1,Dermatofibroma
+ISIC_0025954,ISIC_0025954.jpg,dermatofibroma,data/raw/ISIC_Archive_1/Train/dermatofibroma/ISIC_0025954.jpg,ISIC_Archive_1,Dermatofibroma
+ISIC_0029130,ISIC_0029130.jpg,dermatofibroma,data/raw/ISIC_Archive_1/Train/dermatofibroma/ISIC_0029130.jpg,ISIC_Archive_1,Dermatofibroma
+ISIC_0031799,ISIC_0031799.jpg,dermatofibroma,data/raw/ISIC_Archive_1/Train/dermatofibroma/ISIC_0031799.jpg,ISIC_Archive_1,Dermatofibroma
+ISIC_0025668,ISIC_0025668.jpg,dermatofibroma,data/raw/ISIC_Archive_1/Train/dermatofibroma/ISIC_0025668.jpg,ISIC_Archive_1,Dermatofibroma
+ISIC_0030665,ISIC_0030665.jpg,dermatofibroma,data/raw/ISIC_Archive_1/Train/dermatofibroma/ISIC_0030665.jpg,ISIC_Archive_1,Dermatofibroma
+ISIC_0010426,ISIC_0010426.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0010426.jpg,ISIC_Archive_1,Melanoma
+ISIC_0010400,ISIC_0010400.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0010400.jpg,ISIC_Archive_1,Melanoma
+ISIC_0010611,ISIC_0010611.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0010611.jpg,ISIC_Archive_1,Melanoma
+ISIC_0009910,ISIC_0009910.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0009910.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000410,ISIC_0000410.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0000410.jpg,ISIC_Archive_1,Melanoma
+ISIC_0010648,ISIC_0010648.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0010648.jpg,ISIC_Archive_1,Melanoma
+ISIC_0009882,ISIC_0009882.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0009882.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000299,ISIC_0000299.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0000299.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000414,ISIC_0000414.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0000414.jpg,ISIC_Archive_1,Melanoma
+ISIC_0010402,ISIC_0010402.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0010402.jpg,ISIC_Archive_1,Melanoma
+ISIC_0010407,ISIC_0010407.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0010407.jpg,ISIC_Archive_1,Melanoma
+ISIC_0010376,ISIC_0010376.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0010376.jpg,ISIC_Archive_1,Melanoma
+ISIC_0010391,ISIC_0010391.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0010391.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000459,ISIC_0000459.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0000459.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000450,ISIC_0000450.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0000450.jpg,ISIC_Archive_1,Melanoma
+ISIC_0010148,ISIC_0010148.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0010148.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000522,ISIC_0000522.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0000522.jpg,ISIC_Archive_1,Melanoma
+ISIC_0009897,ISIC_0009897.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0009897.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000484,ISIC_0000484.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0000484.jpg,ISIC_Archive_1,Melanoma
+ISIC_0010783,ISIC_0010783.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0010783.jpg,ISIC_Archive_1,Melanoma
+ISIC_0010729,ISIC_0010729.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0010729.jpg,ISIC_Archive_1,Melanoma
+ISIC_0010034,ISIC_0010034.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0010034.jpg,ISIC_Archive_1,Melanoma
+ISIC_0009955,ISIC_0009955.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0009955.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000165,ISIC_0000165.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0000165.jpg,ISIC_Archive_1,Melanoma
+ISIC_0010759,ISIC_0010759.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0010759.jpg,ISIC_Archive_1,Melanoma
+ISIC_0009913,ISIC_0009913.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0009913.jpg,ISIC_Archive_1,Melanoma
+ISIC_0010579,ISIC_0010579.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0010579.jpg,ISIC_Archive_1,Melanoma
+ISIC_0001103,ISIC_0001103.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0001103.jpg,ISIC_Archive_1,Melanoma
+ISIC_0001128,ISIC_0001128.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0001128.jpg,ISIC_Archive_1,Melanoma
+ISIC_0010482,ISIC_0010482.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0010482.jpg,ISIC_Archive_1,Melanoma
+ISIC_0010081,ISIC_0010081.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0010081.jpg,ISIC_Archive_1,Melanoma
+ISIC_0010393,ISIC_0010393.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0010393.jpg,ISIC_Archive_1,Melanoma
+ISIC_0010231,ISIC_0010231.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0010231.jpg,ISIC_Archive_1,Melanoma
+ISIC_0010432,ISIC_0010432.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0010432.jpg,ISIC_Archive_1,Melanoma
+ISIC_0010379,ISIC_0010379.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0010379.jpg,ISIC_Archive_1,Melanoma
+ISIC_0010413,ISIC_0010413.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0010413.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000278,ISIC_0000278.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0000278.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000463,ISIC_0000463.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0000463.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000400,ISIC_0000400.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0000400.jpg,ISIC_Archive_1,Melanoma
+ISIC_0010217,ISIC_0010217.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0010217.jpg,ISIC_Archive_1,Melanoma
+ISIC_0010799,ISIC_0010799.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0010799.jpg,ISIC_Archive_1,Melanoma
+ISIC_0010564,ISIC_0010564.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0010564.jpg,ISIC_Archive_1,Melanoma
+ISIC_0001127,ISIC_0001127.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0001127.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000176,ISIC_0000176.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0000176.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000295,ISIC_0000295.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0000295.jpg,ISIC_Archive_1,Melanoma
+ISIC_0010609,ISIC_0010609.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0010609.jpg,ISIC_Archive_1,Melanoma
+ISIC_0010359,ISIC_0010359.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0010359.jpg,ISIC_Archive_1,Melanoma
+ISIC_0001148,ISIC_0001148.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0001148.jpg,ISIC_Archive_1,Melanoma
+ISIC_0010364,ISIC_0010364.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0010364.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000309,ISIC_0000309.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0000309.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000167,ISIC_0000167.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0000167.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000279,ISIC_0000279.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0000279.jpg,ISIC_Archive_1,Melanoma
+ISIC_0010278,ISIC_0010278.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0010278.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000303,ISIC_0000303.jpg,melanoma,data/raw/ISIC_Archive_1/Train/melanoma/ISIC_0000303.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000047,ISIC_0000047.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000047.jpg,ISIC_Archive_1,Nevus
+ISIC_0000317,ISIC_0000317.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000317.jpg,ISIC_Archive_1,Nevus
+ISIC_0000346,ISIC_0000346.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000346.jpg,ISIC_Archive_1,Nevus
+ISIC_0000381,ISIC_0000381.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000381.jpg,ISIC_Archive_1,Nevus
+ISIC_0000225,ISIC_0000225.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000225.jpg,ISIC_Archive_1,Nevus
+ISIC_0000532,ISIC_0000532.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000532.jpg,ISIC_Archive_1,Nevus
+ISIC_0000476,ISIC_0000476.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000476.jpg,ISIC_Archive_1,Nevus
+ISIC_0000490,ISIC_0000490.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000490.jpg,ISIC_Archive_1,Nevus
+ISIC_0000378,ISIC_0000378.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000378.jpg,ISIC_Archive_1,Nevus
+ISIC_0000319,ISIC_0000319.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000319.jpg,ISIC_Archive_1,Nevus
+ISIC_0000370,ISIC_0000370.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000370.jpg,ISIC_Archive_1,Nevus
+ISIC_0000320,ISIC_0000320.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000320.jpg,ISIC_Archive_1,Nevus
+ISIC_0000068,ISIC_0000068.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000068.jpg,ISIC_Archive_1,Nevus
+ISIC_0000371,ISIC_0000371.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000371.jpg,ISIC_Archive_1,Nevus
+ISIC_0000053,ISIC_0000053.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000053.jpg,ISIC_Archive_1,Nevus
+ISIC_0000321,ISIC_0000321.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000321.jpg,ISIC_Archive_1,Nevus
+ISIC_0000260,ISIC_0000260.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000260.jpg,ISIC_Archive_1,Nevus
+ISIC_0000471,ISIC_0000471.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000471.jpg,ISIC_Archive_1,Nevus
+ISIC_0000389,ISIC_0000389.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000389.jpg,ISIC_Archive_1,Nevus
+ISIC_0000497,ISIC_0000497.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000497.jpg,ISIC_Archive_1,Nevus
+ISIC_0000231,ISIC_0000231.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000231.jpg,ISIC_Archive_1,Nevus
+ISIC_0000239,ISIC_0000239.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000239.jpg,ISIC_Archive_1,Nevus
+ISIC_0000425,ISIC_0000425.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000425.jpg,ISIC_Archive_1,Nevus
+ISIC_0000052,ISIC_0000052.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000052.jpg,ISIC_Archive_1,Nevus
+ISIC_0000099,ISIC_0000099.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000099.jpg,ISIC_Archive_1,Nevus
+ISIC_0000058,ISIC_0000058.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000058.jpg,ISIC_Archive_1,Nevus
+ISIC_0000418,ISIC_0000418.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000418.jpg,ISIC_Archive_1,Nevus
+ISIC_0000530,ISIC_0000530.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000530.jpg,ISIC_Archive_1,Nevus
+ISIC_0000423,ISIC_0000423.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000423.jpg,ISIC_Archive_1,Nevus
+ISIC_0000088,ISIC_0000088.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000088.jpg,ISIC_Archive_1,Nevus
+ISIC_0000460,ISIC_0000460.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000460.jpg,ISIC_Archive_1,Nevus
+ISIC_0000349,ISIC_0000349.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000349.jpg,ISIC_Archive_1,Nevus
+ISIC_0000338,ISIC_0000338.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000338.jpg,ISIC_Archive_1,Nevus
+ISIC_0000368,ISIC_0000368.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000368.jpg,ISIC_Archive_1,Nevus
+ISIC_0000340,ISIC_0000340.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000340.jpg,ISIC_Archive_1,Nevus
+ISIC_0000492,ISIC_0000492.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000492.jpg,ISIC_Archive_1,Nevus
+ISIC_0000475,ISIC_0000475.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000475.jpg,ISIC_Archive_1,Nevus
+ISIC_0000345,ISIC_0000345.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000345.jpg,ISIC_Archive_1,Nevus
+ISIC_0000360,ISIC_0000360.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000360.jpg,ISIC_Archive_1,Nevus
+ISIC_0000325,ISIC_0000325.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000325.jpg,ISIC_Archive_1,Nevus
+ISIC_0000464,ISIC_0000464.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000464.jpg,ISIC_Archive_1,Nevus
+ISIC_0000489,ISIC_0000489.jpg,nevus,data/raw/ISIC_Archive_1/Train/nevus/ISIC_0000489.jpg,ISIC_Archive_1,Nevus
+ISIC_0028388,ISIC_0028388.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0028388.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0024971,ISIC_0024971.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0024971.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0027042,ISIC_0027042.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0027042.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0026912,ISIC_0026912.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0026912.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0027608,ISIC_0027608.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0027608.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0024877,ISIC_0024877.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0024877.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0027905,ISIC_0027905.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0027905.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0027893,ISIC_0027893.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0027893.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0027504,ISIC_0027504.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0027504.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0027737,ISIC_0027737.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0027737.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0028555,ISIC_0028555.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0028555.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0024761,ISIC_0024761.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0024761.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0026961,ISIC_0026961.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0026961.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0025939,ISIC_0025939.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0025939.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0024758,ISIC_0024758.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0024758.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0026775,ISIC_0026775.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0026775.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0026787,ISIC_0026787.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0026787.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0028052,ISIC_0028052.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0028052.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0026576,ISIC_0026576.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0026576.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0025339,ISIC_0025339.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0025339.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0028258,ISIC_0028258.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0028258.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0027428,ISIC_0027428.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0027428.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0025661,ISIC_0025661.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0025661.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0025567,ISIC_0025567.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0025567.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0026553,ISIC_0026553.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0026553.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0025819,ISIC_0025819.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0025819.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0025830,ISIC_0025830.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0025830.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0025199,ISIC_0025199.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0025199.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0025876,ISIC_0025876.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0025876.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0024705,ISIC_0024705.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0024705.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0025064,ISIC_0025064.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0025064.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0025777,ISIC_0025777.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0025777.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0028347,ISIC_0028347.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0028347.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0025928,ISIC_0025928.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0025928.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0025040,ISIC_0025040.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0025040.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0028308,ISIC_0028308.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0028308.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0025805,ISIC_0025805.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0025805.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0026661,ISIC_0026661.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0026661.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0026044,ISIC_0026044.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0026044.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0026046,ISIC_0026046.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0026046.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0027771,ISIC_0027771.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0027771.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0028121,ISIC_0028121.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0028121.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0027463,ISIC_0027463.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0027463.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0025378,ISIC_0025378.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0025378.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0025140,ISIC_0025140.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0025140.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0027419,ISIC_0027419.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0027419.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0026871,ISIC_0026871.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0026871.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0027142,ISIC_0027142.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0027142.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0028165,ISIC_0028165.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0028165.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0028200,ISIC_0028200.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0028200.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0024643,ISIC_0024643.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0024643.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0026842,ISIC_0026842.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0026842.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0025526,ISIC_0025526.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0025526.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0026532,ISIC_0026532.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0026532.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0028404,ISIC_0028404.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0028404.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0027982,ISIC_0027982.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0027982.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0025627,ISIC_0025627.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0025627.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0025431,ISIC_0025431.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0025431.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0026416,ISIC_0026416.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0026416.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0028656,ISIC_0028656.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0028656.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0027754,ISIC_0027754.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0027754.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0027470,ISIC_0027470.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0027470.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0025387,ISIC_0025387.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0025387.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0025885,ISIC_0025885.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0025885.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0027967,ISIC_0027967.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0027967.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0026955,ISIC_0026955.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0026955.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0025743,ISIC_0025743.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0025743.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0025753,ISIC_0025753.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0025753.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0026637,ISIC_0026637.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Train/pigmented benign keratosis/ISIC_0026637.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0011118,ISIC_0011118.jpg,seborrheic keratosis,data/raw/ISIC_Archive_1/Train/seborrheic keratosis/ISIC_0011118.jpg,ISIC_Archive_1,Seborrheic Keratosis
+ISIC_0032455,ISIC_0032455.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Train/squamous cell carcinoma/ISIC_0032455.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0029059,ISIC_0029059.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Train/squamous cell carcinoma/ISIC_0029059.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0030794,ISIC_0030794.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Train/squamous cell carcinoma/ISIC_0030794.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0024843,ISIC_0024843.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Train/squamous cell carcinoma/ISIC_0024843.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0027719,ISIC_0027719.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Train/squamous cell carcinoma/ISIC_0027719.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0031918,ISIC_0031918.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Train/squamous cell carcinoma/ISIC_0031918.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0029567,ISIC_0029567.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Train/squamous cell carcinoma/ISIC_0029567.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0031012,ISIC_0031012.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Train/squamous cell carcinoma/ISIC_0031012.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0030803,ISIC_0030803.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Train/squamous cell carcinoma/ISIC_0030803.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0029851,ISIC_0029851.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Train/squamous cell carcinoma/ISIC_0029851.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0026492,ISIC_0026492.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Train/squamous cell carcinoma/ISIC_0026492.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0025411,ISIC_0025411.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Train/squamous cell carcinoma/ISIC_0025411.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0026872,ISIC_0026872.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Train/squamous cell carcinoma/ISIC_0026872.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0030341,ISIC_0030341.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Train/squamous cell carcinoma/ISIC_0030341.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0030821,ISIC_0030821.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Train/squamous cell carcinoma/ISIC_0030821.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0026720,ISIC_0026720.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Train/squamous cell carcinoma/ISIC_0026720.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0030549,ISIC_0030549.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Train/squamous cell carcinoma/ISIC_0030549.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0026992,ISIC_0026992.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Train/squamous cell carcinoma/ISIC_0026992.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0029582,ISIC_0029582.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Train/squamous cell carcinoma/ISIC_0029582.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0030714,ISIC_0030714.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Train/squamous cell carcinoma/ISIC_0030714.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0031874,ISIC_0031874.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Train/squamous cell carcinoma/ISIC_0031874.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0032897,ISIC_0032897.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Train/squamous cell carcinoma/ISIC_0032897.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0030487,ISIC_0030487.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Train/squamous cell carcinoma/ISIC_0030487.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0025130,ISIC_0025130.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Train/squamous cell carcinoma/ISIC_0025130.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0031672,ISIC_0031672.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Train/squamous cell carcinoma/ISIC_0031672.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0031929,ISIC_0031929.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Train/squamous cell carcinoma/ISIC_0031929.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0027930,ISIC_0027930.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Train/squamous cell carcinoma/ISIC_0027930.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0032867,ISIC_0032867.jpg,vascular lesion,data/raw/ISIC_Archive_1/Train/vascular lesion/ISIC_0032867.jpg,ISIC_Archive_1,Vascular Lesion
+ISIC_0026068,ISIC_0026068.jpg,vascular lesion,data/raw/ISIC_Archive_1/Train/vascular lesion/ISIC_0026068.jpg,ISIC_Archive_1,Vascular Lesion
+ISIC_0030275,ISIC_0030275.jpg,vascular lesion,data/raw/ISIC_Archive_1/Train/vascular lesion/ISIC_0030275.jpg,ISIC_Archive_1,Vascular Lesion
+ISIC_0031215,ISIC_0031215.jpg,vascular lesion,data/raw/ISIC_Archive_1/Train/vascular lesion/ISIC_0031215.jpg,ISIC_Archive_1,Vascular Lesion
+ISIC_0031065,ISIC_0031065.jpg,vascular lesion,data/raw/ISIC_Archive_1/Train/vascular lesion/ISIC_0031065.jpg,ISIC_Archive_1,Vascular Lesion
+ISIC_0030104,ISIC_0030104.jpg,vascular lesion,data/raw/ISIC_Archive_1/Train/vascular lesion/ISIC_0030104.jpg,ISIC_Archive_1,Vascular Lesion
+ISIC_0033230,ISIC_0033230.jpg,vascular lesion,data/raw/ISIC_Archive_1/Train/vascular lesion/ISIC_0033230.jpg,ISIC_Archive_1,Vascular Lesion
+ISIC_0031093,ISIC_0031093.jpg,vascular lesion,data/raw/ISIC_Archive_1/Train/vascular lesion/ISIC_0031093.jpg,ISIC_Archive_1,Vascular Lesion
+ISIC_0028406,ISIC_0028406.jpg,vascular lesion,data/raw/ISIC_Archive_1/Train/vascular lesion/ISIC_0028406.jpg,ISIC_Archive_1,Vascular Lesion
+ISIC_0024706,ISIC_0024706.jpg,vascular lesion,data/raw/ISIC_Archive_1/Train/vascular lesion/ISIC_0024706.jpg,ISIC_Archive_1,Vascular Lesion
+ISIC_0031719,ISIC_0031719.jpg,vascular lesion,data/raw/ISIC_Archive_1/Train/vascular lesion/ISIC_0031719.jpg,ISIC_Archive_1,Vascular Lesion
+ISIC_0031090,ISIC_0031090.jpg,vascular lesion,data/raw/ISIC_Archive_1/Train/vascular lesion/ISIC_0031090.jpg,ISIC_Archive_1,Vascular Lesion
+ISIC_0033817,ISIC_0033817.jpg,vascular lesion,data/raw/ISIC_Archive_1/Train/vascular lesion/ISIC_0033817.jpg,ISIC_Archive_1,Vascular Lesion
+ISIC_0030882,ISIC_0030882.jpg,vascular lesion,data/raw/ISIC_Archive_1/Train/vascular lesion/ISIC_0030882.jpg,ISIC_Archive_1,Vascular Lesion
+ISIC_0031270,ISIC_0031270.jpg,vascular lesion,data/raw/ISIC_Archive_1/Train/vascular lesion/ISIC_0031270.jpg,ISIC_Archive_1,Vascular Lesion
+ISIC_0024669,ISIC_0024669.jpg,vascular lesion,data/raw/ISIC_Archive_1/Train/vascular lesion/ISIC_0024669.jpg,ISIC_Archive_1,Vascular Lesion
+ISIC_0030956,ISIC_0030956.jpg,vascular lesion,data/raw/ISIC_Archive_1/Train/vascular lesion/ISIC_0030956.jpg,ISIC_Archive_1,Vascular Lesion
+ISIC_0026336,ISIC_0026336.jpg,vascular lesion,data/raw/ISIC_Archive_1/Train/vascular lesion/ISIC_0026336.jpg,ISIC_Archive_1,Vascular Lesion
+ISIC_0033969,ISIC_0033969.jpg,vascular lesion,data/raw/ISIC_Archive_1/Train/vascular lesion/ISIC_0033969.jpg,ISIC_Archive_1,Vascular Lesion
+ISIC_0026490,ISIC_0026490.jpg,vascular lesion,data/raw/ISIC_Archive_1/Train/vascular lesion/ISIC_0026490.jpg,ISIC_Archive_1,Vascular Lesion
+ISIC_0031103,ISIC_0031103.jpg,vascular lesion,data/raw/ISIC_Archive_1/Train/vascular lesion/ISIC_0031103.jpg,ISIC_Archive_1,Vascular Lesion

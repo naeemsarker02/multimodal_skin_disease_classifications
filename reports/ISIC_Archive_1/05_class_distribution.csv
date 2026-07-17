@@ -1,0 +1,19 @@
+split,class_label,count,pct_of_split
+Test,actinic keratosis,16,13.56
+Test,basal cell carcinoma,16,13.56
+Test,dermatofibroma,16,13.56
+Test,melanoma,16,13.56
+Test,nevus,16,13.56
+Test,pigmented benign keratosis,16,13.56
+Test,seborrheic keratosis,3,2.54
+Test,squamous cell carcinoma,16,13.56
+Test,vascular lesion,3,2.54
+Train,actinic keratosis,114,5.09
+Train,basal cell carcinoma,376,16.79
+Train,dermatofibroma,95,4.24
+Train,melanoma,438,19.56
+Train,nevus,357,15.94
+Train,pigmented benign keratosis,462,20.63
+Train,seborrheic keratosis,77,3.44
+Train,squamous cell carcinoma,181,8.08
+Train,vascular lesion,139,6.21

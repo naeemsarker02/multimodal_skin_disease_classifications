@@ -1,0 +1,27 @@
+split,disease_label,count,pct_of_split,pct_of_total_images
+train,Pigmented Benign Keratosis,393,23.75,80.85
+train,Basal Cell Carcinoma,320,19.34,80.85
+train,Melanoma,306,18.49,80.85
+train,Nevus,238,14.38,80.85
+train,Squamous Cell Carcinoma,154,9.31,80.85
+train,Vascular Lesion,118,7.13,80.85
+train,Dermatofibroma,81,4.89,80.85
+train,Actinic Keratosis,44,2.66,80.85
+train,Seborrheic Keratosis,1,0.06,80.85
+val,Pigmented Benign Keratosis,69,23.63,14.26
+val,Basal Cell Carcinoma,56,19.18,14.26
+val,Melanoma,54,18.49,14.26
+val,Nevus,42,14.38,14.26
+val,Squamous Cell Carcinoma,27,9.25,14.26
+val,Vascular Lesion,21,7.19,14.26
+val,Dermatofibroma,14,4.79,14.26
+val,Actinic Keratosis,8,2.74,14.26
+val,Seborrheic Keratosis,1,0.34,14.26
+test,Basal Cell Carcinoma,16,16.0,4.89
+test,Dermatofibroma,16,16.0,4.89
+test,Melanoma,16,16.0,4.89
+test,Nevus,16,16.0,4.89
+test,Pigmented Benign Keratosis,16,16.0,4.89
+test,Squamous Cell Carcinoma,16,16.0,4.89
+test,Vascular Lesion,3,3.0,4.89
+test,Actinic Keratosis,1,1.0,4.89

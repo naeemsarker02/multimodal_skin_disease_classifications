@@ -1,0 +1,22 @@
+split,disease_label,count,pct_of_split,pct_of_total_images
+train,Nevus,4693,67.0,69.94
+train,Melanoma,779,11.12,69.94
+train,Benign Keratosis-like Lesion,768,10.97,69.94
+train,Basal Cell Carcinoma,358,5.11,69.94
+train,Actinic Keratosis / Intraepithelial Carcinoma,228,3.26,69.94
+train,Vascular Lesion,99,1.41,69.94
+train,Dermatofibroma,79,1.13,69.94
+val,Nevus,1005,66.96,14.99
+val,Benign Keratosis-like Lesion,166,11.06,14.99
+val,Melanoma,166,11.06,14.99
+val,Basal Cell Carcinoma,78,5.2,14.99
+val,Actinic Keratosis / Intraepithelial Carcinoma,48,3.2,14.99
+val,Vascular Lesion,20,1.33,14.99
+val,Dermatofibroma,18,1.2,14.99
+test,Nevus,1007,66.69,15.08
+test,Melanoma,168,11.13,15.08
+test,Benign Keratosis-like Lesion,165,10.93,15.08
+test,Basal Cell Carcinoma,78,5.17,15.08
+test,Actinic Keratosis / Intraepithelial Carcinoma,51,3.38,15.08
+test,Vascular Lesion,23,1.52,15.08
+test,Dermatofibroma,18,1.19,15.08

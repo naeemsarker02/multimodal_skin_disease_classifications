@@ -1,0 +1,8 @@
+disease_label,train,val,test
+Actinic Keratosis / Intraepithelial Carcinoma,228,48,51
+Basal Cell Carcinoma,358,78,78
+Benign Keratosis-like Lesion,768,166,165
+Dermatofibroma,79,18,18
+Melanoma,779,166,168
+Nevus,4693,1005,1007
+Vascular Lesion,99,20,23

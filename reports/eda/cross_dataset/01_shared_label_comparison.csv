@@ -1,0 +1,10 @@
+disease_label,PAD-UFES-20,HAM10000,ISIC Archive 1,ISIC Archive 2
+Basal Cell Carcinoma,586.0,358.0,320.0,2324.0
+Actinic Keratosis,513.0,0.0,44.0,603.0
+Nevus,167.0,4693.0,238.0,9011.0
+Seborrheic Keratosis,167.0,0.0,1.0,921.0
+Squamous Cell Carcinoma,135.0,0.0,154.0,435.0
+Melanoma,38.0,779.0,306.0,3165.0
+Vascular Lesion,0.0,99.0,118.0,0.0
+Dermatofibroma,0.0,79.0,81.0,167.0
+Pigmented Benign Keratosis,0.0,0.0,393.0,767.0

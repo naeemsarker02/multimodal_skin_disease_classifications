@@ -1,0 +1,29 @@
+2026-07-08 00:06:12 | INFO     | isic_archive_1_cleaning | ======================================================================
+2026-07-08 00:06:12 | INFO     | isic_archive_1_cleaning | ISIC ARCHIVE 1 DATA CLEANING - START
+2026-07-08 00:06:12 | INFO     | isic_archive_1_cleaning | ======================================================================
+2026-07-08 00:06:12 | INFO     | isic_archive_1_cleaning | --- Step 1: Schema construction ---
+2026-07-08 00:06:12 | INFO     | isic_archive_1_cleaning | Built metadata from folder structure: 2357 rows x 5 columns
+2026-07-08 00:06:12 | WARNING  | isic_archive_1_cleaning | Excluded 310 rows (155 distinct filenames) with conflicting class labels across locations
+2026-07-08 00:06:12 | INFO     | isic_archive_1_cleaning | Saved -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\data\interim\ISIC_Archive_1\metadata_standardized.csv
+2026-07-08 00:06:12 | INFO     | isic_archive_1_cleaning | --- Step 2: Label standardization ---
+2026-07-08 00:06:12 | INFO     | isic_archive_1_cleaning | Label standardization applied: 9 codes -> 9 standardized labels
+2026-07-08 00:06:12 | INFO     | isic_archive_1_cleaning | Saved -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\data\processed\ISIC_Archive_1\label_mapping.csv
+2026-07-08 00:06:12 | INFO     | isic_archive_1_cleaning | --- Step 3: Validation split ---
+2026-07-08 00:06:12 | INFO     | isic_archive_1_cleaning | train: 1655 images
+2026-07-08 00:06:12 | INFO     | isic_archive_1_cleaning | val: 292 images
+2026-07-08 00:06:12 | INFO     | isic_archive_1_cleaning | test: 100 images
+2026-07-08 00:06:12 | INFO     | isic_archive_1_cleaning | Split seed: 42 | Val fraction of Train: 0.15 | Test: archive-provided, untouched
+2026-07-08 00:06:12 | INFO     | isic_archive_1_cleaning | Saved -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\data\processed\ISIC_Archive_1\metadata_train.csv
+2026-07-08 00:06:12 | INFO     | isic_archive_1_cleaning | Saved -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\data\processed\ISIC_Archive_1\metadata_val.csv
+2026-07-08 00:06:12 | INFO     | isic_archive_1_cleaning | Saved -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\data\processed\ISIC_Archive_1\metadata_test.csv
+2026-07-08 00:06:12 | INFO     | isic_archive_1_cleaning | --- Step 4: Split quality report ---
+2026-07-08 00:06:12 | INFO     | isic_archive_1_cleaning | No filename overlap between train/val/test - split is leakage-free
+2026-07-08 00:06:12 | INFO     | isic_archive_1_cleaning | train: 1655 images (80.9% of total)
+2026-07-08 00:06:12 | INFO     | isic_archive_1_cleaning | val: 292 images (14.3% of total)
+2026-07-08 00:06:12 | INFO     | isic_archive_1_cleaning | test: 100 images (4.9% of total)
+2026-07-08 00:06:12 | INFO     | isic_archive_1_cleaning | Saved -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\data\processed\ISIC_Archive_1\split_quality_report.csv
+2026-07-08 00:06:12 | INFO     | isic_archive_1_cleaning | --- Step 5: Dataset description ---
+2026-07-08 00:06:12 | INFO     | isic_archive_1_cleaning | Dataset description written -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\data\processed\ISIC_Archive_1\dataset_description.md
+2026-07-08 00:06:12 | INFO     | isic_archive_1_cleaning | ======================================================================
+2026-07-08 00:06:12 | INFO     | isic_archive_1_cleaning | ISIC ARCHIVE 1 DATA CLEANING - COMPLETE
+2026-07-08 00:06:12 | INFO     | isic_archive_1_cleaning | ======================================================================

@@ -1,0 +1,7 @@
+original_label,standardized_label,reason
+BCC,Basal Cell Carcinoma,Standard dermatological full name for code BCC.
+SCC,Squamous Cell Carcinoma,Standard dermatological full name for code SCC.
+ACK,Actinic Keratosis,Standard dermatological full name for code ACK.
+NEV,Nevus,Standard dermatological full name for code NEV (common mole).
+SEK,Seborrheic Keratosis,Standard dermatological full name for code SEK.
+MEL,Melanoma,Standard dermatological full name for code MEL.

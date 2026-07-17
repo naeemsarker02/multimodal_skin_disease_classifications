@@ -1,0 +1,46 @@
+2026-07-07 23:00:08 | INFO     | isic_archive_1_audit | ======================================================================
+2026-07-07 23:00:08 | INFO     | isic_archive_1_audit | ISIC ARCHIVE 1 DATASET AUDIT - START
+2026-07-07 23:00:08 | INFO     | isic_archive_1_audit | ======================================================================
+2026-07-07 23:00:08 | INFO     | isic_archive_1_audit | --- Module 1: Folder structure + image inventory ---
+2026-07-07 23:00:08 | INFO     | isic_archive_1_audit | Building folder structure + image inventory from D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\data\raw\ISIC_Archive_1
+2026-07-07 23:00:08 | INFO     | isic_archive_1_audit | Splits: ['Train', 'Test'] | Classes per split: ['actinic keratosis', 'basal cell carcinoma', 'dermatofibroma', 'melanoma', 'nevus', 'pigmented benign keratosis', 'seborrheic keratosis', 'squamous cell carcinoma', 'vascular lesion']
+2026-07-07 23:00:08 | INFO     | isic_archive_1_audit |   Train/actinic keratosis -> 114 files
+2026-07-07 23:00:08 | INFO     | isic_archive_1_audit |   Train/basal cell carcinoma -> 376 files
+2026-07-07 23:00:08 | INFO     | isic_archive_1_audit |   Train/dermatofibroma -> 95 files
+2026-07-07 23:00:08 | INFO     | isic_archive_1_audit |   Train/melanoma -> 438 files
+2026-07-07 23:00:08 | INFO     | isic_archive_1_audit |   Train/nevus -> 357 files
+2026-07-07 23:00:08 | INFO     | isic_archive_1_audit |   Train/pigmented benign keratosis -> 462 files
+2026-07-07 23:00:08 | INFO     | isic_archive_1_audit |   Train/seborrheic keratosis -> 77 files
+2026-07-07 23:00:08 | INFO     | isic_archive_1_audit |   Train/squamous cell carcinoma -> 181 files
+2026-07-07 23:00:08 | INFO     | isic_archive_1_audit |   Train/vascular lesion -> 139 files
+2026-07-07 23:00:08 | INFO     | isic_archive_1_audit |   Test/actinic keratosis -> 16 files
+2026-07-07 23:00:08 | INFO     | isic_archive_1_audit |   Test/basal cell carcinoma -> 16 files
+2026-07-07 23:00:08 | INFO     | isic_archive_1_audit |   Test/dermatofibroma -> 16 files
+2026-07-07 23:00:08 | INFO     | isic_archive_1_audit |   Test/melanoma -> 16 files
+2026-07-07 23:00:08 | INFO     | isic_archive_1_audit |   Test/nevus -> 16 files
+2026-07-07 23:00:08 | INFO     | isic_archive_1_audit |   Test/pigmented benign keratosis -> 16 files
+2026-07-07 23:00:08 | INFO     | isic_archive_1_audit |   Test/seborrheic keratosis -> 3 files
+2026-07-07 23:00:08 | INFO     | isic_archive_1_audit |   Test/squamous cell carcinoma -> 16 files
+2026-07-07 23:00:08 | INFO     | isic_archive_1_audit |   Test/vascular lesion -> 3 files
+2026-07-07 23:00:08 | INFO     | isic_archive_1_audit | Total images inventoried: 2357
+2026-07-07 23:00:08 | WARNING  | isic_archive_1_audit | Found 155 filenames appearing in more than one location (possible Train/Test or cross-class duplication)
+2026-07-07 23:00:08 | INFO     | isic_archive_1_audit | Saved -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\reports\ISIC_Archive_1\01_folder_structure.csv
+2026-07-07 23:00:08 | INFO     | isic_archive_1_audit | Saved -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\reports\ISIC_Archive_1\02_image_inventory.csv
+2026-07-07 23:00:08 | INFO     | isic_archive_1_audit | Saved -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\reports\ISIC_Archive_1\02_duplicate_filenames.csv
+2026-07-07 23:00:08 | INFO     | isic_archive_1_audit | --- Module 2: Image verification / size stats ---
+2026-07-07 23:00:08 | INFO     | isic_archive_1_audit | Verifying 2357 images (open + decode)
+2026-07-07 23:00:41 | INFO     | isic_archive_1_audit | Verification complete: 2357 OK, 0 CORRUPTED
+2026-07-07 23:00:41 | INFO     | isic_archive_1_audit | Width range: 576-6688 px | Height range: 450-4479 px | Distinct resolutions: 87
+2026-07-07 23:00:41 | INFO     | isic_archive_1_audit | Saved -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\reports\ISIC_Archive_1\03_image_verification.csv
+2026-07-07 23:00:41 | INFO     | isic_archive_1_audit | Saved -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\reports\ISIC_Archive_1\04_image_size_stats.csv
+2026-07-07 23:00:41 | INFO     | isic_archive_1_audit | Saved figure -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\reports\ISIC_Archive_1\figures\image_size_distribution.png
+2026-07-07 23:00:41 | INFO     | isic_archive_1_audit | --- Module 3: Class distribution ---
+2026-07-07 23:00:41 | INFO     | isic_archive_1_audit | Classes: 9 | Overall counts: {'pigmented benign keratosis': 478, 'melanoma': 454, 'basal cell carcinoma': 392, 'nevus': 373, 'squamous cell carcinoma': 197, 'vascular lesion': 142, 'actinic keratosis': 130, 'dermatofibroma': 111, 'seborrheic keratosis': 80}
+2026-07-07 23:00:41 | INFO     | isic_archive_1_audit | Imbalance ratio (majority:minority): 5.98
+2026-07-07 23:00:41 | INFO     | isic_archive_1_audit | Saved -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\reports\ISIC_Archive_1\05_class_distribution.csv
+2026-07-07 23:00:41 | INFO     | isic_archive_1_audit | Saved figure -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\reports\ISIC_Archive_1\figures\class_distribution.png
+2026-07-07 23:00:41 | INFO     | isic_archive_1_audit | --- Module 4: Dataset summary ---
+2026-07-07 23:00:41 | INFO     | isic_archive_1_audit | Dataset summary written -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\reports\ISIC_Archive_1\06_dataset_audit_summary.md
+2026-07-07 23:00:41 | INFO     | isic_archive_1_audit | ======================================================================
+2026-07-07 23:00:41 | INFO     | isic_archive_1_audit | ISIC ARCHIVE 1 DATASET AUDIT - COMPLETE
+2026-07-07 23:00:41 | INFO     | isic_archive_1_audit | ======================================================================

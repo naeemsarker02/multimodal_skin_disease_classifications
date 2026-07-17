@@ -1,0 +1,8 @@
+original_label,standardized_label,reason
+bcc,Basal Cell Carcinoma,Same disease as PAD-UFES-20's BCC code; standardized name shared across datasets.
+mel,Melanoma,Same disease as PAD-UFES-20's MEL code; standardized name shared across datasets.
+nv,Nevus,Melanocytic nevus; same disease as PAD-UFES-20's NEV code; standardized name shared across datasets.
+akiec,Actinic Keratosis / Intraepithelial Carcinoma,HAM10000's akiec groups actinic keratoses with Bowen's disease (SCC in situ); kept distinct from PAD-UFES-20's narrower ACK code.
+bkl,Benign Keratosis-like Lesion,"HAM10000's bkl groups solar lentigines, seborrheic keratoses, and lichen-planus-like keratoses; broader than PAD-UFES-20's SEK code, so kept distinct."
+df,Dermatofibroma,"HAM10000-specific class, not present in PAD-UFES-20."
+vasc,Vascular Lesion,"HAM10000-specific class, not present in PAD-UFES-20."

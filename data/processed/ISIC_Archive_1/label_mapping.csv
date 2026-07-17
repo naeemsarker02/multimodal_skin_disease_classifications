@@ -1,0 +1,10 @@
+original_label,standardized_label,reason
+actinic keratosis,Actinic Keratosis,Same disease as PAD-UFES-20's ACK code; standardized name shared across sources.
+basal cell carcinoma,Basal Cell Carcinoma,Same disease as PAD-UFES-20/HAM10000's BCC code; standardized name shared across sources.
+dermatofibroma,Dermatofibroma,Same disease as HAM10000's df code; standardized name shared across sources.
+melanoma,Melanoma,Same disease as PAD-UFES-20/HAM10000's MEL code; standardized name shared across sources.
+nevus,Nevus,Same disease as PAD-UFES-20's NEV / HAM10000's nv code; standardized name shared across sources.
+pigmented benign keratosis,Pigmented Benign Keratosis,Distinct from Seborrheic Keratosis in both ISIC archives' own taxonomy (they list both categories separately); kept distinct rather than merged.
+seborrheic keratosis,Seborrheic Keratosis,Same disease as PAD-UFES-20's SEK code; standardized name shared across sources.
+squamous cell carcinoma,Squamous Cell Carcinoma,Same disease as PAD-UFES-20's SCC code; standardized name shared across sources.
+vascular lesion,Vascular Lesion,Same disease as HAM10000's vasc code; standardized name shared across sources.

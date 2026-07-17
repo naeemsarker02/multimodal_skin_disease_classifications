@@ -1,0 +1,311 @@
+split,class_label,filename,extension,size_bytes,relative_path
+Train,actinic keratosis,ISIC_0025780.jpg,.jpg,260942,Train\actinic keratosis\ISIC_0025780.jpg
+Train,actinic keratosis,ISIC_0025803.jpg,.jpg,312743,Train\actinic keratosis\ISIC_0025803.jpg
+Train,actinic keratosis,ISIC_0025825.jpg,.jpg,294418,Train\actinic keratosis\ISIC_0025825.jpg
+Train,actinic keratosis,ISIC_0025953.jpg,.jpg,273040,Train\actinic keratosis\ISIC_0025953.jpg
+Train,actinic keratosis,ISIC_0025957.jpg,.jpg,260619,Train\actinic keratosis\ISIC_0025957.jpg
+Train,actinic keratosis,ISIC_0025992.jpg,.jpg,249077,Train\actinic keratosis\ISIC_0025992.jpg
+Train,actinic keratosis,ISIC_0026040.jpg,.jpg,245057,Train\actinic keratosis\ISIC_0026040.jpg
+Train,actinic keratosis,ISIC_0026149.jpg,.jpg,231529,Train\actinic keratosis\ISIC_0026149.jpg
+Train,actinic keratosis,ISIC_0026171.jpg,.jpg,321683,Train\actinic keratosis\ISIC_0026171.jpg
+Train,actinic keratosis,ISIC_0026194.jpg,.jpg,252103,Train\actinic keratosis\ISIC_0026194.jpg
+Train,actinic keratosis,ISIC_0026212.jpg,.jpg,298308,Train\actinic keratosis\ISIC_0026212.jpg
+Train,actinic keratosis,ISIC_0026457.jpg,.jpg,271535,Train\actinic keratosis\ISIC_0026457.jpg
+Train,actinic keratosis,ISIC_0026468.jpg,.jpg,155738,Train\actinic keratosis\ISIC_0026468.jpg
+Train,actinic keratosis,ISIC_0026525.jpg,.jpg,273790,Train\actinic keratosis\ISIC_0026525.jpg
+Train,actinic keratosis,ISIC_0026575.jpg,.jpg,274739,Train\actinic keratosis\ISIC_0026575.jpg
+Train,actinic keratosis,ISIC_0026625.jpg,.jpg,301284,Train\actinic keratosis\ISIC_0026625.jpg
+Train,actinic keratosis,ISIC_0026626.jpg,.jpg,290951,Train\actinic keratosis\ISIC_0026626.jpg
+Train,actinic keratosis,ISIC_0026650.jpg,.jpg,252523,Train\actinic keratosis\ISIC_0026650.jpg
+Train,actinic keratosis,ISIC_0026702.jpg,.jpg,279799,Train\actinic keratosis\ISIC_0026702.jpg
+Train,actinic keratosis,ISIC_0026709.jpg,.jpg,301437,Train\actinic keratosis\ISIC_0026709.jpg
+Train,actinic keratosis,ISIC_0026729.jpg,.jpg,246442,Train\actinic keratosis\ISIC_0026729.jpg
+Train,actinic keratosis,ISIC_0026765.jpg,.jpg,265203,Train\actinic keratosis\ISIC_0026765.jpg
+Train,actinic keratosis,ISIC_0026848.jpg,.jpg,235871,Train\actinic keratosis\ISIC_0026848.jpg
+Train,actinic keratosis,ISIC_0026857.jpg,.jpg,277681,Train\actinic keratosis\ISIC_0026857.jpg
+Train,actinic keratosis,ISIC_0026905.jpg,.jpg,286887,Train\actinic keratosis\ISIC_0026905.jpg
+Train,actinic keratosis,ISIC_0026984.jpg,.jpg,258050,Train\actinic keratosis\ISIC_0026984.jpg
+Train,actinic keratosis,ISIC_0027172.jpg,.jpg,254845,Train\actinic keratosis\ISIC_0027172.jpg
+Train,actinic keratosis,ISIC_0027254.jpg,.jpg,313807,Train\actinic keratosis\ISIC_0027254.jpg
+Train,actinic keratosis,ISIC_0027334.jpg,.jpg,204831,Train\actinic keratosis\ISIC_0027334.jpg
+Train,actinic keratosis,ISIC_0027447.jpg,.jpg,282606,Train\actinic keratosis\ISIC_0027447.jpg
+Train,actinic keratosis,ISIC_0027452.jpg,.jpg,291471,Train\actinic keratosis\ISIC_0027452.jpg
+Train,actinic keratosis,ISIC_0027536.jpg,.jpg,281851,Train\actinic keratosis\ISIC_0027536.jpg
+Train,actinic keratosis,ISIC_0027562.jpg,.jpg,248041,Train\actinic keratosis\ISIC_0027562.jpg
+Train,actinic keratosis,ISIC_0027580.jpg,.jpg,237879,Train\actinic keratosis\ISIC_0027580.jpg
+Train,actinic keratosis,ISIC_0027615.jpg,.jpg,263206,Train\actinic keratosis\ISIC_0027615.jpg
+Train,actinic keratosis,ISIC_0027650.jpg,.jpg,245792,Train\actinic keratosis\ISIC_0027650.jpg
+Train,actinic keratosis,ISIC_0027668.jpg,.jpg,321848,Train\actinic keratosis\ISIC_0027668.jpg
+Train,actinic keratosis,ISIC_0027802.jpg,.jpg,229911,Train\actinic keratosis\ISIC_0027802.jpg
+Train,actinic keratosis,ISIC_0027829.jpg,.jpg,222294,Train\actinic keratosis\ISIC_0027829.jpg
+Train,actinic keratosis,ISIC_0027884.jpg,.jpg,241430,Train\actinic keratosis\ISIC_0027884.jpg
+Train,actinic keratosis,ISIC_0027896.jpg,.jpg,291117,Train\actinic keratosis\ISIC_0027896.jpg
+Train,actinic keratosis,ISIC_0027950.jpg,.jpg,166916,Train\actinic keratosis\ISIC_0027950.jpg
+Train,actinic keratosis,ISIC_0027958.jpg,.jpg,304406,Train\actinic keratosis\ISIC_0027958.jpg
+Train,actinic keratosis,ISIC_0028063.jpg,.jpg,265530,Train\actinic keratosis\ISIC_0028063.jpg
+Train,actinic keratosis,ISIC_0028076.jpg,.jpg,256847,Train\actinic keratosis\ISIC_0028076.jpg
+Train,actinic keratosis,ISIC_0028190.jpg,.jpg,252138,Train\actinic keratosis\ISIC_0028190.jpg
+Train,actinic keratosis,ISIC_0028314.jpg,.jpg,277914,Train\actinic keratosis\ISIC_0028314.jpg
+Train,actinic keratosis,ISIC_0028370.jpg,.jpg,276804,Train\actinic keratosis\ISIC_0028370.jpg
+Train,actinic keratosis,ISIC_0028393.jpg,.jpg,137807,Train\actinic keratosis\ISIC_0028393.jpg
+Train,actinic keratosis,ISIC_0028517.jpg,.jpg,291607,Train\actinic keratosis\ISIC_0028517.jpg
+Train,actinic keratosis,ISIC_0028558.jpg,.jpg,202086,Train\actinic keratosis\ISIC_0028558.jpg
+Train,actinic keratosis,ISIC_0028820.jpg,.jpg,264410,Train\actinic keratosis\ISIC_0028820.jpg
+Train,actinic keratosis,ISIC_0028854.jpg,.jpg,277851,Train\actinic keratosis\ISIC_0028854.jpg
+Train,actinic keratosis,ISIC_0028941.jpg,.jpg,344641,Train\actinic keratosis\ISIC_0028941.jpg
+Train,actinic keratosis,ISIC_0028990.jpg,.jpg,272750,Train\actinic keratosis\ISIC_0028990.jpg
+Train,actinic keratosis,ISIC_0029025.jpg,.jpg,265155,Train\actinic keratosis\ISIC_0029025.jpg
+Train,actinic keratosis,ISIC_0029041.jpg,.jpg,284761,Train\actinic keratosis\ISIC_0029041.jpg
+Train,actinic keratosis,ISIC_0029133.jpg,.jpg,299092,Train\actinic keratosis\ISIC_0029133.jpg
+Train,actinic keratosis,ISIC_0029141.jpg,.jpg,236726,Train\actinic keratosis\ISIC_0029141.jpg
+Train,actinic keratosis,ISIC_0029210.jpg,.jpg,272519,Train\actinic keratosis\ISIC_0029210.jpg
+Train,actinic keratosis,ISIC_0029309.jpg,.jpg,151314,Train\actinic keratosis\ISIC_0029309.jpg
+Train,actinic keratosis,ISIC_0029460.jpg,.jpg,303601,Train\actinic keratosis\ISIC_0029460.jpg
+Train,melanoma,ISIC_0010803.jpg,.jpg,158064,Train\melanoma\ISIC_0010803.jpg
+Train,melanoma,ISIC_0010808.jpg,.jpg,189079,Train\melanoma\ISIC_0010808.jpg
+Train,melanoma,ISIC_0010809.jpg,.jpg,216205,Train\melanoma\ISIC_0010809.jpg
+Train,melanoma,ISIC_0010810.jpg,.jpg,159089,Train\melanoma\ISIC_0010810.jpg
+Train,melanoma,ISIC_0010812.jpg,.jpg,234772,Train\melanoma\ISIC_0010812.jpg
+Train,melanoma,ISIC_0010834.jpg,.jpg,165788,Train\melanoma\ISIC_0010834.jpg
+Train,melanoma,ISIC_0010852.jpg,.jpg,165785,Train\melanoma\ISIC_0010852.jpg
+Train,melanoma,ISIC_0010860.jpg,.jpg,190344,Train\melanoma\ISIC_0010860.jpg
+Train,melanoma,ISIC_0010862.jpg,.jpg,165423,Train\melanoma\ISIC_0010862.jpg
+Train,melanoma,ISIC_0010863.jpg,.jpg,187724,Train\melanoma\ISIC_0010863.jpg
+Train,melanoma,ISIC_0010866.jpg,.jpg,189528,Train\melanoma\ISIC_0010866.jpg
+Train,melanoma,ISIC_0010872.jpg,.jpg,190351,Train\melanoma\ISIC_0010872.jpg
+Train,melanoma,ISIC_0010876.jpg,.jpg,164468,Train\melanoma\ISIC_0010876.jpg
+Train,melanoma,ISIC_0010878.jpg,.jpg,164284,Train\melanoma\ISIC_0010878.jpg
+Train,melanoma,ISIC_0010883.jpg,.jpg,153471,Train\melanoma\ISIC_0010883.jpg
+Train,melanoma,ISIC_0010890.jpg,.jpg,180954,Train\melanoma\ISIC_0010890.jpg
+Train,melanoma,ISIC_0010898.jpg,.jpg,253862,Train\melanoma\ISIC_0010898.jpg
+Train,melanoma,ISIC_0010900.jpg,.jpg,220006,Train\melanoma\ISIC_0010900.jpg
+Train,melanoma,ISIC_0010909.jpg,.jpg,208357,Train\melanoma\ISIC_0010909.jpg
+Train,melanoma,ISIC_0010912.jpg,.jpg,178011,Train\melanoma\ISIC_0010912.jpg
+Train,melanoma,ISIC_0010917.jpg,.jpg,63265,Train\melanoma\ISIC_0010917.jpg
+Train,melanoma,ISIC_0010923.jpg,.jpg,166835,Train\melanoma\ISIC_0010923.jpg
+Train,melanoma,ISIC_0010925.jpg,.jpg,191337,Train\melanoma\ISIC_0010925.jpg
+Train,melanoma,ISIC_0010934.jpg,.jpg,76235,Train\melanoma\ISIC_0010934.jpg
+Train,melanoma,ISIC_0010938.jpg,.jpg,191954,Train\melanoma\ISIC_0010938.jpg
+Train,melanoma,ISIC_0010942.jpg,.jpg,210245,Train\melanoma\ISIC_0010942.jpg
+Train,melanoma,ISIC_0010965.jpg,.jpg,180382,Train\melanoma\ISIC_0010965.jpg
+Train,melanoma,ISIC_0010971.jpg,.jpg,38917,Train\melanoma\ISIC_0010971.jpg
+Train,melanoma,ISIC_0010977.jpg,.jpg,181421,Train\melanoma\ISIC_0010977.jpg
+Train,melanoma,ISIC_0010978.jpg,.jpg,74323,Train\melanoma\ISIC_0010978.jpg
+Train,melanoma,ISIC_0010979.jpg,.jpg,143169,Train\melanoma\ISIC_0010979.jpg
+Train,melanoma,ISIC_0010982.jpg,.jpg,169227,Train\melanoma\ISIC_0010982.jpg
+Train,melanoma,ISIC_0010990.jpg,.jpg,173656,Train\melanoma\ISIC_0010990.jpg
+Train,melanoma,ISIC_0010993.jpg,.jpg,207468,Train\melanoma\ISIC_0010993.jpg
+Train,melanoma,ISIC_0010995.jpg,.jpg,174427,Train\melanoma\ISIC_0010995.jpg
+Train,melanoma,ISIC_0011007.jpg,.jpg,147669,Train\melanoma\ISIC_0011007.jpg
+Train,melanoma,ISIC_0011012.jpg,.jpg,63303,Train\melanoma\ISIC_0011012.jpg
+Train,melanoma,ISIC_0011013.jpg,.jpg,72118,Train\melanoma\ISIC_0011013.jpg
+Train,melanoma,ISIC_0011030.jpg,.jpg,61052,Train\melanoma\ISIC_0011030.jpg
+Train,melanoma,ISIC_0011031.jpg,.jpg,171992,Train\melanoma\ISIC_0011031.jpg
+Train,melanoma,ISIC_0011032.jpg,.jpg,268153,Train\melanoma\ISIC_0011032.jpg
+Train,melanoma,ISIC_0011039.jpg,.jpg,232984,Train\melanoma\ISIC_0011039.jpg
+Train,melanoma,ISIC_0011040.jpg,.jpg,181454,Train\melanoma\ISIC_0011040.jpg
+Train,melanoma,ISIC_0011042.jpg,.jpg,152615,Train\melanoma\ISIC_0011042.jpg
+Train,melanoma,ISIC_0011043.jpg,.jpg,172869,Train\melanoma\ISIC_0011043.jpg
+Train,melanoma,ISIC_0011045.jpg,.jpg,159711,Train\melanoma\ISIC_0011045.jpg
+Train,melanoma,ISIC_0011052.jpg,.jpg,167118,Train\melanoma\ISIC_0011052.jpg
+Train,melanoma,ISIC_0011056.jpg,.jpg,210271,Train\melanoma\ISIC_0011056.jpg
+Train,melanoma,ISIC_0011057.jpg,.jpg,175244,Train\melanoma\ISIC_0011057.jpg
+Train,melanoma,ISIC_0011077.jpg,.jpg,230189,Train\melanoma\ISIC_0011077.jpg
+Train,melanoma,ISIC_0011094.jpg,.jpg,270435,Train\melanoma\ISIC_0011094.jpg
+Train,melanoma,ISIC_0011095.jpg,.jpg,218383,Train\melanoma\ISIC_0011095.jpg
+Train,melanoma,ISIC_0011099.jpg,.jpg,231164,Train\melanoma\ISIC_0011099.jpg
+Train,melanoma,ISIC_0011112.jpg,.jpg,196660,Train\melanoma\ISIC_0011112.jpg
+Train,melanoma,ISIC_0011121.jpg,.jpg,188024,Train\melanoma\ISIC_0011121.jpg
+Train,melanoma,ISIC_0011125.jpg,.jpg,214485,Train\melanoma\ISIC_0011125.jpg
+Train,melanoma,ISIC_0011128.jpg,.jpg,172168,Train\melanoma\ISIC_0011128.jpg
+Train,melanoma,ISIC_0011130.jpg,.jpg,149624,Train\melanoma\ISIC_0011130.jpg
+Train,melanoma,ISIC_0011132.jpg,.jpg,154909,Train\melanoma\ISIC_0011132.jpg
+Train,melanoma,ISIC_0011135.jpg,.jpg,186854,Train\melanoma\ISIC_0011135.jpg
+Train,melanoma,ISIC_0011136.jpg,.jpg,173821,Train\melanoma\ISIC_0011136.jpg
+Train,melanoma,ISIC_0011137.jpg,.jpg,181060,Train\melanoma\ISIC_0011137.jpg
+Train,melanoma,ISIC_0011138.jpg,.jpg,196164,Train\melanoma\ISIC_0011138.jpg
+Train,melanoma,ISIC_0011139.jpg,.jpg,192380,Train\melanoma\ISIC_0011139.jpg
+Train,melanoma,ISIC_0011140.jpg,.jpg,176219,Train\melanoma\ISIC_0011140.jpg
+Train,melanoma,ISIC_0011151.jpg,.jpg,193997,Train\melanoma\ISIC_0011151.jpg
+Train,melanoma,ISIC_0011158.jpg,.jpg,192562,Train\melanoma\ISIC_0011158.jpg
+Train,melanoma,ISIC_0011161.jpg,.jpg,170118,Train\melanoma\ISIC_0011161.jpg
+Train,melanoma,ISIC_0011163.jpg,.jpg,135398,Train\melanoma\ISIC_0011163.jpg
+Train,melanoma,ISIC_0011166.jpg,.jpg,214523,Train\melanoma\ISIC_0011166.jpg
+Train,melanoma,ISIC_0011169.jpg,.jpg,139489,Train\melanoma\ISIC_0011169.jpg
+Train,melanoma,ISIC_0011174.jpg,.jpg,194129,Train\melanoma\ISIC_0011174.jpg
+Train,melanoma,ISIC_0011176.jpg,.jpg,156698,Train\melanoma\ISIC_0011176.jpg
+Train,melanoma,ISIC_0011178.jpg,.jpg,192520,Train\melanoma\ISIC_0011178.jpg
+Train,melanoma,ISIC_0011181.jpg,.jpg,202271,Train\melanoma\ISIC_0011181.jpg
+Train,melanoma,ISIC_0011185.jpg,.jpg,67281,Train\melanoma\ISIC_0011185.jpg
+Train,melanoma,ISIC_0011187.jpg,.jpg,167983,Train\melanoma\ISIC_0011187.jpg
+Train,melanoma,ISIC_0011193.jpg,.jpg,197051,Train\melanoma\ISIC_0011193.jpg
+Train,nevus,ISIC_0010512.jpg,.jpg,148623,Train\nevus\ISIC_0010512.jpg
+Train,nevus,ISIC_0010889.jpg,.jpg,55730,Train\nevus\ISIC_0010889.jpg
+Train,nevus,ISIC_0024468.jpg,.jpg,291343,Train\nevus\ISIC_0024468.jpg
+Train,nevus,ISIC_0024470.jpg,.jpg,274221,Train\nevus\ISIC_0024470.jpg
+Train,nevus,ISIC_0024511.jpg,.jpg,221256,Train\nevus\ISIC_0024511.jpg
+Train,nevus,ISIC_0024646.jpg,.jpg,232181,Train\nevus\ISIC_0024646.jpg
+Train,nevus,ISIC_0024707.jpg,.jpg,284809,Train\nevus\ISIC_0024707.jpg
+Train,nevus,ISIC_0024763.jpg,.jpg,238553,Train\nevus\ISIC_0024763.jpg
+Train,nevus,ISIC_0024771.jpg,.jpg,265349,Train\nevus\ISIC_0024771.jpg
+Train,nevus,ISIC_0024800.jpg,.jpg,268818,Train\nevus\ISIC_0024800.jpg
+Train,nevus,ISIC_0024913.jpg,.jpg,324844,Train\nevus\ISIC_0024913.jpg
+Train,nevus,ISIC_0024948.jpg,.jpg,274133,Train\nevus\ISIC_0024948.jpg
+Train,nevus,ISIC_0025368.jpg,.jpg,235603,Train\nevus\ISIC_0025368.jpg
+Train,nevus,ISIC_0025427.jpg,.jpg,288982,Train\nevus\ISIC_0025427.jpg
+Train,nevus,ISIC_0025605.jpg,.jpg,249258,Train\nevus\ISIC_0025605.jpg
+Train,nevus,ISIC_0025780.jpg,.jpg,260942,Train\nevus\ISIC_0025780.jpg
+Train,nevus,ISIC_0025803.jpg,.jpg,312743,Train\nevus\ISIC_0025803.jpg
+Train,nevus,ISIC_0025825.jpg,.jpg,294418,Train\nevus\ISIC_0025825.jpg
+Train,nevus,ISIC_0025953.jpg,.jpg,273040,Train\nevus\ISIC_0025953.jpg
+Train,nevus,ISIC_0025957.jpg,.jpg,260619,Train\nevus\ISIC_0025957.jpg
+Train,nevus,ISIC_0025992.jpg,.jpg,249077,Train\nevus\ISIC_0025992.jpg
+Train,nevus,ISIC_0026040.jpg,.jpg,245057,Train\nevus\ISIC_0026040.jpg
+Train,nevus,ISIC_0026149.jpg,.jpg,231529,Train\nevus\ISIC_0026149.jpg
+Train,nevus,ISIC_0026171.jpg,.jpg,321683,Train\nevus\ISIC_0026171.jpg
+Train,nevus,ISIC_0026194.jpg,.jpg,252103,Train\nevus\ISIC_0026194.jpg
+Train,nevus,ISIC_0026212.jpg,.jpg,298308,Train\nevus\ISIC_0026212.jpg
+Train,nevus,ISIC_0026457.jpg,.jpg,271535,Train\nevus\ISIC_0026457.jpg
+Train,nevus,ISIC_0026468.jpg,.jpg,155738,Train\nevus\ISIC_0026468.jpg
+Train,nevus,ISIC_0026525.jpg,.jpg,273790,Train\nevus\ISIC_0026525.jpg
+Train,nevus,ISIC_0026575.jpg,.jpg,274739,Train\nevus\ISIC_0026575.jpg
+Train,nevus,ISIC_0026625.jpg,.jpg,301284,Train\nevus\ISIC_0026625.jpg
+Train,nevus,ISIC_0026626.jpg,.jpg,290951,Train\nevus\ISIC_0026626.jpg
+Train,nevus,ISIC_0026650.jpg,.jpg,252523,Train\nevus\ISIC_0026650.jpg
+Train,nevus,ISIC_0026702.jpg,.jpg,279799,Train\nevus\ISIC_0026702.jpg
+Train,nevus,ISIC_0026709.jpg,.jpg,301437,Train\nevus\ISIC_0026709.jpg
+Train,nevus,ISIC_0026729.jpg,.jpg,246442,Train\nevus\ISIC_0026729.jpg
+Train,nevus,ISIC_0026765.jpg,.jpg,265203,Train\nevus\ISIC_0026765.jpg
+Train,nevus,ISIC_0026848.jpg,.jpg,235871,Train\nevus\ISIC_0026848.jpg
+Train,nevus,ISIC_0026857.jpg,.jpg,277681,Train\nevus\ISIC_0026857.jpg
+Train,nevus,ISIC_0026905.jpg,.jpg,286887,Train\nevus\ISIC_0026905.jpg
+Train,nevus,ISIC_0026984.jpg,.jpg,258050,Train\nevus\ISIC_0026984.jpg
+Train,nevus,ISIC_0027172.jpg,.jpg,254845,Train\nevus\ISIC_0027172.jpg
+Train,nevus,ISIC_0027254.jpg,.jpg,313807,Train\nevus\ISIC_0027254.jpg
+Train,nevus,ISIC_0027334.jpg,.jpg,204831,Train\nevus\ISIC_0027334.jpg
+Train,nevus,ISIC_0027447.jpg,.jpg,282606,Train\nevus\ISIC_0027447.jpg
+Train,nevus,ISIC_0027452.jpg,.jpg,291471,Train\nevus\ISIC_0027452.jpg
+Train,nevus,ISIC_0027536.jpg,.jpg,281851,Train\nevus\ISIC_0027536.jpg
+Train,nevus,ISIC_0027562.jpg,.jpg,248041,Train\nevus\ISIC_0027562.jpg
+Train,nevus,ISIC_0027580.jpg,.jpg,237879,Train\nevus\ISIC_0027580.jpg
+Train,nevus,ISIC_0027615.jpg,.jpg,263206,Train\nevus\ISIC_0027615.jpg
+Train,nevus,ISIC_0027650.jpg,.jpg,245792,Train\nevus\ISIC_0027650.jpg
+Train,nevus,ISIC_0027668.jpg,.jpg,321848,Train\nevus\ISIC_0027668.jpg
+Train,nevus,ISIC_0027802.jpg,.jpg,229911,Train\nevus\ISIC_0027802.jpg
+Train,nevus,ISIC_0027829.jpg,.jpg,222294,Train\nevus\ISIC_0027829.jpg
+Train,nevus,ISIC_0027884.jpg,.jpg,241430,Train\nevus\ISIC_0027884.jpg
+Train,nevus,ISIC_0027896.jpg,.jpg,291117,Train\nevus\ISIC_0027896.jpg
+Train,nevus,ISIC_0027950.jpg,.jpg,166916,Train\nevus\ISIC_0027950.jpg
+Train,nevus,ISIC_0027958.jpg,.jpg,304406,Train\nevus\ISIC_0027958.jpg
+Train,nevus,ISIC_0028063.jpg,.jpg,265530,Train\nevus\ISIC_0028063.jpg
+Train,nevus,ISIC_0028076.jpg,.jpg,256847,Train\nevus\ISIC_0028076.jpg
+Train,nevus,ISIC_0028190.jpg,.jpg,252138,Train\nevus\ISIC_0028190.jpg
+Train,nevus,ISIC_0028314.jpg,.jpg,277914,Train\nevus\ISIC_0028314.jpg
+Train,nevus,ISIC_0028370.jpg,.jpg,276804,Train\nevus\ISIC_0028370.jpg
+Train,nevus,ISIC_0028393.jpg,.jpg,137807,Train\nevus\ISIC_0028393.jpg
+Train,nevus,ISIC_0028517.jpg,.jpg,291607,Train\nevus\ISIC_0028517.jpg
+Train,nevus,ISIC_0028558.jpg,.jpg,202086,Train\nevus\ISIC_0028558.jpg
+Train,nevus,ISIC_0028820.jpg,.jpg,264410,Train\nevus\ISIC_0028820.jpg
+Train,nevus,ISIC_0028854.jpg,.jpg,277851,Train\nevus\ISIC_0028854.jpg
+Train,nevus,ISIC_0028941.jpg,.jpg,344641,Train\nevus\ISIC_0028941.jpg
+Train,nevus,ISIC_0028990.jpg,.jpg,272750,Train\nevus\ISIC_0028990.jpg
+Train,nevus,ISIC_0029025.jpg,.jpg,265155,Train\nevus\ISIC_0029025.jpg
+Train,nevus,ISIC_0029041.jpg,.jpg,284761,Train\nevus\ISIC_0029041.jpg
+Train,nevus,ISIC_0029133.jpg,.jpg,299092,Train\nevus\ISIC_0029133.jpg
+Train,nevus,ISIC_0029141.jpg,.jpg,236726,Train\nevus\ISIC_0029141.jpg
+Train,nevus,ISIC_0029210.jpg,.jpg,272519,Train\nevus\ISIC_0029210.jpg
+Train,nevus,ISIC_0029309.jpg,.jpg,151314,Train\nevus\ISIC_0029309.jpg
+Train,nevus,ISIC_0029460.jpg,.jpg,303601,Train\nevus\ISIC_0029460.jpg
+Train,seborrheic keratosis,ISIC_0010810.jpg,.jpg,159089,Train\seborrheic keratosis\ISIC_0010810.jpg
+Train,seborrheic keratosis,ISIC_0010812.jpg,.jpg,234772,Train\seborrheic keratosis\ISIC_0010812.jpg
+Train,seborrheic keratosis,ISIC_0010834.jpg,.jpg,165788,Train\seborrheic keratosis\ISIC_0010834.jpg
+Train,seborrheic keratosis,ISIC_0010852.jpg,.jpg,165785,Train\seborrheic keratosis\ISIC_0010852.jpg
+Train,seborrheic keratosis,ISIC_0010860.jpg,.jpg,190344,Train\seborrheic keratosis\ISIC_0010860.jpg
+Train,seborrheic keratosis,ISIC_0010862.jpg,.jpg,165423,Train\seborrheic keratosis\ISIC_0010862.jpg
+Train,seborrheic keratosis,ISIC_0010863.jpg,.jpg,187724,Train\seborrheic keratosis\ISIC_0010863.jpg
+Train,seborrheic keratosis,ISIC_0010866.jpg,.jpg,189528,Train\seborrheic keratosis\ISIC_0010866.jpg
+Train,seborrheic keratosis,ISIC_0010872.jpg,.jpg,190351,Train\seborrheic keratosis\ISIC_0010872.jpg
+Train,seborrheic keratosis,ISIC_0010876.jpg,.jpg,164468,Train\seborrheic keratosis\ISIC_0010876.jpg
+Train,seborrheic keratosis,ISIC_0010878.jpg,.jpg,164284,Train\seborrheic keratosis\ISIC_0010878.jpg
+Train,seborrheic keratosis,ISIC_0010883.jpg,.jpg,153471,Train\seborrheic keratosis\ISIC_0010883.jpg
+Train,seborrheic keratosis,ISIC_0010890.jpg,.jpg,180954,Train\seborrheic keratosis\ISIC_0010890.jpg
+Train,seborrheic keratosis,ISIC_0010898.jpg,.jpg,253862,Train\seborrheic keratosis\ISIC_0010898.jpg
+Train,seborrheic keratosis,ISIC_0010900.jpg,.jpg,220006,Train\seborrheic keratosis\ISIC_0010900.jpg
+Train,seborrheic keratosis,ISIC_0010909.jpg,.jpg,208357,Train\seborrheic keratosis\ISIC_0010909.jpg
+Train,seborrheic keratosis,ISIC_0010912.jpg,.jpg,178011,Train\seborrheic keratosis\ISIC_0010912.jpg
+Train,seborrheic keratosis,ISIC_0010917.jpg,.jpg,63265,Train\seborrheic keratosis\ISIC_0010917.jpg
+Train,seborrheic keratosis,ISIC_0010923.jpg,.jpg,166835,Train\seborrheic keratosis\ISIC_0010923.jpg
+Train,seborrheic keratosis,ISIC_0010925.jpg,.jpg,191337,Train\seborrheic keratosis\ISIC_0010925.jpg
+Train,seborrheic keratosis,ISIC_0010934.jpg,.jpg,76235,Train\seborrheic keratosis\ISIC_0010934.jpg
+Train,seborrheic keratosis,ISIC_0010938.jpg,.jpg,191954,Train\seborrheic keratosis\ISIC_0010938.jpg
+Train,seborrheic keratosis,ISIC_0010942.jpg,.jpg,210245,Train\seborrheic keratosis\ISIC_0010942.jpg
+Train,seborrheic keratosis,ISIC_0010965.jpg,.jpg,180382,Train\seborrheic keratosis\ISIC_0010965.jpg
+Train,seborrheic keratosis,ISIC_0010971.jpg,.jpg,38917,Train\seborrheic keratosis\ISIC_0010971.jpg
+Train,seborrheic keratosis,ISIC_0010977.jpg,.jpg,181421,Train\seborrheic keratosis\ISIC_0010977.jpg
+Train,seborrheic keratosis,ISIC_0010978.jpg,.jpg,74323,Train\seborrheic keratosis\ISIC_0010978.jpg
+Train,seborrheic keratosis,ISIC_0010979.jpg,.jpg,143169,Train\seborrheic keratosis\ISIC_0010979.jpg
+Train,seborrheic keratosis,ISIC_0010982.jpg,.jpg,169227,Train\seborrheic keratosis\ISIC_0010982.jpg
+Train,seborrheic keratosis,ISIC_0010990.jpg,.jpg,173656,Train\seborrheic keratosis\ISIC_0010990.jpg
+Train,seborrheic keratosis,ISIC_0010993.jpg,.jpg,207468,Train\seborrheic keratosis\ISIC_0010993.jpg
+Train,seborrheic keratosis,ISIC_0010995.jpg,.jpg,174427,Train\seborrheic keratosis\ISIC_0010995.jpg
+Train,seborrheic keratosis,ISIC_0011007.jpg,.jpg,147669,Train\seborrheic keratosis\ISIC_0011007.jpg
+Train,seborrheic keratosis,ISIC_0011012.jpg,.jpg,63303,Train\seborrheic keratosis\ISIC_0011012.jpg
+Train,seborrheic keratosis,ISIC_0011013.jpg,.jpg,72118,Train\seborrheic keratosis\ISIC_0011013.jpg
+Train,seborrheic keratosis,ISIC_0011030.jpg,.jpg,61052,Train\seborrheic keratosis\ISIC_0011030.jpg
+Train,seborrheic keratosis,ISIC_0011031.jpg,.jpg,171992,Train\seborrheic keratosis\ISIC_0011031.jpg
+Train,seborrheic keratosis,ISIC_0011032.jpg,.jpg,268153,Train\seborrheic keratosis\ISIC_0011032.jpg
+Train,seborrheic keratosis,ISIC_0011039.jpg,.jpg,232984,Train\seborrheic keratosis\ISIC_0011039.jpg
+Train,seborrheic keratosis,ISIC_0011040.jpg,.jpg,181454,Train\seborrheic keratosis\ISIC_0011040.jpg
+Train,seborrheic keratosis,ISIC_0011042.jpg,.jpg,152615,Train\seborrheic keratosis\ISIC_0011042.jpg
+Train,seborrheic keratosis,ISIC_0011043.jpg,.jpg,172869,Train\seborrheic keratosis\ISIC_0011043.jpg
+Train,seborrheic keratosis,ISIC_0011045.jpg,.jpg,159711,Train\seborrheic keratosis\ISIC_0011045.jpg
+Train,seborrheic keratosis,ISIC_0011052.jpg,.jpg,167118,Train\seborrheic keratosis\ISIC_0011052.jpg
+Train,seborrheic keratosis,ISIC_0011056.jpg,.jpg,210271,Train\seborrheic keratosis\ISIC_0011056.jpg
+Train,seborrheic keratosis,ISIC_0011057.jpg,.jpg,175244,Train\seborrheic keratosis\ISIC_0011057.jpg
+Train,seborrheic keratosis,ISIC_0011077.jpg,.jpg,230189,Train\seborrheic keratosis\ISIC_0011077.jpg
+Train,seborrheic keratosis,ISIC_0011094.jpg,.jpg,270435,Train\seborrheic keratosis\ISIC_0011094.jpg
+Train,seborrheic keratosis,ISIC_0011095.jpg,.jpg,218383,Train\seborrheic keratosis\ISIC_0011095.jpg
+Train,seborrheic keratosis,ISIC_0011099.jpg,.jpg,231164,Train\seborrheic keratosis\ISIC_0011099.jpg
+Train,seborrheic keratosis,ISIC_0011112.jpg,.jpg,196660,Train\seborrheic keratosis\ISIC_0011112.jpg
+Train,seborrheic keratosis,ISIC_0011121.jpg,.jpg,188024,Train\seborrheic keratosis\ISIC_0011121.jpg
+Train,seborrheic keratosis,ISIC_0011125.jpg,.jpg,214485,Train\seborrheic keratosis\ISIC_0011125.jpg
+Train,seborrheic keratosis,ISIC_0011128.jpg,.jpg,172168,Train\seborrheic keratosis\ISIC_0011128.jpg
+Train,seborrheic keratosis,ISIC_0011130.jpg,.jpg,149624,Train\seborrheic keratosis\ISIC_0011130.jpg
+Train,seborrheic keratosis,ISIC_0011132.jpg,.jpg,154909,Train\seborrheic keratosis\ISIC_0011132.jpg
+Train,seborrheic keratosis,ISIC_0011135.jpg,.jpg,186854,Train\seborrheic keratosis\ISIC_0011135.jpg
+Train,seborrheic keratosis,ISIC_0011136.jpg,.jpg,173821,Train\seborrheic keratosis\ISIC_0011136.jpg
+Train,seborrheic keratosis,ISIC_0011137.jpg,.jpg,181060,Train\seborrheic keratosis\ISIC_0011137.jpg
+Train,seborrheic keratosis,ISIC_0011138.jpg,.jpg,196164,Train\seborrheic keratosis\ISIC_0011138.jpg
+Train,seborrheic keratosis,ISIC_0011139.jpg,.jpg,192380,Train\seborrheic keratosis\ISIC_0011139.jpg
+Train,seborrheic keratosis,ISIC_0011140.jpg,.jpg,176219,Train\seborrheic keratosis\ISIC_0011140.jpg
+Train,seborrheic keratosis,ISIC_0011151.jpg,.jpg,193997,Train\seborrheic keratosis\ISIC_0011151.jpg
+Train,seborrheic keratosis,ISIC_0011158.jpg,.jpg,192562,Train\seborrheic keratosis\ISIC_0011158.jpg
+Train,seborrheic keratosis,ISIC_0011161.jpg,.jpg,170118,Train\seborrheic keratosis\ISIC_0011161.jpg
+Train,seborrheic keratosis,ISIC_0011163.jpg,.jpg,135398,Train\seborrheic keratosis\ISIC_0011163.jpg
+Train,seborrheic keratosis,ISIC_0011166.jpg,.jpg,214523,Train\seborrheic keratosis\ISIC_0011166.jpg
+Train,seborrheic keratosis,ISIC_0011169.jpg,.jpg,139489,Train\seborrheic keratosis\ISIC_0011169.jpg
+Train,seborrheic keratosis,ISIC_0011174.jpg,.jpg,194129,Train\seborrheic keratosis\ISIC_0011174.jpg
+Train,seborrheic keratosis,ISIC_0011176.jpg,.jpg,156698,Train\seborrheic keratosis\ISIC_0011176.jpg
+Train,seborrheic keratosis,ISIC_0011178.jpg,.jpg,192520,Train\seborrheic keratosis\ISIC_0011178.jpg
+Train,seborrheic keratosis,ISIC_0011181.jpg,.jpg,202271,Train\seborrheic keratosis\ISIC_0011181.jpg
+Train,seborrheic keratosis,ISIC_0011185.jpg,.jpg,67281,Train\seborrheic keratosis\ISIC_0011185.jpg
+Train,seborrheic keratosis,ISIC_0011187.jpg,.jpg,167983,Train\seborrheic keratosis\ISIC_0011187.jpg
+Train,seborrheic keratosis,ISIC_0011193.jpg,.jpg,197051,Train\seborrheic keratosis\ISIC_0011193.jpg
+Test,actinic keratosis,ISIC_0010512.jpg,.jpg,148623,Test\actinic keratosis\ISIC_0010512.jpg
+Test,actinic keratosis,ISIC_0010889.jpg,.jpg,55730,Test\actinic keratosis\ISIC_0010889.jpg
+Test,actinic keratosis,ISIC_0024468.jpg,.jpg,291343,Test\actinic keratosis\ISIC_0024468.jpg
+Test,actinic keratosis,ISIC_0024470.jpg,.jpg,274221,Test\actinic keratosis\ISIC_0024470.jpg
+Test,actinic keratosis,ISIC_0024511.jpg,.jpg,221256,Test\actinic keratosis\ISIC_0024511.jpg
+Test,actinic keratosis,ISIC_0024646.jpg,.jpg,232181,Test\actinic keratosis\ISIC_0024646.jpg
+Test,actinic keratosis,ISIC_0024707.jpg,.jpg,284809,Test\actinic keratosis\ISIC_0024707.jpg
+Test,actinic keratosis,ISIC_0024763.jpg,.jpg,238553,Test\actinic keratosis\ISIC_0024763.jpg
+Test,actinic keratosis,ISIC_0024771.jpg,.jpg,265349,Test\actinic keratosis\ISIC_0024771.jpg
+Test,actinic keratosis,ISIC_0024800.jpg,.jpg,268818,Test\actinic keratosis\ISIC_0024800.jpg
+Test,actinic keratosis,ISIC_0024913.jpg,.jpg,324844,Test\actinic keratosis\ISIC_0024913.jpg
+Test,actinic keratosis,ISIC_0024948.jpg,.jpg,274133,Test\actinic keratosis\ISIC_0024948.jpg
+Test,actinic keratosis,ISIC_0025368.jpg,.jpg,235603,Test\actinic keratosis\ISIC_0025368.jpg
+Test,actinic keratosis,ISIC_0025427.jpg,.jpg,288982,Test\actinic keratosis\ISIC_0025427.jpg
+Test,actinic keratosis,ISIC_0025605.jpg,.jpg,249258,Test\actinic keratosis\ISIC_0025605.jpg
+Test,seborrheic keratosis,ISIC_0010803.jpg,.jpg,158064,Test\seborrheic keratosis\ISIC_0010803.jpg
+Test,seborrheic keratosis,ISIC_0010808.jpg,.jpg,189079,Test\seborrheic keratosis\ISIC_0010808.jpg
+Test,seborrheic keratosis,ISIC_0010809.jpg,.jpg,216205,Test\seborrheic keratosis\ISIC_0010809.jpg

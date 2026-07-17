@@ -1,0 +1,5 @@
+folder,num_files,extensions_present,extension_breakdown,total_size_bytes,total_size_mb
+.,1,.csv,.csv:1,309548,0.3
+imgs_part_1,911,.png,.png:911,1249473691,1191.59
+imgs_part_2,659,.png,.png:659,1132865211,1080.38
+imgs_part_3,728,.png,.png:728,1224194767,1167.48

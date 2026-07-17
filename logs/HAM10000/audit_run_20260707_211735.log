@@ -1,0 +1,65 @@
+2026-07-07 21:17:35 | INFO     | ham10000_audit | ======================================================================
+2026-07-07 21:17:35 | INFO     | ham10000_audit | HAM10000 DATASET AUDIT - START
+2026-07-07 21:17:35 | INFO     | ham10000_audit | ======================================================================
+2026-07-07 21:17:35 | INFO     | ham10000_audit | --- Module 1: Folder structure analysis ---
+2026-07-07 21:17:35 | INFO     | ham10000_audit | Starting folder structure analysis of D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\data\raw\HAM10000
+2026-07-07 21:17:36 | INFO     | ham10000_audit | Folder structure report: 3 folders analyzed
+2026-07-07 21:17:36 | INFO     | ham10000_audit |   . -> 5 files (.csv:5)
+2026-07-07 21:17:36 | INFO     | ham10000_audit |   HAM10000_images_part_1 -> 5000 files (.jpg:5000)
+2026-07-07 21:17:36 | INFO     | ham10000_audit |   HAM10000_images_part_2 -> 5015 files (.jpg:5015)
+2026-07-07 21:17:36 | INFO     | ham10000_audit | Out-of-scope files present (Kaggle precomputed pixel matrices, not used by this pipeline): ['hmnist_28_28_L.csv', 'hmnist_28_28_RGB.csv', 'hmnist_8_8_L.csv', 'hmnist_8_8_RGB.csv']
+2026-07-07 21:17:36 | INFO     | ham10000_audit | Saved -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\reports\HAM10000\01_folder_structure.csv
+2026-07-07 21:17:36 | INFO     | ham10000_audit | --- Module 2: Image inventory ---
+2026-07-07 21:17:36 | INFO     | ham10000_audit | Building image inventory from ['HAM10000_images_part_1', 'HAM10000_images_part_2']
+2026-07-07 21:17:36 | INFO     | ham10000_audit |   HAM10000_images_part_1 -> 5000 image files
+2026-07-07 21:17:36 | INFO     | ham10000_audit |   HAM10000_images_part_2 -> 5015 image files
+2026-07-07 21:17:36 | INFO     | ham10000_audit | Total images inventoried: 10015
+2026-07-07 21:17:36 | INFO     | ham10000_audit | Saved -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\reports\HAM10000\02_image_inventory.csv
+2026-07-07 21:17:36 | INFO     | ham10000_audit | --- Module 3 & 4: Image verification / corrupted detection ---
+2026-07-07 21:17:36 | INFO     | ham10000_audit | Verifying 10015 images (open + decode)
+2026-07-07 21:19:40 | INFO     | ham10000_audit | Verification complete: 10015 OK, 0 CORRUPTED
+2026-07-07 21:19:40 | INFO     | ham10000_audit | Saved -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\reports\HAM10000\03_image_verification.csv
+2026-07-07 21:19:40 | INFO     | ham10000_audit | Saved -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\reports\HAM10000\03_corrupted_images.csv
+2026-07-07 21:19:40 | INFO     | ham10000_audit | --- Module 5: Missing / orphan image detection ---
+2026-07-07 21:19:40 | INFO     | ham10000_audit | Metadata rows: 10015 | Inventory files: 10015
+2026-07-07 21:19:40 | INFO     | ham10000_audit | Missing images (in metadata, not on disk): 0
+2026-07-07 21:19:40 | INFO     | ham10000_audit | Orphan images (on disk, not in metadata): 0
+2026-07-07 21:19:40 | INFO     | ham10000_audit | Duplicate image_id entries in metadata: 0
+2026-07-07 21:19:40 | INFO     | ham10000_audit | --- Module 6: Image size statistics ---
+2026-07-07 21:19:40 | INFO     | ham10000_audit | Image size stats computed over 10015 successfully-decoded images
+2026-07-07 21:19:40 | INFO     | ham10000_audit | Width range: 600-600 px | Height range: 450-450 px | Distinct resolutions: 1 (fully uniform resolution)
+2026-07-07 21:19:40 | INFO     | ham10000_audit | Image modes found: {'RGB': 10015}
+2026-07-07 21:19:40 | INFO     | ham10000_audit | Saved -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\reports\HAM10000\05_image_size_stats.csv
+2026-07-07 21:19:40 | INFO     | ham10000_audit | Saved figure -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\reports\HAM10000\figures\image_size_distribution.png
+2026-07-07 21:19:40 | INFO     | ham10000_audit | --- Module 7: Metadata analysis ---
+2026-07-07 21:19:40 | INFO     | ham10000_audit | Metadata shape: 10015 rows x 7 columns
+2026-07-07 21:19:40 | INFO     | ham10000_audit | Fully duplicate rows: 0
+2026-07-07 21:19:40 | INFO     | ham10000_audit | Numeric column summary (age) saved
+2026-07-07 21:19:40 | INFO     | ham10000_audit | Saved -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\reports\HAM10000\06_metadata_overview.csv
+2026-07-07 21:19:40 | INFO     | ham10000_audit | --- Module 8: Metadata column descriptions ---
+2026-07-07 21:19:40 | INFO     | ham10000_audit | Column description data dictionary built for 7 columns
+2026-07-07 21:19:40 | INFO     | ham10000_audit | Note: this isna()-based missing_pct does NOT capture the literal 'unknown' string values in sex/localization - see module 9 (missing value analysis) for the corrected figures.
+2026-07-07 21:19:40 | INFO     | ham10000_audit | Saved -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\reports\HAM10000\07_column_description.csv
+2026-07-07 21:19:40 | INFO     | ham10000_audit | --- Module 9: Missing value analysis ---
+2026-07-07 21:19:40 | INFO     | ham10000_audit | Missing values (isna()):
+2026-07-07 21:19:40 | INFO     | ham10000_audit |   age: 57 missing (0.57%)
+2026-07-07 21:19:40 | WARNING  | ham10000_audit | Literal 'unknown' string values found (NOT counted by isna() above):
+2026-07-07 21:19:40 | WARNING  | ham10000_audit |   sex: 57 rows have the literal string 'unknown'
+2026-07-07 21:19:40 | WARNING  | ham10000_audit |   localization: 234 rows have the literal string 'unknown'
+2026-07-07 21:19:40 | INFO     | ham10000_audit | Saved -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\reports\HAM10000\08_missing_value_report.csv
+2026-07-07 21:19:40 | INFO     | ham10000_audit | --- Module 10: Class distribution ---
+2026-07-07 21:19:40 | INFO     | ham10000_audit | Class distribution (7 classes): {'nv': 6705, 'mel': 1113, 'bkl': 1099, 'bcc': 514, 'akiec': 327, 'vasc': 142, 'df': 115}
+2026-07-07 21:19:40 | INFO     | ham10000_audit | Imbalance ratio (majority:minority): 58.30
+2026-07-07 21:19:40 | INFO     | ham10000_audit | Saved -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\reports\HAM10000\09_class_distribution.csv
+2026-07-07 21:19:40 | INFO     | ham10000_audit | Saved figure -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\reports\HAM10000\figures\class_distribution.png
+2026-07-07 21:19:40 | INFO     | ham10000_audit | --- Module 11: Lesion statistics ---
+2026-07-07 21:19:40 | INFO     | ham10000_audit | Unique lesions: 7470 | Total images: 10015
+2026-07-07 21:19:40 | INFO     | ham10000_audit | Images per lesion: min=1 max=6 mean=1.34 median=1.0
+2026-07-07 21:19:40 | INFO     | ham10000_audit | Lesions with multiple images: 1956
+2026-07-07 21:19:40 | INFO     | ham10000_audit | Lesions with inconsistent (multiple) dx labels: 0
+2026-07-07 21:19:40 | INFO     | ham10000_audit | Saved -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\reports\HAM10000\10_lesion_statistics.csv
+2026-07-07 21:19:40 | INFO     | ham10000_audit | --- Module 12: Dataset summary ---
+2026-07-07 21:19:40 | INFO     | ham10000_audit | Dataset summary written -> D:\Naeem\thesis-v2\Multimodal_Skin_Disease_Research\reports\HAM10000\11_dataset_audit_summary.md
+2026-07-07 21:19:40 | INFO     | ham10000_audit | ======================================================================
+2026-07-07 21:19:40 | INFO     | ham10000_audit | HAM10000 DATASET AUDIT - COMPLETE
+2026-07-07 21:19:40 | INFO     | ham10000_audit | ======================================================================

@@ -1,0 +1,2358 @@
+relative_path,status,error_message,width,height,mode
+Train\actinic keratosis\ISIC_0025780.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0025803.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0025825.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0025953.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0025957.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0025992.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0026040.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0026149.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0026171.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0026194.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0026212.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0026457.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0026468.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0026525.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0026575.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0026625.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0026626.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0026650.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0026702.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0026709.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0026729.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0026765.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0026848.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0026857.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0026905.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0026984.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0027172.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0027254.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0027334.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0027447.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0027452.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0027536.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0027562.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0027580.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0027615.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0027650.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0027668.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0027802.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0027829.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0027884.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0027896.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0027950.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0027958.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0028063.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0028076.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0028190.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0028314.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0028370.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0028393.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0028517.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0028558.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0028820.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0028854.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0028941.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0028990.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0029025.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0029041.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0029133.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0029141.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0029210.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0029309.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0029460.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0029500.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0029659.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0029713.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0029781.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0029827.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0029830.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0029840.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0029900.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0029915.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0029930.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0030036.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0030133.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0030142.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0030143.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0030242.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0030344.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0030408.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0030463.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0030491.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0030586.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0030655.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0030730.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0030825.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0030826.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0030877.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0031040.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0031108.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0031228.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0031292.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0031335.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0031381.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0031430.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0031506.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0031609.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0031823.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0031922.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0031993.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0032135.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0032199.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0032206.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0032404.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0032422.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0032437.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0032854.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0033151.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0033358.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0033413.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0033456.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0033494.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0033705.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0033811.jpg,OK,,600,450,RGB
+Train\actinic keratosis\ISIC_0033866.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0024504.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0024515.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0024550.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0024564.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0024572.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0024573.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0024582.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0024590.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0024595.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0024632.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0024634.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0024665.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0024666.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0024673.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0024743.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0024787.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0024795.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0024799.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0024829.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0024833.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0024848.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0024885.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0024897.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0024931.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0024949.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0024984.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025019.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025031.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025046.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025102.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025144.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025260.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025266.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025285.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025299.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025301.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025322.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025362.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025383.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025417.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025433.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025467.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025509.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025513.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025530.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025557.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025576.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025601.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025617.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025630.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025644.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025650.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025691.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025700.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025711.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025718.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025731.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025752.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025793.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025818.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025824.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025826.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025932.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025940.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025971.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0025975.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026056.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026074.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026090.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026091.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026117.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026118.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026154.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026192.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026213.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026230.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026275.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026282.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026321.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026324.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026337.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026343.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026350.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026395.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026433.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026439.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026442.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026453.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026496.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026528.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026574.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026593.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026643.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026656.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026668.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026687.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026716.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026760.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026766.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026798.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026829.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026831.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026845.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026855.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026865.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026902.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026940.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026952.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026968.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026970.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026978.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026988.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0026995.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027004.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027038.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027046.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027057.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027058.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027090.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027093.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027117.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027120.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027135.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027146.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027175.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027189.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027229.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027281.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027291.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027297.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027337.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027371.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027425.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027433.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027473.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027478.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027525.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027526.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027531.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027544.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027545.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027546.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027595.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027601.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027609.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027629.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027631.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027675.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027677.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027704.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027722.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027744.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027759.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027774.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027786.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027788.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027814.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027819.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027825.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027846.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027851.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027858.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027865.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027915.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027920.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027966.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027976.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0027998.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028035.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028050.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028059.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028079.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028084.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028085.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028095.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028106.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028107.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028113.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028122.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028147.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028155.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028168.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028197.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028238.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028283.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028303.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028316.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028323.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028329.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028350.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028419.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028457.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028486.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028495.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028542.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028556.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028568.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028570.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028577.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028583.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028652.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028653.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028670.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028671.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028677.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028687.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028688.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028693.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028719.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028728.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028739.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028747.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028765.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028807.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028814.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028815.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028818.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028858.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028871.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028877.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028890.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028928.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028937.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028964.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028973.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028978.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028980.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028989.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0028994.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029020.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029034.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029035.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029053.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029082.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029083.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029123.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029129.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029192.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029193.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029201.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029220.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029230.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029263.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029278.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029323.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029331.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029337.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029341.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029342.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029352.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029372.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029391.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029392.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029412.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029466.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029489.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029501.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029515.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029524.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029539.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029545.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029546.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029564.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029602.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029644.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029647.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029655.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029669.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029680.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029745.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029747.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029755.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029779.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029805.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029820.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029831.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029847.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029856.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029857.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029899.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029917.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029919.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029951.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0029974.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030010.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030094.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030096.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030114.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030138.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030145.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030177.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030181.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030197.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030230.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030233.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030249.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030261.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030271.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030314.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030335.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030339.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030349.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030352.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030403.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030452.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030511.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030514.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030526.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030528.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030574.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030594.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030644.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030659.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030690.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030712.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030737.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030746.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030755.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030766.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030767.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030778.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030782.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030800.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030813.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030868.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030893.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030915.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030954.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0030964.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031007.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031009.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031026.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031041.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031056.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031057.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031062.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031063.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031095.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031122.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031140.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031154.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031166.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031169.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031171.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031175.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031225.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031236.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031243.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031245.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031258.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031266.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031272.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031284.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031294.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031298.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031318.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031351.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031378.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031384.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031400.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031407.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031413.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031442.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031450.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031470.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031489.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031513.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031520.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031526.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031531.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031539.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031552.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031569.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031585.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031597.jpg,OK,,600,450,RGB
+Train\basal cell carcinoma\ISIC_0031614.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0025223.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0025302.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0025314.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0025373.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0025504.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0025594.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0025622.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0025668.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0025771.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0025903.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0025911.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0025954.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0025980.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0026254.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0026313.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0026417.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0026471.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0026473.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0026629.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0026789.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0027008.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0027044.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0027107.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0027141.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0027216.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0027488.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0027598.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0027613.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0027626.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0027648.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0027745.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0027876.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0028346.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0028651.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0028735.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0028790.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0028880.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0028926.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0029039.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0029052.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0029130.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0029177.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0029248.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0029297.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0029578.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0029783.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0029824.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0029891.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0029962.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0029967.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0029973.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0030011.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0030015.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0030021.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0030321.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0030427.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0030442.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0030555.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0030579.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0030665.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0030757.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0030830.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0030870.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0031257.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0031271.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0031309.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0031344.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0031358.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0031372.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0031429.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0031443.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0031457.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0031735.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0031799.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0031827.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0032114.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0032138.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0032247.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0032468.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0032613.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0032642.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0032941.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0033005.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0033554.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0033626.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0033675.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0033695.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0033780.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0033790.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0033808.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0033810.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0033847.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0033860.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0033891.jpg,OK,,600,450,RGB
+Train\dermatofibroma\ISIC_0034135.jpg,OK,,600,450,RGB
+Train\melanoma\ISIC_0000139.jpg,OK,,2816,2112,RGB
+Train\melanoma\ISIC_0000141.jpg,OK,,2048,1536,RGB
+Train\melanoma\ISIC_0000142.jpg,OK,,2048,1536,RGB
+Train\melanoma\ISIC_0000143.jpg,OK,,2592,1944,RGB
+Train\melanoma\ISIC_0000144.jpg,OK,,2048,1536,RGB
+Train\melanoma\ISIC_0000145.jpg,OK,,2048,1536,RGB
+Train\melanoma\ISIC_0000146.jpg,OK,,2048,1536,RGB
+Train\melanoma\ISIC_0000147.jpg,OK,,2048,1536,RGB
+Train\melanoma\ISIC_0000148.jpg,OK,,2816,2112,RGB
+Train\melanoma\ISIC_0000149.jpg,OK,,2048,1536,RGB
+Train\melanoma\ISIC_0000150.jpg,OK,,2048,1536,RGB
+Train\melanoma\ISIC_0000151.jpg,OK,,2048,1536,RGB
+Train\melanoma\ISIC_0000152.jpg,OK,,2592,1944,RGB
+Train\melanoma\ISIC_0000153.jpg,OK,,2592,1944,RGB
+Train\melanoma\ISIC_0000154.jpg,OK,,2048,1536,RGB
+Train\melanoma\ISIC_0000155.jpg,OK,,2048,1536,RGB
+Train\melanoma\ISIC_0000156.jpg,OK,,2048,1536,RGB
+Train\melanoma\ISIC_0000157.jpg,OK,,963,629,RGB
+Train\melanoma\ISIC_0000158.jpg,OK,,722,542,RGB
+Train\melanoma\ISIC_0000159.jpg,OK,,965,724,RGB
+Train\melanoma\ISIC_0000160.jpg,OK,,722,540,RGB
+Train\melanoma\ISIC_0000161.jpg,OK,,962,674,RGB
+Train\melanoma\ISIC_0000162.jpg,OK,,964,640,RGB
+Train\melanoma\ISIC_0000163.jpg,OK,,965,649,RGB
+Train\melanoma\ISIC_0000164.jpg,OK,,959,638,RGB
+Train\melanoma\ISIC_0000165.jpg,OK,,961,649,RGB
+Train\melanoma\ISIC_0000166.jpg,OK,,722,542,RGB
+Train\melanoma\ISIC_0000167.jpg,OK,,965,624,RGB
+Train\melanoma\ISIC_0000168.jpg,OK,,962,645,RGB
+Train\melanoma\ISIC_0000169.jpg,OK,,722,542,RGB
+Train\melanoma\ISIC_0000170.jpg,OK,,722,542,RGB
+Train\melanoma\ISIC_0000171.jpg,OK,,964,720,RGB
+Train\melanoma\ISIC_0000172.jpg,OK,,962,674,RGB
+Train\melanoma\ISIC_0000173.jpg,OK,,722,545,RGB
+Train\melanoma\ISIC_0000174.jpg,OK,,960,724,RGB
+Train\melanoma\ISIC_0000175.jpg,OK,,966,638,RGB
+Train\melanoma\ISIC_0000176.jpg,OK,,944,1127,RGB
+Train\melanoma\ISIC_0000278.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0000279.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0000280.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0000285.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0000288.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0000289.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0000291.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0000292.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0000293.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0000294.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0000295.jpg,OK,,767,576,RGB
+Train\melanoma\ISIC_0000296.jpg,OK,,767,576,RGB
+Train\melanoma\ISIC_0000297.jpg,OK,,767,576,RGB
+Train\melanoma\ISIC_0000298.jpg,OK,,767,576,RGB
+Train\melanoma\ISIC_0000299.jpg,OK,,767,576,RGB
+Train\melanoma\ISIC_0000300.jpg,OK,,767,576,RGB
+Train\melanoma\ISIC_0000301.jpg,OK,,767,576,RGB
+Train\melanoma\ISIC_0000302.jpg,OK,,767,576,RGB
+Train\melanoma\ISIC_0000303.jpg,OK,,767,576,RGB
+Train\melanoma\ISIC_0000304.jpg,OK,,767,576,RGB
+Train\melanoma\ISIC_0000305.jpg,OK,,767,576,RGB
+Train\melanoma\ISIC_0000306.jpg,OK,,767,576,RGB
+Train\melanoma\ISIC_0000307.jpg,OK,,767,576,RGB
+Train\melanoma\ISIC_0000308.jpg,OK,,767,576,RGB
+Train\melanoma\ISIC_0000309.jpg,OK,,767,576,RGB
+Train\melanoma\ISIC_0000310.jpg,OK,,767,576,RGB
+Train\melanoma\ISIC_0000311.jpg,OK,,767,576,RGB
+Train\melanoma\ISIC_0000312.jpg,OK,,767,576,RGB
+Train\melanoma\ISIC_0000313.jpg,OK,,767,576,RGB
+Train\melanoma\ISIC_0000314.jpg,OK,,767,576,RGB
+Train\melanoma\ISIC_0000390.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0000393.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0000394.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0000395.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0000398.jpg,OK,,1242,1284,RGB
+Train\melanoma\ISIC_0000399.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0000400.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0000401.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0000402.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0000404.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0000405.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0000406.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0000410.jpg,OK,,2313,1985,RGB
+Train\melanoma\ISIC_0000411.jpg,OK,,2269,1965,RGB
+Train\melanoma\ISIC_0000412.jpg,OK,,2597,2185,RGB
+Train\melanoma\ISIC_0000413.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0000414.jpg,OK,,2048,1536,RGB
+Train\melanoma\ISIC_0000415.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0000417.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0000420.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0000428.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0000432.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0000434.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0000440.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0000441.jpg,OK,,2126,2185,RGB
+Train\melanoma\ISIC_0000444.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0000445.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0000446.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0000450.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0000459.jpg,OK,,3008,2000,RGB
+Train\melanoma\ISIC_0000462.jpg,OK,,919,802,RGB
+Train\melanoma\ISIC_0000463.jpg,OK,,3008,2000,RGB
+Train\melanoma\ISIC_0000466.jpg,OK,,919,802,RGB
+Train\melanoma\ISIC_0000469.jpg,OK,,919,802,RGB
+Train\melanoma\ISIC_0000482.jpg,OK,,919,802,RGB
+Train\melanoma\ISIC_0000484.jpg,OK,,919,802,RGB
+Train\melanoma\ISIC_0000487.jpg,OK,,919,802,RGB
+Train\melanoma\ISIC_0000502.jpg,OK,,919,802,RGB
+Train\melanoma\ISIC_0000511.jpg,OK,,919,802,RGB
+Train\melanoma\ISIC_0000513.jpg,OK,,919,802,RGB
+Train\melanoma\ISIC_0000516.jpg,OK,,919,802,RGB
+Train\melanoma\ISIC_0000517.jpg,OK,,919,802,RGB
+Train\melanoma\ISIC_0000518.jpg,OK,,919,802,RGB
+Train\melanoma\ISIC_0000519.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0000520.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0000521.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0000522.jpg,OK,,919,802,RGB
+Train\melanoma\ISIC_0000526.jpg,OK,,2304,1536,RGB
+Train\melanoma\ISIC_0000531.jpg,OK,,919,802,RGB
+Train\melanoma\ISIC_0000533.jpg,OK,,1016,682,RGB
+Train\melanoma\ISIC_0000547.jpg,OK,,824,719,RGB
+Train\melanoma\ISIC_0000548.jpg,OK,,771,750,RGB
+Train\melanoma\ISIC_0000549.jpg,OK,,824,719,RGB
+Train\melanoma\ISIC_0000550.jpg,OK,,824,719,RGB
+Train\melanoma\ISIC_0000551.jpg,OK,,838,614,RGB
+Train\melanoma\ISIC_0000552.jpg,OK,,679,566,RGB
+Train\melanoma\ISIC_0000553.jpg,OK,,824,719,RGB
+Train\melanoma\ISIC_0000554.jpg,OK,,824,719,RGB
+Train\melanoma\ISIC_0000555.jpg,OK,,833,680,RGB
+Train\melanoma\ISIC_0001101.jpg,OK,,2198,1603,RGB
+Train\melanoma\ISIC_0001102.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0001103.jpg,OK,,3872,2592,RGB
+Train\melanoma\ISIC_0001105.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0001106.jpg,OK,,3872,2592,RGB
+Train\melanoma\ISIC_0001108.jpg,OK,,3872,2592,RGB
+Train\melanoma\ISIC_0001110.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0001112.jpg,OK,,3872,2592,RGB
+Train\melanoma\ISIC_0001116.jpg,OK,,3872,2592,RGB
+Train\melanoma\ISIC_0001118.jpg,OK,,3872,2592,RGB
+Train\melanoma\ISIC_0001119.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0001121.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0001124.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0001125.jpg,OK,,3872,2592,RGB
+Train\melanoma\ISIC_0001126.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0001127.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0001128.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0001132.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0001134.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0001135.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0001137.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0001138.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0001140.jpg,OK,,1936,1936,RGB
+Train\melanoma\ISIC_0001141.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0001142.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0001143.jpg,OK,,3872,2592,RGB
+Train\melanoma\ISIC_0001148.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0001151.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0001152.jpg,OK,,1936,1296,RGB
+Train\melanoma\ISIC_0001154.jpg,OK,,3872,2592,RGB
+Train\melanoma\ISIC_0001157.jpg,OK,,3072,2304,RGB
+Train\melanoma\ISIC_0009868.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0009882.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0009886.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0009890.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0009897.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0009898.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0009905.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0009908.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0009910.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0009913.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0009916.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0009918.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0009927.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0009934.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0009950.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0009955.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0009960.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0009971.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0009984.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0009989.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0009992.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0009993.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010000.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010007.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010011.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010016.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010023.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010024.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010029.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010034.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010036.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010039.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010049.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010050.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010054.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010056.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010067.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010080.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010081.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010089.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010094.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010106.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010119.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010120.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010131.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010137.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010140.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010143.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010145.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010148.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010156.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010162.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010164.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010165.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010171.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010174.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010175.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010189.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010194.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010207.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010208.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010209.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010210.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010217.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010225.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010231.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010235.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010240.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010241.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010245.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010251.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010265.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010267.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010271.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010278.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010280.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010283.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010288.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010289.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010295.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010299.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010302.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010313.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010319.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010321.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010322.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010329.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010349.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010350.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010355.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010358.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010359.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010360.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010364.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010366.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010372.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010376.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010379.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010380.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010385.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010388.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010391.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010392.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010393.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010394.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010396.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010397.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010398.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010400.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010401.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010402.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010407.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010410.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010413.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010414.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010415.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010416.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010417.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010423.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010426.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010432.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010441.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010466.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010468.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010469.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010470.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010476.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010478.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010482.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010485.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010486.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010503.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010514.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010516.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010527.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010532.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010533.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010534.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010536.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010537.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010543.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010546.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010548.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010550.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010551.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010555.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010559.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010564.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010576.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010579.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010580.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010583.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010587.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010591.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010596.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010597.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010608.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010609.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010610.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010611.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010629.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010630.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010631.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010644.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010648.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010652.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010653.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010655.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010663.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010690.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010707.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010714.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010719.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010723.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010728.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010729.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010730.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010737.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010741.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010746.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010749.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010750.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010754.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010757.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010759.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010765.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010766.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010767.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010770.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010772.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010777.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010778.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010782.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010783.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010784.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010785.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010789.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010790.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010791.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010792.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010796.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010797.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010799.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010803.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010808.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010809.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010810.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010812.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010834.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010852.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010860.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010862.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010863.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010866.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010872.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010876.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010878.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010883.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010890.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010898.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010900.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010909.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010912.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010917.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010923.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010925.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010934.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010938.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010942.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010965.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010971.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010977.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010978.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010979.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010982.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010990.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010993.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0010995.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011007.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011012.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011013.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011030.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011031.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011032.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011039.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011040.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011042.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011043.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011045.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011052.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011056.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011057.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011077.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011094.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011095.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011099.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011112.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011121.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011125.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011128.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011130.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011132.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011135.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011136.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011137.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011138.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011139.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011140.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011151.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011158.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011161.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011163.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011166.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011169.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011174.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011176.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011178.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011181.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011185.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011187.jpg,OK,,1024,768,RGB
+Train\melanoma\ISIC_0011193.jpg,OK,,1024,768,RGB
+Train\nevus\ISIC_0000019.jpg,OK,,1504,1129,RGB
+Train\nevus\ISIC_0000020.jpg,OK,,1504,1129,RGB
+Train\nevus\ISIC_0000021.jpg,OK,,1504,1129,RGB
+Train\nevus\ISIC_0000023.jpg,OK,,1504,1129,RGB
+Train\nevus\ISIC_0000024.jpg,OK,,1504,1129,RGB
+Train\nevus\ISIC_0000025.jpg,OK,,1504,1129,RGB
+Train\nevus\ISIC_0000027.jpg,OK,,1504,1129,RGB
+Train\nevus\ISIC_0000028.jpg,OK,,1504,1129,RGB
+Train\nevus\ISIC_0000032.jpg,OK,,1504,1129,RGB
+Train\nevus\ISIC_0000033.jpg,OK,,1504,1129,RGB
+Train\nevus\ISIC_0000034.jpg,OK,,1504,1129,RGB
+Train\nevus\ISIC_0000037.jpg,OK,,1504,1129,RGB
+Train\nevus\ISIC_0000038.jpg,OK,,1504,1129,RGB
+Train\nevus\ISIC_0000039.jpg,OK,,1504,1129,RGB
+Train\nevus\ISIC_0000041.jpg,OK,,1504,1129,RGB
+Train\nevus\ISIC_0000042.jpg,OK,,1504,1129,RGB
+Train\nevus\ISIC_0000047.jpg,OK,,1504,1129,RGB
+Train\nevus\ISIC_0000050.jpg,OK,,1504,1129,RGB
+Train\nevus\ISIC_0000051.jpg,OK,,1504,1129,RGB
+Train\nevus\ISIC_0000052.jpg,OK,,1504,1129,RGB
+Train\nevus\ISIC_0000053.jpg,OK,,1504,1129,RGB
+Train\nevus\ISIC_0000055.jpg,OK,,1504,1129,RGB
+Train\nevus\ISIC_0000057.jpg,OK,,1504,1129,RGB
+Train\nevus\ISIC_0000058.jpg,OK,,1504,1129,RGB
+Train\nevus\ISIC_0000059.jpg,OK,,1504,1129,RGB
+Train\nevus\ISIC_0000060.jpg,OK,,1504,1129,RGB
+Train\nevus\ISIC_0000061.jpg,OK,,1504,1129,RGB
+Train\nevus\ISIC_0000062.jpg,OK,,1504,1129,RGB
+Train\nevus\ISIC_0000063.jpg,OK,,1504,1129,RGB
+Train\nevus\ISIC_0000064.jpg,OK,,1504,1129,RGB
+Train\nevus\ISIC_0000065.jpg,OK,,1504,1129,RGB
+Train\nevus\ISIC_0000066.jpg,OK,,962,722,RGB
+Train\nevus\ISIC_0000067.jpg,OK,,962,722,RGB
+Train\nevus\ISIC_0000068.jpg,OK,,962,722,RGB
+Train\nevus\ISIC_0000073.jpg,OK,,1022,767,RGB
+Train\nevus\ISIC_0000079.jpg,OK,,1504,1129,RGB
+Train\nevus\ISIC_0000080.jpg,OK,,2592,1944,RGB
+Train\nevus\ISIC_0000081.jpg,OK,,2048,1536,RGB
+Train\nevus\ISIC_0000082.jpg,OK,,2048,1536,RGB
+Train\nevus\ISIC_0000083.jpg,OK,,2048,1536,RGB
+Train\nevus\ISIC_0000084.jpg,OK,,2048,1536,RGB
+Train\nevus\ISIC_0000085.jpg,OK,,2048,1536,RGB
+Train\nevus\ISIC_0000086.jpg,OK,,2592,1944,RGB
+Train\nevus\ISIC_0000087.jpg,OK,,2048,1536,RGB
+Train\nevus\ISIC_0000088.jpg,OK,,2048,1536,RGB
+Train\nevus\ISIC_0000089.jpg,OK,,2048,1536,RGB
+Train\nevus\ISIC_0000091.jpg,OK,,2048,1536,RGB
+Train\nevus\ISIC_0000092.jpg,OK,,2048,1536,RGB
+Train\nevus\ISIC_0000093.jpg,OK,,2048,1536,RGB
+Train\nevus\ISIC_0000094.jpg,OK,,2048,1536,RGB
+Train\nevus\ISIC_0000095.jpg,OK,,2048,1536,RGB
+Train\nevus\ISIC_0000096.jpg,OK,,2048,1536,RGB
+Train\nevus\ISIC_0000097.jpg,OK,,2048,1536,RGB
+Train\nevus\ISIC_0000099.jpg,OK,,2048,1536,RGB
+Train\nevus\ISIC_0000219.jpg,OK,,962,674,RGB
+Train\nevus\ISIC_0000220.jpg,OK,,962,674,RGB
+Train\nevus\ISIC_0000221.jpg,OK,,962,671,RGB
+Train\nevus\ISIC_0000222.jpg,OK,,966,645,RGB
+Train\nevus\ISIC_0000223.jpg,OK,,959,634,RGB
+Train\nevus\ISIC_0000224.jpg,OK,,957,640,RGB
+Train\nevus\ISIC_0000225.jpg,OK,,957,723,RGB
+Train\nevus\ISIC_0000226.jpg,OK,,964,672,RGB
+Train\nevus\ISIC_0000227.jpg,OK,,959,723,RGB
+Train\nevus\ISIC_0000228.jpg,OK,,959,639,RGB
+Train\nevus\ISIC_0000229.jpg,OK,,962,641,RGB
+Train\nevus\ISIC_0000230.jpg,OK,,962,674,RGB
+Train\nevus\ISIC_0000231.jpg,OK,,962,723,RGB
+Train\nevus\ISIC_0000232.jpg,OK,,960,645,RGB
+Train\nevus\ISIC_0000233.jpg,OK,,962,674,RGB
+Train\nevus\ISIC_0000234.jpg,OK,,962,676,RGB
+Train\nevus\ISIC_0000235.jpg,OK,,724,542,RGB
+Train\nevus\ISIC_0000236.jpg,OK,,1024,768,RGB
+Train\nevus\ISIC_0000237.jpg,OK,,1024,768,RGB
+Train\nevus\ISIC_0000238.jpg,OK,,576,768,RGB
+Train\nevus\ISIC_0000239.jpg,OK,,1024,768,RGB
+Train\nevus\ISIC_0000240.jpg,OK,,1024,768,RGB
+Train\nevus\ISIC_0000241.jpg,OK,,576,768,RGB
+Train\nevus\ISIC_0000243.jpg,OK,,576,768,RGB
+Train\nevus\ISIC_0000244.jpg,OK,,1024,768,RGB
+Train\nevus\ISIC_0000245.jpg,OK,,1024,768,RGB
+Train\nevus\ISIC_0000246.jpg,OK,,1024,768,RGB
+Train\nevus\ISIC_0000248.jpg,OK,,1024,768,RGB
+Train\nevus\ISIC_0000250.jpg,OK,,1024,768,RGB
+Train\nevus\ISIC_0000256.jpg,OK,,1024,768,RGB
+Train\nevus\ISIC_0000258.jpg,OK,,1024,768,RGB
+Train\nevus\ISIC_0000259.jpg,OK,,1024,768,RGB
+Train\nevus\ISIC_0000260.jpg,OK,,1024,768,RGB
+Train\nevus\ISIC_0000261.jpg,OK,,1024,768,RGB
+Train\nevus\ISIC_0000262.jpg,OK,,576,768,RGB
+Train\nevus\ISIC_0000263.jpg,OK,,1024,768,RGB
+Train\nevus\ISIC_0000264.jpg,OK,,1024,768,RGB
+Train\nevus\ISIC_0000265.jpg,OK,,1024,768,RGB
+Train\nevus\ISIC_0000266.jpg,OK,,1024,768,RGB
+Train\nevus\ISIC_0000267.jpg,OK,,1024,768,RGB
+Train\nevus\ISIC_0000268.jpg,OK,,1024,768,RGB
+Train\nevus\ISIC_0000270.jpg,OK,,1024,768,RGB
+Train\nevus\ISIC_0000271.jpg,OK,,1024,768,RGB
+Train\nevus\ISIC_0000272.jpg,OK,,1024,768,RGB
+Train\nevus\ISIC_0000273.jpg,OK,,576,768,RGB
+Train\nevus\ISIC_0000315.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000316.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000317.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000318.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000319.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000320.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000321.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000322.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000323.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000324.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000325.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000326.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000327.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000328.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000329.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000330.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000331.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000332.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000333.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000334.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000335.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000336.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000337.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000338.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000339.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000340.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000341.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000342.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000343.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000344.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000345.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000346.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000347.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000348.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000349.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000350.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000351.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000352.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000353.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000354.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000355.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000356.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000357.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000358.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000359.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000360.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000361.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000362.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000363.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000364.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000365.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000366.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000367.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000368.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000369.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000370.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000371.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000372.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000373.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000374.jpg,OK,,767,576,RGB
+Train\nevus\ISIC_0000375.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000376.jpg,OK,,2725,2082,RGB
+Train\nevus\ISIC_0000377.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000378.jpg,OK,,2530,2122,RGB
+Train\nevus\ISIC_0000379.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000380.jpg,OK,,2155,1958,RGB
+Train\nevus\ISIC_0000381.jpg,OK,,2101,1943,RGB
+Train\nevus\ISIC_0000382.jpg,OK,,2314,2067,RGB
+Train\nevus\ISIC_0000383.jpg,OK,,2117,1988,RGB
+Train\nevus\ISIC_0000384.jpg,OK,,2583,2096,RGB
+Train\nevus\ISIC_0000385.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000386.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000387.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000388.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000389.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000391.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000392.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000396.jpg,OK,,2565,2000,RGB
+Train\nevus\ISIC_0000397.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000403.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000407.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000408.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000409.jpg,OK,,2601,1909,RGB
+Train\nevus\ISIC_0000416.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000418.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000419.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000421.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000422.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000423.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000424.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000425.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000426.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000427.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000430.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000431.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000433.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000435.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000436.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000437.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000439.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000442.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000443.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000447.jpg,OK,,2012,1956,RGB
+Train\nevus\ISIC_0000448.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000449.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000451.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000452.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000453.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000455.jpg,OK,,2283,1824,RGB
+Train\nevus\ISIC_0000456.jpg,OK,,3072,2304,RGB
+Train\nevus\ISIC_0000457.jpg,OK,,1028,753,RGB
+Train\nevus\ISIC_0000458.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000460.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000461.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000464.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000465.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000467.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000468.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000470.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000471.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000472.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000473.jpg,OK,,3008,2000,RGB
+Train\nevus\ISIC_0000474.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000475.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000476.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000477.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000478.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000479.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000480.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000481.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000483.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000485.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000486.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000488.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000489.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000490.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000491.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000492.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000493.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000494.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000495.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000496.jpg,OK,,1019,717,RGB
+Train\nevus\ISIC_0000497.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000498.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000499.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000500.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000501.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000503.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000504.jpg,OK,,3872,2592,RGB
+Train\nevus\ISIC_0000505.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000506.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000507.jpg,OK,,1019,717,RGB
+Train\nevus\ISIC_0000508.jpg,OK,,1019,717,RGB
+Train\nevus\ISIC_0000509.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000510.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000512.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000514.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000515.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000523.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000524.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000525.jpg,OK,,1007,711,RGB
+Train\nevus\ISIC_0000527.jpg,OK,,1011,713,RGB
+Train\nevus\ISIC_0000528.jpg,OK,,1008,711,RGB
+Train\nevus\ISIC_0000529.jpg,OK,,1028,753,RGB
+Train\nevus\ISIC_0000530.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000532.jpg,OK,,919,802,RGB
+Train\nevus\ISIC_0000534.jpg,OK,,824,719,RGB
+Train\nevus\ISIC_0000535.jpg,OK,,824,719,RGB
+Train\nevus\ISIC_0000536.jpg,OK,,796,682,RGB
+Train\nevus\ISIC_0000537.jpg,OK,,824,719,RGB
+Train\nevus\ISIC_0000538.jpg,OK,,824,719,RGB
+Train\nevus\ISIC_0000539.jpg,OK,,824,719,RGB
+Train\nevus\ISIC_0000540.jpg,OK,,824,719,RGB
+Train\nevus\ISIC_0000541.jpg,OK,,824,719,RGB
+Train\nevus\ISIC_0000542.jpg,OK,,824,719,RGB
+Train\nevus\ISIC_0000543.jpg,OK,,853,680,RGB
+Train\nevus\ISIC_0000544.jpg,OK,,824,719,RGB
+Train\nevus\ISIC_0000545.jpg,OK,,824,719,RGB
+Train\nevus\ISIC_0000546.jpg,OK,,824,719,RGB
+Train\nevus\ISIC_0000556.jpg,OK,,824,719,RGB
+Train\nevus\ISIC_0010512.jpg,OK,,1024,768,RGB
+Train\nevus\ISIC_0010889.jpg,OK,,1024,768,RGB
+Train\nevus\ISIC_0024468.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0024470.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0024511.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0024646.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0024707.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0024763.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0024771.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0024800.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0024913.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0024948.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0025368.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0025427.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0025605.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0025780.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0025803.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0025825.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0025953.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0025957.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0025992.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0026040.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0026149.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0026171.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0026194.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0026212.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0026457.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0026468.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0026525.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0026575.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0026625.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0026626.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0026650.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0026702.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0026709.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0026729.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0026765.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0026848.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0026857.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0026905.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0026984.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0027172.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0027254.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0027334.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0027447.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0027452.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0027536.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0027562.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0027580.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0027615.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0027650.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0027668.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0027802.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0027829.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0027884.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0027896.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0027950.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0027958.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0028063.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0028076.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0028190.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0028314.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0028370.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0028393.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0028517.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0028558.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0028619.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0028820.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0028854.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0028941.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0028990.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0029025.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0029041.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0029133.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0029141.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0029210.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0029309.jpg,OK,,600,450,RGB
+Train\nevus\ISIC_0029460.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024435.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024445.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024446.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024453.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024471.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024477.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024489.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024490.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024494.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024495.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024498.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024505.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024547.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024581.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024592.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024602.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024612.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024623.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024626.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024635.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024643.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024672.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024676.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024696.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024705.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024708.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024709.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024711.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024726.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024740.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024741.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024748.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024758.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024760.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024761.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024770.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024772.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024773.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024774.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024782.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024786.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024814.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024825.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024839.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024850.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024851.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024871.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024877.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024880.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024881.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024883.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024890.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024909.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024910.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024915.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024943.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024947.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024970.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024971.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024981.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024982.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0024997.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025005.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025016.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025030.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025032.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025033.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025038.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025040.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025063.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025064.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025066.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025068.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025075.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025076.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025083.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025086.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025099.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025103.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025113.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025131.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025136.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025140.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025157.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025180.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025199.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025209.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025222.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025275.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025276.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025286.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025292.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025297.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025312.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025326.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025330.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025337.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025339.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025345.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025351.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025366.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025374.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025376.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025378.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025387.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025388.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025389.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025392.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025419.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025431.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025434.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025454.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025465.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025466.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025470.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025484.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025485.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025507.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025510.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025515.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025519.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025526.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025529.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025548.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025554.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025567.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025575.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025583.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025623.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025627.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025642.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025654.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025656.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025659.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025661.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025693.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025699.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025703.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025710.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025716.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025719.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025743.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025746.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025753.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025758.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025767.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025777.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025781.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025799.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025804.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025805.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025810.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025819.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025830.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025837.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025838.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025842.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025851.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025856.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025867.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025874.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025876.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025879.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025883.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025885.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025906.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025915.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025928.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025937.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025939.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025973.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025982.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025984.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025985.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0025986.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026015.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026016.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026018.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026042.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026044.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026046.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026060.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026069.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026070.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026072.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026085.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026104.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026107.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026135.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026139.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026142.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026153.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026159.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026174.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026205.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026219.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026245.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026248.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026249.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026262.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026263.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026265.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026273.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026276.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026277.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026280.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026286.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026290.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026291.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026298.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026301.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026311.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026316.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026335.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026351.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026365.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026378.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026409.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026416.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026422.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026441.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026443.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026444.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026446.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026477.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026493.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026511.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026514.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026523.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026524.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026526.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026530.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026532.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026538.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026539.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026553.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026556.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026566.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026567.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026576.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026590.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026606.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026607.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026614.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026623.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026631.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026634.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026637.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026644.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026661.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026663.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026675.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026679.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026704.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026714.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026717.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026728.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026737.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026744.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026769.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026775.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026783.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026787.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026790.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026794.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026803.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026827.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026835.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026842.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026843.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026844.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026846.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026849.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026861.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026867.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026871.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026893.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026895.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026907.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026912.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026923.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026941.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026947.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026955.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026958.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026959.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026961.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0026967.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027006.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027017.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027018.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027023.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027025.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027026.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027027.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027037.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027041.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027042.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027053.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027064.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027068.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027083.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027094.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027139.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027142.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027151.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027154.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027162.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027167.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027192.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027194.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027202.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027218.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027219.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027239.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027270.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027275.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027279.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027287.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027295.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027310.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027320.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027326.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027332.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027335.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027344.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027354.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027355.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027367.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027370.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027374.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027388.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027392.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027394.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027419.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027428.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027435.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027437.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027451.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027454.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027455.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027463.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027470.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027504.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027509.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027513.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027527.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027533.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027559.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027584.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027606.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027608.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027612.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027649.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027652.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027680.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027681.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027706.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027710.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027713.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027735.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027737.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027739.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027747.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027754.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027760.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027770.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027771.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027780.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027781.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027796.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027801.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027806.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027811.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027820.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027826.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027828.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027831.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027850.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027859.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027875.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027893.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027905.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027916.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027953.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027954.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027957.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027960.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027967.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027969.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027973.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027982.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027989.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027990.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027991.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0027996.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028020.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028043.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028052.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028080.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028094.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028100.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028104.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028120.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028121.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028123.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028124.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028165.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028180.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028200.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028201.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028209.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028223.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028229.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028233.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028236.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028237.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028254.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028258.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028264.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028294.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028308.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028309.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028331.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028336.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028343.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028347.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028354.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028376.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028386.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028388.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028389.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028404.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028411.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028414.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028448.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028449.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028451.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028473.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028479.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028490.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028496.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028497.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028503.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028511.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028525.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028550.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028555.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028560.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028587.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028593.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028607.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028611.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028615.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028622.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028623.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028628.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028640.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028646.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028650.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028656.jpg,OK,,600,450,RGB
+Train\pigmented benign keratosis\ISIC_0028662.jpg,OK,,600,450,RGB
+Train\seborrheic keratosis\ISIC_0010810.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0010812.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0010834.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0010852.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0010860.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0010862.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0010863.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0010866.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0010872.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0010876.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0010878.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0010883.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0010890.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0010898.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0010900.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0010909.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0010912.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0010917.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0010923.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0010925.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0010934.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0010938.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0010942.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0010965.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0010971.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0010977.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0010978.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0010979.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0010982.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0010990.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0010993.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0010995.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011007.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011012.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011013.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011030.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011031.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011032.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011039.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011040.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011042.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011043.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011045.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011052.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011056.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011057.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011077.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011094.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011095.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011099.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011112.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011118.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011121.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011125.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011126.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011128.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011130.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011132.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011135.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011136.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011137.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011138.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011139.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011140.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011151.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011158.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011161.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011163.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011166.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011169.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011174.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011176.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011178.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011181.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011185.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011187.jpg,OK,,1024,768,RGB
+Train\seborrheic keratosis\ISIC_0011193.jpg,OK,,1024,768,RGB
+Train\squamous cell carcinoma\ISIC_0024710.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0024843.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0024923.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0024925.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0024946.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0025029.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0025069.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0025089.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0025130.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0025178.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0025182.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0025196.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0025247.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0025264.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0025331.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0025350.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0025358.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0025411.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0025471.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0025539.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0025577.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0025637.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0025696.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0025712.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0025790.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0025808.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0025811.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0025831.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0025948.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0026083.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0026100.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0026132.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0026138.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0026152.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0026178.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0026203.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0026206.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0026319.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0026327.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0026362.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0026388.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0026411.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0026466.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0026492.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0026522.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0026549.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0026645.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0026720.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0026872.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0026927.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0026981.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0026992.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0027047.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0027084.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0027178.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0027184.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0027231.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0027294.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0027303.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0027343.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0027506.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0027529.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0027550.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0027577.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0027678.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0027700.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0027708.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0027719.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0027753.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0027767.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0027795.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0027930.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0028132.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0028158.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0028224.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0028231.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0028232.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0028335.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0028372.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0028381.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0028499.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0028644.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0028659.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0028730.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0028763.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0028795.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0028816.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0028872.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0029002.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0029043.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0029059.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0029067.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0029268.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0029279.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0029315.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0029362.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0029371.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0029462.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0029533.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0029541.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0029549.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0029563.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0029567.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0029573.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0029582.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0029598.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0029610.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0029634.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0029638.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0029715.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0029811.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0029851.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0029860.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0029932.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0030076.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0030158.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0030175.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0030191.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0030245.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0030280.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0030297.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0030341.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0030375.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0030387.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0030487.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0030549.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0030591.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0030602.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0030707.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0030714.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0030785.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0030794.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0030803.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0030821.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0030827.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0030844.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0030953.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0030986.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0030991.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0031012.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0031043.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0031044.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0031119.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0031191.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0031198.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0031211.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0031286.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0031421.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0031431.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0031570.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0031578.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0031659.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0031672.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0031692.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0031738.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0031743.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0031852.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0031874.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0031918.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0031927.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0031929.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0031940.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0032014.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0032154.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0032173.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0032203.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0032238.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0032277.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0032329.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0032349.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0032356.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0032371.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0032397.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0032455.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0032897.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0032947.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0033000.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0033084.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0033295.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0033536.jpg,OK,,600,450,RGB
+Train\squamous cell carcinoma\ISIC_0033869.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0024475.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0024662.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0024669.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0024706.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0024747.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0024867.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0024904.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0025197.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0025244.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0025249.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0025250.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0025321.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0025425.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0025452.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0025578.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0025596.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0025599.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0025606.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0025612.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0025628.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0025677.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0025680.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0025707.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0025807.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0025873.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0025924.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0026068.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0026092.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0026163.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0026336.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0026349.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0026393.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0026456.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0026467.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0026490.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0026693.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0026713.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0026876.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0027159.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0027210.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0027256.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0027269.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0027385.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0027522.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0027563.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0027665.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0027672.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0027790.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0027856.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0027888.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0027903.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0027937.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0027983.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0028146.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0028163.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0028188.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0028406.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0028431.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0028680.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0028714.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0028885.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0029099.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0029404.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0029439.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0029448.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0029486.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0029514.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0029608.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0029742.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0029877.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0029889.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0030070.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0030104.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0030275.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0030283.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0030606.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0030722.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0030770.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0030882.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0030956.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0031065.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0031090.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0031093.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0031103.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0031197.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0031201.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0031215.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0031217.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0031270.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0031276.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0031346.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0031648.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0031706.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0031719.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0031759.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0031901.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0031950.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0031955.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0031996.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0032057.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0032076.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0032240.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0032270.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0032409.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0032538.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0032545.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0032557.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0032614.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0032692.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0032715.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0032745.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0032775.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0032839.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0032866.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0032867.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0032890.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0032919.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0032932.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0033031.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0033092.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0033123.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0033135.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0033158.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0033230.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0033254.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0033349.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0033450.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0033458.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0033565.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0033591.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0033608.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0033749.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0033762.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0033817.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0033844.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0033969.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0033991.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0034196.jpg,OK,,600,450,RGB
+Train\vascular lesion\ISIC_0034214.jpg,OK,,600,450,RGB
+Test\actinic keratosis\ISIC_0010512.jpg,OK,,1024,768,RGB
+Test\actinic keratosis\ISIC_0010889.jpg,OK,,1024,768,RGB
+Test\actinic keratosis\ISIC_0024468.jpg,OK,,600,450,RGB
+Test\actinic keratosis\ISIC_0024470.jpg,OK,,600,450,RGB
+Test\actinic keratosis\ISIC_0024511.jpg,OK,,600,450,RGB
+Test\actinic keratosis\ISIC_0024646.jpg,OK,,600,450,RGB
+Test\actinic keratosis\ISIC_0024654.jpg,OK,,600,450,RGB
+Test\actinic keratosis\ISIC_0024707.jpg,OK,,600,450,RGB
+Test\actinic keratosis\ISIC_0024763.jpg,OK,,600,450,RGB
+Test\actinic keratosis\ISIC_0024771.jpg,OK,,600,450,RGB
+Test\actinic keratosis\ISIC_0024800.jpg,OK,,600,450,RGB
+Test\actinic keratosis\ISIC_0024913.jpg,OK,,600,450,RGB
+Test\actinic keratosis\ISIC_0024948.jpg,OK,,600,450,RGB
+Test\actinic keratosis\ISIC_0025368.jpg,OK,,600,450,RGB
+Test\actinic keratosis\ISIC_0025427.jpg,OK,,600,450,RGB
+Test\actinic keratosis\ISIC_0025605.jpg,OK,,600,450,RGB
+Test\basal cell carcinoma\ISIC_0024331.jpg,OK,,600,450,RGB
+Test\basal cell carcinoma\ISIC_0024332.jpg,OK,,600,450,RGB
+Test\basal cell carcinoma\ISIC_0024345.jpg,OK,,600,450,RGB
+Test\basal cell carcinoma\ISIC_0024360.jpg,OK,,600,450,RGB
+Test\basal cell carcinoma\ISIC_0024403.jpg,OK,,600,450,RGB
+Test\basal cell carcinoma\ISIC_0024411.jpg,OK,,600,450,RGB
+Test\basal cell carcinoma\ISIC_0024431.jpg,OK,,600,450,RGB
+Test\basal cell carcinoma\ISIC_0024432.jpg,OK,,600,450,RGB
+Test\basal cell carcinoma\ISIC_0024436.jpg,OK,,600,450,RGB
+Test\basal cell carcinoma\ISIC_0024443.jpg,OK,,600,450,RGB
+Test\basal cell carcinoma\ISIC_0024448.jpg,OK,,600,450,RGB
+Test\basal cell carcinoma\ISIC_0024452.jpg,OK,,600,450,RGB
+Test\basal cell carcinoma\ISIC_0024454.jpg,OK,,600,450,RGB
+Test\basal cell carcinoma\ISIC_0024457.jpg,OK,,600,450,RGB
+Test\basal cell carcinoma\ISIC_0024461.jpg,OK,,600,450,RGB
+Test\basal cell carcinoma\ISIC_0024472.jpg,OK,,600,450,RGB
+Test\dermatofibroma\ISIC_0001114.jpg,OK,,1936,1936,RGB
+Test\dermatofibroma\ISIC_0001130.jpg,OK,,4288,2848,RGB
+Test\dermatofibroma\ISIC_0011410.jpg,OK,,6668,4479,RGB
+Test\dermatofibroma\ISIC_0011433.jpg,OK,,6648,4459,RGB
+Test\dermatofibroma\ISIC_0011478.jpg,OK,,6601,4380,RGB
+Test\dermatofibroma\ISIC_0011677.jpg,OK,,6648,4439,RGB
+Test\dermatofibroma\ISIC_0011865.jpg,OK,,6688,4439,RGB
+Test\dermatofibroma\ISIC_0024318.jpg,OK,,600,450,RGB
+Test\dermatofibroma\ISIC_0024330.jpg,OK,,600,450,RGB
+Test\dermatofibroma\ISIC_0024386.jpg,OK,,600,450,RGB
+Test\dermatofibroma\ISIC_0024396.jpg,OK,,600,450,RGB
+Test\dermatofibroma\ISIC_0024553.jpg,OK,,600,450,RGB
+Test\dermatofibroma\ISIC_0024845.jpg,OK,,600,450,RGB
+Test\dermatofibroma\ISIC_0024973.jpg,OK,,600,450,RGB
+Test\dermatofibroma\ISIC_0024994.jpg,OK,,600,450,RGB
+Test\dermatofibroma\ISIC_0025154.jpg,OK,,600,450,RGB
+Test\melanoma\ISIC_0000002.jpg,OK,,1022,767,RGB
+Test\melanoma\ISIC_0000004.jpg,OK,,1022,767,RGB
+Test\melanoma\ISIC_0000013.jpg,OK,,1022,767,RGB
+Test\melanoma\ISIC_0000022.jpg,OK,,1504,1129,RGB
+Test\melanoma\ISIC_0000026.jpg,OK,,1504,1129,RGB
+Test\melanoma\ISIC_0000029.jpg,OK,,1504,1129,RGB
+Test\melanoma\ISIC_0000030.jpg,OK,,1503,1129,RGB
+Test\melanoma\ISIC_0000031.jpg,OK,,1504,1129,RGB
+Test\melanoma\ISIC_0000035.jpg,OK,,1504,1129,RGB
+Test\melanoma\ISIC_0000036.jpg,OK,,1504,1129,RGB
+Test\melanoma\ISIC_0000040.jpg,OK,,1504,1129,RGB
+Test\melanoma\ISIC_0000043.jpg,OK,,1504,1129,RGB
+Test\melanoma\ISIC_0000046.jpg,OK,,1504,1129,RGB
+Test\melanoma\ISIC_0000049.jpg,OK,,1504,1129,RGB
+Test\melanoma\ISIC_0000054.jpg,OK,,1504,1129,RGB
+Test\melanoma\ISIC_0000056.jpg,OK,,1504,1129,RGB
+Test\nevus\ISIC_0000000.jpg,OK,,1022,767,RGB
+Test\nevus\ISIC_0000001.jpg,OK,,1022,767,RGB
+Test\nevus\ISIC_0000003.jpg,OK,,1022,767,RGB
+Test\nevus\ISIC_0000005.jpg,OK,,1022,767,RGB
+Test\nevus\ISIC_0000006.jpg,OK,,1022,767,RGB
+Test\nevus\ISIC_0000007.jpg,OK,,1022,767,RGB
+Test\nevus\ISIC_0000008.jpg,OK,,1022,767,RGB
+Test\nevus\ISIC_0000009.jpg,OK,,1022,767,RGB
+Test\nevus\ISIC_0000010.jpg,OK,,1022,767,RGB
+Test\nevus\ISIC_0000011.jpg,OK,,1022,767,RGB
+Test\nevus\ISIC_0000012.jpg,OK,,1022,767,RGB
+Test\nevus\ISIC_0000014.jpg,OK,,1022,767,RGB
+Test\nevus\ISIC_0000015.jpg,OK,,1022,767,RGB
+Test\nevus\ISIC_0000016.jpg,OK,,1022,767,RGB
+Test\nevus\ISIC_0000017.jpg,OK,,1504,1129,RGB
+Test\nevus\ISIC_0000018.jpg,OK,,1504,1129,RGB
+Test\pigmented benign keratosis\ISIC_0024312.jpg,OK,,600,450,RGB
+Test\pigmented benign keratosis\ISIC_0024324.jpg,OK,,600,450,RGB
+Test\pigmented benign keratosis\ISIC_0024336.jpg,OK,,600,450,RGB
+Test\pigmented benign keratosis\ISIC_0024337.jpg,OK,,600,450,RGB
+Test\pigmented benign keratosis\ISIC_0024338.jpg,OK,,600,450,RGB
+Test\pigmented benign keratosis\ISIC_0024358.jpg,OK,,600,450,RGB
+Test\pigmented benign keratosis\ISIC_0024371.jpg,OK,,600,450,RGB
+Test\pigmented benign keratosis\ISIC_0024381.jpg,OK,,600,450,RGB
+Test\pigmented benign keratosis\ISIC_0024382.jpg,OK,,600,450,RGB
+Test\pigmented benign keratosis\ISIC_0024383.jpg,OK,,600,450,RGB
+Test\pigmented benign keratosis\ISIC_0024408.jpg,OK,,600,450,RGB
+Test\pigmented benign keratosis\ISIC_0024409.jpg,OK,,600,450,RGB
+Test\pigmented benign keratosis\ISIC_0024412.jpg,OK,,600,450,RGB
+Test\pigmented benign keratosis\ISIC_0024420.jpg,OK,,600,450,RGB
+Test\pigmented benign keratosis\ISIC_0024422.jpg,OK,,600,450,RGB
+Test\pigmented benign keratosis\ISIC_0024426.jpg,OK,,600,450,RGB
+Test\seborrheic keratosis\ISIC_0010803.jpg,OK,,1024,768,RGB
+Test\seborrheic keratosis\ISIC_0010808.jpg,OK,,1024,768,RGB
+Test\seborrheic keratosis\ISIC_0010809.jpg,OK,,1024,768,RGB
+Test\squamous cell carcinoma\ISIC_0011593.jpg,OK,,6668,4399,RGB
+Test\squamous cell carcinoma\ISIC_0011726.jpg,OK,,6668,4419,RGB
+Test\squamous cell carcinoma\ISIC_0011750.jpg,OK,,6641,4421,RGB
+Test\squamous cell carcinoma\ISIC_0011751.jpg,OK,,6641,4391,RGB
+Test\squamous cell carcinoma\ISIC_0012079.jpg,OK,,6668,4419,RGB
+Test\squamous cell carcinoma\ISIC_0024329.jpg,OK,,600,450,RGB
+Test\squamous cell carcinoma\ISIC_0024372.jpg,OK,,600,450,RGB
+Test\squamous cell carcinoma\ISIC_0024418.jpg,OK,,600,450,RGB
+Test\squamous cell carcinoma\ISIC_0024450.jpg,OK,,600,450,RGB
+Test\squamous cell carcinoma\ISIC_0024463.jpg,OK,,600,450,RGB
+Test\squamous cell carcinoma\ISIC_0024517.jpg,OK,,600,450,RGB
+Test\squamous cell carcinoma\ISIC_0024522.jpg,OK,,600,450,RGB
+Test\squamous cell carcinoma\ISIC_0024539.jpg,OK,,600,450,RGB
+Test\squamous cell carcinoma\ISIC_0024562.jpg,OK,,600,450,RGB
+Test\squamous cell carcinoma\ISIC_0024575.jpg,OK,,600,450,RGB
+Test\squamous cell carcinoma\ISIC_0024579.jpg,OK,,600,450,RGB
+Test\vascular lesion\ISIC_0024370.jpg,OK,,600,450,RGB
+Test\vascular lesion\ISIC_0024375.jpg,OK,,600,450,RGB
+Test\vascular lesion\ISIC_0024402.jpg,OK,,600,450,RGB

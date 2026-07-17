@@ -1,0 +1,28 @@
+split,disease_label,count,pct_of_split,pct_of_total_images
+train,Nevus,9011,51.39,69.93
+train,Melanoma,3165,18.05,69.93
+train,Basal Cell Carcinoma,2324,13.25,69.93
+train,Seborrheic Keratosis,921,5.25,69.93
+train,Pigmented Benign Keratosis,767,4.37,69.93
+train,Actinic Keratosis,603,3.44,69.93
+train,Squamous Cell Carcinoma,435,2.48,69.93
+train,Dermatofibroma,167,0.95,69.93
+train,Solar Lentigo,142,0.81,69.93
+val,Nevus,1930,51.21,15.03
+val,Melanoma,678,17.99,15.03
+val,Basal Cell Carcinoma,499,13.24,15.03
+val,Seborrheic Keratosis,197,5.23,15.03
+val,Pigmented Benign Keratosis,166,4.4,15.03
+val,Actinic Keratosis,133,3.53,15.03
+val,Squamous Cell Carcinoma,98,2.6,15.03
+val,Dermatofibroma,34,0.9,15.03
+val,Solar Lentigo,34,0.9,15.03
+test,Nevus,1932,51.22,15.04
+test,Melanoma,679,18.0,15.04
+test,Basal Cell Carcinoma,500,13.26,15.04
+test,Seborrheic Keratosis,198,5.25,15.04
+test,Pigmented Benign Keratosis,166,4.4,15.04
+test,Actinic Keratosis,131,3.47,15.04
+test,Squamous Cell Carcinoma,95,2.52,15.04
+test,Dermatofibroma,38,1.01,15.04
+test,Solar Lentigo,33,0.87,15.04

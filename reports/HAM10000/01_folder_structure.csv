@@ -1,0 +1,4 @@
+folder,num_files,extensions_present,extension_breakdown,total_size_bytes,total_size_mb
+.,5,.csv,.csv:5,133254385,127.08
+HAM10000_images_part_1,5000,.jpg,.jpg:5000,1366471277,1303.17
+HAM10000_images_part_2,5015,.jpg,.jpg:5015,1403744282,1338.71

@@ -1,0 +1,10 @@
+disease_label,train,val,test
+Actinic Keratosis,44,8,1
+Basal Cell Carcinoma,320,56,16
+Dermatofibroma,81,14,16
+Melanoma,306,54,16
+Nevus,238,42,16
+Pigmented Benign Keratosis,393,69,16
+Seborrheic Keratosis,1,1,0
+Squamous Cell Carcinoma,154,27,16
+Vascular Lesion,118,21,3

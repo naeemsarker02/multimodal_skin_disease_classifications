@@ -1,0 +1,1374 @@
+patient_id,dominant_disease_label,n_images,split
+PAT_10,Squamous Cell Carcinoma,1,val
+PAT_100,Nevus,2,train
+PAT_1000,Seborrheic Keratosis,1,test
+PAT_1006,Actinic Keratosis,2,train
+PAT_1008,Seborrheic Keratosis,1,train
+PAT_101,Basal Cell Carcinoma,3,train
+PAT_1013,Actinic Keratosis,1,test
+PAT_1014,Actinic Keratosis,2,train
+PAT_1017,Actinic Keratosis,1,train
+PAT_1018,Actinic Keratosis,1,train
+PAT_1019,Actinic Keratosis,1,val
+PAT_1020,Actinic Keratosis,1,test
+PAT_1021,Actinic Keratosis,1,train
+PAT_1022,Actinic Keratosis,2,train
+PAT_1026,Actinic Keratosis,2,train
+PAT_1027,Actinic Keratosis,1,val
+PAT_1029,Actinic Keratosis,2,train
+PAT_1031,Actinic Keratosis,3,train
+PAT_1033,Actinic Keratosis,1,val
+PAT_1034,Actinic Keratosis,2,test
+PAT_1035,Actinic Keratosis,1,test
+PAT_1036,Actinic Keratosis,1,test
+PAT_104,Actinic Keratosis,3,test
+PAT_1042,Actinic Keratosis,1,train
+PAT_1046,Seborrheic Keratosis,1,train
+PAT_1051,Actinic Keratosis,1,train
+PAT_1057,Actinic Keratosis,1,train
+PAT_106,Basal Cell Carcinoma,3,train
+PAT_1061,Actinic Keratosis,1,val
+PAT_1062,Actinic Keratosis,1,test
+PAT_1063,Actinic Keratosis,5,test
+PAT_1064,Actinic Keratosis,2,train
+PAT_1065,Actinic Keratosis,4,train
+PAT_1066,Actinic Keratosis,2,train
+PAT_1067,Actinic Keratosis,1,train
+PAT_1068,Seborrheic Keratosis,1,train
+PAT_107,Seborrheic Keratosis,1,train
+PAT_1070,Actinic Keratosis,3,val
+PAT_1071,Actinic Keratosis,3,train
+PAT_1072,Seborrheic Keratosis,1,train
+PAT_1074,Actinic Keratosis,4,train
+PAT_1075,Seborrheic Keratosis,1,train
+PAT_108,Actinic Keratosis,6,test
+PAT_1082,Actinic Keratosis,1,train
+PAT_1088,Actinic Keratosis,1,train
+PAT_1089,Nevus,2,val
+PAT_109,Melanoma,2,train
+PAT_1090,Actinic Keratosis,1,test
+PAT_1092,Actinic Keratosis,1,test
+PAT_1093,Actinic Keratosis,1,test
+PAT_1094,Actinic Keratosis,3,train
+PAT_110,Basal Cell Carcinoma,2,train
+PAT_1100,Seborrheic Keratosis,1,train
+PAT_1102,Actinic Keratosis,1,train
+PAT_1105,Seborrheic Keratosis,1,train
+PAT_1107,Nevus,1,train
+PAT_1109,Nevus,2,test
+PAT_1112,Actinic Keratosis,1,val
+PAT_1113,Nevus,1,train
+PAT_1118,Actinic Keratosis,1,train
+PAT_1119,Actinic Keratosis,1,test
+PAT_112,Basal Cell Carcinoma,2,test
+PAT_1122,Seborrheic Keratosis,1,val
+PAT_1124,Actinic Keratosis,1,test
+PAT_1125,Actinic Keratosis,1,test
+PAT_1127,Actinic Keratosis,1,train
+PAT_1128,Actinic Keratosis,2,train
+PAT_1129,Nevus,1,train
+PAT_113,Squamous Cell Carcinoma,1,train
+PAT_1130,Actinic Keratosis,1,train
+PAT_1132,Actinic Keratosis,1,train
+PAT_1133,Actinic Keratosis,1,train
+PAT_1136,Nevus,1,train
+PAT_1138,Nevus,1,test
+PAT_1139,Actinic Keratosis,1,test
+PAT_114,Basal Cell Carcinoma,1,train
+PAT_1141,Actinic Keratosis,1,train
+PAT_1145,Actinic Keratosis,2,train
+PAT_1148,Nevus,1,val
+PAT_115,Basal Cell Carcinoma,7,train
+PAT_1151,Actinic Keratosis,1,val
+PAT_1153,Nevus,1,train
+PAT_1158,Actinic Keratosis,1,train
+PAT_1161,Nevus,1,val
+PAT_117,Basal Cell Carcinoma,1,train
+PAT_1170,Actinic Keratosis,2,train
+PAT_1171,Actinic Keratosis,1,train
+PAT_1172,Actinic Keratosis,1,train
+PAT_1174,Actinic Keratosis,1,test
+PAT_1176,Actinic Keratosis,1,train
+PAT_1177,Actinic Keratosis,1,train
+PAT_1179,Nevus,1,test
+PAT_118,Basal Cell Carcinoma,2,train
+PAT_1180,Nevus,2,train
+PAT_1181,Actinic Keratosis,1,train
+PAT_1184,Actinic Keratosis,3,train
+PAT_1185,Seborrheic Keratosis,1,train
+PAT_1186,Nevus,2,train
+PAT_119,Basal Cell Carcinoma,1,val
+PAT_1190,Seborrheic Keratosis,1,train
+PAT_1197,Nevus,1,train
+PAT_1198,Seborrheic Keratosis,1,train
+PAT_120,Basal Cell Carcinoma,1,train
+PAT_1202,Seborrheic Keratosis,1,train
+PAT_1203,Seborrheic Keratosis,1,test
+PAT_1208,Nevus,1,val
+PAT_1209,Actinic Keratosis,1,train
+PAT_121,Basal Cell Carcinoma,1,train
+PAT_1210,Actinic Keratosis,1,val
+PAT_1215,Nevus,1,train
+PAT_1216,Nevus,3,test
+PAT_1217,Nevus,1,val
+PAT_1219,Nevus,1,train
+PAT_122,Basal Cell Carcinoma,2,train
+PAT_1220,Seborrheic Keratosis,1,train
+PAT_1221,Seborrheic Keratosis,1,train
+PAT_1222,Actinic Keratosis,1,train
+PAT_1223,Nevus,1,train
+PAT_1229,Nevus,1,test
+PAT_123,Basal Cell Carcinoma,2,train
+PAT_1241,Seborrheic Keratosis,1,train
+PAT_1242,Nevus,1,train
+PAT_1243,Actinic Keratosis,2,val
+PAT_1244,Actinic Keratosis,1,train
+PAT_1245,Nevus,2,train
+PAT_1246,Actinic Keratosis,2,train
+PAT_1247,Actinic Keratosis,1,train
+PAT_1249,Nevus,2,val
+PAT_1252,Seborrheic Keratosis,1,test
+PAT_1255,Actinic Keratosis,1,val
+PAT_1256,Nevus,1,train
+PAT_1257,Nevus,1,train
+PAT_1259,Actinic Keratosis,1,train
+PAT_126,Actinic Keratosis,3,val
+PAT_1260,Actinic Keratosis,1,train
+PAT_1261,Seborrheic Keratosis,1,train
+PAT_1264,Nevus,1,val
+PAT_1265,Actinic Keratosis,1,train
+PAT_1267,Actinic Keratosis,1,val
+PAT_1269,Seborrheic Keratosis,1,train
+PAT_1273,Nevus,2,test
+PAT_1274,Actinic Keratosis,1,train
+PAT_1275,Actinic Keratosis,1,test
+PAT_1276,Nevus,1,train
+PAT_1277,Actinic Keratosis,2,train
+PAT_1278,Actinic Keratosis,3,val
+PAT_128,Basal Cell Carcinoma,2,val
+PAT_1280,Actinic Keratosis,2,train
+PAT_1282,Actinic Keratosis,1,train
+PAT_1284,Actinic Keratosis,1,val
+PAT_1286,Seborrheic Keratosis,4,test
+PAT_1288,Nevus,2,train
+PAT_1294,Actinic Keratosis,1,train
+PAT_1296,Actinic Keratosis,1,train
+PAT_1297,Nevus,1,val
+PAT_1298,Nevus,2,train
+PAT_1299,Actinic Keratosis,1,train
+PAT_13,Basal Cell Carcinoma,1,train
+PAT_1300,Actinic Keratosis,1,val
+PAT_1301,Actinic Keratosis,1,train
+PAT_1303,Actinic Keratosis,1,val
+PAT_1304,Seborrheic Keratosis,3,val
+PAT_1305,Seborrheic Keratosis,2,train
+PAT_1306,Seborrheic Keratosis,2,train
+PAT_1307,Actinic Keratosis,2,train
+PAT_1308,Nevus,1,train
+PAT_1309,Actinic Keratosis,1,train
+PAT_131,Squamous Cell Carcinoma,2,train
+PAT_1310,Seborrheic Keratosis,1,test
+PAT_1312,Seborrheic Keratosis,1,train
+PAT_1313,Actinic Keratosis,1,val
+PAT_1314,Seborrheic Keratosis,1,train
+PAT_1315,Actinic Keratosis,1,train
+PAT_1316,Actinic Keratosis,1,train
+PAT_1317,Actinic Keratosis,1,train
+PAT_132,Basal Cell Carcinoma,1,test
+PAT_1320,Actinic Keratosis,1,train
+PAT_1322,Actinic Keratosis,1,train
+PAT_1324,Actinic Keratosis,2,train
+PAT_1326,Nevus,3,train
+PAT_1329,Seborrheic Keratosis,2,train
+PAT_1330,Nevus,1,test
+PAT_1331,Nevus,1,train
+PAT_1332,Seborrheic Keratosis,1,train
+PAT_1333,Nevus,2,train
+PAT_1334,Nevus,1,test
+PAT_1335,Nevus,1,test
+PAT_134,Basal Cell Carcinoma,1,val
+PAT_1340,Seborrheic Keratosis,2,train
+PAT_1341,Seborrheic Keratosis,1,test
+PAT_1343,Seborrheic Keratosis,1,train
+PAT_1344,Nevus,1,test
+PAT_1345,Nevus,1,train
+PAT_1347,Actinic Keratosis,1,test
+PAT_1349,Nevus,1,val
+PAT_135,Basal Cell Carcinoma,3,test
+PAT_1350,Nevus,2,train
+PAT_1351,Nevus,1,train
+PAT_136,Basal Cell Carcinoma,1,val
+PAT_1364,Nevus,6,train
+PAT_1365,Actinic Keratosis,1,train
+PAT_1367,Actinic Keratosis,1,val
+PAT_1369,Actinic Keratosis,2,train
+PAT_1370,Actinic Keratosis,2,train
+PAT_1371,Actinic Keratosis,2,test
+PAT_1373,Actinic Keratosis,1,val
+PAT_1374,Actinic Keratosis,5,train
+PAT_1376,Actinic Keratosis,1,test
+PAT_1377,Seborrheic Keratosis,1,train
+PAT_1379,Nevus,2,test
+PAT_138,Basal Cell Carcinoma,2,train
+PAT_1381,Actinic Keratosis,1,val
+PAT_1385,Actinic Keratosis,1,train
+PAT_1388,Nevus,1,train
+PAT_139,Basal Cell Carcinoma,1,val
+PAT_1390,Actinic Keratosis,1,train
+PAT_1391,Nevus,1,train
+PAT_1392,Seborrheic Keratosis,3,test
+PAT_1393,Actinic Keratosis,4,test
+PAT_1396,Seborrheic Keratosis,1,train
+PAT_1397,Seborrheic Keratosis,1,test
+PAT_1399,Actinic Keratosis,1,test
+PAT_14,Basal Cell Carcinoma,1,train
+PAT_1400,Seborrheic Keratosis,1,train
+PAT_1401,Nevus,2,val
+PAT_1402,Actinic Keratosis,4,val
+PAT_1403,Actinic Keratosis,2,train
+PAT_1404,Seborrheic Keratosis,2,test
+PAT_1405,Actinic Keratosis,1,test
+PAT_1406,Actinic Keratosis,2,val
+PAT_1407,Actinic Keratosis,4,train
+PAT_1408,Seborrheic Keratosis,2,train
+PAT_141,Basal Cell Carcinoma,1,train
+PAT_1410,Actinic Keratosis,1,val
+PAT_1411,Actinic Keratosis,2,val
+PAT_1412,Actinic Keratosis,1,train
+PAT_1414,Actinic Keratosis,7,train
+PAT_1415,Actinic Keratosis,4,train
+PAT_1418,Seborrheic Keratosis,5,val
+PAT_142,Basal Cell Carcinoma,1,train
+PAT_1420,Seborrheic Keratosis,3,train
+PAT_1421,Actinic Keratosis,1,train
+PAT_1423,Actinic Keratosis,1,test
+PAT_1427,Actinic Keratosis,2,val
+PAT_1428,Actinic Keratosis,2,train
+PAT_1429,Actinic Keratosis,1,val
+PAT_143,Basal Cell Carcinoma,1,train
+PAT_1431,Actinic Keratosis,2,train
+PAT_1432,Actinic Keratosis,1,train
+PAT_1433,Actinic Keratosis,1,train
+PAT_1439,Seborrheic Keratosis,3,train
+PAT_1441,Actinic Keratosis,1,test
+PAT_1443,Actinic Keratosis,1,train
+PAT_1448,Nevus,1,train
+PAT_1449,Actinic Keratosis,1,train
+PAT_145,Basal Cell Carcinoma,3,train
+PAT_1450,Actinic Keratosis,1,train
+PAT_1451,Nevus,3,val
+PAT_1452,Actinic Keratosis,2,train
+PAT_1453,Seborrheic Keratosis,3,train
+PAT_1455,Seborrheic Keratosis,1,val
+PAT_146,Basal Cell Carcinoma,1,test
+PAT_1460,Seborrheic Keratosis,3,train
+PAT_1461,Seborrheic Keratosis,1,val
+PAT_1464,Actinic Keratosis,1,train
+PAT_1466,Actinic Keratosis,1,train
+PAT_1468,Actinic Keratosis,2,test
+PAT_1469,Actinic Keratosis,1,test
+PAT_147,Basal Cell Carcinoma,2,train
+PAT_1472,Actinic Keratosis,1,train
+PAT_1475,Actinic Keratosis,1,test
+PAT_1476,Actinic Keratosis,1,train
+PAT_1477,Nevus,1,val
+PAT_1479,Actinic Keratosis,1,test
+PAT_148,Actinic Keratosis,1,val
+PAT_1480,Seborrheic Keratosis,1,train
+PAT_1481,Actinic Keratosis,2,train
+PAT_1482,Actinic Keratosis,1,train
+PAT_1483,Actinic Keratosis,2,train
+PAT_1484,Nevus,1,train
+PAT_1486,Actinic Keratosis,1,train
+PAT_149,Basal Cell Carcinoma,1,train
+PAT_1491,Actinic Keratosis,1,train
+PAT_1492,Actinic Keratosis,2,train
+PAT_1494,Seborrheic Keratosis,1,train
+PAT_1495,Seborrheic Keratosis,1,test
+PAT_1497,Actinic Keratosis,1,train
+PAT_1498,Actinic Keratosis,3,train
+PAT_15,Basal Cell Carcinoma,3,train
+PAT_150,Squamous Cell Carcinoma,1,train
+PAT_1503,Nevus,1,test
+PAT_1505,Actinic Keratosis,1,train
+PAT_1506,Actinic Keratosis,1,train
+PAT_1509,Seborrheic Keratosis,2,train
+PAT_151,Basal Cell Carcinoma,1,train
+PAT_1513,Actinic Keratosis,1,train
+PAT_1514,Nevus,1,train
+PAT_1516,Nevus,1,train
+PAT_152,Basal Cell Carcinoma,2,train
+PAT_1520,Nevus,1,train
+PAT_1521,Seborrheic Keratosis,1,test
+PAT_1526,Actinic Keratosis,1,train
+PAT_1527,Seborrheic Keratosis,1,train
+PAT_1528,Actinic Keratosis,1,train
+PAT_1529,Seborrheic Keratosis,1,train
+PAT_153,Basal Cell Carcinoma,2,val
+PAT_1531,Actinic Keratosis,1,train
+PAT_1534,Nevus,2,train
+PAT_1535,Nevus,1,train
+PAT_1536,Actinic Keratosis,2,val
+PAT_1538,Actinic Keratosis,1,train
+PAT_154,Basal Cell Carcinoma,5,test
+PAT_1540,Actinic Keratosis,1,train
+PAT_1543,Actinic Keratosis,1,test
+PAT_1545,Actinic Keratosis,2,train
+PAT_1546,Actinic Keratosis,2,train
+PAT_1547,Actinic Keratosis,5,test
+PAT_1549,Seborrheic Keratosis,1,train
+PAT_155,Squamous Cell Carcinoma,2,train
+PAT_1550,Actinic Keratosis,2,train
+PAT_1551,Actinic Keratosis,1,train
+PAT_1552,Actinic Keratosis,1,train
+PAT_1554,Seborrheic Keratosis,4,test
+PAT_1555,Seborrheic Keratosis,1,val
+PAT_1557,Actinic Keratosis,1,test
+PAT_156,Basal Cell Carcinoma,1,train
+PAT_1563,Actinic Keratosis,2,train
+PAT_1565,Actinic Keratosis,1,train
+PAT_1566,Actinic Keratosis,1,val
+PAT_1568,Nevus,1,train
+PAT_1569,Seborrheic Keratosis,1,val
+PAT_1570,Nevus,1,train
+PAT_1571,Actinic Keratosis,1,train
+PAT_1572,Actinic Keratosis,3,train
+PAT_1573,Actinic Keratosis,2,train
+PAT_1575,Actinic Keratosis,2,train
+PAT_1577,Seborrheic Keratosis,2,train
+PAT_158,Actinic Keratosis,2,test
+PAT_1581,Actinic Keratosis,1,train
+PAT_1582,Seborrheic Keratosis,4,train
+PAT_1583,Seborrheic Keratosis,1,train
+PAT_1584,Actinic Keratosis,1,val
+PAT_1585,Seborrheic Keratosis,1,val
+PAT_1586,Seborrheic Keratosis,2,train
+PAT_1587,Nevus,1,test
+PAT_1588,Nevus,1,train
+PAT_159,Basal Cell Carcinoma,3,train
+PAT_1591,Nevus,2,train
+PAT_1593,Actinic Keratosis,2,train
+PAT_1594,Actinic Keratosis,1,train
+PAT_1596,Actinic Keratosis,1,train
+PAT_1597,Nevus,1,train
+PAT_16,Basal Cell Carcinoma,1,train
+PAT_160,Basal Cell Carcinoma,2,test
+PAT_1600,Actinic Keratosis,2,train
+PAT_1603,Nevus,1,train
+PAT_1605,Actinic Keratosis,1,test
+PAT_1608,Actinic Keratosis,1,train
+PAT_161,Basal Cell Carcinoma,2,train
+PAT_1611,Nevus,1,test
+PAT_1613,Nevus,1,train
+PAT_1614,Nevus,1,train
+PAT_1615,Actinic Keratosis,1,train
+PAT_1618,Seborrheic Keratosis,1,train
+PAT_1619,Seborrheic Keratosis,1,train
+PAT_162,Basal Cell Carcinoma,1,train
+PAT_1620,Actinic Keratosis,1,train
+PAT_1624,Nevus,1,train
+PAT_1626,Seborrheic Keratosis,1,val
+PAT_163,Actinic Keratosis,1,train
+PAT_1631,Actinic Keratosis,1,val
+PAT_1633,Actinic Keratosis,2,val
+PAT_1636,Seborrheic Keratosis,2,test
+PAT_1638,Actinic Keratosis,1,val
+PAT_1639,Nevus,1,val
+PAT_164,Squamous Cell Carcinoma,2,train
+PAT_1641,Seborrheic Keratosis,1,val
+PAT_1648,Nevus,2,val
+PAT_165,Basal Cell Carcinoma,1,val
+PAT_1650,Actinic Keratosis,1,test
+PAT_1651,Actinic Keratosis,1,train
+PAT_1652,Seborrheic Keratosis,1,train
+PAT_1653,Seborrheic Keratosis,2,train
+PAT_1655,Actinic Keratosis,1,train
+PAT_1657,Nevus,1,val
+PAT_1658,Nevus,1,train
+PAT_166,Seborrheic Keratosis,2,train
+PAT_1661,Actinic Keratosis,1,train
+PAT_1665,Actinic Keratosis,1,test
+PAT_1666,Actinic Keratosis,1,test
+PAT_167,Basal Cell Carcinoma,3,train
+PAT_1670,Actinic Keratosis,1,train
+PAT_1671,Nevus,1,train
+PAT_1673,Actinic Keratosis,1,train
+PAT_168,Basal Cell Carcinoma,5,val
+PAT_1680,Nevus,1,train
+PAT_1682,Seborrheic Keratosis,2,train
+PAT_1688,Actinic Keratosis,1,train
+PAT_1689,Actinic Keratosis,2,val
+PAT_169,Actinic Keratosis,1,train
+PAT_1690,Actinic Keratosis,1,train
+PAT_1693,Actinic Keratosis,1,train
+PAT_1694,Nevus,1,train
+PAT_1696,Seborrheic Keratosis,1,train
+PAT_1698,Nevus,1,test
+PAT_1699,Nevus,1,train
+PAT_170,Basal Cell Carcinoma,1,train
+PAT_1701,Seborrheic Keratosis,2,train
+PAT_1702,Nevus,1,train
+PAT_1704,Actinic Keratosis,1,train
+PAT_1705,Actinic Keratosis,1,train
+PAT_1706,Actinic Keratosis,1,train
+PAT_1707,Actinic Keratosis,3,val
+PAT_1708,Actinic Keratosis,4,train
+PAT_1709,Seborrheic Keratosis,2,train
+PAT_171,Basal Cell Carcinoma,1,train
+PAT_1710,Actinic Keratosis,1,test
+PAT_1712,Actinic Keratosis,2,val
+PAT_1713,Seborrheic Keratosis,1,train
+PAT_1714,Seborrheic Keratosis,1,train
+PAT_1715,Actinic Keratosis,2,train
+PAT_1718,Nevus,1,train
+PAT_1719,Seborrheic Keratosis,1,train
+PAT_172,Basal Cell Carcinoma,2,train
+PAT_1720,Actinic Keratosis,1,train
+PAT_1721,Seborrheic Keratosis,2,train
+PAT_1722,Actinic Keratosis,1,test
+PAT_1723,Seborrheic Keratosis,1,train
+PAT_1725,Actinic Keratosis,1,train
+PAT_1726,Actinic Keratosis,1,train
+PAT_1727,Actinic Keratosis,1,train
+PAT_1728,Actinic Keratosis,2,train
+PAT_1729,Actinic Keratosis,2,train
+PAT_173,Nevus,1,val
+PAT_1730,Seborrheic Keratosis,2,train
+PAT_1731,Nevus,2,train
+PAT_1733,Nevus,2,test
+PAT_1734,Seborrheic Keratosis,1,train
+PAT_1735,Nevus,2,train
+PAT_1736,Actinic Keratosis,1,val
+PAT_1738,Actinic Keratosis,1,train
+PAT_1739,Actinic Keratosis,1,val
+PAT_1740,Actinic Keratosis,1,val
+PAT_1741,Actinic Keratosis,1,train
+PAT_1746,Actinic Keratosis,1,val
+PAT_1749,Actinic Keratosis,1,val
+PAT_1753,Nevus,1,train
+PAT_1754,Nevus,3,train
+PAT_1755,Nevus,2,train
+PAT_1757,Actinic Keratosis,1,train
+PAT_176,Actinic Keratosis,1,train
+PAT_1760,Actinic Keratosis,1,train
+PAT_1761,Seborrheic Keratosis,1,train
+PAT_1762,Actinic Keratosis,1,train
+PAT_1764,Seborrheic Keratosis,3,train
+PAT_1765,Seborrheic Keratosis,1,train
+PAT_1767,Actinic Keratosis,1,train
+PAT_1769,Actinic Keratosis,1,train
+PAT_177,Basal Cell Carcinoma,4,test
+PAT_1770,Nevus,1,train
+PAT_1772,Nevus,1,train
+PAT_1774,Actinic Keratosis,1,train
+PAT_1777,Actinic Keratosis,1,train
+PAT_178,Basal Cell Carcinoma,1,test
+PAT_1780,Seborrheic Keratosis,2,val
+PAT_1783,Seborrheic Keratosis,3,train
+PAT_1784,Nevus,1,train
+PAT_1786,Actinic Keratosis,2,train
+PAT_1787,Nevus,1,train
+PAT_179,Basal Cell Carcinoma,2,train
+PAT_1790,Actinic Keratosis,3,train
+PAT_1794,Actinic Keratosis,1,train
+PAT_1798,Seborrheic Keratosis,1,train
+PAT_1799,Actinic Keratosis,1,train
+PAT_180,Basal Cell Carcinoma,3,train
+PAT_1800,Seborrheic Keratosis,1,test
+PAT_1801,Nevus,2,train
+PAT_1803,Nevus,1,val
+PAT_1804,Actinic Keratosis,1,test
+PAT_1805,Actinic Keratosis,1,train
+PAT_1807,Actinic Keratosis,1,train
+PAT_181,Actinic Keratosis,4,test
+PAT_1810,Nevus,1,val
+PAT_1811,Actinic Keratosis,1,train
+PAT_1812,Actinic Keratosis,1,train
+PAT_1813,Seborrheic Keratosis,1,val
+PAT_1814,Actinic Keratosis,1,train
+PAT_1818,Actinic Keratosis,2,train
+PAT_1819,Actinic Keratosis,1,train
+PAT_1821,Actinic Keratosis,1,train
+PAT_1822,Actinic Keratosis,1,train
+PAT_1826,Seborrheic Keratosis,1,train
+PAT_183,Squamous Cell Carcinoma,2,train
+PAT_1832,Seborrheic Keratosis,1,train
+PAT_1833,Actinic Keratosis,1,train
+PAT_1837,Nevus,1,val
+PAT_1838,Seborrheic Keratosis,1,train
+PAT_184,Actinic Keratosis,1,train
+PAT_1840,Actinic Keratosis,1,train
+PAT_1842,Nevus,1,train
+PAT_1844,Seborrheic Keratosis,1,val
+PAT_1846,Nevus,1,train
+PAT_1849,Actinic Keratosis,1,train
+PAT_185,Basal Cell Carcinoma,2,val
+PAT_1850,Actinic Keratosis,1,train
+PAT_1854,Actinic Keratosis,1,train
+PAT_1855,Actinic Keratosis,1,train
+PAT_186,Actinic Keratosis,1,train
+PAT_1861,Seborrheic Keratosis,1,val
+PAT_1866,Actinic Keratosis,2,train
+PAT_1869,Actinic Keratosis,1,train
+PAT_187,Basal Cell Carcinoma,1,train
+PAT_1871,Seborrheic Keratosis,1,train
+PAT_1874,Seborrheic Keratosis,1,test
+PAT_1875,Actinic Keratosis,1,train
+PAT_188,Basal Cell Carcinoma,2,train
+PAT_1881,Actinic Keratosis,3,train
+PAT_1882,Seborrheic Keratosis,1,val
+PAT_1884,Actinic Keratosis,1,train
+PAT_1892,Actinic Keratosis,1,train
+PAT_1893,Actinic Keratosis,1,train
+PAT_1899,Actinic Keratosis,1,train
+PAT_190,Basal Cell Carcinoma,1,test
+PAT_1902,Seborrheic Keratosis,1,train
+PAT_1903,Nevus,1,val
+PAT_1904,Nevus,1,train
+PAT_1906,Actinic Keratosis,1,train
+PAT_1907,Nevus,1,train
+PAT_191,Basal Cell Carcinoma,5,val
+PAT_1913,Actinic Keratosis,3,train
+PAT_1914,Nevus,3,train
+PAT_1918,Actinic Keratosis,2,val
+PAT_192,Basal Cell Carcinoma,3,train
+PAT_1922,Seborrheic Keratosis,1,train
+PAT_1926,Seborrheic Keratosis,1,train
+PAT_1928,Nevus,1,train
+PAT_193,Basal Cell Carcinoma,1,train
+PAT_1931,Actinic Keratosis,1,test
+PAT_1933,Seborrheic Keratosis,1,train
+PAT_1934,Nevus,1,train
+PAT_1937,Actinic Keratosis,1,train
+PAT_194,Seborrheic Keratosis,2,train
+PAT_1940,Nevus,2,train
+PAT_1942,Seborrheic Keratosis,3,train
+PAT_1944,Seborrheic Keratosis,1,val
+PAT_1945,Nevus,1,test
+PAT_1946,Seborrheic Keratosis,3,train
+PAT_1947,Nevus,1,train
+PAT_1950,Actinic Keratosis,1,train
+PAT_1951,Actinic Keratosis,1,train
+PAT_1955,Actinic Keratosis,2,train
+PAT_1956,Seborrheic Keratosis,1,val
+PAT_196,Basal Cell Carcinoma,1,train
+PAT_1960,Nevus,1,train
+PAT_1967,Actinic Keratosis,1,test
+PAT_1969,Actinic Keratosis,1,train
+PAT_197,Basal Cell Carcinoma,2,test
+PAT_1971,Seborrheic Keratosis,1,test
+PAT_1975,Seborrheic Keratosis,1,train
+PAT_1976,Actinic Keratosis,1,val
+PAT_1978,Seborrheic Keratosis,2,train
+PAT_198,Basal Cell Carcinoma,2,val
+PAT_1980,Actinic Keratosis,1,test
+PAT_1981,Actinic Keratosis,1,train
+PAT_1983,Actinic Keratosis,1,val
+PAT_1984,Nevus,1,train
+PAT_1988,Seborrheic Keratosis,1,val
+PAT_1989,Actinic Keratosis,1,val
+PAT_1993,Actinic Keratosis,2,test
+PAT_1995,Actinic Keratosis,1,train
+PAT_1998,Actinic Keratosis,1,train
+PAT_20,Squamous Cell Carcinoma,2,val
+PAT_200,Basal Cell Carcinoma,1,val
+PAT_2003,Actinic Keratosis,1,train
+PAT_2006,Nevus,1,test
+PAT_2008,Actinic Keratosis,1,train
+PAT_2009,Actinic Keratosis,1,train
+PAT_201,Actinic Keratosis,2,train
+PAT_2010,Actinic Keratosis,1,test
+PAT_2011,Actinic Keratosis,3,test
+PAT_2013,Nevus,1,train
+PAT_2016,Seborrheic Keratosis,3,train
+PAT_2017,Nevus,1,val
+PAT_2018,Actinic Keratosis,1,train
+PAT_202,Actinic Keratosis,6,train
+PAT_2020,Actinic Keratosis,2,test
+PAT_2021,Actinic Keratosis,1,train
+PAT_2022,Actinic Keratosis,1,train
+PAT_2024,Actinic Keratosis,3,train
+PAT_2025,Actinic Keratosis,1,train
+PAT_2026,Actinic Keratosis,1,train
+PAT_2030,Nevus,1,test
+PAT_2034,Actinic Keratosis,3,test
+PAT_2036,Actinic Keratosis,2,test
+PAT_2039,Actinic Keratosis,1,train
+PAT_204,Basal Cell Carcinoma,1,train
+PAT_2041,Actinic Keratosis,1,train
+PAT_2042,Nevus,1,test
+PAT_2043,Actinic Keratosis,1,test
+PAT_2046,Seborrheic Keratosis,2,test
+PAT_2048,Seborrheic Keratosis,1,train
+PAT_2049,Seborrheic Keratosis,1,train
+PAT_205,Nevus,1,test
+PAT_2050,Actinic Keratosis,1,val
+PAT_2051,Actinic Keratosis,1,train
+PAT_2053,Seborrheic Keratosis,1,train
+PAT_2056,Seborrheic Keratosis,1,train
+PAT_206,Basal Cell Carcinoma,2,test
+PAT_2061,Actinic Keratosis,1,test
+PAT_2062,Nevus,1,train
+PAT_2065,Seborrheic Keratosis,2,test
+PAT_2066,Seborrheic Keratosis,1,train
+PAT_2068,Actinic Keratosis,1,train
+PAT_207,Basal Cell Carcinoma,4,train
+PAT_2070,Actinic Keratosis,1,train
+PAT_2071,Actinic Keratosis,1,train
+PAT_2076,Actinic Keratosis,1,train
+PAT_2077,Actinic Keratosis,1,val
+PAT_2079,Actinic Keratosis,1,test
+PAT_208,Basal Cell Carcinoma,1,val
+PAT_2080,Nevus,1,train
+PAT_2081,Actinic Keratosis,1,train
+PAT_2082,Actinic Keratosis,1,val
+PAT_2085,Seborrheic Keratosis,1,train
+PAT_2088,Nevus,3,train
+PAT_2089,Actinic Keratosis,1,train
+PAT_2090,Actinic Keratosis,1,test
+PAT_2092,Seborrheic Keratosis,1,train
+PAT_2093,Actinic Keratosis,1,test
+PAT_2097,Nevus,1,train
+PAT_2098,Actinic Keratosis,1,train
+PAT_2099,Nevus,1,val
+PAT_21,Basal Cell Carcinoma,2,val
+PAT_210,Actinic Keratosis,1,test
+PAT_2102,Actinic Keratosis,1,test
+PAT_2103,Nevus,1,train
+PAT_2105,Actinic Keratosis,1,train
+PAT_2106,Actinic Keratosis,1,train
+PAT_2107,Actinic Keratosis,1,test
+PAT_2108,Seborrheic Keratosis,1,train
+PAT_2109,Seborrheic Keratosis,1,train
+PAT_211,Basal Cell Carcinoma,4,train
+PAT_2113,Seborrheic Keratosis,1,train
+PAT_2114,Actinic Keratosis,1,train
+PAT_2115,Actinic Keratosis,1,train
+PAT_2116,Actinic Keratosis,1,train
+PAT_2119,Actinic Keratosis,1,train
+PAT_212,Basal Cell Carcinoma,2,val
+PAT_2122,Actinic Keratosis,2,test
+PAT_2123,Actinic Keratosis,1,train
+PAT_2124,Actinic Keratosis,1,train
+PAT_2125,Nevus,1,train
+PAT_2126,Actinic Keratosis,1,train
+PAT_2127,Nevus,1,train
+PAT_2128,Actinic Keratosis,1,val
+PAT_2129,Nevus,1,train
+PAT_213,Nevus,1,val
+PAT_2131,Actinic Keratosis,1,train
+PAT_214,Basal Cell Carcinoma,2,val
+PAT_2140,Actinic Keratosis,2,train
+PAT_2142,Nevus,1,train
+PAT_2143,Actinic Keratosis,1,val
+PAT_2144,Nevus,1,val
+PAT_215,Squamous Cell Carcinoma,2,test
+PAT_2150,Actinic Keratosis,1,test
+PAT_2151,Seborrheic Keratosis,1,train
+PAT_2152,Seborrheic Keratosis,1,train
+PAT_2153,Actinic Keratosis,1,train
+PAT_2154,Actinic Keratosis,1,train
+PAT_2155,Seborrheic Keratosis,1,train
+PAT_2157,Actinic Keratosis,1,train
+PAT_2159,Nevus,1,train
+PAT_216,Squamous Cell Carcinoma,1,train
+PAT_2160,Actinic Keratosis,1,val
+PAT_2161,Nevus,2,train
+PAT_2162,Nevus,1,train
+PAT_217,Basal Cell Carcinoma,5,train
+PAT_219,Squamous Cell Carcinoma,2,train
+PAT_220,Nevus,2,train
+PAT_221,Basal Cell Carcinoma,2,test
+PAT_223,Actinic Keratosis,3,train
+PAT_224,Actinic Keratosis,3,val
+PAT_225,Actinic Keratosis,1,train
+PAT_227,Squamous Cell Carcinoma,1,train
+PAT_228,Basal Cell Carcinoma,2,train
+PAT_229,Basal Cell Carcinoma,2,val
+PAT_230,Actinic Keratosis,5,train
+PAT_233,Melanoma,3,train
+PAT_235,Basal Cell Carcinoma,1,train
+PAT_236,Actinic Keratosis,2,train
+PAT_237,Basal Cell Carcinoma,4,train
+PAT_238,Actinic Keratosis,1,train
+PAT_240,Squamous Cell Carcinoma,1,train
+PAT_241,Basal Cell Carcinoma,2,train
+PAT_242,Basal Cell Carcinoma,3,train
+PAT_243,Basal Cell Carcinoma,2,train
+PAT_244,Nevus,1,train
+PAT_245,Basal Cell Carcinoma,2,train
+PAT_246,Actinic Keratosis,1,train
+PAT_247,Basal Cell Carcinoma,3,train
+PAT_248,Basal Cell Carcinoma,1,test
+PAT_249,Actinic Keratosis,1,train
+PAT_251,Basal Cell Carcinoma,3,train
+PAT_252,Basal Cell Carcinoma,2,train
+PAT_253,Basal Cell Carcinoma,1,train
+PAT_255,Basal Cell Carcinoma,2,train
+PAT_256,Seborrheic Keratosis,2,train
+PAT_257,Basal Cell Carcinoma,2,test
+PAT_258,Basal Cell Carcinoma,1,train
+PAT_259,Squamous Cell Carcinoma,1,train
+PAT_26,Actinic Keratosis,1,train
+PAT_260,Actinic Keratosis,3,train
+PAT_261,Basal Cell Carcinoma,1,train
+PAT_262,Melanoma,2,val
+PAT_263,Actinic Keratosis,4,train
+PAT_264,Basal Cell Carcinoma,2,train
+PAT_265,Basal Cell Carcinoma,4,val
+PAT_267,Basal Cell Carcinoma,6,train
+PAT_268,Basal Cell Carcinoma,1,train
+PAT_269,Basal Cell Carcinoma,2,train
+PAT_27,Actinic Keratosis,1,val
+PAT_270,Actinic Keratosis,7,train
+PAT_271,Squamous Cell Carcinoma,2,train
+PAT_272,Basal Cell Carcinoma,3,val
+PAT_273,Basal Cell Carcinoma,1,train
+PAT_274,Basal Cell Carcinoma,1,test
+PAT_275,Basal Cell Carcinoma,1,train
+PAT_276,Actinic Keratosis,1,val
+PAT_277,Actinic Keratosis,3,train
+PAT_279,Basal Cell Carcinoma,3,test
+PAT_280,Basal Cell Carcinoma,1,train
+PAT_281,Nevus,4,train
+PAT_282,Basal Cell Carcinoma,1,train
+PAT_286,Nevus,3,train
+PAT_287,Actinic Keratosis,1,train
+PAT_288,Basal Cell Carcinoma,1,train
+PAT_289,Actinic Keratosis,2,train
+PAT_29,Nevus,1,train
+PAT_290,Basal Cell Carcinoma,2,train
+PAT_291,Basal Cell Carcinoma,1,train
+PAT_294,Basal Cell Carcinoma,1,train
+PAT_295,Basal Cell Carcinoma,1,test
+PAT_296,Squamous Cell Carcinoma,1,train
+PAT_297,Nevus,1,val
+PAT_299,Basal Cell Carcinoma,2,val
+PAT_30,Basal Cell Carcinoma,1,train
+PAT_300,Actinic Keratosis,4,train
+PAT_301,Basal Cell Carcinoma,1,train
+PAT_302,Basal Cell Carcinoma,3,test
+PAT_303,Basal Cell Carcinoma,2,train
+PAT_304,Actinic Keratosis,2,train
+PAT_305,Basal Cell Carcinoma,1,test
+PAT_306,Actinic Keratosis,3,train
+PAT_307,Actinic Keratosis,3,train
+PAT_308,Basal Cell Carcinoma,1,train
+PAT_309,Basal Cell Carcinoma,3,test
+PAT_31,Basal Cell Carcinoma,2,train
+PAT_311,Squamous Cell Carcinoma,2,test
+PAT_312,Basal Cell Carcinoma,1,train
+PAT_313,Basal Cell Carcinoma,2,train
+PAT_314,Basal Cell Carcinoma,1,train
+PAT_315,Basal Cell Carcinoma,1,train
+PAT_316,Basal Cell Carcinoma,3,train
+PAT_317,Actinic Keratosis,1,train
+PAT_318,Basal Cell Carcinoma,1,train
+PAT_319,Squamous Cell Carcinoma,4,train
+PAT_32,Basal Cell Carcinoma,1,train
+PAT_320,Melanoma,2,test
+PAT_321,Squamous Cell Carcinoma,1,train
+PAT_323,Basal Cell Carcinoma,2,val
+PAT_324,Basal Cell Carcinoma,2,train
+PAT_325,Actinic Keratosis,3,train
+PAT_326,Basal Cell Carcinoma,2,train
+PAT_328,Actinic Keratosis,2,train
+PAT_330,Basal Cell Carcinoma,10,val
+PAT_333,Nevus,3,train
+PAT_334,Basal Cell Carcinoma,1,train
+PAT_336,Basal Cell Carcinoma,1,train
+PAT_337,Basal Cell Carcinoma,4,train
+PAT_338,Squamous Cell Carcinoma,4,train
+PAT_34,Basal Cell Carcinoma,1,train
+PAT_340,Melanoma,2,train
+PAT_341,Nevus,1,train
+PAT_342,Basal Cell Carcinoma,2,train
+PAT_343,Seborrheic Keratosis,1,train
+PAT_344,Nevus,1,val
+PAT_345,Nevus,1,train
+PAT_346,Basal Cell Carcinoma,1,train
+PAT_349,Squamous Cell Carcinoma,2,train
+PAT_35,Basal Cell Carcinoma,1,train
+PAT_351,Basal Cell Carcinoma,1,val
+PAT_352,Nevus,1,test
+PAT_354,Seborrheic Keratosis,5,train
+PAT_355,Basal Cell Carcinoma,2,test
+PAT_356,Basal Cell Carcinoma,3,train
+PAT_357,Basal Cell Carcinoma,1,train
+PAT_358,Basal Cell Carcinoma,1,train
+PAT_359,Actinic Keratosis,5,train
+PAT_36,Basal Cell Carcinoma,2,test
+PAT_360,Squamous Cell Carcinoma,2,train
+PAT_361,Basal Cell Carcinoma,3,val
+PAT_362,Basal Cell Carcinoma,1,train
+PAT_363,Basal Cell Carcinoma,2,val
+PAT_364,Basal Cell Carcinoma,2,train
+PAT_365,Squamous Cell Carcinoma,2,train
+PAT_366,Basal Cell Carcinoma,2,train
+PAT_367,Squamous Cell Carcinoma,1,train
+PAT_368,Basal Cell Carcinoma,3,train
+PAT_369,Squamous Cell Carcinoma,3,train
+PAT_370,Actinic Keratosis,3,val
+PAT_372,Basal Cell Carcinoma,2,test
+PAT_373,Seborrheic Keratosis,3,val
+PAT_374,Actinic Keratosis,1,train
+PAT_375,Basal Cell Carcinoma,3,test
+PAT_377,Squamous Cell Carcinoma,3,train
+PAT_378,Basal Cell Carcinoma,2,train
+PAT_379,Basal Cell Carcinoma,2,train
+PAT_38,Basal Cell Carcinoma,6,val
+PAT_380,Squamous Cell Carcinoma,6,train
+PAT_381,Basal Cell Carcinoma,2,test
+PAT_382,Basal Cell Carcinoma,1,train
+PAT_383,Squamous Cell Carcinoma,2,val
+PAT_384,Actinic Keratosis,1,train
+PAT_385,Basal Cell Carcinoma,2,train
+PAT_386,Basal Cell Carcinoma,5,train
+PAT_387,Squamous Cell Carcinoma,3,train
+PAT_388,Basal Cell Carcinoma,10,train
+PAT_389,Actinic Keratosis,1,test
+PAT_39,Basal Cell Carcinoma,1,train
+PAT_390,Squamous Cell Carcinoma,1,train
+PAT_392,Basal Cell Carcinoma,2,test
+PAT_393,Actinic Keratosis,1,val
+PAT_394,Basal Cell Carcinoma,2,train
+PAT_395,Squamous Cell Carcinoma,1,train
+PAT_396,Basal Cell Carcinoma,1,train
+PAT_397,Squamous Cell Carcinoma,3,train
+PAT_398,Nevus,1,train
+PAT_40,Basal Cell Carcinoma,3,test
+PAT_400,Squamous Cell Carcinoma,1,train
+PAT_401,Actinic Keratosis,1,train
+PAT_402,Basal Cell Carcinoma,1,val
+PAT_403,Nevus,1,train
+PAT_404,Actinic Keratosis,1,train
+PAT_406,Basal Cell Carcinoma,5,train
+PAT_407,Basal Cell Carcinoma,1,test
+PAT_408,Actinic Keratosis,1,train
+PAT_409,Actinic Keratosis,3,train
+PAT_41,Basal Cell Carcinoma,1,train
+PAT_411,Seborrheic Keratosis,1,train
+PAT_412,Actinic Keratosis,2,val
+PAT_413,Basal Cell Carcinoma,2,train
+PAT_414,Actinic Keratosis,1,train
+PAT_416,Basal Cell Carcinoma,2,train
+PAT_417,Nevus,2,train
+PAT_419,Basal Cell Carcinoma,4,train
+PAT_42,Basal Cell Carcinoma,1,train
+PAT_420,Actinic Keratosis,2,train
+PAT_422,Basal Cell Carcinoma,2,train
+PAT_423,Basal Cell Carcinoma,2,test
+PAT_425,Nevus,1,val
+PAT_426,Basal Cell Carcinoma,1,train
+PAT_428,Actinic Keratosis,1,train
+PAT_43,Basal Cell Carcinoma,2,val
+PAT_430,Basal Cell Carcinoma,3,train
+PAT_431,Basal Cell Carcinoma,1,test
+PAT_432,Basal Cell Carcinoma,2,val
+PAT_433,Melanoma,2,val
+PAT_435,Basal Cell Carcinoma,1,test
+PAT_437,Actinic Keratosis,1,train
+PAT_439,Nevus,3,train
+PAT_44,Actinic Keratosis,1,val
+PAT_441,Basal Cell Carcinoma,3,val
+PAT_442,Basal Cell Carcinoma,1,val
+PAT_443,Basal Cell Carcinoma,1,train
+PAT_445,Basal Cell Carcinoma,1,train
+PAT_447,Squamous Cell Carcinoma,1,test
+PAT_448,Squamous Cell Carcinoma,1,val
+PAT_45,Actinic Keratosis,2,train
+PAT_451,Basal Cell Carcinoma,2,train
+PAT_452,Basal Cell Carcinoma,1,train
+PAT_453,Basal Cell Carcinoma,1,test
+PAT_454,Squamous Cell Carcinoma,1,train
+PAT_455,Basal Cell Carcinoma,1,train
+PAT_456,Basal Cell Carcinoma,2,val
+PAT_457,Actinic Keratosis,2,train
+PAT_458,Basal Cell Carcinoma,1,test
+PAT_459,Basal Cell Carcinoma,1,train
+PAT_46,Basal Cell Carcinoma,6,train
+PAT_460,Basal Cell Carcinoma,5,train
+PAT_461,Basal Cell Carcinoma,1,test
+PAT_462,Basal Cell Carcinoma,1,train
+PAT_463,Basal Cell Carcinoma,1,val
+PAT_464,Basal Cell Carcinoma,4,test
+PAT_465,Nevus,2,test
+PAT_466,Basal Cell Carcinoma,1,test
+PAT_467,Basal Cell Carcinoma,3,train
+PAT_468,Basal Cell Carcinoma,2,test
+PAT_470,Basal Cell Carcinoma,1,test
+PAT_471,Nevus,3,train
+PAT_472,Basal Cell Carcinoma,1,val
+PAT_473,Basal Cell Carcinoma,2,train
+PAT_474,Basal Cell Carcinoma,1,val
+PAT_475,Basal Cell Carcinoma,1,train
+PAT_477,Basal Cell Carcinoma,1,test
+PAT_478,Basal Cell Carcinoma,4,train
+PAT_479,Basal Cell Carcinoma,3,val
+PAT_48,Squamous Cell Carcinoma,2,train
+PAT_480,Basal Cell Carcinoma,1,train
+PAT_481,Basal Cell Carcinoma,1,train
+PAT_482,Squamous Cell Carcinoma,2,train
+PAT_483,Basal Cell Carcinoma,1,test
+PAT_484,Actinic Keratosis,1,train
+PAT_485,Basal Cell Carcinoma,1,train
+PAT_486,Melanoma,2,train
+PAT_487,Squamous Cell Carcinoma,1,train
+PAT_488,Basal Cell Carcinoma,1,train
+PAT_489,Basal Cell Carcinoma,1,test
+PAT_49,Squamous Cell Carcinoma,1,val
+PAT_490,Squamous Cell Carcinoma,2,train
+PAT_491,Squamous Cell Carcinoma,1,train
+PAT_492,Squamous Cell Carcinoma,6,train
+PAT_493,Actinic Keratosis,2,val
+PAT_494,Basal Cell Carcinoma,1,test
+PAT_495,Melanoma,1,train
+PAT_497,Squamous Cell Carcinoma,1,train
+PAT_498,Actinic Keratosis,1,train
+PAT_499,Basal Cell Carcinoma,1,train
+PAT_50,Basal Cell Carcinoma,2,test
+PAT_500,Squamous Cell Carcinoma,1,train
+PAT_503,Basal Cell Carcinoma,3,train
+PAT_504,Seborrheic Keratosis,1,val
+PAT_505,Basal Cell Carcinoma,2,train
+PAT_506,Basal Cell Carcinoma,1,test
+PAT_507,Basal Cell Carcinoma,1,val
+PAT_51,Squamous Cell Carcinoma,1,test
+PAT_510,Basal Cell Carcinoma,2,val
+PAT_512,Basal Cell Carcinoma,1,train
+PAT_513,Basal Cell Carcinoma,3,train
+PAT_514,Basal Cell Carcinoma,5,train
+PAT_516,Basal Cell Carcinoma,1,test
+PAT_517,Basal Cell Carcinoma,2,train
+PAT_519,Basal Cell Carcinoma,1,train
+PAT_520,Basal Cell Carcinoma,2,train
+PAT_521,Basal Cell Carcinoma,1,train
+PAT_522,Basal Cell Carcinoma,5,train
+PAT_523,Basal Cell Carcinoma,2,test
+PAT_524,Basal Cell Carcinoma,1,test
+PAT_526,Basal Cell Carcinoma,2,val
+PAT_527,Squamous Cell Carcinoma,2,train
+PAT_528,Actinic Keratosis,3,train
+PAT_529,Basal Cell Carcinoma,1,train
+PAT_53,Basal Cell Carcinoma,7,train
+PAT_530,Basal Cell Carcinoma,1,train
+PAT_531,Basal Cell Carcinoma,3,train
+PAT_532,Seborrheic Keratosis,2,train
+PAT_534,Basal Cell Carcinoma,1,train
+PAT_535,Basal Cell Carcinoma,3,val
+PAT_536,Actinic Keratosis,1,train
+PAT_537,Squamous Cell Carcinoma,2,test
+PAT_539,Actinic Keratosis,2,val
+PAT_54,Basal Cell Carcinoma,1,test
+PAT_540,Basal Cell Carcinoma,1,train
+PAT_541,Actinic Keratosis,1,val
+PAT_544,Seborrheic Keratosis,2,train
+PAT_545,Basal Cell Carcinoma,3,val
+PAT_547,Basal Cell Carcinoma,2,train
+PAT_549,Squamous Cell Carcinoma,2,train
+PAT_55,Basal Cell Carcinoma,2,train
+PAT_550,Basal Cell Carcinoma,1,train
+PAT_551,Basal Cell Carcinoma,1,train
+PAT_553,Basal Cell Carcinoma,1,train
+PAT_554,Basal Cell Carcinoma,1,train
+PAT_557,Basal Cell Carcinoma,1,train
+PAT_558,Basal Cell Carcinoma,1,train
+PAT_559,Basal Cell Carcinoma,1,val
+PAT_56,Squamous Cell Carcinoma,3,val
+PAT_561,Basal Cell Carcinoma,3,train
+PAT_562,Basal Cell Carcinoma,1,train
+PAT_563,Basal Cell Carcinoma,1,train
+PAT_564,Basal Cell Carcinoma,2,train
+PAT_565,Basal Cell Carcinoma,1,test
+PAT_566,Actinic Keratosis,2,train
+PAT_567,Basal Cell Carcinoma,3,train
+PAT_568,Basal Cell Carcinoma,1,train
+PAT_57,Actinic Keratosis,1,train
+PAT_570,Basal Cell Carcinoma,4,train
+PAT_571,Actinic Keratosis,2,train
+PAT_572,Basal Cell Carcinoma,1,train
+PAT_573,Basal Cell Carcinoma,2,test
+PAT_574,Squamous Cell Carcinoma,1,test
+PAT_575,Basal Cell Carcinoma,2,val
+PAT_576,Basal Cell Carcinoma,1,test
+PAT_577,Nevus,1,train
+PAT_579,Actinic Keratosis,3,train
+PAT_58,Basal Cell Carcinoma,2,train
+PAT_580,Basal Cell Carcinoma,1,train
+PAT_581,Basal Cell Carcinoma,1,train
+PAT_582,Basal Cell Carcinoma,1,val
+PAT_583,Basal Cell Carcinoma,1,train
+PAT_585,Actinic Keratosis,2,val
+PAT_587,Actinic Keratosis,2,train
+PAT_59,Basal Cell Carcinoma,4,train
+PAT_590,Squamous Cell Carcinoma,1,train
+PAT_591,Squamous Cell Carcinoma,1,val
+PAT_593,Basal Cell Carcinoma,1,test
+PAT_595,Actinic Keratosis,1,train
+PAT_596,Basal Cell Carcinoma,2,test
+PAT_597,Basal Cell Carcinoma,1,train
+PAT_598,Basal Cell Carcinoma,1,train
+PAT_599,Actinic Keratosis,1,train
+PAT_600,Squamous Cell Carcinoma,2,test
+PAT_601,Basal Cell Carcinoma,2,test
+PAT_604,Basal Cell Carcinoma,1,train
+PAT_605,Squamous Cell Carcinoma,1,test
+PAT_609,Basal Cell Carcinoma,2,val
+PAT_61,Nevus,1,train
+PAT_610,Basal Cell Carcinoma,1,val
+PAT_611,Melanoma,1,train
+PAT_612,Squamous Cell Carcinoma,1,train
+PAT_613,Basal Cell Carcinoma,1,train
+PAT_614,Melanoma,1,train
+PAT_615,Nevus,2,train
+PAT_616,Seborrheic Keratosis,1,train
+PAT_618,Basal Cell Carcinoma,1,train
+PAT_619,Basal Cell Carcinoma,1,test
+PAT_62,Basal Cell Carcinoma,1,train
+PAT_620,Basal Cell Carcinoma,1,train
+PAT_621,Nevus,4,train
+PAT_622,Melanoma,1,train
+PAT_624,Basal Cell Carcinoma,2,train
+PAT_625,Seborrheic Keratosis,2,test
+PAT_626,Basal Cell Carcinoma,2,val
+PAT_627,Nevus,2,val
+PAT_628,Basal Cell Carcinoma,1,train
+PAT_629,Squamous Cell Carcinoma,1,train
+PAT_63,Basal Cell Carcinoma,6,train
+PAT_630,Squamous Cell Carcinoma,1,train
+PAT_631,Basal Cell Carcinoma,2,val
+PAT_632,Squamous Cell Carcinoma,3,val
+PAT_633,Squamous Cell Carcinoma,2,test
+PAT_636,Basal Cell Carcinoma,2,train
+PAT_637,Squamous Cell Carcinoma,3,train
+PAT_638,Actinic Keratosis,1,val
+PAT_639,Actinic Keratosis,3,test
+PAT_640,Basal Cell Carcinoma,1,train
+PAT_641,Nevus,2,train
+PAT_645,Basal Cell Carcinoma,10,train
+PAT_646,Basal Cell Carcinoma,1,train
+PAT_649,Seborrheic Keratosis,1,test
+PAT_65,Actinic Keratosis,1,train
+PAT_650,Basal Cell Carcinoma,3,train
+PAT_651,Actinic Keratosis,1,test
+PAT_652,Basal Cell Carcinoma,1,train
+PAT_653,Squamous Cell Carcinoma,1,train
+PAT_654,Basal Cell Carcinoma,1,val
+PAT_655,Actinic Keratosis,2,val
+PAT_656,Melanoma,2,train
+PAT_657,Basal Cell Carcinoma,1,train
+PAT_658,Basal Cell Carcinoma,1,test
+PAT_660,Basal Cell Carcinoma,2,train
+PAT_662,Basal Cell Carcinoma,2,train
+PAT_663,Squamous Cell Carcinoma,1,test
+PAT_664,Squamous Cell Carcinoma,1,train
+PAT_665,Nevus,3,test
+PAT_666,Basal Cell Carcinoma,3,test
+PAT_667,Basal Cell Carcinoma,1,train
+PAT_668,Basal Cell Carcinoma,1,train
+PAT_669,Basal Cell Carcinoma,1,train
+PAT_67,Basal Cell Carcinoma,2,val
+PAT_672,Nevus,1,train
+PAT_673,Actinic Keratosis,2,train
+PAT_674,Basal Cell Carcinoma,1,train
+PAT_677,Squamous Cell Carcinoma,6,test
+PAT_678,Squamous Cell Carcinoma,2,val
+PAT_679,Squamous Cell Carcinoma,2,test
+PAT_68,Basal Cell Carcinoma,1,val
+PAT_680,Melanoma,2,train
+PAT_681,Basal Cell Carcinoma,1,test
+PAT_682,Basal Cell Carcinoma,3,train
+PAT_683,Basal Cell Carcinoma,3,val
+PAT_684,Basal Cell Carcinoma,4,train
+PAT_686,Squamous Cell Carcinoma,1,train
+PAT_687,Basal Cell Carcinoma,1,train
+PAT_688,Basal Cell Carcinoma,1,train
+PAT_689,Squamous Cell Carcinoma,2,train
+PAT_69,Actinic Keratosis,2,train
+PAT_690,Basal Cell Carcinoma,3,train
+PAT_691,Basal Cell Carcinoma,7,train
+PAT_692,Basal Cell Carcinoma,1,test
+PAT_693,Actinic Keratosis,1,train
+PAT_695,Basal Cell Carcinoma,1,train
+PAT_697,Basal Cell Carcinoma,1,train
+PAT_698,Actinic Keratosis,3,train
+PAT_699,Basal Cell Carcinoma,1,train
+PAT_70,Melanoma,2,train
+PAT_701,Seborrheic Keratosis,2,test
+PAT_703,Basal Cell Carcinoma,1,test
+PAT_704,Actinic Keratosis,2,train
+PAT_705,Actinic Keratosis,2,train
+PAT_707,Actinic Keratosis,1,train
+PAT_708,Basal Cell Carcinoma,1,train
+PAT_709,Basal Cell Carcinoma,1,train
+PAT_71,Actinic Keratosis,3,train
+PAT_710,Melanoma,1,train
+PAT_711,Basal Cell Carcinoma,3,train
+PAT_712,Squamous Cell Carcinoma,1,train
+PAT_713,Squamous Cell Carcinoma,1,train
+PAT_714,Squamous Cell Carcinoma,2,val
+PAT_715,Actinic Keratosis,4,val
+PAT_716,Basal Cell Carcinoma,1,train
+PAT_717,Melanoma,1,train
+PAT_718,Basal Cell Carcinoma,1,test
+PAT_719,Melanoma,2,train
+PAT_72,Nevus,2,train
+PAT_720,Basal Cell Carcinoma,1,train
+PAT_721,Basal Cell Carcinoma,2,val
+PAT_722,Basal Cell Carcinoma,2,train
+PAT_723,Basal Cell Carcinoma,1,test
+PAT_724,Basal Cell Carcinoma,1,train
+PAT_726,Basal Cell Carcinoma,2,train
+PAT_727,Basal Cell Carcinoma,2,train
+PAT_728,Actinic Keratosis,2,test
+PAT_729,Basal Cell Carcinoma,1,train
+PAT_73,Basal Cell Carcinoma,2,train
+PAT_730,Basal Cell Carcinoma,2,train
+PAT_731,Actinic Keratosis,1,val
+PAT_734,Basal Cell Carcinoma,1,train
+PAT_735,Actinic Keratosis,2,train
+PAT_736,Basal Cell Carcinoma,1,train
+PAT_737,Basal Cell Carcinoma,2,train
+PAT_738,Basal Cell Carcinoma,4,train
+PAT_739,Actinic Keratosis,1,train
+PAT_74,Basal Cell Carcinoma,1,train
+PAT_741,Basal Cell Carcinoma,2,train
+PAT_742,Actinic Keratosis,3,train
+PAT_744,Basal Cell Carcinoma,2,val
+PAT_745,Basal Cell Carcinoma,1,train
+PAT_746,Melanoma,1,train
+PAT_747,Actinic Keratosis,7,train
+PAT_749,Actinic Keratosis,2,train
+PAT_75,Squamous Cell Carcinoma,3,val
+PAT_751,Squamous Cell Carcinoma,1,train
+PAT_752,Basal Cell Carcinoma,1,train
+PAT_753,Actinic Keratosis,5,train
+PAT_754,Melanoma,1,test
+PAT_755,Actinic Keratosis,1,train
+PAT_756,Nevus,3,train
+PAT_757,Actinic Keratosis,3,val
+PAT_758,Basal Cell Carcinoma,1,train
+PAT_759,Nevus,3,test
+PAT_76,Squamous Cell Carcinoma,1,train
+PAT_760,Basal Cell Carcinoma,1,train
+PAT_761,Basal Cell Carcinoma,1,train
+PAT_762,Basal Cell Carcinoma,1,train
+PAT_763,Actinic Keratosis,1,train
+PAT_764,Basal Cell Carcinoma,1,train
+PAT_766,Basal Cell Carcinoma,2,train
+PAT_767,Basal Cell Carcinoma,1,train
+PAT_768,Squamous Cell Carcinoma,2,train
+PAT_770,Squamous Cell Carcinoma,1,test
+PAT_771,Squamous Cell Carcinoma,6,train
+PAT_773,Basal Cell Carcinoma,1,test
+PAT_774,Basal Cell Carcinoma,1,train
+PAT_775,Basal Cell Carcinoma,1,train
+PAT_776,Basal Cell Carcinoma,1,train
+PAT_778,Basal Cell Carcinoma,2,train
+PAT_779,Basal Cell Carcinoma,1,train
+PAT_78,Basal Cell Carcinoma,2,test
+PAT_780,Squamous Cell Carcinoma,1,train
+PAT_781,Basal Cell Carcinoma,1,val
+PAT_782,Basal Cell Carcinoma,3,train
+PAT_785,Basal Cell Carcinoma,1,train
+PAT_786,Basal Cell Carcinoma,1,train
+PAT_787,Squamous Cell Carcinoma,1,train
+PAT_788,Basal Cell Carcinoma,2,train
+PAT_789,Basal Cell Carcinoma,1,test
+PAT_79,Basal Cell Carcinoma,2,train
+PAT_791,Nevus,1,train
+PAT_792,Actinic Keratosis,2,train
+PAT_793,Nevus,3,train
+PAT_794,Basal Cell Carcinoma,1,train
+PAT_795,Actinic Keratosis,1,train
+PAT_796,Basal Cell Carcinoma,4,train
+PAT_797,Basal Cell Carcinoma,1,train
+PAT_798,Actinic Keratosis,4,train
+PAT_799,Actinic Keratosis,1,val
+PAT_8,Basal Cell Carcinoma,1,val
+PAT_800,Squamous Cell Carcinoma,2,train
+PAT_801,Melanoma,2,test
+PAT_802,Actinic Keratosis,2,train
+PAT_803,Basal Cell Carcinoma,1,train
+PAT_805,Squamous Cell Carcinoma,2,val
+PAT_806,Basal Cell Carcinoma,3,train
+PAT_809,Squamous Cell Carcinoma,3,train
+PAT_81,Actinic Keratosis,1,val
+PAT_810,Basal Cell Carcinoma,2,train
+PAT_812,Basal Cell Carcinoma,1,train
+PAT_813,Basal Cell Carcinoma,1,train
+PAT_814,Basal Cell Carcinoma,2,train
+PAT_815,Basal Cell Carcinoma,4,train
+PAT_816,Basal Cell Carcinoma,1,val
+PAT_817,Basal Cell Carcinoma,3,train
+PAT_818,Basal Cell Carcinoma,1,train
+PAT_819,Seborrheic Keratosis,1,val
+PAT_82,Basal Cell Carcinoma,3,train
+PAT_821,Basal Cell Carcinoma,1,test
+PAT_822,Basal Cell Carcinoma,4,test
+PAT_823,Basal Cell Carcinoma,3,train
+PAT_824,Actinic Keratosis,2,train
+PAT_826,Basal Cell Carcinoma,1,test
+PAT_827,Basal Cell Carcinoma,4,train
+PAT_829,Basal Cell Carcinoma,1,train
+PAT_83,Basal Cell Carcinoma,2,train
+PAT_830,Basal Cell Carcinoma,3,train
+PAT_831,Actinic Keratosis,2,train
+PAT_832,Basal Cell Carcinoma,1,train
+PAT_833,Basal Cell Carcinoma,1,val
+PAT_834,Squamous Cell Carcinoma,5,test
+PAT_835,Basal Cell Carcinoma,3,train
+PAT_837,Basal Cell Carcinoma,3,train
+PAT_838,Basal Cell Carcinoma,4,train
+PAT_839,Nevus,1,test
+PAT_84,Basal Cell Carcinoma,1,train
+PAT_840,Basal Cell Carcinoma,1,train
+PAT_841,Basal Cell Carcinoma,1,train
+PAT_842,Basal Cell Carcinoma,2,train
+PAT_844,Squamous Cell Carcinoma,1,train
+PAT_845,Basal Cell Carcinoma,1,train
+PAT_846,Actinic Keratosis,2,val
+PAT_847,Basal Cell Carcinoma,1,train
+PAT_849,Basal Cell Carcinoma,2,train
+PAT_85,Actinic Keratosis,3,train
+PAT_850,Basal Cell Carcinoma,1,train
+PAT_851,Actinic Keratosis,4,train
+PAT_852,Basal Cell Carcinoma,1,train
+PAT_853,Basal Cell Carcinoma,1,train
+PAT_854,Basal Cell Carcinoma,1,train
+PAT_856,Basal Cell Carcinoma,2,train
+PAT_857,Squamous Cell Carcinoma,2,train
+PAT_858,Basal Cell Carcinoma,3,train
+PAT_859,Squamous Cell Carcinoma,1,train
+PAT_86,Actinic Keratosis,5,train
+PAT_860,Squamous Cell Carcinoma,2,train
+PAT_861,Actinic Keratosis,1,test
+PAT_862,Actinic Keratosis,1,train
+PAT_864,Basal Cell Carcinoma,3,test
+PAT_866,Basal Cell Carcinoma,1,train
+PAT_867,Basal Cell Carcinoma,2,train
+PAT_868,Actinic Keratosis,1,train
+PAT_87,Seborrheic Keratosis,3,train
+PAT_872,Actinic Keratosis,3,train
+PAT_873,Actinic Keratosis,1,train
+PAT_874,Squamous Cell Carcinoma,4,train
+PAT_875,Basal Cell Carcinoma,3,train
+PAT_876,Basal Cell Carcinoma,4,train
+PAT_877,Basal Cell Carcinoma,3,train
+PAT_878,Actinic Keratosis,1,test
+PAT_879,Basal Cell Carcinoma,1,test
+PAT_88,Basal Cell Carcinoma,1,val
+PAT_880,Actinic Keratosis,3,val
+PAT_881,Squamous Cell Carcinoma,1,train
+PAT_882,Squamous Cell Carcinoma,2,train
+PAT_883,Actinic Keratosis,1,train
+PAT_884,Melanoma,1,train
+PAT_885,Basal Cell Carcinoma,2,train
+PAT_886,Actinic Keratosis,3,train
+PAT_887,Basal Cell Carcinoma,1,test
+PAT_888,Squamous Cell Carcinoma,1,val
+PAT_889,Actinic Keratosis,1,train
+PAT_89,Basal Cell Carcinoma,1,train
+PAT_890,Melanoma,3,val
+PAT_891,Actinic Keratosis,2,train
+PAT_892,Nevus,1,train
+PAT_893,Seborrheic Keratosis,1,train
+PAT_894,Basal Cell Carcinoma,2,val
+PAT_895,Melanoma,1,train
+PAT_896,Basal Cell Carcinoma,1,train
+PAT_897,Basal Cell Carcinoma,2,train
+PAT_898,Nevus,1,train
+PAT_899,Basal Cell Carcinoma,1,test
+PAT_9,Actinic Keratosis,1,train
+PAT_90,Basal Cell Carcinoma,4,train
+PAT_900,Nevus,1,train
+PAT_901,Basal Cell Carcinoma,1,test
+PAT_902,Melanoma,1,test
+PAT_903,Basal Cell Carcinoma,2,train
+PAT_904,Basal Cell Carcinoma,3,train
+PAT_905,Basal Cell Carcinoma,1,test
+PAT_906,Basal Cell Carcinoma,2,train
+PAT_908,Squamous Cell Carcinoma,1,test
+PAT_91,Actinic Keratosis,5,test
+PAT_911,Basal Cell Carcinoma,1,train
+PAT_912,Basal Cell Carcinoma,1,test
+PAT_913,Basal Cell Carcinoma,1,train
+PAT_914,Actinic Keratosis,2,train
+PAT_915,Basal Cell Carcinoma,1,val
+PAT_917,Nevus,1,val
+PAT_918,Basal Cell Carcinoma,2,train
+PAT_919,Basal Cell Carcinoma,2,test
+PAT_92,Actinic Keratosis,1,val
+PAT_920,Basal Cell Carcinoma,2,train
+PAT_921,Actinic Keratosis,1,train
+PAT_923,Basal Cell Carcinoma,2,train
+PAT_924,Squamous Cell Carcinoma,2,val
+PAT_926,Basal Cell Carcinoma,1,train
+PAT_927,Basal Cell Carcinoma,2,train
+PAT_928,Basal Cell Carcinoma,1,train
+PAT_93,Seborrheic Keratosis,6,train
+PAT_930,Basal Cell Carcinoma,1,test
+PAT_931,Actinic Keratosis,3,train
+PAT_933,Squamous Cell Carcinoma,1,train
+PAT_934,Squamous Cell Carcinoma,2,train
+PAT_935,Basal Cell Carcinoma,5,train
+PAT_936,Melanoma,1,test
+PAT_937,Actinic Keratosis,1,test
+PAT_938,Basal Cell Carcinoma,2,train
+PAT_939,Seborrheic Keratosis,1,val
+PAT_940,Squamous Cell Carcinoma,2,train
+PAT_942,Actinic Keratosis,1,train
+PAT_943,Basal Cell Carcinoma,2,train
+PAT_944,Basal Cell Carcinoma,2,test
+PAT_945,Squamous Cell Carcinoma,1,train
+PAT_946,Basal Cell Carcinoma,1,train
+PAT_947,Basal Cell Carcinoma,1,test
+PAT_948,Basal Cell Carcinoma,3,train
+PAT_949,Melanoma,1,train
+PAT_950,Basal Cell Carcinoma,2,train
+PAT_951,Actinic Keratosis,1,train
+PAT_952,Basal Cell Carcinoma,1,train
+PAT_953,Squamous Cell Carcinoma,2,train
+PAT_954,Basal Cell Carcinoma,1,test
+PAT_955,Basal Cell Carcinoma,1,train
+PAT_957,Nevus,1,train
+PAT_958,Nevus,1,train
+PAT_959,Basal Cell Carcinoma,1,train
+PAT_96,Basal Cell Carcinoma,1,train
+PAT_960,Actinic Keratosis,1,train
+PAT_961,Actinic Keratosis,1,train
+PAT_962,Basal Cell Carcinoma,2,train
+PAT_963,Squamous Cell Carcinoma,3,train
+PAT_964,Basal Cell Carcinoma,1,train
+PAT_966,Melanoma,3,train
+PAT_967,Basal Cell Carcinoma,1,train
+PAT_968,Basal Cell Carcinoma,1,val
+PAT_97,Basal Cell Carcinoma,2,train
+PAT_970,Basal Cell Carcinoma,1,train
+PAT_971,Actinic Keratosis,1,train
+PAT_972,Melanoma,1,test
+PAT_973,Actinic Keratosis,1,val
+PAT_974,Basal Cell Carcinoma,2,test
+PAT_975,Nevus,2,train
+PAT_976,Basal Cell Carcinoma,2,train
+PAT_978,Squamous Cell Carcinoma,2,train
+PAT_98,Basal Cell Carcinoma,1,train
+PAT_980,Basal Cell Carcinoma,2,train
+PAT_981,Basal Cell Carcinoma,2,val
+PAT_982,Actinic Keratosis,1,train
+PAT_983,Actinic Keratosis,2,train
+PAT_985,Basal Cell Carcinoma,2,train
+PAT_986,Basal Cell Carcinoma,1,val
+PAT_987,Actinic Keratosis,2,train
+PAT_988,Basal Cell Carcinoma,2,train
+PAT_989,Squamous Cell Carcinoma,1,train
+PAT_99,Basal Cell Carcinoma,1,train
+PAT_990,Squamous Cell Carcinoma,2,test
+PAT_992,Actinic Keratosis,1,train
+PAT_993,Basal Cell Carcinoma,1,train
+PAT_994,Basal Cell Carcinoma,2,train
+PAT_995,Melanoma,2,train
+PAT_996,Actinic Keratosis,3,train
+PAT_997,Actinic Keratosis,1,test
+PAT_998,Seborrheic Keratosis,1,train
+PAT_999,Actinic Keratosis,4,train

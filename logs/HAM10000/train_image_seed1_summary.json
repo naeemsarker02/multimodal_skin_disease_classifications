@@ -1,0 +1,7 @@
+{
+  "dataset": "HAM10000",
+  "branch": "image",
+  "seed": 1,
+  "best_val_macro_f1": 0.6882331291613664,
+  "checkpoint_path": "/kaggle/working/logs/HAM10000/checkpoints/image_seed1_best.pt"
+}

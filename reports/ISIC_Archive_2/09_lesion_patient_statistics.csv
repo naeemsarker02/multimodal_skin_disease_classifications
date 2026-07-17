@@ -1,0 +1,9 @@
+metric,value
+n_rows,25331
+n_rows_with_lesion_id,23664
+n_rows_with_patient_id,417
+n_unique_lesions,12264
+n_unique_patients,369
+images_per_lesion_max,31
+lesions_with_multiple_images,5059
+lesions_with_inconsistent_diagnosis_3,0

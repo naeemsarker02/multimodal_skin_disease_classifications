@@ -1,0 +1,13 @@
+2026-07-09 00:23:36 | INFO     | pad_ufes20_eda | ======================================================================
+2026-07-09 00:23:36 | INFO     | pad_ufes20_eda | PAD-UFES-20 EDA - START
+2026-07-09 00:23:36 | INFO     | pad_ufes20_eda | ======================================================================
+2026-07-09 00:23:36 | INFO     | pad_ufes20_eda | 01_class_distribution done: {'Basal Cell Carcinoma': 586, 'Actinic Keratosis': 513, 'Nevus': 167, 'Seborrheic Keratosis': 167, 'Squamous Cell Carcinoma': 135, 'Melanoma': 38}
+2026-07-09 00:23:38 | INFO     | pad_ufes20_eda | 02_demographics (+ symptoms, lifestyle) done
+2026-07-09 00:23:38 | INFO     | pad_ufes20_eda | 03_fitzpatrick_distribution done
+2026-07-09 00:23:39 | INFO     | pad_ufes20_eda | 04_missing_value_report done
+2026-07-09 00:23:41 | INFO     | pad_ufes20_eda | 05_image_dimensions done: {'width': {'count': 250.0, 'mean': 915.316, 'std': 501.9865517486959, 'min': 167.0, '25%': 548.5, '50%': 783.0, '75%': 1207.75, 'max': 3120.0}, 'height': {'count': 250.0, 'mean': 915.092, 'std': 502.2313139449065, 'min': 167.0, '25%': 548.5, '50%': 783.0, '75%': 1207.75, 'max': 3120.0}, 'aspect_ratio': {'count': 250.0, 'mean': 1.0006460000000001, 'std': 0.010401768655601737, 'min': 0.9649, '25%': 1.0, '50%': 1.0, '75%': 1.0, 'max': 1.1568}, 'size_kb': {'count': 250.0, 'mean': 1422.69392, 'std': 1493.4128663096722, 'min': 44.16, '25%': 478.15, '50%': 950.885, '75%': 1879.6325, 'max': 12428.04}}
+2026-07-09 00:23:44 | INFO     | pad_ufes20_eda | 06_sample_image_grid done
+2026-07-09 00:23:45 | INFO     | pad_ufes20_eda | 07_split_balance_check done
+2026-07-09 00:23:45 | INFO     | pad_ufes20_eda | ======================================================================
+2026-07-09 00:23:45 | INFO     | pad_ufes20_eda | PAD-UFES-20 EDA - COMPLETE
+2026-07-09 00:23:45 | INFO     | pad_ufes20_eda | ======================================================================

@@ -1,0 +1,12 @@
+metric,value
+n_unique_patients,1373.0
+n_unique_lesions,1641.0
+n_total_images,2298.0
+images_per_patient_min,1.0
+images_per_patient_max,10.0
+images_per_patient_mean,1.67
+images_per_patient_median,1.0
+lesions_per_patient_min,1.0
+lesions_per_patient_max,8.0
+lesions_per_patient_mean,1.38
+patients_with_multiple_lesions,355.0

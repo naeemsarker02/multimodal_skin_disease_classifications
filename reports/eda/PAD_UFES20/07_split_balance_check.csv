@@ -1,0 +1,7 @@
+disease_label,train,val,test
+Actinic Keratosis,513,108,109
+Basal Cell Carcinoma,586,126,133
+Melanoma,38,6,8
+Nevus,167,42,35
+Seborrheic Keratosis,167,31,37
+Squamous Cell Carcinoma,135,25,32

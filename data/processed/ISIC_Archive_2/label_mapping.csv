@@ -1,0 +1,14 @@
+original_label,standardized_label,reason
+solar or actinic keratosis,Actinic Keratosis,ISIC Archive 2's diagnosis_3 wording for the same disease as Archive 1's 'actinic keratosis' and PAD-UFES-20's ACK.
+basal cell carcinoma,Basal Cell Carcinoma,Same disease as PAD-UFES-20/HAM10000's BCC code; standardized name shared across sources.
+"squamous cell carcinoma, nos",Squamous Cell Carcinoma,ISIC Archive 2's diagnosis_3 wording ('NOS' = not otherwise specified) for the same disease as PAD-UFES-20's SCC.
+nevus,Nevus,Same disease as PAD-UFES-20's NEV / HAM10000's nv code; standardized name shared across sources.
+epidermal nevus,Nevus,Distinct histological variant of nevus; grouped with Nevus given only 1 occurrence in the source data.
+atypical melanocytic neoplasm,Nevus,Grouped with Nevus (atypical/dysplastic nevus spectrum) given only 1 occurrence in the source data.
+seborrheic keratosis,Seborrheic Keratosis,Same disease as PAD-UFES-20's SEK code; standardized name shared across sources.
+"melanoma, nos",Melanoma,ISIC Archive 2's diagnosis_3 wording for Melanoma; subtype detail (NOS) dropped for cross-source consistency.
+melanoma in situ,Melanoma,"Melanoma subtype (non-invasive); collapsed into Melanoma for cross-source consistency, since PAD-UFES-20/HAM10000 do not distinguish invasion stage."
+melanoma invasive,Melanoma,"Melanoma subtype (invasive); collapsed into Melanoma for cross-source consistency, since PAD-UFES-20/HAM10000 do not distinguish invasion stage."
+dermatofibroma,Dermatofibroma,Same disease as HAM10000's df code; standardized name shared across sources.
+pigmented benign keratosis,Pigmented Benign Keratosis,Distinct from Seborrheic Keratosis in both ISIC archives' own taxonomy (they list both categories separately); kept distinct rather than merged.
+solar lentigo,Solar Lentigo,"ISIC Archive 2-specific class, not present in Archive 1, PAD-UFES-20, or HAM10000."

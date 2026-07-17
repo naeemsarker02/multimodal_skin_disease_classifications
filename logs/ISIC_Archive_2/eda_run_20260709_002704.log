@@ -1,0 +1,12 @@
+2026-07-09 00:27:04 | INFO     | isic_archive_2_eda | ======================================================================
+2026-07-09 00:27:04 | INFO     | isic_archive_2_eda | ISIC ARCHIVE 2 EDA - START
+2026-07-09 00:27:04 | INFO     | isic_archive_2_eda | ======================================================================
+2026-07-09 00:27:04 | INFO     | isic_archive_2_eda | 01_class_distribution done: {'Nevus': 9011, 'Melanoma': 3165, 'Basal Cell Carcinoma': 2324, 'Seborrheic Keratosis': 921, 'Pigmented Benign Keratosis': 767, 'Actinic Keratosis': 603, 'Squamous Cell Carcinoma': 435, 'Dermatofibroma': 167, 'Solar Lentigo': 142}
+2026-07-09 00:27:06 | INFO     | isic_archive_2_eda | 02_demographics (+ site hierarchy, clinical history) done
+2026-07-09 00:27:06 | INFO     | isic_archive_2_eda | 04_missing_value_report done
+2026-07-09 00:27:08 | INFO     | isic_archive_2_eda | 05_image_dimensions done: {'width': {'count': 250.0, 'mean': 1027.868, 'std': 799.6149440894942, 'min': 600.0, '25%': 600.0, '50%': 1024.0, '75%': 1024.0, 'max': 6641.0}, 'height': {'count': 250.0, 'mean': 876.652, 'std': 544.2640538721525, 'min': 450.0, '25%': 450.0, '50%': 1024.0, '75%': 1024.0, 'max': 4401.0}, 'aspect_ratio': {'count': 250.0, 'mean': 1.1808771999999998, 'std': 0.1801962729562108, 'min': 1.0, '25%': 1.0, '50%': 1.3333, '75%': 1.3333, 'max': 1.5305}, 'size_kb': {'count': 250.0, 'mean': 80.95836, 'std': 165.765421327071, 'min': 15.04, '25%': 28.082500000000003, '50%': 45.864999999999995, '75%': 62.7075, 'max': 1913.74}}
+2026-07-09 00:27:25 | INFO     | isic_archive_2_eda | 06_sample_image_grid done
+2026-07-09 00:27:25 | INFO     | isic_archive_2_eda | 07_split_balance_check done
+2026-07-09 00:27:25 | INFO     | isic_archive_2_eda | ======================================================================
+2026-07-09 00:27:25 | INFO     | isic_archive_2_eda | ISIC ARCHIVE 2 EDA - COMPLETE
+2026-07-09 00:27:25 | INFO     | isic_archive_2_eda | ======================================================================

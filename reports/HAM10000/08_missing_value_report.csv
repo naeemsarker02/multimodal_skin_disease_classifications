@@ -1,0 +1,8 @@
+column,missing_count_isna,missing_pct_isna,literal_unknown_string_count,dtype
+age,57,0.57,0,float64
+image_id,0,0.0,0,str
+lesion_id,0,0.0,0,str
+dx,0,0.0,0,str
+dx_type,0,0.0,0,str
+sex,0,0.0,57,str
+localization,0,0.0,234,str

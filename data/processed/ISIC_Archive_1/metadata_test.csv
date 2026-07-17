@@ -1,0 +1,101 @@
+image_id,filename,class_label,image_path,dataset_source,disease_label
+ISIC_0024654,ISIC_0024654.jpg,actinic keratosis,data/raw/ISIC_Archive_1/Test/actinic keratosis/ISIC_0024654.jpg,ISIC_Archive_1,Actinic Keratosis
+ISIC_0024331,ISIC_0024331.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Test/basal cell carcinoma/ISIC_0024331.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0024332,ISIC_0024332.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Test/basal cell carcinoma/ISIC_0024332.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0024345,ISIC_0024345.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Test/basal cell carcinoma/ISIC_0024345.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0024360,ISIC_0024360.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Test/basal cell carcinoma/ISIC_0024360.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0024403,ISIC_0024403.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Test/basal cell carcinoma/ISIC_0024403.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0024411,ISIC_0024411.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Test/basal cell carcinoma/ISIC_0024411.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0024431,ISIC_0024431.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Test/basal cell carcinoma/ISIC_0024431.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0024432,ISIC_0024432.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Test/basal cell carcinoma/ISIC_0024432.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0024436,ISIC_0024436.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Test/basal cell carcinoma/ISIC_0024436.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0024443,ISIC_0024443.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Test/basal cell carcinoma/ISIC_0024443.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0024448,ISIC_0024448.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Test/basal cell carcinoma/ISIC_0024448.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0024452,ISIC_0024452.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Test/basal cell carcinoma/ISIC_0024452.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0024454,ISIC_0024454.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Test/basal cell carcinoma/ISIC_0024454.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0024457,ISIC_0024457.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Test/basal cell carcinoma/ISIC_0024457.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0024461,ISIC_0024461.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Test/basal cell carcinoma/ISIC_0024461.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0024472,ISIC_0024472.jpg,basal cell carcinoma,data/raw/ISIC_Archive_1/Test/basal cell carcinoma/ISIC_0024472.jpg,ISIC_Archive_1,Basal Cell Carcinoma
+ISIC_0001114,ISIC_0001114.jpg,dermatofibroma,data/raw/ISIC_Archive_1/Test/dermatofibroma/ISIC_0001114.jpg,ISIC_Archive_1,Dermatofibroma
+ISIC_0001130,ISIC_0001130.jpg,dermatofibroma,data/raw/ISIC_Archive_1/Test/dermatofibroma/ISIC_0001130.jpg,ISIC_Archive_1,Dermatofibroma
+ISIC_0011410,ISIC_0011410.jpg,dermatofibroma,data/raw/ISIC_Archive_1/Test/dermatofibroma/ISIC_0011410.jpg,ISIC_Archive_1,Dermatofibroma
+ISIC_0011433,ISIC_0011433.jpg,dermatofibroma,data/raw/ISIC_Archive_1/Test/dermatofibroma/ISIC_0011433.jpg,ISIC_Archive_1,Dermatofibroma
+ISIC_0011478,ISIC_0011478.jpg,dermatofibroma,data/raw/ISIC_Archive_1/Test/dermatofibroma/ISIC_0011478.jpg,ISIC_Archive_1,Dermatofibroma
+ISIC_0011677,ISIC_0011677.jpg,dermatofibroma,data/raw/ISIC_Archive_1/Test/dermatofibroma/ISIC_0011677.jpg,ISIC_Archive_1,Dermatofibroma
+ISIC_0011865,ISIC_0011865.jpg,dermatofibroma,data/raw/ISIC_Archive_1/Test/dermatofibroma/ISIC_0011865.jpg,ISIC_Archive_1,Dermatofibroma
+ISIC_0024318,ISIC_0024318.jpg,dermatofibroma,data/raw/ISIC_Archive_1/Test/dermatofibroma/ISIC_0024318.jpg,ISIC_Archive_1,Dermatofibroma
+ISIC_0024330,ISIC_0024330.jpg,dermatofibroma,data/raw/ISIC_Archive_1/Test/dermatofibroma/ISIC_0024330.jpg,ISIC_Archive_1,Dermatofibroma
+ISIC_0024386,ISIC_0024386.jpg,dermatofibroma,data/raw/ISIC_Archive_1/Test/dermatofibroma/ISIC_0024386.jpg,ISIC_Archive_1,Dermatofibroma
+ISIC_0024396,ISIC_0024396.jpg,dermatofibroma,data/raw/ISIC_Archive_1/Test/dermatofibroma/ISIC_0024396.jpg,ISIC_Archive_1,Dermatofibroma
+ISIC_0024553,ISIC_0024553.jpg,dermatofibroma,data/raw/ISIC_Archive_1/Test/dermatofibroma/ISIC_0024553.jpg,ISIC_Archive_1,Dermatofibroma
+ISIC_0024845,ISIC_0024845.jpg,dermatofibroma,data/raw/ISIC_Archive_1/Test/dermatofibroma/ISIC_0024845.jpg,ISIC_Archive_1,Dermatofibroma
+ISIC_0024973,ISIC_0024973.jpg,dermatofibroma,data/raw/ISIC_Archive_1/Test/dermatofibroma/ISIC_0024973.jpg,ISIC_Archive_1,Dermatofibroma
+ISIC_0024994,ISIC_0024994.jpg,dermatofibroma,data/raw/ISIC_Archive_1/Test/dermatofibroma/ISIC_0024994.jpg,ISIC_Archive_1,Dermatofibroma
+ISIC_0025154,ISIC_0025154.jpg,dermatofibroma,data/raw/ISIC_Archive_1/Test/dermatofibroma/ISIC_0025154.jpg,ISIC_Archive_1,Dermatofibroma
+ISIC_0000002,ISIC_0000002.jpg,melanoma,data/raw/ISIC_Archive_1/Test/melanoma/ISIC_0000002.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000004,ISIC_0000004.jpg,melanoma,data/raw/ISIC_Archive_1/Test/melanoma/ISIC_0000004.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000013,ISIC_0000013.jpg,melanoma,data/raw/ISIC_Archive_1/Test/melanoma/ISIC_0000013.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000022,ISIC_0000022.jpg,melanoma,data/raw/ISIC_Archive_1/Test/melanoma/ISIC_0000022.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000026,ISIC_0000026.jpg,melanoma,data/raw/ISIC_Archive_1/Test/melanoma/ISIC_0000026.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000029,ISIC_0000029.jpg,melanoma,data/raw/ISIC_Archive_1/Test/melanoma/ISIC_0000029.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000030,ISIC_0000030.jpg,melanoma,data/raw/ISIC_Archive_1/Test/melanoma/ISIC_0000030.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000031,ISIC_0000031.jpg,melanoma,data/raw/ISIC_Archive_1/Test/melanoma/ISIC_0000031.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000035,ISIC_0000035.jpg,melanoma,data/raw/ISIC_Archive_1/Test/melanoma/ISIC_0000035.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000036,ISIC_0000036.jpg,melanoma,data/raw/ISIC_Archive_1/Test/melanoma/ISIC_0000036.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000040,ISIC_0000040.jpg,melanoma,data/raw/ISIC_Archive_1/Test/melanoma/ISIC_0000040.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000043,ISIC_0000043.jpg,melanoma,data/raw/ISIC_Archive_1/Test/melanoma/ISIC_0000043.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000046,ISIC_0000046.jpg,melanoma,data/raw/ISIC_Archive_1/Test/melanoma/ISIC_0000046.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000049,ISIC_0000049.jpg,melanoma,data/raw/ISIC_Archive_1/Test/melanoma/ISIC_0000049.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000054,ISIC_0000054.jpg,melanoma,data/raw/ISIC_Archive_1/Test/melanoma/ISIC_0000054.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000056,ISIC_0000056.jpg,melanoma,data/raw/ISIC_Archive_1/Test/melanoma/ISIC_0000056.jpg,ISIC_Archive_1,Melanoma
+ISIC_0000000,ISIC_0000000.jpg,nevus,data/raw/ISIC_Archive_1/Test/nevus/ISIC_0000000.jpg,ISIC_Archive_1,Nevus
+ISIC_0000001,ISIC_0000001.jpg,nevus,data/raw/ISIC_Archive_1/Test/nevus/ISIC_0000001.jpg,ISIC_Archive_1,Nevus
+ISIC_0000003,ISIC_0000003.jpg,nevus,data/raw/ISIC_Archive_1/Test/nevus/ISIC_0000003.jpg,ISIC_Archive_1,Nevus
+ISIC_0000005,ISIC_0000005.jpg,nevus,data/raw/ISIC_Archive_1/Test/nevus/ISIC_0000005.jpg,ISIC_Archive_1,Nevus
+ISIC_0000006,ISIC_0000006.jpg,nevus,data/raw/ISIC_Archive_1/Test/nevus/ISIC_0000006.jpg,ISIC_Archive_1,Nevus
+ISIC_0000007,ISIC_0000007.jpg,nevus,data/raw/ISIC_Archive_1/Test/nevus/ISIC_0000007.jpg,ISIC_Archive_1,Nevus
+ISIC_0000008,ISIC_0000008.jpg,nevus,data/raw/ISIC_Archive_1/Test/nevus/ISIC_0000008.jpg,ISIC_Archive_1,Nevus
+ISIC_0000009,ISIC_0000009.jpg,nevus,data/raw/ISIC_Archive_1/Test/nevus/ISIC_0000009.jpg,ISIC_Archive_1,Nevus
+ISIC_0000010,ISIC_0000010.jpg,nevus,data/raw/ISIC_Archive_1/Test/nevus/ISIC_0000010.jpg,ISIC_Archive_1,Nevus
+ISIC_0000011,ISIC_0000011.jpg,nevus,data/raw/ISIC_Archive_1/Test/nevus/ISIC_0000011.jpg,ISIC_Archive_1,Nevus
+ISIC_0000012,ISIC_0000012.jpg,nevus,data/raw/ISIC_Archive_1/Test/nevus/ISIC_0000012.jpg,ISIC_Archive_1,Nevus
+ISIC_0000014,ISIC_0000014.jpg,nevus,data/raw/ISIC_Archive_1/Test/nevus/ISIC_0000014.jpg,ISIC_Archive_1,Nevus
+ISIC_0000015,ISIC_0000015.jpg,nevus,data/raw/ISIC_Archive_1/Test/nevus/ISIC_0000015.jpg,ISIC_Archive_1,Nevus
+ISIC_0000016,ISIC_0000016.jpg,nevus,data/raw/ISIC_Archive_1/Test/nevus/ISIC_0000016.jpg,ISIC_Archive_1,Nevus
+ISIC_0000017,ISIC_0000017.jpg,nevus,data/raw/ISIC_Archive_1/Test/nevus/ISIC_0000017.jpg,ISIC_Archive_1,Nevus
+ISIC_0000018,ISIC_0000018.jpg,nevus,data/raw/ISIC_Archive_1/Test/nevus/ISIC_0000018.jpg,ISIC_Archive_1,Nevus
+ISIC_0024312,ISIC_0024312.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Test/pigmented benign keratosis/ISIC_0024312.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0024324,ISIC_0024324.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Test/pigmented benign keratosis/ISIC_0024324.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0024336,ISIC_0024336.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Test/pigmented benign keratosis/ISIC_0024336.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0024337,ISIC_0024337.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Test/pigmented benign keratosis/ISIC_0024337.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0024338,ISIC_0024338.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Test/pigmented benign keratosis/ISIC_0024338.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0024358,ISIC_0024358.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Test/pigmented benign keratosis/ISIC_0024358.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0024371,ISIC_0024371.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Test/pigmented benign keratosis/ISIC_0024371.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0024381,ISIC_0024381.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Test/pigmented benign keratosis/ISIC_0024381.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0024382,ISIC_0024382.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Test/pigmented benign keratosis/ISIC_0024382.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0024383,ISIC_0024383.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Test/pigmented benign keratosis/ISIC_0024383.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0024408,ISIC_0024408.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Test/pigmented benign keratosis/ISIC_0024408.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0024409,ISIC_0024409.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Test/pigmented benign keratosis/ISIC_0024409.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0024412,ISIC_0024412.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Test/pigmented benign keratosis/ISIC_0024412.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0024420,ISIC_0024420.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Test/pigmented benign keratosis/ISIC_0024420.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0024422,ISIC_0024422.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Test/pigmented benign keratosis/ISIC_0024422.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0024426,ISIC_0024426.jpg,pigmented benign keratosis,data/raw/ISIC_Archive_1/Test/pigmented benign keratosis/ISIC_0024426.jpg,ISIC_Archive_1,Pigmented Benign Keratosis
+ISIC_0011593,ISIC_0011593.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Test/squamous cell carcinoma/ISIC_0011593.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0011726,ISIC_0011726.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Test/squamous cell carcinoma/ISIC_0011726.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0011750,ISIC_0011750.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Test/squamous cell carcinoma/ISIC_0011750.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0011751,ISIC_0011751.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Test/squamous cell carcinoma/ISIC_0011751.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0012079,ISIC_0012079.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Test/squamous cell carcinoma/ISIC_0012079.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0024329,ISIC_0024329.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Test/squamous cell carcinoma/ISIC_0024329.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0024372,ISIC_0024372.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Test/squamous cell carcinoma/ISIC_0024372.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0024418,ISIC_0024418.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Test/squamous cell carcinoma/ISIC_0024418.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0024450,ISIC_0024450.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Test/squamous cell carcinoma/ISIC_0024450.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0024463,ISIC_0024463.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Test/squamous cell carcinoma/ISIC_0024463.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0024517,ISIC_0024517.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Test/squamous cell carcinoma/ISIC_0024517.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0024522,ISIC_0024522.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Test/squamous cell carcinoma/ISIC_0024522.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0024539,ISIC_0024539.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Test/squamous cell carcinoma/ISIC_0024539.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0024562,ISIC_0024562.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Test/squamous cell carcinoma/ISIC_0024562.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0024575,ISIC_0024575.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Test/squamous cell carcinoma/ISIC_0024575.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0024579,ISIC_0024579.jpg,squamous cell carcinoma,data/raw/ISIC_Archive_1/Test/squamous cell carcinoma/ISIC_0024579.jpg,ISIC_Archive_1,Squamous Cell Carcinoma
+ISIC_0024370,ISIC_0024370.jpg,vascular lesion,data/raw/ISIC_Archive_1/Test/vascular lesion/ISIC_0024370.jpg,ISIC_Archive_1,Vascular Lesion
+ISIC_0024375,ISIC_0024375.jpg,vascular lesion,data/raw/ISIC_Archive_1/Test/vascular lesion/ISIC_0024375.jpg,ISIC_Archive_1,Vascular Lesion
+ISIC_0024402,ISIC_0024402.jpg,vascular lesion,data/raw/ISIC_Archive_1/Test/vascular lesion/ISIC_0024402.jpg,ISIC_Archive_1,Vascular Lesion
