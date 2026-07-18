@@ -180,6 +180,9 @@ sections below are unchanged and remain the source of truth.*
 21. [HAM10000 Phase 6 Stage 1 — Scope Approved (2026-07-13)](#ham10000-stage-1-same-recipe-decision)
 22. [HAM10000 Stage 1 — COMPLETE (2026-07-16)](#ham10000-stage-1-complete)
 23. [Phase 7 Stage 1 — Late Fusion Scope Approved, PAD-UFES-20 Only (2026-07-16)](#phase-7-stage-1-scope-approved)
+24. [Literature Review Reconciliation — 16 Papers (2026-07-17)](#literature-review-reconciliation)
+25. [Phase 7 Stage 1 — COMPLETE (2026-07-18)](#phase-7-stage-1-complete)
+26. [MetaBlock Mechanism Confirmed; Phase 7 Stage 2 Proposal — PENDING APPROVAL (2026-07-18)](#phase-7-stage-2-proposal)
 
 ---
 
@@ -218,7 +221,7 @@ sections below are unchanged and remain the source of truth.*
 | Phase | Status | Completion Date | Description |
 |---|---|---|---|
 | 1. Planning | ✅ Completed | 2026-06-29 | README, Research_Plan, Dataset_Strategy, AI_Assistant_Instructions authored (Research_Plan.md since archived to `_archive/`, superseded by this file) |
-| 2. Literature Review | 🟡 In Progress | — | 3 core papers reviewed (Mridha & Islam 2026; Suresh et al. 2026 TG-CAVNet; Watson et al. 2026); comparative analysis complete; ongoing as new papers are added |
+| 2. Literature Review | 🟡 In Progress | — | 16 papers reconciled (8 abstract-only, pending full-text read) — see "Literature Review Reconciliation" below and `docs/Literature_Review.md`. Not yet complete: 8 papers still need full-text reading before the Literature Review chapter can be written. |
 | 3. Dataset Collection | ✅ Completed | — | PAD-UFES-20, HAM10000, ISIC Archive 1 & 2 acquired into `data/raw/` |
 | 4. Dataset Preparation — PAD-UFES-20 | ✅ Completed | 2026-07-07 | Full audit (12 modules) + cleaning (schema standardization, label mapping, patient-wise stratified split, documentation) |
 | 4. Dataset Preparation — HAM10000 | ✅ Completed | 2026-07-07 | Audit (11 modules) + cleaning (schema standardization, label mapping shared with PAD-UFES-20 where diseases overlap, lesion-wise stratified split, documentation) |
@@ -230,7 +233,7 @@ sections below are unchanged and remain the source of truth.*
 | **4. Dataset Preparation — Phase closure** | **✅ CLOSED** | **2026-07-08** | All 4 `PROJECT_PLAN.md` Current Phase items done and reviewed |
 | **5. EDA** | **✅ Completed** | **2026-07-09** | Scope approved 2026-07-08 (incl. approved image-dimension addition). `src/eda/` code executed for all 4 datasets + cross-dataset comparison; all outputs verified non-empty in `reports/eda/`; 5 notebooks (`notebooks/01-05_eda_*.ipynb`) and `reports/eda/eda_summary.md` written. Key finding: ISIC Archive 2's bimodal image resolution (600x450 / 1024x1024 clusters) visually confirms its documented image-source overlap with HAM10000. |
 | 6. Baseline Model Development | ✅ Completed — both datasets' Stage 1 baselines done | 2026-07-16 | Pre-conditions resolved 2026-07-09 (sparse-field exclusion, 224×224 resize+pad). PAD-UFES-20: all 6 Stage 1 runs completed and verified 2026-07-13 (image mean macro-F1 0.5703+/-0.0130, metadata mean macro-F1 0.5762+/-0.0072) — see "Phase 6 Stage 1 — COMPLETE" entry. HAM10000: all 6 Stage 1 runs completed and verified 2026-07-16, same recipe (image mean macro-F1 0.6940+/-0.0041, metadata mean macro-F1 0.2521+/-0.0104) — see "HAM10000 Stage 1 — COMPLETE" entry. Sequencing decision (full HAM10000 baseline before Phase 7) fulfilled. Next: Phase 7 late fusion design. |
-| 7. Multimodal Model Development | 🔄 In progress — Stage 1 (late fusion) code written, PAD-UFES-20 only | 2026-07-16 | Scope approved and implemented — see "Phase 7 Stage 1 — Late Fusion Scope Approved" entry. Smoke-tested locally on a real subset; Kaggle notebook (`notebooks/pad_ufes20_fusion_kaggle_notebook.md`) ready for the 3 seed runs, pending Stage 1 checkpoint upload as a new Kaggle dataset. Stage 2 (cross-attention fusion) not started. |
+| 7. Multimodal Model Development | 🔄 In progress — Stage 1 (late fusion) COMPLETE, PAD-UFES-20 only | 2026-07-18 | Stage 1 (late fusion) all 3 seeds completed and verified 2026-07-18 (fusion mean macro-F1 0.5731+/-0.0021) — see "Phase 7 Stage 1 — COMPLETE" entry. Late fusion did not clearly beat either single-modality Stage 1 baseline in raw macro-F1 but showed markedly lower variance, motivating Stage 2 (cross-attention fusion), not yet started/scoped. |
 | 8. Experiments & Evaluation | ⏳ Pending | — | Includes external validation (HAM10000/ISIC, with exclusions applied) and bootstrap significance testing |
 | 9. Thesis Writing Support | ⏳ Pending | — | |
 | 10. arXiv preprint / submission | ⏳ Pending | — | |
@@ -935,3 +938,266 @@ Stage 1 checkpoints (`logs/PAD_UFES20/checkpoints/*.pt` from this
 machine, zipped and uploaded as a new private Kaggle dataset) — since
 `/kaggle/working` is wiped fresh per session and warm-start cannot
 proceed without them.
+
+---
+
+<a id="literature-review-reconciliation"></a>
+## Literature Review Reconciliation — 16 Papers (2026-07-17)
+
+**Documentation/writing-support update only** — does not touch `data/`,
+`src/models/`, `src/evaluation/`, or any logs/checkpoints; no dataset,
+split, `feature_whitelist.md`, architecture, or hyperparameter changed.
+
+`docs/Literature_Review_Master.xlsx` reconciles this project's original 3
+tracked papers (Mridha & Islam 2026; Suresh et al. 2026 TG-CAVNet; Watson et
+al. 2026), the user's 8 Excel-reviewed papers, and 8 new web-search-found
+candidates into **16 unique papers, not 19** (see duplicate resolution
+below). A readable summary of the reconciled table, per-paper limitations,
+and relevance-to-thesis notes is in `docs/Literature_Review.md` — the xlsx
+remains the source of record if the two ever disagree.
+
+**Status: 8 of the 16 papers are abstract-only, pending full-text read.**
+Phase 2 (Literature Review) is **not** being marked complete — full-text
+reading of those 8 is required before the Literature Review chapter can be
+written. Updated in the Progress Tracker table above.
+
+**Duplicate resolved (logged so it is not re-investigated later):** the
+user's Excel rows 1 and 2 are the *same* paper listed twice under slightly
+different titles (identical AUC=0.9818/AUPRC=0.9924/F1=0.9769) — confirmed
+via GitHub author match to be the medRxiv preprint already tracked as
+**"Mridha & Islam 2026"**. Net effect: the Excel's 8 rows contribute only 6
+new unique papers, not 8, giving 3 + 6 + 8 = 16 total.
+
+**Still open, not a duplicate finding:** one *unconfirmed* possible match —
+Excel row 4 ("Multimodal Skin Lesion Classification Using Deep Learning",
+ISIC Archive, 2018) may be the same paper as Yap, Yolland & Tschandl (2018,
+Experimental Dermatology), found independently via the web search. Needs a
+full-text author check; if confirmed, paper count drops to 15.
+
+**Literature gap — Fitzpatrick/skin-tone fairness:** none of the 16 papers
+focus on Fitzpatrick/skin-tone fairness in dermatology AI. This is relevant
+because `PROJECT_PLAN.md`'s Phase 8 already plans a dedicated Fitzpatrick
+fairness analysis — the absence of prior work specifically on skin-tone bias
+in dermatology AI means Phase 8's fairness analysis is a citable
+contribution in its own right, not just a routine evaluation step, and
+should be stated explicitly as such in the thesis (e.g. Related Work or
+Contributions section). Recommend a targeted search for 2-3
+fairness-specific papers before Phase 9 (Thesis Writing Support) begins.
+
+**Two priority full-text reads flagged for the user**, both by PAD-UFES-20's
+own dataset creators and near-mandatory citations for a thesis using their
+dataset:
+
+1. **Pacheco & Krohling (2021)** — MetaBlock (attention-based
+   image+metadata fusion) — highest priority, direct architectural
+   comparison point for Phase 7.
+2. **Pacheco & Krohling (2020)** — clinical-information impact on automated
+   skin cancer detection — foundational justification for this thesis's
+   multimodal premise, citable in the Introduction.
+
+---
+
+<a id="phase-7-stage-1-complete"></a>
+## Phase 7 Stage 1 — COMPLETE (2026-07-18)
+
+All 3 Stage 1 late-fusion runs (seeds 0/1/2) for PAD-UFES-20 ran to
+completion on Kaggle. Verified on disk directly this session, not trusted
+from pasted numbers alone — the first verification pass (before any files
+existed) correctly caught that the fusion checkpoints/summaries were not
+actually present yet; they were re-checked only after the user placed them
+and confirmed via VS Code. Verification method: all 3 checkpoint files
+(`logs/PAD_UFES20/checkpoints/fusion_seed{0,1,2}_best.pt`, ~17.2MB each,
+sane for an EfficientNet-B0 image branch + MLP metadata branch + joint
+head) and all 3 summary files
+(`logs/PAD_UFES20/train_fusion_seed{0,1,2}_summary.json`) exist; each
+summary's `best_val_macro_f1` was read directly and matches the reported
+number exactly (seed0=0.572250, seed1=0.576023, seed2=0.571108); mean/std
+recomputed independently from these exact values using the same
+(population, ddof=0) method as the Stage 1 image/metadata baselines, giving
+0.5731/0.0021 — the pasted 0.0022 was a trivial rounding difference, not a
+discrepancy in the underlying numbers.
+
+**Final 3-way comparison (best val macro-F1 per run, mean +/- std across 3
+seeds, PAD-UFES-20):**
+
+| branch | seed0 | seed1 | seed2 | mean | std |
+|---|---|---|---|---|---|
+| image (EfficientNet-B0) | 0.5529 | 0.5741 | 0.5840 | 0.5703 | 0.0130 |
+| metadata (MLP) | 0.5861 | 0.5694 | 0.5732 | 0.5762 | 0.0072 |
+| **late fusion** (warm-started, joint fine-tune) | 0.5723 | 0.5760 | 0.5711 | **0.5731** | **0.0021** |
+
+**Finding — late fusion did not clearly beat either single-modality
+baseline in raw macro-F1, but is markedly more stable:**
+
+- Late fusion's mean (0.5731) lands between the two unimodal baselines —
+  slightly below metadata-only (0.5762) and slightly above image-only
+  (0.5703) — a difference well within the unimodal branches' own std
+  (0.0130 for image), so this is **not** a demonstrated improvement over
+  either baseline on its own terms.
+- What late fusion clearly does deliver is variance reduction: std=0.0021,
+  roughly 3.4x tighter than metadata-only (0.0072) and 6.2x tighter than
+  image-only (0.0130). All 3 fusion seeds land in a narrow 0.5711-0.5760
+  band, vs. image-only's 0.5529-0.5840 spread.
+- This is the expected outcome flagged in advance in "Phase 7 Stage 1 —
+  Late Fusion Scope Approved" above: the 1280:64 image:metadata embedding
+  dimensionality imbalance was predicted to let the image branch
+  numerically dominate simple concatenation even with a deeper joint head,
+  diluting metadata's contribution rather than combining both branches'
+  genuine signal. The result is consistent with that prediction — fusion
+  behaves more like a regularized/stabilized version of the image branch
+  (much lower variance, similar mean) than like a genuine combination that
+  captures metadata's higher standalone score.
+- **Framing for the thesis: not a failed experiment.** This is the
+  pre-registered, literal purpose of running late fusion as the Phase 7
+  Stage 1 baseline step before cross-attention — it empirically
+  demonstrates *why* naive concatenation fusion is insufficient on this
+  dataset's embedding-dimension imbalance, giving Stage 2 (cross-attention
+  fusion) a concrete, quantified motivation rather than an assumed one.
+
+**Status:** Phase 7 Stage 1 (late fusion, PAD-UFES-20) is now complete.
+Next: Phase 7 Stage 2 (cross-attention fusion) scope proposal — pending
+your review/approval before code starts, per the same two-stage process
+used for every prior phase.
+
+---
+
+<a id="phase-7-stage-2-proposal"></a>
+## MetaBlock Mechanism Confirmed; Phase 7 Stage 2 Proposal — PENDING APPROVAL (2026-07-18)
+
+**MetaBlock's actual mechanism (Pacheco & Krohling 2021, row #10 in
+`Literature_Review.md`) confirmed before locking Stage 2's design, per your
+instruction not to assume abstract-level fidelity.** Verified via the
+paper's official code repository (`github.com/paaatcha/MetaBlock`),
+cross-checked against an independently-agreeing secondary paper's
+description. **Caveat, stated plainly: the primary IEEE JBHI PDF is
+paywalled and was not directly read** — this is a code + secondary-source
+confirmation, not a full-text read. If the thesis needs to cite specific
+numeric results or methodology details beyond the mechanism itself, the
+primary PDF should still be obtained before finalizing those claims.
+
+**Finding: our abstract-level guess was correct — MetaBlock is not
+Transformer-style Q/K/V attention.** It is a channel-wise gated
+feature-modulation block: a metadata vector `U` passes through two
+independent `Linear + BatchNorm` branches producing `t1`, `t2` (same
+channel-dim as the CNN's feature vector `V`); output
+`V' = sigmoid(tanh(V·t1) + t2)` — a multiplicative gate (`t1`) plus an
+additive bias (`t2`), squashed by sigmoid, broadcast **uniformly across
+spatial positions within each channel** (no per-spatial-location
+weighting). Their own simpler baseline, MetaNet, is even closer to
+squeeze-and-excitation: metadata → conv+ReLU+sigmoid → per-channel scale
+map → elementwise multiply, no tanh/additive term. Per the abstract,
+MetaBlock beats MetaNet + plain concatenation in 6/10 tested scenarios
+across ISIC 2019 and PAD-UFES-20.
+
+**Answering your question 2 directly: our proposed cross-attention design
+is a related-but-meaningfully-different mechanism, not a MetaBlock
+reproduction.** Both pursue the same goal (let metadata do more than get
+concatenated/ignored), but:
+
+- MetaBlock modulates **channels**, uniformly across all spatial locations
+  within a channel — it cannot make the network attend to one image region
+  over another.
+- Our proposed design (metadata as Query, EfficientNet-B0's 49 spatial
+  tokens from `backbone.features(x)` as Key/Value, standard multi-head
+  scaled dot-product attention) computes explicit **per-spatial-location**
+  attention weights — genuinely different image regions can be weighted
+  differently depending on metadata, which channel-wise gating structurally
+  cannot do.
+
+**Corrected framing for all future references (this doc,
+`Literature_Review.md`, eventual thesis text): call Stage 2 "cross-attention
+fusion, contrasted with MetaBlock's channel-gating approach" — never
+"MetaBlock-inspired" or "MetaBlock-style," since that would overclaim
+architectural fidelity to a mechanism we now know is different.**
+`Literature_Review.md` row #10 and its "Priority Full-Text Reads" section
+have been updated accordingly.
+
+### Stage 2 architecture — reconfirmed proposal, pending your approval
+
+Unchanged from what was proposed before this verification, now with
+accurate framing and grounded in the actual `fusion_model.py`/
+`image_model.py` code:
+
+- **Fusion point:** replace the pooled 1280-d image vector with
+  EfficientNet-B0's pre-pool spatial feature map (`backbone.features(x)`,
+  shape `[B, 1280, 7, 7]` → 49 spatial tokens × 1280-d). The 64-d metadata
+  embedding (from the existing `MetadataEmbedder`) is projected into a
+  query and cross-attends over the 49 image tokens (Q=metadata, K/V=image
+  tokens, standard multi-head scaled dot-product attention, projected to a
+  shared `d_model` so the 1280:64 raw-dimension imbalance no longer
+  mechanically dominates the result the way Stage 1's concatenation did).
+- **Optional dual-mechanism add-on** (Suresh et al. TG-CAVNet-inspired,
+  already flagged in "Future Improvements" above): a metadata-conditioned
+  channel gate applied before cross-attention, so metadata both reweights
+  channels *and* spatially attends — TG-CAVNet itself remains only
+  partially captured in `Literature_Review.md` (row #2), so this stays a
+  secondary, not primary, design input pending its own full-text read.
+- **New class** `CrossAttentionFusionModel` added alongside the existing
+  `FusionModel` in `fusion_model.py` (not replacing it), so Stage 1's
+  late-fusion checkpoints/results remain reproducible for the eventual
+  3-way (image/metadata/late-fusion) vs. cross-attention comparison.
+- **Everything else unchanged from Stage 1's discipline:** warm-start both
+  branches from Stage 1 checkpoints (seed-matched), fine-tune end-to-end at
+  a low LR, class-weighted CE loss, macro-F1 for model selection/reporting,
+  seeds 0/1/2, PAD-UFES-20 only (same reasoning as Stage 1 — HAM10000's
+  3-column metadata whitelist is too thin), test split untouched until
+  final evaluation.
+
+**Approved 2026-07-18.** Implementation status below.
+
+### Stage 2 implementation status (2026-07-18)
+
+`src/models/cross_attention_fusion_model.py` written:
+`SpatialImageEmbedder` (wraps the full `build_efficientnet_b0()` model,
+forward stops at `backbone.features(x)` to return the 49 pre-pool spatial
+tokens instead of the pooled 1280-d vector — same full-architecture-wrap
+approach as Stage 1's `ImageEmbedder`, so a Stage 1 image checkpoint's
+state_dict still loads with `strict=True`), `MetadataChannelGate` (the
+optional TG-CAVNet-inspired channel gate, enabled by default via
+`use_channel_gate=True`), and `CrossAttentionFusionModel` (reuses Stage
+1's `MetadataEmbedder` unchanged from `fusion_model.py`; metadata
+projected to a `d_model=256` query, image tokens projected to
+`d_model=256` key/value, `nn.MultiheadAttention` with 8 heads; joint head
+concatenates the attended 256-d vector with the raw 64-d metadata
+embedding before the same `Linear→BatchNorm→ReLU→Dropout→Linear` head
+style as Stage 1). Added alongside `FusionModel`, not replacing it.
+
+`src/models/train_cross_attention_fusion.py` written, mirroring
+`train_fusion.py`'s structure exactly (same warm-start-then-fine-tune
+flow, same `compute_class_weights`/`set_seed` reuse from `train.py`, same
+CLI convention — `--dataset PAD_UFES20 --seed {0,1,2}`), writing
+`cross_attention_seed{N}_best.pt` checkpoints and
+`train_cross_attention_seed{N}_summary.json`/`.csv` logs, distinct
+filenames from Stage 1's `fusion_seed{N}_*` so both stages' outputs coexist
+in the same `logs/PAD_UFES20/` folder. `src/models/config.py` extended
+with `LEARNING_RATE_CROSS_ATTENTION = 1e-5` (same conservative rationale
+as Stage 1's `LEARNING_RATE_FUSION` — both embedders are Stage
+1-converged, only the new cross-attention/head parameters start random).
+
+**Smoke-tested locally on a real 12-row train / 12-row val PAD-UFES-20
+subset (2 rows per class, all 6 classes present) via `.venv` (CPU):**
+confirmed strict-mode Stage 1 checkpoint loading into
+`CrossAttentionFusionModel` (both the image and metadata embedders),
+single-sample and batch-of-4 forward passes with correct output shapes,
+one real train epoch + one real eval epoch via
+`run_epoch_cross_attention`, and a checkpoint save/reload round trip — all
+passed.
+
+**Kaggle notebook generated, not hand-assembled:**
+`scripts/generate_cross_attention_kaggle_notebook.py` reads the real
+`src/models/*.py` file contents at generation time and writes
+`notebooks/pad_ufes20_cross_attention_kaggle_notebook.md`, so the notebook
+cannot silently drift from the source-of-truth `.py` files the way a
+hand-typed copy could. Same 3 Kaggle "Add Data" sources as Stage 1's
+fusion notebook (raw PAD-UFES-20 mirror, processed metadata,
+`pad-ufes20-stage1-checkpoints`) — Stage 2 warm-starts from the identical
+Stage 1 image/metadata checkpoints Stage 1 fusion did, so no new upload is
+needed. Same folder-verification → setup → 8 `%%writefile` cells (config,
+dataset, image_model, metadata_model, fusion_model,
+cross_attention_fusion_model, train, train_cross_attention_fusion) →
+sanity check → full model/GPU check → 3 training cells (seeds 0/1/2)
+pattern as the Stage 1 notebook.
+
+**Not yet done:** the 3 actual Kaggle training runs (seeds 0/1/2) have not
+been executed — notebook is ready to paste in, per the same "Save & Run
+All (Commit)" process adopted after the Stage 1 session-loss incident.

@@ -1,0 +1,9 @@
+{
+  "dataset": "PAD_UFES20",
+  "branch": "fusion",
+  "seed": 1,
+  "best_val_macro_f1": 0.5760231543694199,
+  "checkpoint_path": "/kaggle/working/logs/PAD_UFES20/checkpoints/fusion_seed1_best.pt",
+  "warm_start_image_checkpoint": "/kaggle/input/datasets/naeemsarkertracer/pad-ufes20-stage1-checkpoints/image_seed1_best.pt",
+  "warm_start_metadata_checkpoint": "/kaggle/input/datasets/naeemsarkertracer/pad-ufes20-stage1-checkpoints/metadata_seed1_best.pt"
+}

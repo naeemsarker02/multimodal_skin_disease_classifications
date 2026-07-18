@@ -230,6 +230,12 @@ LEARNING_RATE_METADATA = 1e-3
 # Stage-1-scale LR risks catastrophically forgetting the warm-started
 # weights in early fusion epochs.
 LEARNING_RATE_FUSION = 1e-5
+# Phase 7 Stage 2 (cross-attention fusion): same warm-start-then-fine-tune
+# discipline as Stage 1's late fusion, at the same conservative LR - both
+# embedders are Stage 1-converged and only the new cross-attention/head
+# parameters are randomly initialized, so a low LR protects the warm-started
+# weights the same way it did for Stage 1's fusion head.
+LEARNING_RATE_CROSS_ATTENTION = 1e-5
 WEIGHT_DECAY = 1e-4
 
 
