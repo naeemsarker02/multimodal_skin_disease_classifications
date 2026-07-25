@@ -1,0 +1,15 @@
+{
+  "dataset": "PAD_UFES20",
+  "branch": "metadata_reduced",
+  "seed": 1,
+  "best_val_macro_f1": 0.48321581172481337,
+  "checkpoint_path": "/kaggle/working/logs/PAD_UFES20/checkpoints/metadata_reduced_seed1_best.pt",
+  "numeric_features": [
+    "age"
+  ],
+  "categorical_features": [
+    "sex",
+    "anatomical_site"
+  ],
+  "metadata_input_dim": 16
+}

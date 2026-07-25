@@ -1,0 +1,9 @@
+{
+  "dataset": "PAD_UFES20",
+  "branch": "cross_attention",
+  "seed": 2,
+  "best_val_macro_f1": 0.6396616287586523,
+  "checkpoint_path": "/kaggle/working/logs/PAD_UFES20/checkpoints/cross_attention_seed2_best.pt",
+  "warm_start_image_checkpoint": "/kaggle/input/datasets/naeemsarkertracer/pad-ufes20-stage1-checkpoints/image_seed2_best.pt",
+  "warm_start_metadata_checkpoint": "/kaggle/input/datasets/naeemsarkertracer/pad-ufes20-stage1-checkpoints/metadata_seed2_best.pt"
+}

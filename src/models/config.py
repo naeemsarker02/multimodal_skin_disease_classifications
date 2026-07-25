@@ -239,6 +239,58 @@ LEARNING_RATE_CROSS_ATTENTION = 1e-5
 WEIGHT_DECAY = 1e-4
 
 
+# --- Phase 8: reduced-feature schema for PAD-UFES-20 -> HAM10000 -------
+# cross-dataset generalization. HAM10000's own metadata whitelist has only
+# 3 columns (age, sex, anatomical_site) - a PAD-UFES-20 metadata/fusion/
+# cross-attention checkpoint trained on the full 21-column whitelist
+# cannot run on HAM10000 data at all (18 columns are simply absent).
+# REDUCED_* restricts PAD-UFES-20 training to just the 3 columns
+# HAM10000 also has, so a schema-matched model can be evaluated on both
+# datasets. See docs/Phase8_Anatomical_Site_Mapping.csv for the full
+# per-category mapping review (approved 2026-07-18).
+REDUCED_NUMERIC_FEATURES = ["age"]
+REDUCED_CATEGORICAL_FEATURES = ["sex", "anatomical_site"]
+
+# PAD-UFES-20 anatomical_site (uppercase, finer-grained) -> HAM10000
+# anatomical_site (lowercase, coarser) - approved 2026-07-18, per
+# docs/Phase8_Anatomical_Site_Mapping.csv. 9 clean (casing-only), 3
+# lossy/coarsened (ARM+FOREARM collide into "upper extremity"; THIGH ->
+# "lower extremity"), 2 deliberately absent (LIP, NOSE - no HAM10000
+# equivalent, approved to fall through to the "__MISSING__" bucket rather
+# than being force-mapped to "face").
+ANATOMICAL_SITE_CROSS_DATASET_MAP = {
+    "ABDOMEN": "abdomen",
+    "BACK": "back",
+    "CHEST": "chest",
+    "EAR": "ear",
+    "FACE": "face",
+    "FOOT": "foot",
+    "HAND": "hand",
+    "NECK": "neck",
+    "SCALP": "scalp",
+    "ARM": "upper extremity",
+    "FOREARM": "upper extremity",
+    "THIGH": "lower extremity",
+    # LIP, NOSE intentionally absent - normalize_anatomical_site_for_cross_dataset()
+    # falls through to "__MISSING__" for these, same treatment as a
+    # genuinely missing value.
+}
+
+
+def normalize_anatomical_site_for_cross_dataset(raw_value) -> str:
+    """PAD-UFES-20's anatomical_site value -> HAM10000-vocabulary string,
+    for the reduced-feature cross-dataset models only. HAM10000's own
+    anatomical_site values pass through MetadataPreprocessor unchanged
+    (already in the target vocabulary) - this normalization only needs to
+    run on the PAD-UFES-20 side.
+    """
+    import pandas as pd
+
+    if pd.isna(raw_value):
+        return "__MISSING__"
+    return ANATOMICAL_SITE_CROSS_DATASET_MAP.get(str(raw_value).strip(), "__MISSING__")
+
+
 class DatasetConfig:
     """Everything Stage 1 code needs for one dataset. Class order is
     fixed (alphabetical by standardized label) so label-encoding is
@@ -282,6 +334,21 @@ class DatasetConfig:
         if self._stage1_checkpoints_dir is None:
             self._stage1_checkpoints_dir = _stage1_checkpoints_dir(self.name)
         return self._stage1_checkpoints_dir
+
+    def with_features(self, numeric_features: list, categorical_features: list) -> "DatasetConfig":
+        """Shallow copy overriding only the metadata feature lists - all
+        paths/class lists/checkpoint dirs stay identical. Used for Phase 8's
+        reduced-feature PAD-UFES-20 variants (REDUCED_NUMERIC_FEATURES /
+        REDUCED_CATEGORICAL_FEATURES above), so the schema-matched training
+        runs reuse the same DatasetConfig plumbing without a second,
+        near-duplicate PAD_UFES20 entry in DATASETS.
+        """
+        import copy
+
+        clone = copy.copy(self)
+        clone.numeric_features = numeric_features
+        clone.categorical_features = categorical_features
+        return clone
 
 
 # data/processed/PAD_UFES20/feature_whitelist.md - allowed model-input

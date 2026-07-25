@@ -183,6 +183,10 @@ sections below are unchanged and remain the source of truth.*
 24. [Literature Review Reconciliation — 16 Papers (2026-07-17)](#literature-review-reconciliation)
 25. [Phase 7 Stage 1 — COMPLETE (2026-07-18)](#phase-7-stage-1-complete)
 26. [MetaBlock Mechanism Confirmed; Phase 7 Stage 2 Proposal — PENDING APPROVAL (2026-07-18)](#phase-7-stage-2-proposal)
+27. [Phase 7 Stage 2 — COMPLETE (2026-07-18)](#phase-7-stage-2-complete)
+28. [Phase 8 Experiment 1 — Anatomical-Site Mapping Approved; Reduced-Feature Models + Eval Script Implemented (2026-07-18)](#phase-8-experiment-1-implementation)
+29. [Negative Result — Improved Cross-Attention Variant Underperforms Original (2026-07-23)](#negative-result-improved-cross-attention)
+30. [Phase 8, Experiment 1 — Cross-Dataset Generalization Scope, Final Model Confirmed (2026-07-23)](#phase-8-experiment-1-scope-final-model)
 
 ---
 
@@ -233,7 +237,7 @@ sections below are unchanged and remain the source of truth.*
 | **4. Dataset Preparation — Phase closure** | **✅ CLOSED** | **2026-07-08** | All 4 `PROJECT_PLAN.md` Current Phase items done and reviewed |
 | **5. EDA** | **✅ Completed** | **2026-07-09** | Scope approved 2026-07-08 (incl. approved image-dimension addition). `src/eda/` code executed for all 4 datasets + cross-dataset comparison; all outputs verified non-empty in `reports/eda/`; 5 notebooks (`notebooks/01-05_eda_*.ipynb`) and `reports/eda/eda_summary.md` written. Key finding: ISIC Archive 2's bimodal image resolution (600x450 / 1024x1024 clusters) visually confirms its documented image-source overlap with HAM10000. |
 | 6. Baseline Model Development | ✅ Completed — both datasets' Stage 1 baselines done | 2026-07-16 | Pre-conditions resolved 2026-07-09 (sparse-field exclusion, 224×224 resize+pad). PAD-UFES-20: all 6 Stage 1 runs completed and verified 2026-07-13 (image mean macro-F1 0.5703+/-0.0130, metadata mean macro-F1 0.5762+/-0.0072) — see "Phase 6 Stage 1 — COMPLETE" entry. HAM10000: all 6 Stage 1 runs completed and verified 2026-07-16, same recipe (image mean macro-F1 0.6940+/-0.0041, metadata mean macro-F1 0.2521+/-0.0104) — see "HAM10000 Stage 1 — COMPLETE" entry. Sequencing decision (full HAM10000 baseline before Phase 7) fulfilled. Next: Phase 7 late fusion design. |
-| 7. Multimodal Model Development | 🔄 In progress — Stage 1 (late fusion) COMPLETE, PAD-UFES-20 only | 2026-07-18 | Stage 1 (late fusion) all 3 seeds completed and verified 2026-07-18 (fusion mean macro-F1 0.5731+/-0.0021) — see "Phase 7 Stage 1 — COMPLETE" entry. Late fusion did not clearly beat either single-modality Stage 1 baseline in raw macro-F1 but showed markedly lower variance, motivating Stage 2 (cross-attention fusion), not yet started/scoped. |
+| 7. Multimodal Model Development | ✅ Completed — both stages done, PAD-UFES-20 only | 2026-07-18 | Stage 1 (late fusion, mean macro-F1 0.5731+/-0.0021) and Stage 2 (cross-attention fusion, mean macro-F1 0.6209+/-0.0143) both complete and verified — see "Phase 7 Stage 1 — COMPLETE" and "Phase 7 Stage 2 — COMPLETE" entries. Cross-attention clearly outperforms all 3 prior variants (image/metadata/late-fusion), confirming the pre-registered dimensionality-imbalance hypothesis. Next: Phase 8 (Experiments & Evaluation). |
 | 8. Experiments & Evaluation | ⏳ Pending | — | Includes external validation (HAM10000/ISIC, with exclusions applied) and bootstrap significance testing |
 | 9. Thesis Writing Support | ⏳ Pending | — | |
 | 10. arXiv preprint / submission | ⏳ Pending | — | |
@@ -1201,3 +1205,624 @@ pattern as the Stage 1 notebook.
 **Not yet done:** the 3 actual Kaggle training runs (seeds 0/1/2) have not
 been executed — notebook is ready to paste in, per the same "Save & Run
 All (Commit)" process adopted after the Stage 1 session-loss incident.
+
+---
+
+<a id="phase-7-stage-2-complete"></a>
+## Phase 7 Stage 2 — COMPLETE (2026-07-18)
+
+All 3 Stage 2 cross-attention-fusion runs (seeds 0/1/2) for PAD-UFES-20 ran
+to completion on Kaggle. Verified on disk directly this session, not
+trusted from pasted numbers alone — the first verification pass (before
+any files existed) correctly caught that the cross-attention
+checkpoints/summaries were not actually present yet; they were re-checked
+only after the user placed them and confirmed via VS Code. Verification
+method: all 3 checkpoint files
+(`logs/PAD_UFES20/checkpoints/cross_attention_seed{0,1,2}_best.pt`,
+~19.4MB each — larger than Stage 1 fusion's ~17.2MB, consistent with the
+added query/key/value projections and attention module) and all 3 summary
+files (`logs/PAD_UFES20/train_cross_attention_seed{0,1,2}_summary.json`)
+exist; each summary's `best_val_macro_f1` was read directly and matches
+the reported number exactly (seed0=0.604949, seed1=0.618178,
+seed2=0.639662); mean/std recomputed independently using the same
+population (ddof=0) method as every prior stage, giving 0.6209/0.0143.
+
+**Final 4-way comparison (best val macro-F1 per run, mean +/- std across 3
+seeds, PAD-UFES-20):**
+
+| branch | seed0 | seed1 | seed2 | mean | std |
+|---|---|---|---|---|---|
+| image (EfficientNet-B0) | 0.5529 | 0.5741 | 0.5840 | 0.5703 | 0.0130 |
+| metadata (MLP) | 0.5861 | 0.5694 | 0.5732 | 0.5762 | 0.0072 |
+| late fusion (concat, warm-started) | 0.5723 | 0.5760 | 0.5711 | 0.5731 | 0.0021 |
+| **cross-attention fusion** (metadata=Q, image tokens=K/V) | 0.6049 | 0.6182 | 0.6397 | **0.6209** | 0.0143 |
+
+**Finding — cross-attention clearly outperforms all 3 prior variants, a
+clean separation, not just a mean-level difference within noise:**
+
+- Cross-attention's minimum seed result (0.6049) exceeds every other
+  variant's *maximum* seed result (image max 0.5840, metadata max 0.5861,
+  late-fusion max 0.5760) — all 3 cross-attention seeds land strictly above
+  the entire range of all 3 prior variants' 9 combined runs, with zero
+  overlap. This is a materially stronger result than a mean-difference
+  claim resting on overlapping distributions.
+- Magnitude: +0.0506 over image-only, +0.0447 over metadata-only, +0.0478
+  over late-fusion (mean-to-mean) — roughly 4x the size of late-fusion's
+  own std (0.0021) and comparable to or larger than image-only's std
+  (0.0130), i.e. a jump too large to attribute to run-to-run noise at this
+  seed count.
+- **Confirms the pre-registered hypothesis from Phase 7 Stage 1's scope
+  approval** (dimensionality-imbalance limitation, logged in advance, not
+  discovered after the fact): late fusion's 1280:64 raw-dimension
+  concatenation let the image branch numerically dominate, diluting
+  metadata's contribution (Stage 1's finding: fusion ~= regularized image
+  branch, not a genuine combination). Cross-attention's shared-`d_model`
+  projection (both modalities projected to 256-d before any interaction)
+  removes that mechanical imbalance, and the result is consistent with
+  that structural fix actually working — not merely a different
+  hyperparameter producing a better number by chance.
+- **Honest caveat on variance:** cross-attention's std (0.0143) is higher
+  than late fusion's (0.0021) and close to image-only's (0.0130) — Stage 2
+  trades away Stage 1's variance-tightening property in exchange for a
+  substantially higher mean. Both properties are true simultaneously and
+  should be reported together in the thesis, not just the mean gain.
+
+**Status:** Phase 7 (Multimodal Model Development) is now complete —
+both Stage 1 (late fusion) and Stage 2 (cross-attention fusion) done and
+verified for PAD-UFES-20. Per `PROJECT_PLAN.md`'s roadmap, next is Phase 8
+(Experiments & Evaluation): PAD-UFES-20<->HAM10000 cross-dataset
+generalization (headline result), HAM10000->ISIC external validation
+(with the documented exclusion lists applied), Fitzpatrick fairness
+analysis, and bootstrap significance testing — scope proposal pending,
+same two-stage process as every prior phase.
+
+---
+
+<a id="ensemble-tta-exploration"></a>
+## Ensemble/TTA Exploration on Cross-Attention Fusion — No Adoption (2026-07-19)
+
+**Backfilled 2026-07-25** — this entry documents `reports/PAD_UFES20/
+score_experiments/` and `reports/PAD_UFES20/fusion/eval_fusion_seed0_val.json`
+(all file-dated 2026-07-19), which existed on disk without a corresponding
+status entry until flagged by the 2026-07-25 project audit. Contents read
+and verified directly from the JSON files for this entry — not from
+memory or the audit's summary.
+
+**What was tested:** after Phase 7 Stage 2 completed (2026-07-18), a
+follow-up exploration asked whether ensembling the 3 independently-trained
+cross-attention seeds (and/or adding test-time augmentation) could beat
+per-seed reporting as the "final" way to present/deploy the cross-attention
+result, before committing to Phase 8. Val split, PAD-UFES-20.
+
+**Files and verified contents:**
+
+| File | Config | macro-F1 (val) |
+|---|---|---|
+| `eval_cross_attention_seed0_val.json` | single seed 0 | 0.604949 |
+| `eval_cross_attention_seed1_val.json` | single seed 1 | 0.618178 |
+| `eval_cross_attention_seed2_val.json` | single seed 2 | 0.639662 |
+| `eval_cross_attention_ensemble3_val.json` | 3-seed logit-average ensemble | **0.621266** |
+| `eval_cross_attention_ensemble3_tta_val.json` | 3-seed ensemble + TTA | **0.588628** |
+| `../fusion/eval_fusion_seed0_val.json` | late-fusion, single seed 0 | 0.572250 |
+
+The 3 single-seed values reproduce the already-reported Phase 7 Stage 2
+numbers exactly (seed0=0.604949, seed1=0.618178, seed2=0.639662 — see
+"Phase 7 Stage 2 — COMPLETE" entry above), confirming these are the same
+underlying evaluations, not a divergent re-run. The fusion seed0 value
+(0.572250) likewise matches the already-reported late-fusion seed0
+(0.5723) to within float/eval-pass noise.
+
+**New information from these files — the ensemble and TTA results:**
+- **3-seed ensemble (no TTA): 0.6213** vs. the individual-seed mean of
+  0.6209 — a +0.0004 difference, well inside run-to-run noise (individual
+  seeds already span 0.6049-0.6397, std 0.0143). Ensembling the 3 seeds
+  does **not** meaningfully outperform simply reporting their mean.
+- **3-seed ensemble + TTA: 0.5886** — **worse** than every individual
+  cross-attention seed (all 3 of which exceed 0.60) and worse than the
+  ensemble-without-TTA. TTA hurts this model/dataset rather than helping.
+
+**Conclusion / decision (inferred from the fact no later entry adopts an
+ensemble or TTA checkpoint, and Phase 8 evaluation code loads single-seed
+checkpoints only):** neither ensembling nor TTA was adopted. The
+project's existing practice — reporting mean +/- std across 3
+independently trained single-model seeds, and using single-seed
+checkpoints for all downstream work — remained the right call; this
+exploration is negative-result evidence supporting that choice, not a
+change to it. No checkpoint files exist for the ensemble/TTA
+configurations (there's nothing to checkpoint — an eval-time ensemble
+of the 3 existing single-seed checkpoints), consistent with them not
+being adopted.
+
+---
+
+<a id="phase-8-experiment-1-implementation"></a>
+## Phase 8 Experiment 1 — Anatomical-Site Mapping Approved; Reduced-Feature Models + Eval Script Implemented (2026-07-18)
+
+**Scope (approved earlier this session):** PAD-UFES-20 -> HAM10000 is the
+primary/headline cross-dataset generalization direction (reverse direction
+deferred, do-if-time-allows); all 4 variants (image, metadata, late-fusion,
+cross-attention) evaluated, not just cross-attention, to see whether the
+generalization gap differs by architecture; Protocol A (full native
+6-way argmax, scored only on the 3 shared classes, spillover reported, not
+masked/hidden); Fitzpatrick fairness via per-group macro-F1 (equalized
+odds deferred - small per-group samples make it unstable); significance
+testing = cross-attention vs. each of the other 3 variants, 1000 bootstrap
+resamples, 95% CI.
+
+### Anatomical-site mapping — reviewed and approved before any training
+
+`docs/Phase8_Anatomical_Site_Mapping.csv` (mirrors the `label_mapping.csv`
+format) reviewed and approved before locking. PAD-UFES-20 has 14 total
+`anatomical_site` categories: **9 clean** (casing-only difference: ABDOMEN,
+BACK, CHEST, EAR, FACE, FOOT, HAND, NECK, SCALP), **3 lossy/coarsened**
+(ARM and FOREARM both collapse into HAM10000's single "upper extremity"
+category - collision flagged explicitly, not hidden; THIGH -> "lower
+extremity"), **2 ambiguous with no HAM10000 equivalent** (LIP, NOSE -
+**approved decision: left unmapped**, falling to the existing
+unseen-category "__MISSING__" bucket rather than being force-mapped to
+"face", which would have been an anatomically imprecise stretch not
+reflected in either dataset's real taxonomy).
+
+### Implementation (2026-07-18)
+
+**`src/models/config.py`** extended with `REDUCED_NUMERIC_FEATURES`
+(`["age"]`), `REDUCED_CATEGORICAL_FEATURES` (`["sex", "anatomical_site"]`),
+`ANATOMICAL_SITE_CROSS_DATASET_MAP` (the approved mapping, coded directly
+from the CSV above), and `normalize_anatomical_site_for_cross_dataset()`.
+`DatasetConfig.with_features()` added (shallow copy overriding just the
+feature lists) so the reduced-feature variant reuses all of PAD-UFES-20's
+existing paths/checkpoint dirs without a near-duplicate second
+`DatasetConfig` entry.
+
+**`src/models/dataset.py`**: `MetadataPreprocessor` extended with an
+optional `column_transforms` dict (`{column: callable}`, applied in both
+`fit()` and `transform_row()`) and a `without_transforms()` method
+(shallow copy with transforms cleared, keeping the already-fitted
+means/stds/categories) - the latter is what lets the same fitted
+preprocessor be reused at HAM10000 evaluation time without re-applying
+PAD-UFES-20's normalization to HAM10000's already-correctly-vocabularied
+values. Verified backward-compatible: re-ran the existing rich-feature
+preprocessor with no `column_transforms` argument, confirmed
+`output_dim` still returns 89 exactly as before.
+
+**3 new training scripts** (`train_metadata_reduced.py`,
+`train_fusion_reduced.py`, `train_cross_attention_fusion_reduced.py`),
+mirroring their Stage 1/7 counterparts exactly (same architecture,
+hyperparameters, loss/metric/seed discipline) except: metadata restricted
+to the 3 reduced features with anatomical_site normalization applied;
+image side of fusion/cross-attention warm-starts from the *existing,
+unchanged* `image_seed{N}_best.pt` (no schema issue there); metadata side
+warm-starts from the new `metadata_reduced_seed{N}_best.pt`. Checkpoints
+saved as `{metadata,fusion,cross_attention}_reduced_seed{N}_best.pt`,
+alongside - never overwriting - the existing rich-feature Stage 1/7
+checkpoints used for every already-reported PAD-UFES-20-internal result.
+
+**Smoke-tested locally on a real 12-row train/12-row val PAD-UFES-20
+subset** (2 rows/class, deliberately including CHEST/FOREARM+ARM/THIGH/NOSE
+to exercise clean, lossy-collision, and unmapped-fallback cases all at
+once): confirmed `normalize_anatomical_site_for_cross_dataset()` maps each
+category correctly (verified `ARM`/`FOREARM` -> `upper extremity`,
+`THIGH` -> `lower extremity`, `NOSE`/`LIP`/missing -> `__MISSING__`,
+9 clean cases -> lowercase identity); real train+eval epochs for all 3
+reduced-feature models (metadata_reduced standalone, then fusion_reduced
+and cross_attention_reduced warm-started from it plus the real
+`image_seed0_best.pt`); checkpoint save/reload round trip. All passed.
+
+**Kaggle notebook generated** (`scripts/generate_reduced_feature_kaggle_notebook.py`
+-> `notebooks/pad_ufes20_reduced_feature_kaggle_notebook.md`), same
+read-real-files-at-generation-time approach as the Stage 2 notebook.
+Reuses the identical 3 "Add Data" sources as Phase 7 (no new upload
+needed). 24 cells: folder verification -> setup -> 12 `%%writefile` cells
+-> sanity check (normalization spot-check + Stage 1 checkpoint
+resolution) -> 9 training cells in dependency order (metadata_reduced x3
+must complete before fusion_reduced/cross_attention_reduced x3, since the
+latter two warm-start from the former's output).
+
+**`src/evaluation/evaluate_cross_dataset.py` written**, implementing
+Protocol A for all 4 variants: `CrossDatasetEvalDataset` (filters
+HAM10000's test split to the 3 shared classes, encodes labels in
+PAD-UFES-20's label space), `build_pad_to_ham_eval_preprocessor()` (fits
+on PAD-UFES-20 train, returns the `without_transforms()` eval copy),
+`coverage_diagnostic()` (reports what fraction of HAM10000's sex/
+anatomical_site values matched a known category vs. fell to
+"__MISSING__" - e.g. HAM10000's "genital"/"trunk" categories have no
+PAD-UFES-20 counterpart and are expected to fall through), macro-F1 +
+per-class F1 restricted to the 3 shared classes via sklearn's `labels=`,
+full 6-class confusion matrix, and spillover rate.
+
+**Validated with a complete real run (image variant, seed 0) - no Kaggle
+dependency, since `image_seed0_best.pt` already exists and evaluation is
+inference-only:** 1,253 HAM10000 test images (all 3 shared classes),
+macro-F1 (shared classes) = **0.4577** (Basal Cell Carcinoma 0.1987,
+Melanoma 0.3642, Nevus 0.8102), spillover rate 16.5%. Lower than
+PAD-UFES-20's own within-dataset image macro-F1 (0.5703) - the expected
+generalization-gap direction for true cross-dataset transfer, not a bug.
+This exercises the entire shared dataset/protocol/reporting code path
+used by all 4 variants; the metadata/late-fusion/cross-attention variants
+share this same code and differ only in which checkpoint/preprocessor
+they load, but full verification of those 3 awaits the 9 Kaggle-trained
+reduced-feature checkpoints below.
+
+**Not yet done:** the 9 actual Kaggle training runs (via
+`notebooks/pad_ufes20_reduced_feature_kaggle_notebook.md`) have not been
+executed. Once run and the checkpoints brought back and verified (same
+process as every prior stage), remaining work is: run
+`evaluate_cross_dataset.py` for the metadata/late_fusion/cross_attention
+variants x 3 seeds, then assemble the 4-way PAD-UFES-20->HAM10000
+generalization comparison table.
+
+---
+
+<a id="negative-result-improved-cross-attention"></a>
+## Negative Result — Improved Cross-Attention Variant Underperforms Original (2026-07-23)
+
+An "improved" cross-attention fusion variant was trained (3 seeds, via
+`notebooks/pad_ufes20_cross_attention_improved_kaggle_notebook.md` /
+`src/models/train_cross_attention_improved.py`) as an attempt to beat the
+original Phase 7 Stage 2 cross-attention result (0.6209 +/- 0.0143 mean
+macro-F1, see "Phase 7 Stage 2 — COMPLETE"). It did not.
+
+**Result (user-reported, unverified from file):** seed macro-F1 scores
+0.4804 / 0.5447 / 0.5028, mean **0.509**. These numbers were provided
+directly by the user in this session rather than confirmed against
+checkpoint/summary files in this pass — flagged explicitly as
+**unverified-from-file**, but consistent with what was observed during
+the improved-variant runs. Standard file-verification (checkpoint
+existence, summary JSON cross-check) was deliberately skipped for this
+entry per user instruction, since the result is negative and not being
+carried forward as a reported/final number.
+
+**Decision:** the improved cross-attention variant is **not** adopted.
+The original Phase 7 Stage 2 cross-attention model (0.6209 +/- 0.0143)
+remains the final fusion architecture and is what Phase 8 experiments
+(cross-dataset generalization, fairness analysis, etc.) evaluate against.
+No further tuning of the "improved" variant is planned — recorded here
+only so the attempt and its outcome aren't lost, per this project's
+practice of logging negative results alongside positive ones.
+
+**Re-confirmed 2026-07-25 (project audit):** re-checked disk for any
+`cross_attention_improved` checkpoint or summary JSON — `find . -iname
+"*improved*"` returns only the training script/notebook
+(`src/models/train_cross_attention_improved.py`,
+`notebooks/pad_ufes20_cross_attention_improved_kaggle_notebook.md`,
+`scripts/generate_improved_cross_attention_kaggle_notebook.py`); no
+`.pt` or summary file exists anywhere in the repo. The
+0.4804/0.5447/0.5028 numbers above remain exactly as flagged —
+user-reported and unverified-from-file, not silently upgraded to
+verified status anywhere else in this document.
+
+---
+
+<a id="phase-8-experiment-1-scope-final-model"></a>
+## Phase 8, Experiment 1 — Cross-Dataset Generalization Scope, Final Model Confirmed (2026-07-23)
+
+With the improved cross-attention variant ruled out (see previous entry),
+Phase 8 proceeds using the original Phase 7 Stage 2 cross-attention model
+(0.6209 +/- 0.0143 mean macro-F1, PAD-UFES-20 internal) as the final
+fusion architecture. This does not change the Experiment 1 scope already
+approved on 2026-07-18 ("Phase 8 Experiment 1 — Anatomical-Site Mapping
+Approved" entry above); it confirms which checkpoint set the
+cross-attention arm of that comparison uses going forward:
+`logs/PAD_UFES20/checkpoints/cross_attention_seed{0,1,2}_best.pt` (the
+original variant, already validated — see Phase 7 Stage 2 entry), not any
+checkpoint from the improved-variant experiment.
+
+**Experiment 1 recap — PAD-UFES-20 -> HAM10000 cross-dataset
+generalization:**
+- **Direction:** PAD-UFES-20 (train) -> HAM10000 (eval) is primary/
+  headline; reverse direction deferred, do-if-time-allows.
+- **Variants evaluated:** all 4 — image, metadata, late-fusion,
+  cross-attention (original, not improved) — to see whether the
+  generalization gap differs by architecture, not just report
+  cross-attention alone.
+- **Protocol:** Protocol A — full native 6-way argmax, scored only on the
+  3 classes shared between PAD-UFES-20 and HAM10000, spillover rate
+  reported (not masked/hidden).
+- **Anatomical-site mapping:** already reviewed and locked
+  (`docs/Phase8_Anatomical_Site_Mapping.csv`) — 9 clean, 3
+  lossy/coarsened (ARM+FOREARM -> upper extremity, THIGH -> lower
+  extremity), 2 unmapped (LIP, NOSE -> `__MISSING__`).
+- **Fairness:** per-Fitzpatrick-group macro-F1 (equalized odds deferred —
+  small per-group samples make it unstable).
+- **Significance testing:** cross-attention vs. each of the other 3
+  variants, 1000 bootstrap resamples, 95% CI.
+
+**Status of implementation** (from the 2026-07-18 entry, unchanged by
+today's decision): reduced-feature training scripts, config/dataset
+support, and `evaluate_cross_dataset.py` are written and smoke-tested;
+one full real run (image variant, seed 0) is validated end-to-end
+(macro-F1 0.4577 on shared classes vs. 0.5703 within-dataset — expected
+generalization-gap direction). **Not yet done:** the 9 Kaggle training
+runs for the reduced-feature metadata/fusion/cross-attention variants
+(3 variants x 3 seeds), after which `evaluate_cross_dataset.py` runs for
+each and the 4-way PAD-UFES-20->HAM10000 comparison table is assembled.
+
+**Next step:** run the 9 reduced-feature training jobs via
+`notebooks/pad_ufes20_reduced_feature_kaggle_notebook.md` on Kaggle,
+bring back and verify checkpoints (file-verified, per normal practice —
+today's skip applies only to the negative-result entry above), then
+evaluate all 4 variants cross-dataset and assemble the comparison table.
+
+---
+
+<a id="phase-8-reduced-feature-training-complete"></a>
+## Phase 8 — Reduced-Feature Training — COMPLETE (2026-07-25)
+
+All 9 reduced-feature training runs (metadata_reduced, fusion_reduced,
+cross_attention_reduced x 3 seeds each) completed via Kaggle commit,
+using `notebooks/pad_ufes20_reduced_feature_kaggle_notebook.md`. All 9
+checkpoints and matching CSV/summary files verified present in
+`logs/PAD_UFES20/` and cross-checked against the summary JSON contents
+(file-verified, not user-reported-only).
+
+**Results (PAD-UFES-20 internal, best validation macro-F1):**
+
+| Branch | seed0 | seed1 | seed2 | mean |
+|---|---|---|---|---|
+| metadata_reduced | 0.4789 | 0.4832 | 0.4736 | 0.4786 |
+| fusion_reduced | 0.5734 | 0.5835 | 0.5945 | 0.5838 |
+| cross_attention_reduced | 0.5921 | 0.6777 | 0.6650 | 0.6449 |
+
+**Important caveat — not comparable to the original 21-feature models:**
+these are schema-matched (3-feature: age, sex, anatomical_site) versions
+built specifically so their metadata preprocessing lines up with what
+HAM10000 provides, for Phase 8 Experiment 1 cross-dataset evaluation.
+Reducing from 21 features to 3 naturally changes the task the metadata/
+fusion/cross-attention branches are solving, so these numbers are not a
+regression relative to the original Phase 7 models (metadata/fusion/
+cross_attention_seed{0,1,2}, e.g. cross-attention's original 0.6209 mean)
+— they answer a different question (how well does a 3-feature-schema
+model do) and exist only to support the cross-dataset generalization
+experiment, not to replace the original within-dataset headline numbers.
+
+**Next step:** run `evaluate_cross_dataset.py` for all 4 variants (image
+using the original unmodified checkpoints; metadata/late_fusion/
+cross_attention using these new reduced-feature checkpoints) and assemble
+the 4-way PAD-UFES-20->HAM10000 generalization comparison table.
+
+---
+
+<a id="phase-8-experiment-1-complete"></a>
+## Phase 8, Experiment 1 — PAD-UFES-20 -> HAM10000 Cross-Dataset Generalization — COMPLETE (2026-07-25)
+
+All 12 runs (4 variants x 3 seeds) of `evaluate_cross_dataset.py` Protocol
+A completed: image uses the original unmodified
+`image_seed{0,1,2}_best.pt` checkpoints; metadata/late_fusion/
+cross_attention use the new reduced-feature checkpoints logged above.
+1,253 of HAM10000's 1,510 test rows (3 shared classes: Basal Cell
+Carcinoma, Melanoma, Nevus) evaluated per run, full native 6-way argmax,
+scored only on the 3 shared classes.
+
+**Bug found and fixed during this run:** `evaluate_cross_dataset.py`'s
+eval loop called `model(images, metadata)` unconditionally whenever
+`need_metadata` was true, but `MetadataMLP.forward()` only accepts a
+single metadata tensor (matches its usage in `evaluate.py`) - the
+metadata-only variant doesn't take an image input at all. This raised
+`TypeError: MetadataMLP.forward() takes 2 positional arguments but 3
+were given` on first run. Fixed by branching on `variant == "metadata"`
+to call `model(metadata)` only for that variant, leaving late_fusion/
+cross_attention's `model(images, metadata)` call unchanged (their
+`forward()` signatures do take both).
+
+**Results — macro-F1 (3 shared classes), mean +/- population std across
+3 seeds:**
+
+| Variant | seed0 | seed1 | seed2 | mean | std | spillover (mean) |
+|---|---|---|---|---|---|---|
+| image | 0.4577 | 0.4247 | 0.5149 | 0.4658 | 0.0373 | 17.7% |
+| metadata | 0.3079 | 0.2787 | 0.2893 | 0.2920 | 0.0121 | 13.1% |
+| late_fusion | 0.4521 | 0.4715 | 0.4557 | 0.4597 | 0.0084 | 12.2% |
+| cross_attention | 0.4916 | 0.4442 | 0.4604 | 0.4654 | 0.0197 | 11.6% |
+
+**Per-class F1 (shared classes), mean across 3 seeds:**
+
+| Variant | Basal Cell Carcinoma | Melanoma | Nevus |
+|---|---|---|---|
+| image | 0.2609 | 0.3335 | 0.8028 |
+| metadata | 0.1393 | 0.2071 | 0.5296 |
+| late_fusion | 0.2417 | 0.3360 | 0.8015 |
+| cross_attention | 0.2399 | 0.3526 | 0.8037 |
+
+**Reading the table:**
+- **Metadata alone generalizes worst** (0.2920) - unsurprising given it's
+  the reduced 3-feature schema (age/sex/anatomical_site) and metadata
+  distributions (especially anatomical_site coverage - ~17% of HAM10000
+  rows fell to `__MISSING__`, see per-run `metadata_coverage` in the JSON
+  reports) shift more across datasets than pixel statistics do.
+- **Image, late_fusion, and cross_attention cluster tightly** (0.4597-
+  0.4658 mean) - fusing in the weak reduced-metadata signal neither helps
+  much nor hurts much relative to image-alone under zero-shot transfer;
+  none of the three differences look likely to be significant by eye
+  (overlapping seed-to-seed ranges), though the formal bootstrap
+  significance test (cross-attention vs. each of the other 3, 1000
+  resamples, 95% CI - scoped in the 2026-07-23 entry above) has not been
+  run yet.
+- **Nevus dominates every variant's per-class F1** (0.53-0.80) while
+  Basal Cell Carcinoma and Melanoma lag well behind (0.14-0.35) - this
+  mirrors PAD-UFES-20's own class imbalance and is consistent across all
+  4 architectures, not an artifact of one branch.
+- **All 4 variants underperform their PAD-UFES-20-internal macro-F1**
+  (image 0.5703, cross_attention 0.6209 original / 0.6449 reduced-feature
+  mean) - the expected generalization-gap direction for genuine zero-shot
+  cross-dataset transfer.
+
+**Not yet done:** bootstrap significance testing (cross-attention vs.
+each other variant), per-Fitzpatrick-group fairness breakdown, and the
+reverse-direction (HAM10000 -> PAD-UFES-20) experiment, all still scoped
+as deferred/next-step per the 2026-07-23 entry.
+
+**Clean writeup:** full per-seed/mean/std/spillover/per-class-F1 tables
+assembled into `docs/Phase8_CrossDataset_Generalization_Results.md`.
+
+---
+
+<a id="pad-ufes20-image-path-integrity-check"></a>
+## Due-Diligence — PAD-UFES-20 Image Path Integrity, Exhaustive Check (2026-07-25)
+
+Every row (not a sample) in PAD-UFES-20's `train.csv`/`val.csv`/`test.csv`
+was checked: `resolve_image_path(row["image_path"])` resolved and
+`Path.exists()` verified for all 2,298 rows (train 1,606 + val 338 + test
+354). **0 missing/unresolvable paths.** This closes out any residual
+doubt about silent image-loading failures affecting the Phase 6-8 results
+reported above.
+
+---
+
+<a id="phase-8-bootstrap-significance-complete"></a>
+## Phase 8 — Bootstrap Significance Testing — COMPLETE (2026-07-25)
+
+**Scope (approved earlier this session):** cross-attention vs. each of
+the other 3 variants (image, metadata, late_fusion) - 3 comparisons, all
+sharing the cross-attention anchor. Paired bootstrap, row-level
+resampling of the 1,253 HAM10000 eval rows, seed-averaged per iteration,
+1,000 resamples, percentile-method 95% CI, fixed RNG seed (42, distinct
+from the 3 model-training seeds) for reproducibility. Both the
+uncorrected alpha=0.05 and the Bonferroni-adjusted alpha=0.05/3~=0.0167
+reported by default (3 comparisons share one anchor - flagged in advance
+as a predictable reviewer question, costs nothing extra to compute).
+
+**Prerequisite implemented first:** `evaluate_cross_dataset.py` never
+saved per-row predictions (only the aggregate confusion matrix/macro-F1),
+so bootstrap resampling had nothing to resample. Added a non-invasive
+per-row prediction CSV dump
+(`reports/PAD_UFES20/cross_dataset/predictions_{variant}_seed{seed}_pad_to_ham.csv`)
+after the existing forward pass - the existing aggregate JSON output and
+metrics logic are untouched. All 12 evals (4 variants x 3 seeds) were
+re-run to produce these CSVs; every re-run macro-F1 matched the
+already-logged number exactly, confirming this was purely additive, not
+a re-verification catching a discrepancy. Row order was independently
+confirmed identical across all 12 CSVs (same HAM10000-filtered rows in
+the same order) before it was relied on for paired resampling.
+
+**Script:** `src/evaluation/bootstrap_significance.py`. **Output:**
+`reports/PAD_UFES20/cross_dataset/bootstrap_significance.json`.
+
+**Results:**
+
+| Comparison | Observed diff | 95% CI | p-value (2-sided) | Sig. alpha=0.05 | Sig. Bonferroni alpha~=0.0167 |
+|---|---|---|---|---|---|
+| cross_attention vs. image | -0.0004 | [-0.0189, +0.0196] | 0.970 | No | No |
+| cross_attention vs. metadata | **+0.1734** | **[+0.1341, +0.2097]** | **0.000** | **Yes** | **Yes** |
+| cross_attention vs. late_fusion | +0.0057 | [-0.0139, +0.0247] | 0.590 | No | No |
+
+**Interpretation:** cross-attention's advantage over metadata-alone on
+this cross-dataset transfer task is real and highly significant under
+both thresholds. Cross-attention is **not** statistically distinguishable
+from image-alone or late_fusion here - both CIs comfortably straddle 0.
+**This means the apparent 0.4597-0.4658 mean-macro-F1 ranking among
+image/late_fusion/cross_attention in the cross-dataset generalization
+table should not be reported as one architecture "beating" the others on
+this specific transfer task** - only that all 3 clearly and significantly
+outperform metadata-alone, while remaining statistically tied with each
+other on HAM10000 transfer specifically. This does not change
+cross-attention's status as the strongest architecture within-dataset
+(0.6209 vs. 0.5703 image / 0.5731 late-fusion, PAD-UFES-20-internal,
+already a clean non-overlapping-range separation per the Phase 7 Stage 2
+entry) - it only tempers what can be claimed about the cross-dataset
+transfer numbers specifically.
+
+**Full writeup:** results and interpretation also added to
+`docs/Phase8_CrossDataset_Generalization_Results.md`.
+
+**Next step (approved order):** Fitzpatrick fairness analysis, then
+external validation via ISIC (blocked on the 2 open ISIC gaps - see
+project audit, 2026-07-25).
+
+---
+
+<a id="phase-8-fitzpatrick-fairness-complete"></a>
+## Phase 8 — Fitzpatrick Fairness Analysis — COMPLETE; PAD-UFES-20 Test Split Now Spent (2026-07-25)
+
+**Scope (approved earlier this session):** all 4 variants (image,
+metadata, fusion, cross_attention), original full-feature checkpoints
+(not the reduced-feature HAM10000-schema ones - not needed here, this
+stays within PAD-UFES-20). Per-group macro-F1 on PAD-UFES-20's own test
+split (Fitzpatrick only exists in PAD-UFES-20 - HAM10000 has no such
+column, so this cannot extend the cross-dataset experiment). Small-sample
+tiering: n<15 excluded from the macro-F1 table (count-only), 15<=n<30
+included with a small-sample caution flag, n>=30 included with no flag;
+missing Fitzpatrick reported as its own count/percentage, not treated as
+a fairness group. Per-group 95% CIs via the same paired-bootstrap
+machinery built for the cross-dataset significance test (1000 resamples,
+percentile method, RNG seed 42).
+
+**Process issue caught and resolved during implementation:** the initial
+script draft asserted in its own docstring that PAD-UFES-20's test split
+"had already been used once for Phase 6/7 Stage 1's final evaluation" -
+this was an unverified assumption, and it was wrong. Checked directly:
+no `eval_*_test.json` exists anywhere in `reports/PAD_UFES20/`, and
+`evaluate.py`'s `--confirm-final` guard (in place since Phase 6 Stage 1,
+per the 2026-07-09 entry) had never actually been invoked - only ever
+described in code. The 12 inference runs for this fairness analysis were
+therefore **the first-ever evaluation of any PAD-UFES-20 checkpoint on
+the test split**, run through a new script that doesn't go through
+`evaluate.py`'s guard at all - a real deviation from the project's own
+"test touched only once, after all training/model-selection decisions
+are finalized" discipline (decision 4), caught only after the runs had
+already executed, not before. Flagged to the user immediately once
+discovered, before writing up or logging any results. **User decision:**
+keep the results and treat them as both the fairness breakdown and
+PAD-UFES-20's official final Stage 1 test-set result - the single
+sanctioned test-split use, retroactively justified since all Stage
+1/Phase 7 training and model-selection decisions were already finalized
+before this analysis ran (Phase 7 Stage 2 completed 2026-07-18, well
+before this 2026-07-25 run).
+
+**Official PAD-UFES-20 Stage 1 test-set result (first and only test-set
+evaluation of these checkpoints):**
+
+| Variant | seed0 | seed1 | seed2 | mean | std |
+|---|---|---|---|---|---|
+| image | 0.6019 | 0.6382 | 0.6123 | 0.6175 | 0.0153 |
+| metadata | 0.5897 | 0.5975 | 0.6360 | 0.6077 | 0.0202 |
+| fusion | 0.6261 | 0.6830 | 0.6606 | 0.6566 | 0.0234 |
+| **cross_attention** | 0.6862 | 0.6721 | 0.7349 | **0.6977** | 0.0269 |
+
+Architecture ranking matches the val-split ranking from Phase 7 Stage 2
+(cross-attention > fusion > image ~= metadata) - consistent, not a
+reversal. All 4 score higher on test than val; no other test-set number
+exists for these checkpoints to cross-check against, since this is the
+first time the split was touched.
+
+**Fitzpatrick group sizes, test split (n=354):** 1=22, 2=120, 3=59, 4=15,
+5=2, 6=1, missing=135 (38.1%). **Headline finding: the two darkest-skin
+groups (5, 6) have only 2 and 1 rows total - too few to report any rate**,
+and 38% of the test set has no Fitzpatrick value recorded at all. This
+means **the fairness question that matters most clinically (performance
+on the darkest skin tones) cannot be answered from this dataset** - an
+absence-of-data finding, not a negative result, and the single most
+important conclusion of this analysis. Any fairness claim drawn from this
+work is bounded to Fitzpatrick types I-IV (and even IV is small-sample,
+n=15) - must be stated explicitly wherever these results are cited, not
+implied to cover the full clinical population.
+
+**Per-group macro-F1, mean across 3 seeds (reportable groups only):**
+
+| Variant | Group 1 (n=22) | Group 2 (n=120) | Group 3 (n=59) | Group 4 (n=15) |
+|---|---|---|---|---|
+| image | 0.2525 | 0.5446 | 0.4637 | 0.4051 |
+| metadata | 0.3586 | 0.3690 | 0.5351 | 0.4053 |
+| fusion | 0.2785 | 0.5638 | 0.5228 | 0.4190 |
+| **cross_attention** | 0.3307 | 0.6212 | 0.5706 | 0.4365 |
+
+Groups 1 and 4 carry a small-sample caution flag (n<30); bootstrap CIs
+(in `reports/PAD_UFES20/fairness/fairness_results.json`) are wide across
+every group, typically spanning 0.1-0.3 macro-F1 even for the
+best-scoring group. cross_attention is the best or tied-best performer
+in every reportable group, not just on the overall mean - a positive
+signal that its overall lead isn't coming at the expense of the
+weaker-performing groups, though still bounded by the same small-sample
+caveats. No equalized-odds or other parity metric computed (deferred, as
+scoped - per-group instability at this n would make such a metric itself
+unreliable).
+
+**Script:** `src/evaluation/evaluate_fairness.py`. **Outputs:**
+`reports/PAD_UFES20/fairness/fairness_results.json`, per-row predictions
+`reports/PAD_UFES20/fairness/predictions_{variant}_seed{seed}_test.csv`.
+**Full writeup:** `docs/Phase8_Fitzpatrick_Fairness_Results.md`.
+
+**Next step (approved order):** external validation via ISIC - blocked
+on the 2 open ISIC gaps (Archive 2's 3 unverified
+anatomical_site-adjacent whitelist fields, and the 3 cross-archive
+label conflicts) per the 2026-07-25 project audit; those need resolving
+before an ISIC evaluation run is scoped.

@@ -1,0 +1,90 @@
+{
+  "experiment": "phase8_pad_to_ham_cross_dataset_generalization",
+  "protocol": "A - full native argmax, restricted to 3 shared classes for scoring",
+  "variant": "late_fusion",
+  "seed": 2,
+  "n_eval_rows": 1253,
+  "shared_classes": [
+    "Basal Cell Carcinoma",
+    "Melanoma",
+    "Nevus"
+  ],
+  "macro_f1_shared_classes": 0.45568002060111096,
+  "per_class_f1_shared_classes": {
+    "Basal Cell Carcinoma": 0.2601626016260163,
+    "Melanoma": 0.3252032520325203,
+    "Nevus": 0.7816742081447964
+  },
+  "spillover_count": 123,
+  "spillover_rate": 0.09816440542697526,
+  "confusion_matrix": [
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      12,
+      16,
+      11,
+      15,
+      13,
+      11
+    ],
+    [
+      0,
+      8,
+      80,
+      55,
+      14,
+      11
+    ],
+    [
+      12,
+      21,
+      233,
+      691,
+      44,
+      6
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "confusion_matrix_class_order": [
+    "Actinic Keratosis",
+    "Basal Cell Carcinoma",
+    "Melanoma",
+    "Nevus",
+    "Seborrheic Keratosis",
+    "Squamous Cell Carcinoma"
+  ],
+  "metadata_coverage": {
+    "sex": {
+      "matched": 1244,
+      "fell_to_missing": 9,
+      "total": 1253
+    },
+    "anatomical_site": {
+      "matched": 1039,
+      "fell_to_missing": 214,
+      "total": 1253
+    }
+  }
+}

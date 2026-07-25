@@ -1,0 +1,74 @@
+{
+  "dataset": "PAD_UFES20",
+  "branch": "cross_attention",
+  "seed": 2,
+  "split": "val",
+  "macro_f1": 0.6396616287586523,
+  "accuracy_reference_only": 0.7218934911242604,
+  "per_class_f1": {
+    "Actinic Keratosis": 0.8121827411167513,
+    "Basal Cell Carcinoma": 0.7710843373493976,
+    "Melanoma": 0.5,
+    "Nevus": 0.7073170731707317,
+    "Seborrheic Keratosis": 0.6944444444444444,
+    "Squamous Cell Carcinoma": 0.35294117647058826
+  },
+  "confusion_matrix": [
+    [
+      80,
+      13,
+      0,
+      1,
+      3,
+      11
+    ],
+    [
+      5,
+      96,
+      0,
+      7,
+      0,
+      18
+    ],
+    [
+      0,
+      0,
+      2,
+      2,
+      2,
+      0
+    ],
+    [
+      0,
+      2,
+      0,
+      29,
+      11,
+      0
+    ],
+    [
+      1,
+      2,
+      0,
+      1,
+      25,
+      2
+    ],
+    [
+      3,
+      10,
+      0,
+      0,
+      0,
+      12
+    ]
+  ],
+  "confusion_matrix_class_order": [
+    "Actinic Keratosis",
+    "Basal Cell Carcinoma",
+    "Melanoma",
+    "Nevus",
+    "Seborrheic Keratosis",
+    "Squamous Cell Carcinoma"
+  ]
+}

@@ -84,14 +84,29 @@ class MetadataPreprocessor:
     """Fits standardization/encoding on the train split only, applies it
     identically to val/test - prevents any val/test statistic (mean,
     std, category set) from leaking into the transform.
+
+    column_transforms (optional): {column_name: callable(raw_value) -> str}
+    applied to a categorical column's raw value before the standard
+    one-hot logic, for both fit() and transform_row(). Used by Phase 8's
+    reduced-feature PAD-UFES-20 models to normalize anatomical_site into
+    HAM10000's vocabulary (config.normalize_anatomical_site_for_cross_dataset)
+    before fitting/encoding - HAM10000's own values pass through unchanged
+    since they're already in the target vocabulary and have no transform
+    registered.
     """
 
-    def __init__(self, dataset_config: DatasetConfig):
+    def __init__(self, dataset_config: DatasetConfig, column_transforms: dict = None):
         self.numeric_features = dataset_config.numeric_features
         self.categorical_features = dataset_config.categorical_features
+        self.column_transforms = column_transforms or {}
         self.numeric_means = {}
         self.numeric_stds = {}
         self.categorical_values = {}  # col -> sorted list of seen categories
+
+    def _categorical_value(self, col: str, raw_value) -> str:
+        if col in self.column_transforms:
+            return self.column_transforms[col](raw_value)
+        return "__MISSING__" if pd.isna(raw_value) else str(raw_value)
 
     def fit(self, df: pd.DataFrame) -> "MetadataPreprocessor":
         for col in self.numeric_features:
@@ -100,9 +115,28 @@ class MetadataPreprocessor:
             std = values.std()
             self.numeric_stds[col] = std if std and std > 0 else 1.0
         for col in self.categorical_features:
-            values = df[col].astype("string").fillna("__MISSING__")
+            values = df[col].apply(lambda v, c=col: self._categorical_value(c, v))
             self.categorical_values[col] = sorted(values.unique().tolist())
         return self
+
+    def without_transforms(self) -> "MetadataPreprocessor":
+        """Shallow copy with column_transforms cleared, keeping the fitted
+        numeric_means/stds/categorical_values as-is. Used at Phase 8
+        cross-dataset evaluation time: the preprocessor is fit on
+        PAD-UFES-20's train split with anatomical_site normalized into
+        HAM10000's vocabulary (config.normalize_anatomical_site_for_cross_dataset),
+        but HAM10000's own anatomical_site/sex values are already in that
+        target vocabulary - re-applying the transform to them would
+        incorrectly try to re-map already-correct strings (e.g. the
+        transform's dict is keyed on PAD-UFES-20's uppercase site names,
+        so a HAM10000 value like "abdomen" wouldn't match and would
+        wrongly fall to "__MISSING__").
+        """
+        import copy
+
+        clone = copy.copy(self)
+        clone.column_transforms = {}
+        return clone
 
     @property
     def output_dim(self) -> int:
@@ -118,8 +152,7 @@ class MetadataPreprocessor:
                 raw = self.numeric_means[col]
             parts.append((raw - self.numeric_means[col]) / self.numeric_stds[col])
         for col in self.categorical_features:
-            value = row[col]
-            value = "__MISSING__" if pd.isna(value) else str(value)
+            value = self._categorical_value(col, row[col])
             categories = self.categorical_values[col]
             one_hot = [1.0 if value == cat else 0.0 for cat in categories]
             if value not in categories:

@@ -1,0 +1,733 @@
+{
+  "experiment": "phase8_fitzpatrick_fairness_pad_ufes20_test",
+  "n_resamples": 1000,
+  "rng_seed": 42,
+  "min_n_reportable": 15,
+  "min_n_no_caution": 30,
+  "variants": {
+    "image": {
+      "seeds": {
+        "0": {
+          "overall_macro_f1": 0.6018943605666214,
+          "groups": {
+            "1": {
+              "n": 22,
+              "pct_of_total": 0.062146892655367235,
+              "reported": true,
+              "macro_f1": 0.3955555555555555,
+              "ci_95_low": 0.16666666666666666,
+              "ci_95_high": 0.513938492063492,
+              "small_sample_caution": true
+            },
+            "2": {
+              "n": 120,
+              "pct_of_total": 0.3389830508474576,
+              "reported": true,
+              "macro_f1": 0.5248294885098759,
+              "ci_95_low": 0.36541027097526435,
+              "ci_95_high": 0.6325227391462689,
+              "small_sample_caution": false
+            },
+            "3": {
+              "n": 59,
+              "pct_of_total": 0.16666666666666666,
+              "reported": true,
+              "macro_f1": 0.3906432748538011,
+              "ci_95_low": 0.1855708752230491,
+              "ci_95_high": 0.517411414168865,
+              "small_sample_caution": false
+            },
+            "4": {
+              "n": 15,
+              "pct_of_total": 0.0423728813559322,
+              "reported": true,
+              "macro_f1": 0.32905982905982906,
+              "ci_95_low": 0.023809523809523808,
+              "ci_95_high": 0.4166666666666667,
+              "small_sample_caution": true
+            },
+            "5": {
+              "n": 2,
+              "pct_of_total": 0.005649717514124294,
+              "reported": false,
+              "reason": "insufficient sample (n<15)"
+            },
+            "6": {
+              "n": 1,
+              "pct_of_total": 0.002824858757062147,
+              "reported": false,
+              "reason": "insufficient sample (n<15)"
+            },
+            "missing": {
+              "n": 135,
+              "pct_of_total": 0.3813559322033898,
+              "reported": false,
+              "reason": "not a fairness group - data-availability gap"
+            }
+          }
+        },
+        "1": {
+          "overall_macro_f1": 0.6381721003814703,
+          "groups": {
+            "1": {
+              "n": 22,
+              "pct_of_total": 0.062146892655367235,
+              "reported": true,
+              "macro_f1": 0.1475095785440613,
+              "ci_95_low": 0.06172839506172839,
+              "ci_95_high": 0.23337179487179482,
+              "small_sample_caution": true
+            },
+            "2": {
+              "n": 120,
+              "pct_of_total": 0.3389830508474576,
+              "reported": true,
+              "macro_f1": 0.5518739346172974,
+              "ci_95_low": 0.37414106667326075,
+              "ci_95_high": 0.6734733144654697,
+              "small_sample_caution": false
+            },
+            "3": {
+              "n": 59,
+              "pct_of_total": 0.16666666666666666,
+              "reported": true,
+              "macro_f1": 0.513846526264827,
+              "ci_95_low": 0.30468573132103843,
+              "ci_95_high": 0.5834426921165826,
+              "small_sample_caution": false
+            },
+            "4": {
+              "n": 15,
+              "pct_of_total": 0.0423728813559322,
+              "reported": true,
+              "macro_f1": 0.4907407407407407,
+              "ci_95_low": 0.13882575757575757,
+              "ci_95_high": 0.6039989680082558,
+              "small_sample_caution": true
+            },
+            "5": {
+              "n": 2,
+              "pct_of_total": 0.005649717514124294,
+              "reported": false,
+              "reason": "insufficient sample (n<15)"
+            },
+            "6": {
+              "n": 1,
+              "pct_of_total": 0.002824858757062147,
+              "reported": false,
+              "reason": "insufficient sample (n<15)"
+            },
+            "missing": {
+              "n": 135,
+              "pct_of_total": 0.3813559322033898,
+              "reported": false,
+              "reason": "not a fairness group - data-availability gap"
+            }
+          }
+        },
+        "2": {
+          "overall_macro_f1": 0.6123002305608211,
+          "groups": {
+            "1": {
+              "n": 22,
+              "pct_of_total": 0.062146892655367235,
+              "reported": true,
+              "macro_f1": 0.21428571428571427,
+              "ci_95_low": 0.10665151515151516,
+              "ci_95_high": 0.29312880324543605,
+              "small_sample_caution": true
+            },
+            "2": {
+              "n": 120,
+              "pct_of_total": 0.3389830508474576,
+              "reported": true,
+              "macro_f1": 0.5571908256982068,
+              "ci_95_low": 0.3773617847395107,
+              "ci_95_high": 0.6868026951869541,
+              "small_sample_caution": false
+            },
+            "3": {
+              "n": 59,
+              "pct_of_total": 0.16666666666666666,
+              "reported": true,
+              "macro_f1": 0.48654637543526436,
+              "ci_95_low": 0.29115049943363197,
+              "ci_95_high": 0.5350609736606572,
+              "small_sample_caution": false
+            },
+            "4": {
+              "n": 15,
+              "pct_of_total": 0.0423728813559322,
+              "reported": true,
+              "macro_f1": 0.3954248366013072,
+              "ci_95_low": 0.09999999999999999,
+              "ci_95_high": 0.48148148148148145,
+              "small_sample_caution": true
+            },
+            "5": {
+              "n": 2,
+              "pct_of_total": 0.005649717514124294,
+              "reported": false,
+              "reason": "insufficient sample (n<15)"
+            },
+            "6": {
+              "n": 1,
+              "pct_of_total": 0.002824858757062147,
+              "reported": false,
+              "reason": "insufficient sample (n<15)"
+            },
+            "missing": {
+              "n": 135,
+              "pct_of_total": 0.3813559322033898,
+              "reported": false,
+              "reason": "not a fairness group - data-availability gap"
+            }
+          }
+        }
+      }
+    },
+    "metadata": {
+      "seeds": {
+        "0": {
+          "overall_macro_f1": 0.589712445706489,
+          "groups": {
+            "1": {
+              "n": 22,
+              "pct_of_total": 0.062146892655367235,
+              "reported": true,
+              "macro_f1": 0.26904761904761904,
+              "ci_95_low": 0.1111111111111111,
+              "ci_95_high": 0.3952585765488991,
+              "small_sample_caution": true
+            },
+            "2": {
+              "n": 120,
+              "pct_of_total": 0.3389830508474576,
+              "reported": true,
+              "macro_f1": 0.37304699657640833,
+              "ci_95_low": 0.26495747269948816,
+              "ci_95_high": 0.4641477994041848,
+              "small_sample_caution": false
+            },
+            "3": {
+              "n": 59,
+              "pct_of_total": 0.16666666666666666,
+              "reported": true,
+              "macro_f1": 0.496464775534543,
+              "ci_95_low": 0.29368095852138404,
+              "ci_95_high": 0.6327298985490741,
+              "small_sample_caution": false
+            },
+            "4": {
+              "n": 15,
+              "pct_of_total": 0.0423728813559322,
+              "reported": true,
+              "macro_f1": 0.3954248366013072,
+              "ci_95_low": 0.10606060606060606,
+              "ci_95_high": 0.4761904761904762,
+              "small_sample_caution": true
+            },
+            "5": {
+              "n": 2,
+              "pct_of_total": 0.005649717514124294,
+              "reported": false,
+              "reason": "insufficient sample (n<15)"
+            },
+            "6": {
+              "n": 1,
+              "pct_of_total": 0.002824858757062147,
+              "reported": false,
+              "reason": "insufficient sample (n<15)"
+            },
+            "missing": {
+              "n": 135,
+              "pct_of_total": 0.3813559322033898,
+              "reported": false,
+              "reason": "not a fairness group - data-availability gap"
+            }
+          }
+        },
+        "1": {
+          "overall_macro_f1": 0.5974680895408434,
+          "groups": {
+            "1": {
+              "n": 22,
+              "pct_of_total": 0.062146892655367235,
+              "reported": true,
+              "macro_f1": 0.39999999999999997,
+              "ci_95_low": 0.14163377192982457,
+              "ci_95_high": 0.47126436781609193,
+              "small_sample_caution": true
+            },
+            "2": {
+              "n": 120,
+              "pct_of_total": 0.3389830508474576,
+              "reported": true,
+              "macro_f1": 0.30411877394636017,
+              "ci_95_low": 0.17527173026515666,
+              "ci_95_high": 0.4042582147191879,
+              "small_sample_caution": false
+            },
+            "3": {
+              "n": 59,
+              "pct_of_total": 0.16666666666666666,
+              "reported": true,
+              "macro_f1": 0.5658837047725936,
+              "ci_95_low": 0.2998108662621336,
+              "ci_95_high": 0.6678085644827036,
+              "small_sample_caution": false
+            },
+            "4": {
+              "n": 15,
+              "pct_of_total": 0.0423728813559322,
+              "reported": true,
+              "macro_f1": 0.4694444444444444,
+              "ci_95_low": 0.12962962962962962,
+              "ci_95_high": 0.5857539682539682,
+              "small_sample_caution": true
+            },
+            "5": {
+              "n": 2,
+              "pct_of_total": 0.005649717514124294,
+              "reported": false,
+              "reason": "insufficient sample (n<15)"
+            },
+            "6": {
+              "n": 1,
+              "pct_of_total": 0.002824858757062147,
+              "reported": false,
+              "reason": "insufficient sample (n<15)"
+            },
+            "missing": {
+              "n": 135,
+              "pct_of_total": 0.3813559322033898,
+              "reported": false,
+              "reason": "not a fairness group - data-availability gap"
+            }
+          }
+        },
+        "2": {
+          "overall_macro_f1": 0.6359516261983272,
+          "groups": {
+            "1": {
+              "n": 22,
+              "pct_of_total": 0.062146892655367235,
+              "reported": true,
+              "macro_f1": 0.4068100358422939,
+              "ci_95_low": 0.13513513513513514,
+              "ci_95_high": 0.4803921568627451,
+              "small_sample_caution": true
+            },
+            "2": {
+              "n": 120,
+              "pct_of_total": 0.3389830508474576,
+              "reported": true,
+              "macro_f1": 0.4297107683648284,
+              "ci_95_low": 0.3008189421202445,
+              "ci_95_high": 0.5295030843566575,
+              "small_sample_caution": false
+            },
+            "3": {
+              "n": 59,
+              "pct_of_total": 0.16666666666666666,
+              "reported": true,
+              "macro_f1": 0.542989417989418,
+              "ci_95_low": 0.3040614682299036,
+              "ci_95_high": 0.6558187299309968,
+              "small_sample_caution": false
+            },
+            "4": {
+              "n": 15,
+              "pct_of_total": 0.0423728813559322,
+              "reported": true,
+              "macro_f1": 0.3509803921568628,
+              "ci_95_low": 0.09803921568627451,
+              "ci_95_high": 0.45101540616246494,
+              "small_sample_caution": true
+            },
+            "5": {
+              "n": 2,
+              "pct_of_total": 0.005649717514124294,
+              "reported": false,
+              "reason": "insufficient sample (n<15)"
+            },
+            "6": {
+              "n": 1,
+              "pct_of_total": 0.002824858757062147,
+              "reported": false,
+              "reason": "insufficient sample (n<15)"
+            },
+            "missing": {
+              "n": 135,
+              "pct_of_total": 0.3813559322033898,
+              "reported": false,
+              "reason": "not a fairness group - data-availability gap"
+            }
+          }
+        }
+      }
+    },
+    "fusion": {
+      "seeds": {
+        "0": {
+          "overall_macro_f1": 0.6260626084155495,
+          "groups": {
+            "1": {
+              "n": 22,
+              "pct_of_total": 0.062146892655367235,
+              "reported": true,
+              "macro_f1": 0.37777777777777777,
+              "ci_95_low": 0.13720894607843137,
+              "ci_95_high": 0.47474747474747475,
+              "small_sample_caution": true
+            },
+            "2": {
+              "n": 120,
+              "pct_of_total": 0.3389830508474576,
+              "reported": true,
+              "macro_f1": 0.5057850770965525,
+              "ci_95_low": 0.3503165664227611,
+              "ci_95_high": 0.6060208443726329,
+              "small_sample_caution": false
+            },
+            "3": {
+              "n": 59,
+              "pct_of_total": 0.16666666666666666,
+              "reported": true,
+              "macro_f1": 0.49516066589237323,
+              "ci_95_low": 0.2836519607843137,
+              "ci_95_high": 0.5751770516434721,
+              "small_sample_caution": false
+            },
+            "4": {
+              "n": 15,
+              "pct_of_total": 0.0423728813559322,
+              "reported": true,
+              "macro_f1": 0.3819444444444444,
+              "ci_95_low": 0.0784313725490196,
+              "ci_95_high": 0.46296296296296297,
+              "small_sample_caution": true
+            },
+            "5": {
+              "n": 2,
+              "pct_of_total": 0.005649717514124294,
+              "reported": false,
+              "reason": "insufficient sample (n<15)"
+            },
+            "6": {
+              "n": 1,
+              "pct_of_total": 0.002824858757062147,
+              "reported": false,
+              "reason": "insufficient sample (n<15)"
+            },
+            "missing": {
+              "n": 135,
+              "pct_of_total": 0.3813559322033898,
+              "reported": false,
+              "reason": "not a fairness group - data-availability gap"
+            }
+          }
+        },
+        "1": {
+          "overall_macro_f1": 0.6830306387649232,
+          "groups": {
+            "1": {
+              "n": 22,
+              "pct_of_total": 0.062146892655367235,
+              "reported": true,
+              "macro_f1": 0.19791666666666666,
+              "ci_95_low": 0.08888888888888889,
+              "ci_95_high": 0.3,
+              "small_sample_caution": true
+            },
+            "2": {
+              "n": 120,
+              "pct_of_total": 0.3389830508474576,
+              "reported": true,
+              "macro_f1": 0.5984581551919013,
+              "ci_95_low": 0.4377768761027949,
+              "ci_95_high": 0.7170051910098094,
+              "small_sample_caution": false
+            },
+            "3": {
+              "n": 59,
+              "pct_of_total": 0.16666666666666666,
+              "reported": true,
+              "macro_f1": 0.5399106002554278,
+              "ci_95_low": 0.3178577540402158,
+              "ci_95_high": 0.6103565083480814,
+              "small_sample_caution": false
+            },
+            "4": {
+              "n": 15,
+              "pct_of_total": 0.0423728813559322,
+              "reported": true,
+              "macro_f1": 0.4930555555555555,
+              "ci_95_low": 0.1111111111111111,
+              "ci_95_high": 0.6112037037037036,
+              "small_sample_caution": true
+            },
+            "5": {
+              "n": 2,
+              "pct_of_total": 0.005649717514124294,
+              "reported": false,
+              "reason": "insufficient sample (n<15)"
+            },
+            "6": {
+              "n": 1,
+              "pct_of_total": 0.002824858757062147,
+              "reported": false,
+              "reason": "insufficient sample (n<15)"
+            },
+            "missing": {
+              "n": 135,
+              "pct_of_total": 0.3813559322033898,
+              "reported": false,
+              "reason": "not a fairness group - data-availability gap"
+            }
+          }
+        },
+        "2": {
+          "overall_macro_f1": 0.6605778487468781,
+          "groups": {
+            "1": {
+              "n": 22,
+              "pct_of_total": 0.062146892655367235,
+              "reported": true,
+              "macro_f1": 0.2597701149425287,
+              "ci_95_low": 0.11538461538461538,
+              "ci_95_high": 0.3148148148148148,
+              "small_sample_caution": true
+            },
+            "2": {
+              "n": 120,
+              "pct_of_total": 0.3389830508474576,
+              "reported": true,
+              "macro_f1": 0.5870510544185902,
+              "ci_95_low": 0.4234860555644431,
+              "ci_95_high": 0.6963911989311894,
+              "small_sample_caution": false
+            },
+            "3": {
+              "n": 59,
+              "pct_of_total": 0.16666666666666666,
+              "reported": true,
+              "macro_f1": 0.5334742776603242,
+              "ci_95_low": 0.3229697604350382,
+              "ci_95_high": 0.6131258917424647,
+              "small_sample_caution": false
+            },
+            "4": {
+              "n": 15,
+              "pct_of_total": 0.0423728813559322,
+              "reported": true,
+              "macro_f1": 0.3819444444444444,
+              "ci_95_low": 0.08771929824561403,
+              "ci_95_high": 0.4663935574229691,
+              "small_sample_caution": true
+            },
+            "5": {
+              "n": 2,
+              "pct_of_total": 0.005649717514124294,
+              "reported": false,
+              "reason": "insufficient sample (n<15)"
+            },
+            "6": {
+              "n": 1,
+              "pct_of_total": 0.002824858757062147,
+              "reported": false,
+              "reason": "insufficient sample (n<15)"
+            },
+            "missing": {
+              "n": 135,
+              "pct_of_total": 0.3813559322033898,
+              "reported": false,
+              "reason": "not a fairness group - data-availability gap"
+            }
+          }
+        }
+      }
+    },
+    "cross_attention": {
+      "seeds": {
+        "0": {
+          "overall_macro_f1": 0.6861807934155405,
+          "groups": {
+            "1": {
+              "n": 22,
+              "pct_of_total": 0.062146892655367235,
+              "reported": true,
+              "macro_f1": 0.5404040404040403,
+              "ci_95_low": 0.21578947368421053,
+              "ci_95_high": 0.637921497404256,
+              "small_sample_caution": true
+            },
+            "2": {
+              "n": 120,
+              "pct_of_total": 0.3389830508474576,
+              "reported": true,
+              "macro_f1": 0.5726264997391758,
+              "ci_95_low": 0.37783527466472533,
+              "ci_95_high": 0.6944081403643363,
+              "small_sample_caution": false
+            },
+            "3": {
+              "n": 59,
+              "pct_of_total": 0.16666666666666666,
+              "reported": true,
+              "macro_f1": 0.5897065897065897,
+              "ci_95_low": 0.3586519607843137,
+              "ci_95_high": 0.6801492869875222,
+              "small_sample_caution": false
+            },
+            "4": {
+              "n": 15,
+              "pct_of_total": 0.0423728813559322,
+              "reported": true,
+              "macro_f1": 0.3954248366013072,
+              "ci_95_low": 0.09999999999999999,
+              "ci_95_high": 0.4791666666666667,
+              "small_sample_caution": true
+            },
+            "5": {
+              "n": 2,
+              "pct_of_total": 0.005649717514124294,
+              "reported": false,
+              "reason": "insufficient sample (n<15)"
+            },
+            "6": {
+              "n": 1,
+              "pct_of_total": 0.002824858757062147,
+              "reported": false,
+              "reason": "insufficient sample (n<15)"
+            },
+            "missing": {
+              "n": 135,
+              "pct_of_total": 0.3813559322033898,
+              "reported": false,
+              "reason": "not a fairness group - data-availability gap"
+            }
+          }
+        },
+        "1": {
+          "overall_macro_f1": 0.6721210588403012,
+          "groups": {
+            "1": {
+              "n": 22,
+              "pct_of_total": 0.062146892655367235,
+              "reported": true,
+              "macro_f1": 0.2222222222222222,
+              "ci_95_low": 0.09677419354838711,
+              "ci_95_high": 0.2956989247311828,
+              "small_sample_caution": true
+            },
+            "2": {
+              "n": 120,
+              "pct_of_total": 0.3389830508474576,
+              "reported": true,
+              "macro_f1": 0.6012265512265512,
+              "ci_95_low": 0.42125285451104016,
+              "ci_95_high": 0.7071678941544791,
+              "small_sample_caution": false
+            },
+            "3": {
+              "n": 59,
+              "pct_of_total": 0.16666666666666666,
+              "reported": true,
+              "macro_f1": 0.5354030501089324,
+              "ci_95_low": 0.3155979403760515,
+              "ci_95_high": 0.6174075475866206,
+              "small_sample_caution": false
+            },
+            "4": {
+              "n": 15,
+              "pct_of_total": 0.0423728813559322,
+              "reported": true,
+              "macro_f1": 0.5065359477124183,
+              "ci_95_low": 0.13312500000000002,
+              "ci_95_high": 0.6190476190476191,
+              "small_sample_caution": true
+            },
+            "5": {
+              "n": 2,
+              "pct_of_total": 0.005649717514124294,
+              "reported": false,
+              "reason": "insufficient sample (n<15)"
+            },
+            "6": {
+              "n": 1,
+              "pct_of_total": 0.002824858757062147,
+              "reported": false,
+              "reason": "insufficient sample (n<15)"
+            },
+            "missing": {
+              "n": 135,
+              "pct_of_total": 0.3813559322033898,
+              "reported": false,
+              "reason": "not a fairness group - data-availability gap"
+            }
+          }
+        },
+        "2": {
+          "overall_macro_f1": 0.734936389122803,
+          "groups": {
+            "1": {
+              "n": 22,
+              "pct_of_total": 0.062146892655367235,
+              "reported": true,
+              "macro_f1": 0.22939068100358426,
+              "ci_95_low": 0.10416666666666667,
+              "ci_95_high": 0.3020929783950617,
+              "small_sample_caution": true
+            },
+            "2": {
+              "n": 120,
+              "pct_of_total": 0.3389830508474576,
+              "reported": true,
+              "macro_f1": 0.6896931426372297,
+              "ci_95_low": 0.4928922155027898,
+              "ci_95_high": 0.7851778602131428,
+              "small_sample_caution": false
+            },
+            "3": {
+              "n": 59,
+              "pct_of_total": 0.16666666666666666,
+              "reported": true,
+              "macro_f1": 0.5865839243498817,
+              "ci_95_low": 0.3521649447553451,
+              "ci_95_high": 0.6876712490551775,
+              "small_sample_caution": false
+            },
+            "4": {
+              "n": 15,
+              "pct_of_total": 0.0423728813559322,
+              "reported": true,
+              "macro_f1": 0.40740740740740744,
+              "ci_95_low": 0.11594202898550725,
+              "ci_95_high": 0.48484848484848486,
+              "small_sample_caution": true
+            },
+            "5": {
+              "n": 2,
+              "pct_of_total": 0.005649717514124294,
+              "reported": false,
+              "reason": "insufficient sample (n<15)"
+            },
+            "6": {
+              "n": 1,
+              "pct_of_total": 0.002824858757062147,
+              "reported": false,
+              "reason": "insufficient sample (n<15)"
+            },
+            "missing": {
+              "n": 135,
+              "pct_of_total": 0.3813559322033898,
+              "reported": false,
+              "reason": "not a fairness group - data-availability gap"
+            }
+          }
+        }
+      }
+    }
+  }
+}

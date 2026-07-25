@@ -1,0 +1,45 @@
+{
+  "experiment": "phase8_bootstrap_significance_cross_attention_vs_others",
+  "method": "paired bootstrap, row-level resampling (n=1253 HAM10000 eval rows), seed-averaged (3 seeds) per iteration, percentile-method 95% CI",
+  "n_resamples": 1000,
+  "rng_seed": 42,
+  "alpha_uncorrected": 0.05,
+  "alpha_bonferroni": 0.016666666666666666,
+  "n_comparisons": 3,
+  "anchor": "cross_attention",
+  "observed_macro_f1_mean_across_seeds": {
+    "image": 0.4657502999726499,
+    "metadata": 0.2919794987166499,
+    "late_fusion": 0.4597377409245204,
+    "cross_attention": 0.4653882409917052
+  },
+  "comparisons": {
+    "cross_attention_vs_image": {
+      "observed_diff": -0.00036205898094465727,
+      "bootstrap_mean_diff": -0.0003476544210230621,
+      "ci_95_low": -0.01889188962247708,
+      "ci_95_high": 0.01959808016413028,
+      "p_value_two_sided": 0.97,
+      "significant_alpha_0.05": false,
+      "significant_bonferroni_alpha_0.0167": false
+    },
+    "cross_attention_vs_metadata": {
+      "observed_diff": 0.17340874227505532,
+      "bootstrap_mean_diff": 0.1729717861092796,
+      "ci_95_low": 0.13411431417594288,
+      "ci_95_high": 0.20974006905211828,
+      "p_value_two_sided": 0.0,
+      "significant_alpha_0.05": true,
+      "significant_bonferroni_alpha_0.0167": true
+    },
+    "cross_attention_vs_late_fusion": {
+      "observed_diff": 0.005650500067184816,
+      "bootstrap_mean_diff": 0.005406560955294036,
+      "ci_95_low": -0.013904001825863498,
+      "ci_95_high": 0.024718258278768782,
+      "p_value_two_sided": 0.59,
+      "significant_alpha_0.05": false,
+      "significant_bonferroni_alpha_0.0167": false
+    }
+  }
+}
