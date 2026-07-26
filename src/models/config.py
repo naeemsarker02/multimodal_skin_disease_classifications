@@ -291,6 +291,43 @@ def normalize_anatomical_site_for_cross_dataset(raw_value) -> str:
     return ANATOMICAL_SITE_CROSS_DATASET_MAP.get(str(raw_value).strip(), "__MISSING__")
 
 
+# --- ISIC Archive 2 -> HAM10000 anatomical-site mapping (external
+# validation, Gap resolution approved 2026-07-25) -----------------------
+# Source field is anatom_site_general (Archive 2's finer of its two
+# location fields - see docs/Phase8_ISIC_Archive2_Anatomical_Site_Mapping.csv
+# for the full per-category review and approval). 4 clean (2 casing-only,
+# 2 dermatology-standard synonyms: palms/soles -> acral, posterior torso
+# -> back), 2 lossy/coarsened (anterior torso + lateral torso -> HAM10000's
+# own generic "trunk" catch-all - same legitimate-coarsening precedent as
+# PAD-UFES-20's ARM/FOREARM -> upper extremity), 2 deliberately absent
+# (head/neck, oral/genital - no single HAM10000 category covers either
+# bundle without guessing which sub-part - falls through to
+# "__MISSING__", same treatment as PAD-UFES-20's LIP/NOSE).
+ISIC_ARCHIVE2_ANATOMICAL_SITE_CROSS_DATASET_MAP = {
+    "lower extremity": "lower extremity",
+    "upper extremity": "upper extremity",
+    "palms/soles": "acral",
+    "posterior torso": "back",
+    "anterior torso": "trunk",
+    "lateral torso": "trunk",
+    # head/neck, oral/genital intentionally absent - fall through to
+    # "__MISSING__", same as PAD-UFES-20's LIP/NOSE.
+}
+
+
+def normalize_isic_archive2_anatomical_site_for_ham10000(raw_value) -> str:
+    """ISIC Archive 2's anatom_site_general value -> HAM10000-vocabulary
+    string, for the HAM10000->ISIC external validation metadata branch
+    only. Mirrors normalize_anatomical_site_for_cross_dataset()'s shape
+    but uses the Archive-2-specific map above.
+    """
+    import pandas as pd
+
+    if pd.isna(raw_value):
+        return "__MISSING__"
+    return ISIC_ARCHIVE2_ANATOMICAL_SITE_CROSS_DATASET_MAP.get(str(raw_value).strip(), "__MISSING__")
+
+
 class DatasetConfig:
     """Everything Stage 1 code needs for one dataset. Class order is
     fixed (alphabetical by standardized label) so label-encoding is

@@ -1,0 +1,21 @@
+{
+  "dataset": "PAD_UFES20",
+  "consumed_on": "2026-07-25",
+  "consumed_by": "evaluate_fairness.py",
+  "reference": "docs/Project_Tracking.md#phase-8-fitzpatrick-fairness-complete, docs/Phase8_Fitzpatrick_Fairness_Results.md",
+  "detail": {
+    "variants": [
+      "image",
+      "metadata",
+      "fusion",
+      "cross_attention"
+    ],
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "n_runs": 12,
+    "note": "also stands as PAD-UFES-20 official final Stage 1 test-set result"
+  }
+}

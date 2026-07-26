@@ -40,6 +40,7 @@ from src.models.dataset import (
 from src.models.fusion_model import FusionModel
 from src.models.image_model import build_efficientnet_b0
 from src.models.metadata_model import MetadataMLP
+from src.evaluation.test_split_guard import check_test_split_available
 
 
 def load_model(branch: str, checkpoint_path, ds_config, device, preprocessor=None):
@@ -85,6 +86,8 @@ def evaluate(dataset_name: str, branch: str, seed: int, split: str) -> dict:
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     ds_config = get_dataset(dataset_name)
+    if split == "test":
+        check_test_split_available(ds_config, "evaluate.py")
     checkpoint_path = ds_config.checkpoints_dir / f"{branch}_seed{seed}_best.pt"
 
     preprocessor = None
@@ -161,6 +164,8 @@ def evaluate_ensemble(
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     ds_config = get_dataset(dataset_name)
+    if split == "test":
+        check_test_split_available(ds_config, "evaluate.py (ensemble)")
     preprocessor = MetadataPreprocessor(ds_config).fit(pd.read_csv(ds_config.train_csv))
 
     models = []

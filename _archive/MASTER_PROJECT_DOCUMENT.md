@@ -1,3 +1,15 @@
+> **⚠️ SUPERSEDED — see `docs/Project_Tracking.md` for current project status.**
+> This document was last updated 2026-07-09 (Phase 5/EDA). It predates Phase
+> 6 (Baseline Models), Phase 7 (Multimodal Fusion), and all of Phase 8
+> (Experiments & Evaluation) — everything below is historically frozen and
+> **does not reflect the project's actual current state**. Archived
+> 2026-07-26 specifically because a stale, confidently-worded status
+> document left in `docs/` is a real risk during viva/thesis prep if
+> mistaken for current. Kept here for historical reference only; do not cite
+> or rely on any status/progress claim below.
+
+---
+
 # MASTER PROJECT DOCUMENT
 ## Multimodal Skin Lesion Classification Using Image and Clinical Metadata
 

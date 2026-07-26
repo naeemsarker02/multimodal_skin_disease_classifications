@@ -49,6 +49,7 @@ from sklearn.metrics import f1_score
 from torch.utils.data import DataLoader
 
 from src.evaluation.evaluate import build_eval_dataset, load_model
+from src.evaluation.test_split_guard import check_test_split_available, mark_test_split_consumed
 from src.models.config import BATCH_SIZE, get_dataset
 from src.models.dataset import MetadataPreprocessor
 
@@ -148,6 +149,7 @@ def analyze_variant_seed(predictions_df, num_classes, rng):
 def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     ds_config = get_dataset("PAD_UFES20")
+    check_test_split_available(ds_config, "evaluate_fairness.py")
     num_classes = ds_config.num_classes
 
     fairness_dir = ds_config.baseline_reports_dir.parent / "fairness"
@@ -199,6 +201,15 @@ def main():
     with open(out_path, "w") as f:
         json.dump(all_results, f, indent=2)
     print(f"\nwritten -> {out_path}")
+
+    marker = mark_test_split_consumed(
+        ds_config,
+        caller="evaluate_fairness.py",
+        consumed_on="2026-07-25",
+        reference="docs/Project_Tracking.md#phase-8-fitzpatrick-fairness-complete, docs/Phase8_Fitzpatrick_Fairness_Results.md",
+        detail={"variants": VARIANTS, "seeds": SEEDS, "n_runs": len(VARIANTS) * len(SEEDS)},
+    )
+    print(f"test split now marked consumed -> {marker}")
 
 
 if __name__ == "__main__":

@@ -1,27 +1,39 @@
 # ISIC Archive 2 — Model-Input Feature Whitelist
 
 Generated: 2026-07-08. Updated 2026-07-09 (sparse-field source-leak
-exclusion — see below). This is the single reference for feature selection
-in any future model. `metadata_train.csv` has 30 total columns; 7 are
-allowed as model input, of which 4 are the active Phase 6 Stage 1 baseline.
+exclusion — see below). Updated 2026-07-25 (Gap A of the 2026-07-25
+project audit resolved — the missingness/attribution check deferred on
+2026-07-09 for `anatom_site_2`, `anatom_site_special`, and
+`dermoscopic_type` was finally run; `dermoscopic_type` excluded,
+`anatom_site_2`/`anatom_site_special` confirmed clean — see below and
+`Project_Tracking.md`). This is the single reference for feature
+selection in any future model. `metadata_train.csv` has 30 total
+columns; 6 are allowed as model input, of which 4 are the active Phase 6
+Stage 1 baseline.
 
 Note: this whitelist excludes more columns than `docs/PROJECT_PLAN.md`
 literally listed. Several extensions were made during this audit and are
 recorded here and in `Project_Tracking.md` rather than applied silently —
 see the "(extension...)" reason tags below.
 
-## Allowed features (7)
+## Allowed features (6)
 
 `age_approx`, `anatom_site_1`, `anatom_site_2`, `anatom_site_general`,
-`anatom_site_special`, `dermoscopic_type`, `sex`
+`anatom_site_special`, `sex`
 
-**Active Phase 6 Stage 1 baseline (4 of the 7 above):** `age_approx`,
+**Active Phase 6 Stage 1 baseline (4 of the 6 above):** `age_approx`,
 `sex`, `anatom_site_1`, `anatom_site_general` — chosen for reliable
 population (1.5–10.2% missing) and no attribution-correlation signal
-found. `anatom_site_2` (52.7% missing), `anatom_site_special`, and
-`dermoscopic_type` (94.4% missing) remain allowed-in-principle but are
-deferred out of the Stage 1 active feature set pending their own
-missingness/attribution check, not yet run.
+found. `anatom_site_2` (52.91% missing) and `anatom_site_special`
+(96.21% missing) remain allowed-in-principle but stay out of the active
+Stage 1 feature set — not for a leak reason (their own
+missingness/attribution check, run 2026-07-25, found no
+institution-correlation: presence rates are broadly similar across all
+3 `attribution` values for both fields, e.g. `anatom_site_2` present at
+40.98%/51.68%/57.39% for Hospital Clínic/ViDIR/Anonymous respectively —
+unlike a source-leak field, no institution shows nowhere-close-to-0%
+presence), purely because Stage 1 was already scoped and locked around
+the 4-feature baseline before this check ran.
 
 ## Excluded columns and reasons
 
@@ -47,6 +59,7 @@ missingness/attribution check, not yet run.
 | `family_hx_mm` | source-leak risk (extension, confirmed via crosstab 2026-07-09). 97.83% missing overall; present for 0.00% of Hospital Clínic and ViDIR rows, only ever populated (18.75%) for Anonymous rows. |
 | `personal_hx_mm` | source-leak risk (extension, confirmed via crosstab 2026-07-09). 97.79% missing overall; present for 0.00% of Hospital Clínic and ViDIR rows, only ever populated (19.10%) for Anonymous rows. |
 | `clin_size_long_diam_mm` | source-leak risk (extension, confirmed via crosstab 2026-07-09). 97.79% missing overall; present for 0.00% of Hospital Clínic and ViDIR rows, only ever populated (19.13%) for Anonymous rows. |
+| `dermoscopic_type` | source-leak risk (confirmed via crosstab 2026-07-25, resolving the missingness/attribution check deferred on 2026-07-09). 94.30% missing overall; present for 0.00% of Hospital Clínic and 0.00% of ViDIR rows, only ever populated (49.29%) for Anonymous rows — reproduces the exact same near-deterministic institution-proxy pattern as `anatom_site_3`/`4`/`5`, `family_hx_mm`, `personal_hx_mm`, and `clin_size_long_diam_mm` above. |
 | `attribution` | non-clinical, source-identifying (extension, judgment call — flagging for your review). Only 3 values; "ViDIR Group... Medical University of Vienna" = exactly 9,873 rows, matching this project's already-documented HAM10000↔ISIC-Archive-2 image overlap count exactly. This column identifies which sub-collection an image came from, not a clinical feature — and correlates with the cross-dataset overlap already handled via `external_validation_exclusions.csv`. |
 | `copyright_license` | non-clinical, source-identifying (extension, judgment call). Only 2 values, directly redundant with `attribution` (`CC-0` co-occurs exactly with `attribution="Anonymous"`, 2,901/2,901). |
 | `image_type` | zero-variance (extension, uncontroversial). Constant `"dermoscopic"` for all 25,076 rows — carries no information. |

@@ -64,6 +64,7 @@ from src.models.dataset import MetadataPreprocessor, build_image_transform
 from src.models.fusion_model import FusionModel
 from src.models.image_model import build_efficientnet_b0
 from src.models.metadata_model import MetadataMLP
+from src.evaluation.test_split_guard import check_test_split_available, mark_test_split_consumed
 
 SHARED_CLASSES = ["Basal Cell Carcinoma", "Melanoma", "Nevus"]
 
@@ -183,6 +184,7 @@ def evaluate(variant: str, seed: int) -> dict:
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     pad_ds_config = get_dataset("PAD_UFES20")
     ham_ds_config = get_dataset("HAM10000")
+    check_test_split_available(ham_ds_config, "evaluate_cross_dataset.py")
 
     need_metadata = VARIANT_NEEDS_METADATA[variant]
     eval_preprocessor = None

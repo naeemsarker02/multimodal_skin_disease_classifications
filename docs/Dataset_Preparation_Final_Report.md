@@ -16,10 +16,20 @@ CSVs already on disk.
 
 | Dataset | Total images | Train / Val / Test | Classes | Imbalance ratio | Grouping key used for split | Patient ID coverage |
 |---|---|---|---|---|---|---|
-| PAD-UFES-20 | 2,298 | 1,606 / 338 / 354 | 6 | 16.2:1 | `patient_id` (true patient-wise) | 100% |
+| PAD-UFES-20 | 2,298 | 1,606 / 338 / 354 | 6 | 16.2:1 | `patient_id` (true patient-wise) | 100% (of 2,298 processed) |
 | HAM10000 | 10,015 | 7,004 / 1,501 / 1,510 | 7 | 58.3:1 | `lesion_id` (no patient ID exists) | 0% (none available) |
 | ISIC Archive 1 | 2,047 (155 images excluded, see §6) | 1,655 / 292 / 100 | 9 | 239:1 | none (archive-provided Train/Test kept, val carved from Train) | 0% (none available) |
-| ISIC Archive 2 | 25,076 (255 images excluded, see §6) | 17,535 / 3,769 / 3,772 | 9 | 61.6:1 | `lesion_id` where present, else `image_id` singleton | 1.6% (417/25,331 raw rows) |
+| ISIC Archive 2 | 25,076 (255 images excluded, see §6) | 17,535 / 3,769 / 3,772 | 9 | 61.6:1 | `lesion_id` where present, else `image_id` singleton | 1.6% (417/25,331 raw rows, *before* the 255-row exclusion — see note†) |
+
+† **Denominator note (presentation fix, 2026-07-26):** every other column in
+this row (Total images, Train/Val/Test) is reported **after** the 255-row
+exclusion in §6, i.e. against a base of 25,076. The "Patient ID coverage"
+figure is the one exception — it is computed against the 25,331 **raw**,
+pre-exclusion rows, because patient-ID coverage was measured before the
+exclusion step ran. The two numbers (25,076 vs. 25,331) are not
+interchangeable; don't divide 417 by 25,076 or compare this percentage
+directly against the other rows' coverage figures without accounting for
+the different base.
 
 Each dataset's own `dataset_description.md` and `split_quality_report.csv`
 were re-derived independently below rather than taken on trust, and all
@@ -183,7 +193,7 @@ Independently checking `image_id` overlap across all processed datasets
 |---|---|---|
 | HAM10000 ↔ ISIC Archive 2 | **9,873** | **98.6% of HAM10000** |
 | ISIC Archive 1 ↔ ISIC Archive 2 | **1,673** | **81.7% of ISIC Archive 1** |
-| HAM10000 ↔ ISIC Archive 1 | **1,362** | 66.5% of ISIC Archive 1 |
+| HAM10000 ↔ ISIC Archive 1 | **1,362** | **66.5% of ISIC Archive 1** |
 | PAD-UFES-20 ↔ any other dataset | **0** | — (genuinely independent source) |
 
 **Interpretation:** HAM10000 is not an independent dataset from ISIC Archive

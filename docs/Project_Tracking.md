@@ -182,7 +182,7 @@ sections below are unchanged and remain the source of truth.*
 23. [Phase 7 Stage 1 — Late Fusion Scope Approved, PAD-UFES-20 Only (2026-07-16)](#phase-7-stage-1-scope-approved)
 24. [Literature Review Reconciliation — 16 Papers (2026-07-17)](#literature-review-reconciliation)
 25. [Phase 7 Stage 1 — COMPLETE (2026-07-18)](#phase-7-stage-1-complete)
-26. [MetaBlock Mechanism Confirmed; Phase 7 Stage 2 Proposal — PENDING APPROVAL (2026-07-18)](#phase-7-stage-2-proposal)
+26. [MetaBlock Mechanism Confirmed; Phase 7 Stage 2 Proposal — APPROVED (2026-07-18)](#phase-7-stage-2-proposal)
 27. [Phase 7 Stage 2 — COMPLETE (2026-07-18)](#phase-7-stage-2-complete)
 28. [Phase 8 Experiment 1 — Anatomical-Site Mapping Approved; Reduced-Feature Models + Eval Script Implemented (2026-07-18)](#phase-8-experiment-1-implementation)
 29. [Negative Result — Improved Cross-Attention Variant Underperforms Original (2026-07-23)](#negative-result-improved-cross-attention)
@@ -238,7 +238,7 @@ sections below are unchanged and remain the source of truth.*
 | **5. EDA** | **✅ Completed** | **2026-07-09** | Scope approved 2026-07-08 (incl. approved image-dimension addition). `src/eda/` code executed for all 4 datasets + cross-dataset comparison; all outputs verified non-empty in `reports/eda/`; 5 notebooks (`notebooks/01-05_eda_*.ipynb`) and `reports/eda/eda_summary.md` written. Key finding: ISIC Archive 2's bimodal image resolution (600x450 / 1024x1024 clusters) visually confirms its documented image-source overlap with HAM10000. |
 | 6. Baseline Model Development | ✅ Completed — both datasets' Stage 1 baselines done | 2026-07-16 | Pre-conditions resolved 2026-07-09 (sparse-field exclusion, 224×224 resize+pad). PAD-UFES-20: all 6 Stage 1 runs completed and verified 2026-07-13 (image mean macro-F1 0.5703+/-0.0130, metadata mean macro-F1 0.5762+/-0.0072) — see "Phase 6 Stage 1 — COMPLETE" entry. HAM10000: all 6 Stage 1 runs completed and verified 2026-07-16, same recipe (image mean macro-F1 0.6940+/-0.0041, metadata mean macro-F1 0.2521+/-0.0104) — see "HAM10000 Stage 1 — COMPLETE" entry. Sequencing decision (full HAM10000 baseline before Phase 7) fulfilled. Next: Phase 7 late fusion design. |
 | 7. Multimodal Model Development | ✅ Completed — both stages done, PAD-UFES-20 only | 2026-07-18 | Stage 1 (late fusion, mean macro-F1 0.5731+/-0.0021) and Stage 2 (cross-attention fusion, mean macro-F1 0.6209+/-0.0143) both complete and verified — see "Phase 7 Stage 1 — COMPLETE" and "Phase 7 Stage 2 — COMPLETE" entries. Cross-attention clearly outperforms all 3 prior variants (image/metadata/late-fusion), confirming the pre-registered dimensionality-imbalance hypothesis. Next: Phase 8 (Experiments & Evaluation). |
-| 8. Experiments & Evaluation | ⏳ Pending | — | Includes external validation (HAM10000/ISIC, with exclusions applied) and bootstrap significance testing |
+| 8. Experiments & Evaluation | ⏳ In progress | — | PAD-UFES-20<->HAM10000 cross-dataset generalization: ✅ complete 2026-07-25 (bootstrap significance included — note: only cross_attention vs. metadata is statistically significant; cross_attention's edge over image-only and late-fusion is **not** significant in this transfer direction, see "Phase 8, Experiment 1 ... COMPLETE" entry). Fitzpatrick fairness analysis: ✅ complete 2026-07-25, also stands as PAD-UFES-20's official final Stage 1 test-set result (see "Test-Split Single-Use Safeguard Added"). Both dataset's test splits now locked. Ensemble/TTA on cross-attention explored and permanently rejected (Melanoma F1 collapses 0.364->0.20 under ensemble+TTA — disqualifying, not just "no improvement" — see "Ensemble/TTA Exploration" entry). Remaining: HAM10000->ISIC external validation — both previously-open ISIC gaps (Archive 2's 3 unverified anatomical_site-adjacent whitelist fields, 3 cross-archive label conflicts) are now **resolved** (2026-07-25), scope approved, `evaluate_external_isic.py` implemented and smoke-tested (1 of 9 combinations run: Archive 1 image seed0). Not blocking — 8 of 9 combinations remain, to be run on Kaggle. |
 | 9. Thesis Writing Support | ⏳ Pending | — | |
 | 10. arXiv preprint / submission | ⏳ Pending | — | |
 
@@ -646,6 +646,14 @@ and inspected to confirm the overfitting pattern below.
 |---|---|---|---|---|---|
 | image (EfficientNet-B0) | 0.5529 | 0.5741 | 0.5840 | 0.5703 | 0.0130 |
 | metadata (MLP) | 0.5861 | 0.5694 | 0.5732 | 0.5762 | 0.0072 |
+
+**Note (added 2026-07-25):** these are **val**-split numbers only. The
+official, one-time PAD-UFES-20 **test**-split result for all 4 variants
+(image/metadata/fusion/cross_attention) is logged under "Phase 8 —
+Fitzpatrick Fairness Analysis — COMPLETE; PAD-UFES-20 Test Split Now
+Spent (2026-07-25)" below and cross-referenced in
+`docs/Phase8_Fitzpatrick_Fairness_Results.md`. The test split is now
+locked (see "Test-Split Single-Use Safeguard Added" entry, 2026-07-25).
 
 **Findings:**
 
@@ -1066,7 +1074,7 @@ used for every prior phase.
 ---
 
 <a id="phase-7-stage-2-proposal"></a>
-## MetaBlock Mechanism Confirmed; Phase 7 Stage 2 Proposal — PENDING APPROVAL (2026-07-18)
+## MetaBlock Mechanism Confirmed; Phase 7 Stage 2 Proposal — APPROVED (2026-07-18)
 
 **MetaBlock's actual mechanism (Pacheco & Krohling 2021, row #10 in
 `Literature_Review.md`) confirmed before locking Stage 2's design, per your
@@ -1237,6 +1245,13 @@ seeds, PAD-UFES-20):**
 | late fusion (concat, warm-started) | 0.5723 | 0.5760 | 0.5711 | 0.5731 | 0.0021 |
 | **cross-attention fusion** (metadata=Q, image tokens=K/V) | 0.6049 | 0.6182 | 0.6397 | **0.6209** | 0.0143 |
 
+**Note (added 2026-07-25):** these are **val**-split numbers only. The
+official, one-time PAD-UFES-20 **test**-split result for all 4 variants
+is logged under "Phase 8 — Fitzpatrick Fairness Analysis — COMPLETE;
+PAD-UFES-20 Test Split Now Spent (2026-07-25)" below and cross-referenced
+in `docs/Phase8_Fitzpatrick_Fairness_Results.md`. The test split is now
+locked (see "Test-Split Single-Use Safeguard Added" entry, 2026-07-25).
+
 **Finding — cross-attention clearly outperforms all 3 prior variants, a
 clean separation, not just a mean-level difference within noise:**
 
@@ -1320,6 +1335,14 @@ underlying evaluations, not a divergent re-run. The fusion seed0 value
 - **3-seed ensemble + TTA: 0.5886** — **worse** than every individual
   cross-attention seed (all 3 of which exceed 0.60) and worse than the
   ensemble-without-TTA. TTA hurts this model/dataset rather than helping.
+- **Per-class breakdown reveals the real reason this is disqualifying, not
+  just "no improvement":** Melanoma F1 **collapses from 0.3636 (ensemble,
+  no TTA) to 0.20 (ensemble + TTA)** — verified directly from
+  `eval_cross_attention_ensemble3_val.json` and
+  `eval_cross_attention_ensemble3_tta_val.json`. Melanoma is the clinically
+  critical minority class in this task; a test-time augmentation scheme
+  that nearly halves its F1 is not a neutral/no-op choice, it is actively
+  harmful to the metric that matters most.
 
 **Conclusion / decision (inferred from the fact no later entry adopts an
 ensemble or TTA checkpoint, and Phase 8 evaluation code loads single-seed
@@ -1332,6 +1355,15 @@ change to it. No checkpoint files exist for the ensemble/TTA
 configurations (there's nothing to checkpoint — an eval-time ensemble
 of the 3 existing single-seed checkpoints), consistent with them not
 being adopted.
+
+**Explicit, permanent confirmation (2026-07-26):** TTA (ensemble+TTA) is
+**permanently excluded from consideration anywhere in this project**, at
+any future phase, for any variant. This is not a "revisit later" deferral
+— the Melanoma collapse above is a disqualifying failure mode on the most
+clinically important class, not a marginal or dataset-specific quirk that
+different hyperparameters might fix. Any future proposal to reintroduce
+TTA should be treated as requiring a fresh justification against this
+finding, not a default option.
 
 ---
 
@@ -1646,10 +1678,27 @@ cross_attention's `model(images, metadata)` call unchanged (their
   mean) - the expected generalization-gap direction for genuine zero-shot
   cross-dataset transfer.
 
-**Not yet done:** bootstrap significance testing (cross-attention vs.
-each other variant), per-Fitzpatrick-group fairness breakdown, and the
-reverse-direction (HAM10000 -> PAD-UFES-20) experiment, all still scoped
-as deferred/next-step per the 2026-07-23 entry.
+**Not yet done (at time of this entry):** bootstrap significance testing
+(cross-attention vs. each other variant), per-Fitzpatrick-group fairness
+breakdown, and the reverse-direction (HAM10000 -> PAD-UFES-20)
+experiment, all still scoped as deferred/next-step per the 2026-07-23
+entry.
+
+**Update — bootstrap significance testing completed (2026-07-25):** see
+`docs/Phase8_CrossDataset_Generalization_Results.md` §"Bootstrap
+significance testing". Result confirms the "cluster tightly" read above
+was correct, with one important nuance for the thesis writeup:
+**cross_attention's edge over image and over late_fusion is NOT
+statistically significant** (p=0.970 and p=0.590 respectively, both 95%
+CIs straddling zero) — **only cross_attention vs. metadata is
+significant** (p<0.001). **This caveat must be preserved wherever these
+cross-dataset results are summarized for the thesis** (abstract,
+methodology/results chapters, any headline-result slide) — the correct
+claim is "cross-attention matches image/late-fusion performance under
+zero-shot transfer while significantly beating metadata-alone," not
+"cross-attention generalizes better than image-only or late-fusion."
+Overclaiming generalization superiority here would not survive a viva
+question that asks for the significance test.
 
 **Clean writeup:** full per-seed/mean/std/spillover/per-class-F1 tables
 assembled into `docs/Phase8_CrossDataset_Generalization_Results.md`.
@@ -1821,8 +1870,360 @@ unreliable).
 `reports/PAD_UFES20/fairness/predictions_{variant}_seed{seed}_test.csv`.
 **Full writeup:** `docs/Phase8_Fitzpatrick_Fairness_Results.md`.
 
-**Next step (approved order):** external validation via ISIC - blocked
-on the 2 open ISIC gaps (Archive 2's 3 unverified
-anatomical_site-adjacent whitelist fields, and the 3 cross-archive
-label conflicts) per the 2026-07-25 project audit; those need resolving
-before an ISIC evaluation run is scoped.
+**Next step (approved order):** external validation via ISIC - the 2
+open ISIC gaps flagged by the 2026-07-25 project audit (Archive 2's 3
+unverified anatomical_site-adjacent whitelist fields, and the 3
+cross-archive label conflicts) are now **resolved** (see "Gap B" entry
+and "Proposed ISIC External Validation Scope" below) - no longer
+blocking. Scope approved 2026-07-25, `evaluate_external_isic.py`
+implemented and smoke-tested; 8 of 9 combinations remain to be run on
+Kaggle.
+
+---
+
+<a id="test-split-safeguard-added"></a>
+## Test-Split Single-Use Safeguard Added (2026-07-25)
+
+**What happened:** `evaluate_fairness.py` read PAD-UFES-20's
+`metadata_test.csv` without going through `evaluate.py`'s
+`--confirm-final` flag (see "Phase 8 — Fitzpatrick Fairness Analysis —
+COMPLETE" above) - that flag only ever gated `evaluate.py` itself, so a
+second, independent script reading the same file bypassed the "test
+split touched only once" discipline (decision 4) with no error raised.
+Caught and flagged before any results were written up, per the "never
+silently resolve" rule.
+
+**Why the existing results still stand:** all Stage 1/Phase 7
+training and model-selection decisions for PAD-UFES-20 were already
+finalized (Phase 7 Stage 2 completed 2026-07-18, a week before this run);
+the 12 fairness-analysis inference runs did not feed back into any
+training or hyperparameter choice (post-hoc diagnostic only); and the
+resulting test-split ranking (cross-attention > fusion > image ~=
+metadata) matches the val-split ranking already established, i.e. no
+post-hoc tuning happened and no surprising reversal needs explaining
+away. Per user decision (2026-07-25), these 12 runs are now **the
+official, final, one-time Stage 1 test-set evaluation** for
+image/metadata/fusion/cross_attention on PAD-UFES-20 - locked, no further
+hyperparameter changes, retraining, or re-evaluation of these checkpoints
+on the test split. Full numbers: "Phase 8 — Fitzpatrick Fairness Analysis
+— COMPLETE" above and `docs/Phase8_Fitzpatrick_Fairness_Results.md`;
+cross-referenced from the Phase 6 Stage 1 and Phase 7 Stage 2 val-result
+tables above so anyone reading only those sections is pointed at the
+official test number instead of assuming val is final.
+
+**Same gap existed for HAM10000:** `evaluate_cross_dataset.py` reads
+`metadata_test.csv` for HAM10000 (zero-shot evaluation of PAD-UFES-20-
+trained models, Protocol A - see "Phase 8, Experiment 1" above) and had
+the identical unguarded read. That experiment is also already complete
+and its ranking claims are unaffected (see "Phase 8, Experiment 1 —
+COMPLETE"), so it is being locked retroactively for the same reason, not
+re-run.
+
+**Safeguard implemented:** a shared, dataset-scoped marker file rather
+than a per-script flag, since the flag-based approach is exactly what
+was bypassed here - a marker file is checked by every script that reads
+a test split, not just the one that happens to remember to check.
+
+- `src/evaluation/test_split_guard.py` (new): `check_test_split_available(ds_config, caller)`
+  raises `SystemExit` if `data/processed/<Dataset>/TEST_SPLIT_CONSUMED.json`
+  exists, naming the dataset, who consumed it, when, and where the
+  official numbers live. `mark_test_split_consumed(...)` writes that
+  marker.
+- Wired into all 3 scripts that can read a `*_test.csv`:
+  `evaluate.py` (both the single-checkpoint `evaluate()` path and the
+  ensemble/TTA `evaluate_ensemble()` path, whenever `--split test`),
+  `evaluate_fairness.py` (unconditional - it only ever touches
+  PAD-UFES-20's test split), and `evaluate_cross_dataset.py` (reads
+  HAM10000's test split unconditionally).
+- Marker files written for both already-consumed splits:
+  `data/processed/PAD_UFES20/TEST_SPLIT_CONSUMED.json` (consumed by
+  `evaluate_fairness.py`, 2026-07-25) and
+  `data/processed/HAM10000/TEST_SPLIT_CONSUMED.json` (consumed by
+  `evaluate_cross_dataset.py`, 2026-07-25).
+- Verified: `evaluate.py --dataset PAD_UFES20 --branch image --seed 0
+  --split test --confirm-final` now fails fast with a clear message
+  before loading any model or data; `--split val` runs are unaffected
+  and reproduce the already-recorded seed0 image val macro-F1 (0.5529)
+  exactly.
+- The marker is deliberately not something a script can silently work
+  around - deleting it to re-run would itself have to be a logged,
+  user-approved decision to reopen decision 4 for that dataset, not a
+  code change.
+
+**Thesis-writing note (2026-07-26):** when writing the methodology
+chapter, be precise about where PAD-UFES-20's **official** Stage 1
+test-set number comes from. It is **not** the output of a separate,
+dedicated test-set evaluation script — it is sourced from
+`evaluate_fairness.py`'s 12 inference runs (4 variants x 3 seeds),
+which were repurposed on 2026-07-25 to serve double duty as both the
+Fitzpatrick fairness breakdown *and* the official one-time test-split
+result (see "Important process note — first use of the test split" in
+`docs/Phase8_Fitzpatrick_Fairness_Results.md`, and the "Why the existing
+results still stand" paragraph above). If the methodology chapter
+describes a distinct "test evaluation" step/script, that description
+would not match what actually happened and should instead say: test-set
+numbers were obtained as a by-product of the fairness-analysis run,
+justified because no training/model-selection decisions were made
+afterward. cross-attention's official test macro-F1 is **0.6977**
+(mean of 0.6862/0.6721/0.7349), reported in "Phase 8 — Fitzpatrick
+Fairness Analysis — COMPLETE" above.
+
+---
+
+<a id="isic-gaps-resolved"></a>
+## ISIC External-Validation Gaps A & B — Resolved (2026-07-25)
+
+Both gaps blocking ISIC external validation (flagged in the 2026-07-25
+project audit, see "Test-Split Single-Use Safeguard Added" and Phase 8
+fairness entries above) are now resolved.
+
+### Gap A — 3 unverified anatomical_site-adjacent whitelist fields
+
+`anatom_site_2`, `anatom_site_special`, and `dermoscopic_type` were left
+"allowed-in-principle but deferred" in `feature_whitelist.md` on
+2026-07-09, pending the same missingness x `attribution` crosstab used
+to exclude the other 6 sparse fields that day - never run until now. Ran
+it, on the identical train+val+test-combined methodology, and showed the
+evidence to the user before excluding anything (same discipline as the
+2026-07-09 audit and the `melanocytic` exclusion):
+
+| Field | Overall missing | Hospital Clínic present | ViDIR present | Anonymous present | Verdict |
+|---|---|---|---|---|---|
+| `anatom_site_2` | 52.91% | 40.98% | 51.68% | 57.39% | keep - populated across all 3 institutions, ordinary sparsity |
+| `anatom_site_special` | 96.21% | 3.53% | 4.65% | 1.96% | keep - uniformly sparse across all 3 institutions, ordinary sparsity |
+| `dermoscopic_type` | 94.30% | **0.00%** | **0.00%** | 49.29% | **exclude** - reproduces the exact 0%/0%/nonzero institution-proxy pattern of the 6 already-excluded fields |
+
+**User-confirmed decision:** exclude `dermoscopic_type` as a source-leak
+risk (same category/reasoning as `anatom_site_3`/`4`/`5`,
+`family_hx_mm`, `personal_hx_mm`, `clin_size_long_diam_mm`); keep
+`anatom_site_2` and `anatom_site_special` in the whitelist -
+`data/processed/ISIC_Archive_2/feature_whitelist.md` updated
+accordingly (allowed-feature count 7 -> 6). Both remain outside the
+active Phase 6 Stage 1 4-feature baseline, but that's a scoping artifact
+of Stage 1 already being locked before this check ran, not a leak
+finding.
+
+### Gap B — 3 cross-archive label conflicts
+
+`ISIC_0028619`, `ISIC_0011126`, `ISIC_0011118` (documented under
+"Cross-Dataset Verification" above, 2026-07-08) each have disagreeing
+`disease_label` values between ISIC Archive 1 and ISIC Archive 2.
+Consistent with this project's existing "ambiguous label -> exclude,
+never guess" precedent (ISIC Archive 1's 155 conflicting-folder images;
+ISIC Archive 2's 255 missing-`diagnosis_3` rows), these 3 images are now
+excluded from external-validation scoring in both archives, rather than
+picking one archive's label as authoritative.
+
+**Implementation:** `src/data_cleaning/label_conflict_filter.py` (new)
+re-verifies all 3 image_ids are present with disagreeing labels in both
+archives (fails loudly if the conflict list is ever stale, e.g. if a
+future data refresh resolves the disagreement), then writes:
+`data/processed/ISIC_Archive_1/label_conflict_exclusions.csv` and
+`data/processed/ISIC_Archive_2/label_conflict_exclusions.csv` (each: one
+`image_id` column, the same 3 rows). Re-verified labels at write time:
+`ISIC_0011118` (Seborrheic Keratosis vs. Melanoma), `ISIC_0011126`
+(Seborrheic Keratosis vs. Melanoma), `ISIC_0028619` (Nevus vs. Actinic
+Keratosis) - matches the 2026-07-08 finding exactly. This is a separate
+file from `external_validation_exclusions.csv` (the pre-existing
+HAM10000-overlap exclusion) since it's a distinct exclusion reason with
+its own provenance - see "Proposed ISIC External Validation Scope"
+below for how the two combine at evaluation time.
+
+**Status:** both gaps resolved. ISIC external validation is now
+unblocked pending scope approval (see next entry).
+
+---
+
+<a id="isic-external-validation-scope-proposed"></a>
+## Proposed ISIC External Validation Scope — APPROVED (2026-07-25)
+
+Same two-stage process as every prior experiment: proposed here, not
+started until approved.
+
+**Direction:** HAM10000-trained models evaluated zero-shot on the ISIC
+archives — the direction the project has documented as the planned use
+case throughout (Cross-Dataset Verification entry, PROJECT_PLAN.md).
+Not PAD-UFES-20-trained models: PAD-UFES-20 has zero image overlap with
+the ISIC archives (unlike HAM10000, which is 66.5-98.6% overlapping),
+so it needs no exclusion-list machinery, but the project's stated
+external-validation use case is specifically "HAM10000->ISIC", and
+that's what the exclusion lists (both existing ones) were built for.
+
+**Archives, evaluated separately, never pooled:** ISIC Archive 1 and
+ISIC Archive 2, each its own independent evaluation run against the same
+HAM10000 checkpoints - continuing fix (b)'s existing per-archive
+protocol (2026-07-08 decision) rather than merging them, which is also
+what makes Gap B's resolution sufficient (each archive scores with its
+own label for the 3 conflicting images once they're excluded, no need to
+reconcile the two archives' disagreeing labels into one true value).
+
+**Models:** `image` and `metadata` Stage 1 branches only, 3 seeds each
+(the only branches trained on HAM10000 - fusion/cross_attention are
+PAD-UFES-20-only, Phase 7 scope, never trained on HAM10000). 2 branches
+x 3 seeds x 2 archives = 12 runs.
+
+- **Archive 1:** image branch only - Archive 1 has 0 usable metadata
+  columns (image-only by necessity, `feature_whitelist.md`), so the
+  metadata branch cannot be evaluated there at all.
+- **Archive 2:** both branches. Metadata branch needs `anatom_site_1`
+  (or `anatom_site_general`) normalized into HAM10000's `anatomical_site`
+  vocabulary before scoring - same normalization *mechanism* as
+  `normalize_anatomical_site_for_cross_dataset()` (Phase 8 Experiment 1),
+  but that specific mapping table was built for PAD-UFES-20's vocabulary,
+  not Archive 2's - a **new mapping table for Archive 2's anatom_site
+  values would need review before this specific sub-run**, same
+  precedent as the PAD-UFES-20 mapping's 2026-07-18 approval. Flagging
+  this now rather than assuming the existing map transfers.
+
+**Class taxonomy - restrict to exact-string-matching shared classes only
+(Protocol A precedent), not a semantic best-guess merge:**
+
+| | HAM10000 ∩ Archive 1 | HAM10000 ∩ Archive 2 |
+|---|---|---|
+| Shared classes (exact string match) | Basal Cell Carcinoma, Dermatofibroma, Melanoma, Nevus, Vascular Lesion (5) | Basal Cell Carcinoma, Dermatofibroma, Melanoma, Nevus (4 - Archive 2 has no Vascular Lesion class) |
+
+**Known, deliberately-unresolved naming/granularity mismatches (flagged,
+not merged):** HAM10000's `"Actinic Keratosis / Intraepithelial
+Carcinoma"` vs. both archives' `"Actinic Keratosis"` are very likely the
+same clinical category under a different label string; HAM10000's
+`"Benign Keratosis-like Lesion"` (a known coarse bucket covering
+seborrheic keratosis, solar lentigo, and lichen-planus-like keratosis in
+the source ISIC taxonomy) vs. the archives' finer `"Pigmented Benign
+Keratosis"`/`"Seborrheic Keratosis"`/`"Solar Lentigo"` categories is a
+real hierarchy mismatch, not just a spelling difference. Per this
+project's "don't guess, exclude or ask" precedent (same one used for
+`melanocytic`, the 155/255 ambiguous-label exclusions, and Gap B just
+above), these are **not** auto-merged into the shared-class set now -
+scoring stays restricted to the 5/4 exact-match classes above unless you
+approve an explicit mapping for these two categories, which would
+expand shared-class coverage meaningfully (AK and the keratosis-family
+classes are common in all 3 datasets).
+
+**Exclusions, applied per archive independently (union of two lists,
+each archive scored using only its own two files):**
+
+1. `external_validation_exclusions.csv` (existing, 2026-07-08) - drops
+   images already seen by the HAM10000-trained model as training data
+   (or leaking into HAM10000's own val/test split) - Archive 1: 1,362 of
+   2,047 dropped, 685 remain; Archive 2: 9,873 of 25,076 dropped, 15,203
+   remain.
+2. `label_conflict_exclusions.csv` (new, this session) - drops the 3
+   images with disagreeing cross-archive ground truth, from both
+   archives' evaluation sets regardless of which archive is used, since
+   the ground truth is unreliable either way.
+
+**Protocol:** same as `evaluate_cross_dataset.py`'s Protocol A - each
+HAM10000-trained model's native, unmodified classifier (full argmax over
+its own 7-class output, never masked) is run on the filtered archive
+images; macro-F1 and per-class F1 are reported restricted to that
+archive's shared-class list (`labels=` parameter, so spillover into a
+non-shared HAM10000 class still counts against the true class); full
+7-class confusion matrix reported for transparency; per-row predictions
+saved for reuse by `bootstrap_significance.py`, same as the PAD-UFES-20
+version. Proposed implementation: extend/adapt
+`evaluate_cross_dataset.py`'s pattern into a new
+`evaluate_external_isic.py` rather than duplicating the mechanics from
+scratch, since the two experiments share the same shape (native argmax,
+foreign-dataset evaluation, shared-class-restricted scoring, row-level
+CSV output).
+
+**Test-split discipline:** this is HAM10000's *training* checkpoints
+evaluated against *ISIC's* own data, not a second read of HAM10000's own
+test split - no interaction with the `test_split_guard.py` marker
+already placed for HAM10000. Each ISIC archive's own train/val/test
+split is not being touched as a "test split" in the single-use sense
+either, since ISIC's own splits were never used for any ISIC-internal
+model training in this project (no ISIC-trained models exist) - this is
+purely external validation of already-finalized HAM10000 checkpoints.
+
+**Approved 2026-07-25**, with one adjustment to the open question: AK
+and keratosis-family naming/granularity mismatches deferred (not
+merged) - exact-string-matching shared classes only, per Protocol A
+precedent. Logged as a documented future-work item, not needed for the
+core result.
+
+---
+
+<a id="isic-archive2-metadata-mapping-approved"></a>
+## ISIC Archive 2 -> HAM10000 Metadata Mapping — Proposed and Approved (2026-07-25)
+
+Proposed as its own artifact before any code ran, same process as the
+PAD-UFES-20 anatomical-site mapping (2026-07-18). `sex` and `age_approx`
+needed no mapping - `sex` vocabulary (MALE/FEMALE) and numeric scale
+already match HAM10000's exactly, verified directly rather than assumed.
+`anatom_site_general` (Archive 2's finer of its two location fields)
+needed a mapping into HAM10000's `anatomical_site` vocabulary -
+`docs/Phase8_ISIC_Archive2_Anatomical_Site_Mapping.csv`:
+
+| Archive 2 category | n | HAM10000 target | Type |
+|---|---|---|---|
+| lower extremity | 4,941 | lower extremity | clean |
+| upper extremity | 2,887 | upper extremity | clean |
+| palms/soles | 385 | acral | clean (definitional - "acral" is the standard dermatology term for palms/soles/nail-unit) |
+| posterior torso | 2,765 | back | clean (standard synonym, no information loss) |
+| anterior torso | 6,837 | trunk | lossy_coarsened (same precedent as PAD-UFES-20's ARM/FOREARM->upper extremity: anterior torso is genuinely part of the trunk region, mapped to HAM10000's own generic "trunk" catch-all) |
+| lateral torso | 54 | trunk | lossy_coarsened (same reasoning) |
+| head/neck | 4,550 | unmapped -> `__MISSING__` | ambiguous - HAM10000 splits this into 4 categories (face/scalp/neck/ear), no way to disambiguate, no single catch-all like "trunk" covers this split |
+| oral/genital | 106 | unmapped -> `__MISSING__` | ambiguous - bundles "oral" (no HAM10000 equivalent, same gap as PAD-UFES-20's LIP) with "genital" |
+| missing/NaN | 2,551 | `__MISSING__` | not a mapping question |
+
+**Two rounds of user review before finalizing:** first round questioned
+whether anterior/lateral torso should map to "trunk" or stay unmapped -
+approved for "trunk" specifically because it's a genuine anatomical
+hierarchy relationship (trunk subsumes anterior/posterior/lateral torso)
+matching the already-approved ARM/FOREARM/THIGH coarsening precedent,
+not an invented equivalence like the deferred AK/keratosis case above.
+Second round confirmed posterior torso->back at the **clean** tier
+(same concept, different label, no information loss), not the
+coarsening tier.
+
+**Implementation:** `src/models/config.py` -
+`ISIC_ARCHIVE2_ANATOMICAL_SITE_CROSS_DATASET_MAP` and
+`normalize_isic_archive2_anatomical_site_for_ham10000()`, mirroring the
+shape of the existing PAD-UFES-20 map/function. Wired into
+`evaluate_external_isic.py`'s `ExternalIsicEvalDataset._adapted_row()`.
+
+---
+
+<a id="evaluate-external-isic-implemented"></a>
+## `evaluate_external_isic.py` Implemented and Smoke-Tested (2026-07-25)
+
+Implements the approved scope above. Structure mirrors
+`evaluate_cross_dataset.py`'s Protocol A: native unmasked argmax over
+each HAM10000-trained model's full 7-class output, scored restricted to
+that archive's exact-string-match shared classes (`labels=` parameter),
+full 7-class confusion matrix for transparency, per-row predictions
+saved to `reports/HAM10000/external_isic/predictions_{archive}_{variant}_seed{seed}.csv`
+for reuse by `bootstrap_significance.py`.
+
+Both exclusion lists (`external_validation_exclusions.csv`,
+`label_conflict_exclusions.csv`) applied per archive before scoring, as
+their union. Archive 1: 678 shared-class rows remain after filtering +
+exclusion (from 2,047 total). Archive 2: 12,508 remain (from 25,076).
+
+**Smoke-tested, not yet run to completion for all 12 combinations:**
+
+- `--archive ISIC_Archive_1 --variant image --seed 0` run to completion
+  locally (678 images, CPU) - macro-F1 (shared classes) 0.2563. Sanity
+  numbers only, not a final result - single seed, not yet compared
+  against anything.
+- Archive 2 metadata path verified directly (not a full run, this
+  machine is CPU-only per the 2026-07-09 Kaggle-move decision and 12,508
+  images x EfficientNet-B0 would be slow): confirmed the fitted
+  preprocessor's `anatomical_site` categories include `trunk`/`back`/
+  `acral`/`__MISSING__` as expected, confirmed sample Archive 2 rows map
+  correctly (`anterior torso`->`trunk`, `head/neck`->`__MISSING__`,
+  missing->`__MISSING__`), and ran one real batch through the loaded
+  `metadata_seed0_best.pt` checkpoint end-to-end (output shape `[8, 7]`,
+  as expected for HAM10000's 7 classes).
+- Archive 1's image branch (678 rows) is the only combination cheap
+  enough to run fully on this machine; the other 11 (Archive 1 has no
+  metadata branch; Archive 2 image x 3 seeds + metadata x 3 seeds =
+  12,508 rows each) should move to Kaggle, same as every prior
+  full-scale run in this project, rather than run slowly/riskily on CPU
+  here.
+
+**Next step:** run all 12 combinations (Archive 1: image x 3 seeds;
+Archive 2: image x 3 seeds + metadata x 3 seeds) - proposed as a Kaggle
+notebook, following the same "Save & Run All (Commit)" discipline
+adopted after the Stage 1 session-loss incident.
