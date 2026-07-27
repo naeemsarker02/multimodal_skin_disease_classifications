@@ -1,0 +1,99 @@
+{
+  "experiment": "phase8_ham_to_isic_external_validation",
+  "protocol": "A - full native argmax, restricted to exact-string-match shared classes for scoring",
+  "archive": "ISIC_Archive_1",
+  "variant": "image",
+  "seed": 1,
+  "n_eval_rows": 678,
+  "shared_classes": [
+    "Basal Cell Carcinoma",
+    "Dermatofibroma",
+    "Melanoma",
+    "Nevus",
+    "Vascular Lesion"
+  ],
+  "macro_f1_shared_classes": 0.22751637205458675,
+  "per_class_f1_shared_classes": {
+    "Basal Cell Carcinoma": 0.0,
+    "Dermatofibroma": 0.0,
+    "Melanoma": 0.4506517690875233,
+    "Nevus": 0.6869300911854104,
+    "Vascular Lesion": 0.0
+  },
+  "spillover_count": 128,
+  "spillover_rate": 0.1887905604719764,
+  "confusion_matrix": [
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      7,
+      0
+    ],
+    [
+      41,
+      18,
+      63,
+      2,
+      121,
+      130,
+      1
+    ],
+    [
+      2,
+      1,
+      22,
+      1,
+      40,
+      226,
+      3
+    ],
+    [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ]
+  ],
+  "confusion_matrix_class_order": [
+    "Actinic Keratosis / Intraepithelial Carcinoma",
+    "Basal Cell Carcinoma",
+    "Benign Keratosis-like Lesion",
+    "Dermatofibroma",
+    "Melanoma",
+    "Nevus",
+    "Vascular Lesion"
+  ]
+}

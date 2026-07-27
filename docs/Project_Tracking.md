@@ -2227,3 +2227,47 @@ exclusion (from 2,047 total). Archive 2: 12,508 remain (from 25,076).
 Archive 2: image x 3 seeds + metadata x 3 seeds) - proposed as a Kaggle
 notebook, following the same "Save & Run All (Commit)" discipline
 adopted after the Stage 1 session-loss incident.
+
+---
+
+<a id="isic-archive2-kaggle-mirror-quirks"></a>
+## ISIC Archive 2 Kaggle Mirror (`andrewmvd/isic-2019`) - Known Packaging Quirks (2026-07-27)
+
+Found while running `external_isic_evaluation_kaggle_notebook.md`'s
+sanity-check cell against the live Kaggle mount. Recorded here so
+neither quirk gets re-investigated from scratch by a future session -
+both are fixed in `src/models/config.py`'s `resolve_image_path()`, not
+worked around per-caller.
+
+1. **Images folder is renamed.** Our local
+   `data/raw/ISIC_Archive_2/images/` is packaged on this mirror as
+   `ISIC_2019_Training_Input/` instead of `images/` - a plain rename, not
+   a nesting difference. Fixed via `KAGGLE_REST_FOLDER_RENAME`.
+
+2. **Some files are additionally renamed with a `_downsampled` suffix.**
+   ~2,074 of our 25,076 processed IDs (8.3%) exist on this mirror only as
+   `<image_id>_downsampled.jpg`, not `<image_id>.jpg` - e.g.
+   `ISIC_0016058.jpg` only exists as `ISIC_0016058_downsampled.jpg`.
+   Presumably the mirror uploader's own downsizing of oversized
+   originals; undocumented upstream. This is a systematic naming
+   convention affecting a real subset of files, not stray/corrupt
+   entries - confirmed via a full ID-set comparison
+   (`scripts/isic_archive2_id_comparison_cell.py`), not assumed from the
+   3 IDs that happened to surface in a 20-row sanity-check sample. Fixed
+   via `KAGGLE_FILENAME_FALLBACK_SUFFIX["ISIC_Archive_2"] = "_downsampled"`,
+   tried as a fallback (checked with `.exists()`, never assumed) after
+   the plain filename fails to resolve, at both the flat and doubled
+   candidate locations.
+
+**Verification discipline:** total image count matching our expected
+25,331 (passed during initial mirror verification) was NOT sufficient to
+rule out ID-level mismatches - a mirror can have the right *count* while
+missing/renaming specific files, as happened here. `resolve_image_path()`
+now has three independent, individually-`.exists()`-checked fallback
+layers for Kaggle mirrors, in order: (a) `KAGGLE_DATASET_SUBPATH` (whole
+dataset root shifted deeper - Archive 1's case), (b)
+`KAGGLE_REST_FOLDER_RENAME` (top-level folder renamed) +
+imgs_part_N-style doubling (folder nested inside itself), (c)
+`KAGGLE_FILENAME_FALLBACK_SUFFIX` (individual filenames renamed). None of
+these are assumed to apply beyond the specific dataset/mirror they were
+confirmed for.

@@ -62,10 +62,68 @@ KAGGLE_DATASET_SLUGS = {
     # assumed. Mounted at
     # /kaggle/input/datasets/kmader/skin-cancer-mnist-ham10000/.
     "HAM10000": ("kmader", "skin-cancer-mnist-ham10000"),
+    # nodoubttome/skin-cancer9-classesisic - verified raw mirror of
+    # ISIC Archive 1 (2,357 images, all 18 per-class Train/Test counts
+    # match exactly). Mounted at
+    # /kaggle/input/datasets/nodoubttome/skin-cancer9-classesisic/, but
+    # double-nested one level deeper under "Skin cancer ISIC The
+    # International Skin Imaging Collaboration/" before reaching
+    # Train/Test - see KAGGLE_DATASET_SUBPATH below.
+    "ISIC_Archive_1": ("nodoubttome", "skin-cancer9-classesisic"),
+    # andrewmvd/isic-2019 - verified raw mirror of ISIC Archive 2
+    # (25,331 images match exactly; ISIC_2019_Training_Metadata.csv also
+    # present, 25,331 rows, columns image/age_approx/anatom_site_general/
+    # lesion_id/sex - no attribution column, which is expected since our
+    # own processed CSV already carries that from Phase 4's audit).
+    # Mounted at /kaggle/input/datasets/andrewmvd/isic-2019/.
+    "ISIC_Archive_2": ("andrewmvd", "isic-2019"),
 }
 KAGGLE_DATASET_SUBPATH = {
     "PAD_UFES20": "",
     "HAM10000": "",
+    "ISIC_Archive_1": "Skin cancer ISIC The International Skin Imaging Collaboration",
+    "ISIC_Archive_2": "",
+}
+
+# Per-dataset top-level rest-folder rename, Kaggle-only: our own local
+# data/raw/<Dataset>/ layout is never touched (image_path values in the
+# CSVs keep saying "images/..." everywhere) - this only maps that first
+# path component to whatever this *specific* Kaggle mirror actually
+# named the folder, when the packaging disagrees with our local naming.
+# Distinct from KAGGLE_DATASET_SUBPATH (which shifts the whole dataset
+# root deeper) and from the imgs_part_N doubling check below (which
+# handles a folder being nested inside an identically-named folder, not
+# a rename) - this is a third, independent kind of Kaggle packaging
+# mismatch.
+KAGGLE_REST_FOLDER_RENAME = {
+    # andrewmvd/isic-2019 packages images under "ISIC_2019_Training_Input/",
+    # not "images/" like our own local data/raw/ISIC_Archive_2/images/ -
+    # confirmed via folder-verification cell 2026-07-27 (top-level
+    # contents: ISIC_2019_Training_GroundTruth.csv, ISIC_2019_Training_Input,
+    # ISIC_2019_Training_Metadata.csv). Filenames themselves are unaffected
+    # (ISIC_0000000.jpg-style IDs match on both sides) - only the
+    # containing folder name differs.
+    "ISIC_Archive_2": {"images": "ISIC_2019_Training_Input"},
+}
+
+# Per-dataset filename-suffix fallback, Kaggle-only: some mirrors rename
+# individual files when repackaging (e.g. downsampling oversized
+# originals) rather than keeping the original filename - a per-file
+# naming difference affecting only a subset of files, distinct from
+# KAGGLE_REST_FOLDER_RENAME (whole containing folder renamed) and the
+# imgs_part_N/renamed-folder doubling check (nesting, not renaming)
+# above. Checked via .exists() per-call, same defensive pattern as every
+# other fallback here - never assumed to apply to every file.
+KAGGLE_FILENAME_FALLBACK_SUFFIX = {
+    # andrewmvd/isic-2019 renames ~2,074 of our 25,076 processed IDs
+    # (8.3%) with a "_downsampled" suffix before the extension (e.g.
+    # ISIC_0016058.jpg only exists as ISIC_0016058_downsampled.jpg) -
+    # root cause confirmed via scripts/isic_archive2_id_comparison_cell.py
+    # 2026-07-27 (see Project_Tracking.md's ISIC Archive 2 Kaggle mirror
+    # quirks entry). Presumably the mirror uploader's own downsizing of
+    # oversized originals; undocumented upstream, so treated as this
+    # mirror's own idiosyncrasy - never assumed for other datasets.
+    "ISIC_Archive_2": "_downsampled",
 }
 
 RAW_ROOT = PROJECT_ROOT / "data" / "raw"  # local only; unused on Kaggle
@@ -96,6 +154,15 @@ def resolve_image_path(image_path: str) -> Path:
     subpath = KAGGLE_DATASET_SUBPATH.get(dataset_dir, "")
     dataset_root = KAGGLE_DATASETS_ROOT / owner / slug / subpath
 
+    rest_parts = rest.parts
+
+    # Apply this dataset's rest-folder rename (if any) before any
+    # existence checks below, so the doubling check operates on the
+    # renamed name too.
+    rename_map = KAGGLE_REST_FOLDER_RENAME.get(dataset_dir, {})
+    if rest_parts and rest_parts[0] in rename_map:
+        rest_parts = (rename_map[rest_parts[0]],) + rest_parts[1:]
+
     # PAD-UFES-20's Kaggle mirror double-nests imgs_part_N/ folders:
     # verified via direct listing that imgs_part_1, imgs_part_2, and
     # imgs_part_3 are ALL doubled the same way (each contains a
@@ -103,15 +170,36 @@ def resolve_image_path(image_path: str) -> Path:
     # per-call rather than hardcoded, so the fix keeps working even if a
     # future dataset version changes the packaging for only some parts,
     # and so it's a no-op (never matches) for datasets without
-    # imgs_part_N/ folders, e.g. HAM10000.
-    rest_parts = rest.parts
-    if rest_parts and rest_parts[0].startswith("imgs_part_"):
+    # imgs_part_N/ folders, e.g. HAM10000. Generalized to also cover a
+    # freshly-renamed folder (e.g. ISIC_2019_Training_Input/) rather than
+    # just the imgs_part_ prefix - nesting-depth was never independently
+    # confirmed for that renamed folder (only that it exists at the top
+    # level), so this checks rather than assumes a flat layout.
+    candidates = []
+    if rest_parts:
         top_dir = rest_parts[0]
-        doubled = dataset_root / top_dir / top_dir / Path(*rest_parts[1:])
-        if doubled.exists():
-            return doubled
+        renamed_targets = set(rename_map.values())
+        if top_dir.startswith("imgs_part_") or top_dir in renamed_targets:
+            candidates.append(dataset_root / top_dir / top_dir / Path(*rest_parts[1:]))
+    candidates.append(dataset_root / Path(*rest_parts))
 
-    return dataset_root / rest
+    # For each candidate location (doubled first if applicable, then
+    # flat), try the plain filename, then this dataset's filename-suffix
+    # fallback (if any) at that same location - e.g. ISIC Archive 2's
+    # "_downsampled" quirk. Returns the first that actually exists;
+    # falls back to the primary (first) candidate, unresolved, if none
+    # do, so the caller's eventual FileNotFoundError still names a
+    # sensible expected path rather than a silently-wrong guess.
+    filename_suffix = KAGGLE_FILENAME_FALLBACK_SUFFIX.get(dataset_dir)
+    for candidate in candidates:
+        if candidate.exists():
+            return candidate
+        if filename_suffix:
+            suffixed = candidate.with_name(f"{candidate.stem}{filename_suffix}{candidate.suffix}")
+            if suffixed.exists():
+                return suffixed
+
+    return candidates[0]
 
 
 # --- Our processed metadata (train/val/test CSVs, feature_whitelist.md) -
@@ -124,15 +212,30 @@ KAGGLE_PROCESSED_SLUGS = {
     # naeemsarkertracer/ham10000-processed - uploaded and published
     # 2026-07-15 (https://www.kaggle.com/datasets/naeemsarkertracer/ham10000-processed).
     "HAM10000": ("naeemsarkertracer", "ham10000-processed"),
+    # naeemsarkertracer/isic-archive1-processed - uploaded and published
+    # 2026-07-27 (https://www.kaggle.com/datasets/naeemsarkertracer/isic-archive1-processed).
+    "ISIC_Archive_1": ("naeemsarkertracer", "isic-archive1-processed"),
+    # naeemsarkertracer/isic-archive2-processed - uploaded and published
+    # 2026-07-27 (https://www.kaggle.com/datasets/naeemsarkertracer/isic-archive2-processed).
+    "ISIC_Archive_2": ("naeemsarkertracer", "isic-archive2-processed"),
 }
 # Whether that Kaggle dataset was zipped from the dataset folder itself
 # (True -> mounted root wraps everything in an extra "<Dataset>/"
 # subfolder, e.g. PAD-UFES-20's) or from the folder's contents (False ->
 # mounted root already contains metadata_train.csv etc. directly). Set
 # per-dataset once the HAM10000 processed dataset is actually uploaded.
+# Not yet confirmed for the two ISIC archives - _processed_dir()
+# auto-detects the actual layout at runtime regardless, so this fallback
+# value only matters if that detection can't find either candidate path.
 KAGGLE_PROCESSED_WRAPPED = {
     "PAD_UFES20": True,
     "HAM10000": True,
+    # Confirmed FLAT via folder-verification cell 2026-07-27 (metadata_train.csv
+    # found directly at dataset root, not under an ISIC_Archive_1/ subfolder).
+    "ISIC_Archive_1": False,
+    # Confirmed FLAT via folder-verification cell 2026-07-27 (metadata_train.csv
+    # found directly at dataset root, not under an ISIC_Archive_2/ subfolder).
+    "ISIC_Archive_2": False,
 }
 
 
@@ -175,9 +278,20 @@ KAGGLE_STAGE1_CHECKPOINT_SLUGS = {
     # naeemsarkertracer/pad-ufes20-stage1-checkpoints - published 2026-07-16
     # (https://www.kaggle.com/datasets/naeemsarkertracer/pad-ufes20-stage1-checkpoints).
     "PAD_UFES20": ("naeemsarkertracer", "pad-ufes20-stage1-checkpoints"),
+    # naeemsarkertracer/ham10000-stage1-checkpoints - published 2026-07-27
+    # (https://www.kaggle.com/datasets/naeemsarkertracer/ham10000-stage1-checkpoints).
+    # Deliberately a separate dataset from ham10000-processed (KAGGLE_PROCESSED_SLUGS
+    # above) - that one holds the train/val/test split CSVs, this one holds
+    # the Stage 1 image/metadata checkpoints for fusion warm-start.
+    "HAM10000": ("naeemsarkertracer", "ham10000-stage1-checkpoints"),
 }
 KAGGLE_STAGE1_CHECKPOINT_WRAPPED = {
     "PAD_UFES20": True,
+    # Confirmed FLAT via folder-verification cell 2026-07-27 (all 6
+    # checkpoint .pt files found directly at dataset root, not under a
+    # checkpoints/ subfolder; byte sizes match local logs/HAM10000/checkpoints/
+    # exactly - image: 16,367,949 bytes each, metadata: 54,523 bytes each).
+    "HAM10000": False,
 }
 
 

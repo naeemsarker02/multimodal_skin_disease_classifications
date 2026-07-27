@@ -54,6 +54,7 @@ from src.models.config import (
     normalize_isic_archive2_anatomical_site_for_ham10000,
     resolve_image_path,
 )
+from src.models.config import _processed_dir as _config_processed_dir
 from src.models.dataset import MetadataPreprocessor, build_image_transform
 from src.models.image_model import build_efficientnet_b0
 from src.models.metadata_model import MetadataMLP
@@ -80,7 +81,12 @@ ARCHIVE_METADATA_COLUMNS = {
 
 
 def _archive_processed_dir(archive: str) -> Path:
-    return Path("data") / "processed" / archive
+    """Delegates to config.py's Kaggle-aware resolver (KAGGLE_PROCESSED_SLUGS
+    -> flat-vs-wrapped auto-detection) instead of hardcoding a local-only
+    "data/processed/<archive>" path - this script must also run inside the
+    Kaggle notebook, where that local path does not exist.
+    """
+    return _config_processed_dir(archive)
 
 
 def load_archive_metadata(archive: str) -> pd.DataFrame:
@@ -165,7 +171,12 @@ def build_ham_eval_preprocessor(ham_ds_config) -> MetadataPreprocessor:
 
 def load_model_for_variant(variant: str, seed: int, ham_ds_config, num_classes: int,
                             metadata_input_dim: int, device) -> torch.nn.Module:
-    ckpt_path = ham_ds_config.checkpoints_dir / f"{variant}_seed{seed}_best.pt"
+    # stage1_checkpoints_dir (KAGGLE_STAGE1_CHECKPOINT_SLUGS-resolved), NOT
+    # checkpoints_dir (OUTPUT_ROOT write-target for newly-trained output) -
+    # the two only happened to coincide locally because OUTPUT_ROOT ==
+    # PROJECT_ROOT off-Kaggle; on Kaggle checkpoints_dir is an empty
+    # /kaggle/working path and this eval script never writes there.
+    ckpt_path = ham_ds_config.stage1_checkpoints_dir / f"{variant}_seed{seed}_best.pt"
     if not ckpt_path.exists():
         raise FileNotFoundError(f"Checkpoint not found: {ckpt_path}")
     if variant == "image":
