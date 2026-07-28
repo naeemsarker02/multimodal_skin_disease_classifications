@@ -1,0 +1,20 @@
+{
+  "experiment": "phase8_bootstrap_significance_isic_archive2_image_vs_metadata",
+  "method": "paired bootstrap, row-level resampling (n=12508 ISIC Archive 2 eval rows), seed-averaged (3 seeds) per iteration, percentile-method 95% CI",
+  "n_resamples": 1000,
+  "rng_seed": 42,
+  "alpha": 0.05,
+  "n_comparisons": 1,
+  "observed_macro_f1_mean_across_seeds": {
+    "image": 0.49121067378496547,
+    "metadata": 0.24097563570977118
+  },
+  "comparison": {
+    "observed_diff": 0.2502350380751943,
+    "bootstrap_mean_diff": 0.25007206044093616,
+    "ci_95_low": 0.23677556670011757,
+    "ci_95_high": 0.2641209460933473,
+    "p_value_two_sided": 0.0,
+    "significant_alpha_0.05": true
+  }
+}

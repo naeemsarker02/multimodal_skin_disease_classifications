@@ -238,7 +238,7 @@ sections below are unchanged and remain the source of truth.*
 | **5. EDA** | **✅ Completed** | **2026-07-09** | Scope approved 2026-07-08 (incl. approved image-dimension addition). `src/eda/` code executed for all 4 datasets + cross-dataset comparison; all outputs verified non-empty in `reports/eda/`; 5 notebooks (`notebooks/01-05_eda_*.ipynb`) and `reports/eda/eda_summary.md` written. Key finding: ISIC Archive 2's bimodal image resolution (600x450 / 1024x1024 clusters) visually confirms its documented image-source overlap with HAM10000. |
 | 6. Baseline Model Development | ✅ Completed — both datasets' Stage 1 baselines done | 2026-07-16 | Pre-conditions resolved 2026-07-09 (sparse-field exclusion, 224×224 resize+pad). PAD-UFES-20: all 6 Stage 1 runs completed and verified 2026-07-13 (image mean macro-F1 0.5703+/-0.0130, metadata mean macro-F1 0.5762+/-0.0072) — see "Phase 6 Stage 1 — COMPLETE" entry. HAM10000: all 6 Stage 1 runs completed and verified 2026-07-16, same recipe (image mean macro-F1 0.6940+/-0.0041, metadata mean macro-F1 0.2521+/-0.0104) — see "HAM10000 Stage 1 — COMPLETE" entry. Sequencing decision (full HAM10000 baseline before Phase 7) fulfilled. Next: Phase 7 late fusion design. |
 | 7. Multimodal Model Development | ✅ Completed — both stages done, PAD-UFES-20 only | 2026-07-18 | Stage 1 (late fusion, mean macro-F1 0.5731+/-0.0021) and Stage 2 (cross-attention fusion, mean macro-F1 0.6209+/-0.0143) both complete and verified — see "Phase 7 Stage 1 — COMPLETE" and "Phase 7 Stage 2 — COMPLETE" entries. Cross-attention clearly outperforms all 3 prior variants (image/metadata/late-fusion), confirming the pre-registered dimensionality-imbalance hypothesis. Next: Phase 8 (Experiments & Evaluation). |
-| 8. Experiments & Evaluation | ⏳ In progress | — | PAD-UFES-20<->HAM10000 cross-dataset generalization: ✅ complete 2026-07-25 (bootstrap significance included — note: only cross_attention vs. metadata is statistically significant; cross_attention's edge over image-only and late-fusion is **not** significant in this transfer direction, see "Phase 8, Experiment 1 ... COMPLETE" entry). Fitzpatrick fairness analysis: ✅ complete 2026-07-25, also stands as PAD-UFES-20's official final Stage 1 test-set result (see "Test-Split Single-Use Safeguard Added"). Both dataset's test splits now locked. Ensemble/TTA on cross-attention explored and permanently rejected (Melanoma F1 collapses 0.364->0.20 under ensemble+TTA — disqualifying, not just "no improvement" — see "Ensemble/TTA Exploration" entry). Remaining: HAM10000->ISIC external validation — both previously-open ISIC gaps (Archive 2's 3 unverified anatomical_site-adjacent whitelist fields, 3 cross-archive label conflicts) are now **resolved** (2026-07-25), scope approved, `evaluate_external_isic.py` implemented and smoke-tested (1 of 9 combinations run: Archive 1 image seed0). Not blocking — 8 of 9 combinations remain, to be run on Kaggle. |
+| 8. Experiments & Evaluation | ✅ Completed | 2026-07-27 | PAD-UFES-20<->HAM10000 cross-dataset generalization: ✅ complete 2026-07-25 (bootstrap significance included — note: only cross_attention vs. metadata is statistically significant; cross_attention's edge over image-only and late-fusion is **not** significant in this transfer direction, see "Phase 8, Experiment 1 ... COMPLETE" entry). Fitzpatrick fairness analysis: ✅ complete 2026-07-25, also stands as PAD-UFES-20's official final Stage 1 test-set result (see "Test-Split Single-Use Safeguard Added"). Both dataset's test splits now locked. Ensemble/TTA on cross-attention explored and permanently rejected (Melanoma F1 collapses 0.364->0.20 under ensemble+TTA — disqualifying, not just "no improvement" — see "Ensemble/TTA Exploration" entry). HAM10000->ISIC external validation: ✅ complete 2026-07-27, all 9 combinations run (image seeds0-2 x Archive1, image+metadata seeds0-2 x Archive2), bootstrap significance included (image vs. metadata on Archive 2: +0.2502, 95% CI [+0.2368,+0.2641], p<0.001, significant) — see "Phase 8.2 — ISIC External Validation — COMPLETE" entry and `docs/Phase8_ISIC_External_Validation_Results.md`. All 4 planned Phase 8 components now complete. |
 | 9. Thesis Writing Support | ⏳ Pending | — | |
 | 10. arXiv preprint / submission | ⏳ Pending | — | |
 
@@ -2271,3 +2271,34 @@ imgs_part_N-style doubling (folder nested inside itself), (c)
 `KAGGLE_FILENAME_FALLBACK_SUFFIX` (individual filenames renamed). None of
 these are assumed to apply beyond the specific dataset/mirror they were
 confirmed for.
+
+---
+
+<a id="phase-8-2-isic-external-validation-complete"></a>
+## Phase 8.2 — ISIC External Validation — COMPLETE (2026-07-27)
+
+All 9 planned runs (3 seeds × [Archive 1 image + Archive 2 image + Archive 2 metadata]) executed on Kaggle per the approved scope ("Proposed ISIC External Validation Scope — APPROVED", 2026-07-25) and `evaluate_external_isic.py`. Output files verified read directly from disk (not from any pasted log) — every JSON's `macro_f1_shared_classes` is exactly the mean of its own `per_class_f1_shared_classes` values, confirming internal consistency between the stored macro-F1 and per-class numbers.
+
+**Headline results — macro-F1 (shared classes):**
+
+| Archive | Variant | seed0 | seed1 | seed2 | mean | std (population) | spillover rate (mean) |
+|---|---|---|---|---|---|---|---|
+| Archive 1 (n=678) | image | 0.2563 | 0.2275 | 0.2426 | **0.2421** | 0.0118 | 19.1% |
+| Archive 2 (n=12,508) | image | 0.5029 | 0.4908 | 0.4799 | **0.4912** | 0.0094 | 23.0% |
+| Archive 2 (n=12,508) | metadata | 0.2009 | 0.2710 | 0.2510 | **0.2410** | 0.0295 | 27.3% |
+
+**Notable finding, verified directly from each run's confusion matrix:** Archive 1's 678-row eval set has **zero** true instances of 2 of its 5 shared classes (Basal Cell Carcinoma, Vascular Lesion) and only 7 of Dermatofibroma — Archive 1's low macro-F1 (0.2421) is substantially a consequence of this eval-set composition, not a weaker model than Archive 2's (0.4912), which has hundreds-to-thousands of true rows in 3 of its 4 shared classes. Flagged explicitly rather than left implicit, per this project's "don't silently average away a support artifact" precedent.
+
+**Bootstrap significance (Archive 2, image vs. metadata — the only archive with both branches, so the only place this comparison is possible):** paired bootstrap, 1,000 resamples, RNG seed 42, same method as the PAD→HAM bootstrap test. `src/evaluation/bootstrap_significance_isic.py` (new). Result: **+0.2502** observed diff (image − metadata), 95% CI **[+0.2368, +0.2641]**, p<0.001 — significant. Image is a materially and significantly stronger generalizer than metadata on this transfer task, consistent with the same qualitative finding already established for PAD→HAM (there, cross_attention vs. metadata: +0.1734, [+0.1341, +0.2097]).
+
+**Full writeup:** `docs/Phase8_ISIC_External_Validation_Results.md` (per-seed macro-F1, mean±std, per-class F1 for all 3 archive/variant combinations, spillover rates, bootstrap test, and reading notes).
+
+**Fitzpatrick fairness doc checked for dangling follow-up before declaring Phase 8 complete:** `docs/Phase8_Fitzpatrick_Fairness_Results.md` has exactly one deferred item — an equalized-odds/parity metric, explicitly deferred as scoped (2026-07-25) because per-group instability at PAD-UFES-20's small Fitzpatrick group sizes would make such a metric itself unreliable. This was an intentional scope decision, not an open TODO, and is not a blocker for Phase 8 completion.
+
+**Phase 8 status — all 4 planned components now complete:**
+1. PAD-UFES-20↔HAM10000 cross-dataset generalization — ✅ complete 2026-07-25
+2. HAM10000→ISIC external validation — ✅ complete 2026-07-27 (this entry)
+3. Fitzpatrick skin-type fairness analysis — ✅ complete 2026-07-25
+4. Bootstrap significance testing — ✅ complete for both cross-dataset directions (PAD→HAM 2026-07-25, ISIC Archive 2 image-vs-metadata 2026-07-27)
+
+Phase 8 (Experiments & Evaluation) is now fully complete. Next: Phase 9 (Thesis Writing Support).
