@@ -67,7 +67,7 @@ paper may exist.
 | 8 | 2024 | Skin Lesion Classification Using EfficientNet | HAM10000 | EfficientNet-B0/B1 transfer learning, dermoscopic images only | ~90–94% accuracy | No metadata/symptoms, purely image-based | Directly validates this thesis's own architecture choice (EfficientNet-B0) as a reasonable image-branch baseline |
 | 9 | 2025 | Multimodal Learning with Clinical Metadata for Skin Cancer Diagnosis | PAD-UFES-20 | Dual-branch: CNN for image + TabNet for clinical metadata, fused representations | ~94–97% accuracy | Skin-cancer-focused only, limited disease variety, structured metadata only | Closest prior-art comparison for this thesis's PAD-UFES-20 image+metadata baseline numbers — cite directly in Results discussion |
 | 10 | 2021 | MetaBlock: An Attention-Based Mechanism to Combine Images and Metadata in Deep Learning Models Applied to Skin Cancer Classification — Pacheco & Krohling | PAD-UFES-20 (creators' own dataset) | **Mechanism confirmed 2026-07-18 (see below) — NOT Transformer-style Q/K/V attention.** MetaBlock is a channel-wise gated feature-modulation block: metadata vector U passes through two independent Linear+BatchNorm branches producing t1, t2 (same channel-dim as CNN feature vector V); output V' = sigmoid(tanh(V·t1) + t2) — a multiplicative gate plus additive bias, squashed by sigmoid, broadcast uniformly across spatial positions within each channel (no per-location weighting). Their own simpler baseline MetaNet is closer to squeeze-and-excitation (metadata → conv+ReLU+sigmoid → per-channel scale map → elementwise multiply). | Per abstract: improves classification across all tested models on both datasets (ISIC 2019, PAD-UFES-20); beats MetaNet + concatenation in 6/10 scenarios. Secondary-source figures, unconfirmed against primary text: ~80.7%±0.008 accuracy (ISIC 2019), ~74.8%±0.018 (PAD-UFES-20). | Channel-wise-only gating, no explicit spatial/token-level attention (unlike our proposed cross-attention). Primary IEEE PDF paywalled and not directly read — mechanism verified via the official code repo (`github.com/paaatcha/MetaBlock`) + a secondary paper's description, not the primary text itself. | **CRITICAL** — written by PAD-UFES-20's own creators; near-mandatory citation. Our Phase 7 Stage 2 cross-attention design (metadata=Q, image spatial tokens=K/V) is confirmed **not** a MetaBlock reproduction — a related-but-distinct mechanism pursuing the same goal via genuine spatial attention rather than MetaBlock's per-channel gating. Correct framing going forward: "cross-attention, contrasted with MetaBlock's channel-gating approach," not "MetaBlock-inspired." |
-| 11 | 2020 | The impact of patient clinical information on automated skin cancer detection — Pacheco & Krohling | PAD-UFES-20-related | Not yet captured — read full text | Not yet captured — read full text | Not yet captured — read full text | Foundational justification for this thesis's entire multimodal premise — cite in Introduction |
+| 11 | 2019/2020 | The impact of patient clinical information on automated skin cancer detection — Pacheco & Krohling | PAD dataset precursor (1,612 clinical images, 6 classes — smaller/earlier version of the public PAD-UFES-20 this thesis uses) | **Full text read 2026-07-28** (arXiv:1909.12912, freely available). Simple concatenation-based fusion, not MetaBlock's gating and not cross-attention: CNN feature extractor kept frozen-then-fine-tuned; flattened image features pass through a "feature reducer" NN block whose output size is controlled by a tunable "combination factor" `cf` (0.5-0.9) to balance against the fixed 28 clinical features (8 raw fields, one-hot encoded except age); reduced image features concatenated with clinical features, fed to classifier. `T = ceil(cf·Nimg + (1-cf)·Ncli)`. Best `cf`=0.7-0.8 (no significant difference between them), found via sensitivity analysis on ResNet-50. Tested 6 backbones (ResNet-50/101, GoogleNet, MobileNet, VGGNet-13/19), 5-fold CV, class-weighted loss (upsampling tried and rejected — biased toward Melanoma). | Image-only avg across 6 models: BACC 0.650±0.031. Image+clinical avg: BACC 0.718±0.022 (~7% absolute improvement), AUC 0.929→0.948. Best single model: ResNet-50 image+clinical — ACC 0.788±0.025, BACC 0.750±0.033, F1 0.790±0.027, AUC 0.958±0.007. Friedman+Wilcoxon confirm all 6 models significantly improved by adding clinical data. | **Key finding directly relevant to this thesis's own results:** clinical features improve differentiation of ACK/MEL/NEV/SEK but do **not** help separate SCC vs. BCC — the two share near-identical clinical profiles (both bleed, hurt, itch, same age range, same anatomical-site preference), so the model keeps confusing them even with metadata added. Authors' own dataset (1,612 images, precursor to PAD-UFES-20) is smaller/less rich than the 2,298-image, 21-whitelisted-feature PAD-UFES-20 this thesis uses. Authors acknowledge smartphone image quality (vs. dermoscopy), patient self-report subjectivity, and unresolved SCC/BCC confusion as limitations. | **Foundational justification for this thesis's entire multimodal premise — cite in Introduction.** The SCC/BCC confusion-persists-with-metadata finding is a useful forward citation for this thesis's own per-class results (worth checking whether the same pair is confused in our PAD-UFES-20 confusion matrices). This 2020 paper's fusion method (tunable concatenation ratio) is a direct historical precursor to this thesis's own late-fusion Stage 1 baseline (Phase 7 Stage 1) — both are "naive concatenation" approaches that motivate a more sophisticated fusion mechanism (MetaBlock's gating here; cross-attention in this thesis). **Important side-finding: this paper's dataset is the direct precursor to the public PAD-UFES-20 dataset** (later formally released as "PAD-UFES-20: A skin lesion dataset composed of patient data and clinical images collected from smartphones," Pacheco et al., *Data in Brief* — see note below); this Data in Brief paper, not this 2019/2020 preprint, is the correct citation for the dataset itself and is not yet in this 16-paper table. |
 | 12 | 2025 | A multimodal skin lesion classification through cross-attention fusion and collaborative edge computing | Not yet captured — read full text | Novel cross-attention fusion mechanism; distributes compute across IoT/edge devices | Not yet captured — read full text | Not yet captured — read full text | Recent (2025) cross-attention precedent, directly relevant to Phase 7 Stage 2 design |
 | 13 | 2025 | Comparative analysis of multimodal architectures for effective skin lesion detection using clinical and image data (Frontiers in AI) | Not yet captured — read full text | Multimodal data fusion framework systematically integrating dermatoscopic images with clinical metadata; compares fusion techniques | Not yet captured — read full text | Not yet captured — read full text | Directly supports this thesis's own baseline-vs-fusion comparison narrative (Phase 6 vs. Phase 7) |
 | 14 | 2025 | JI-ADF: A multi-stage multi-modal learning algorithm with adaptive multimodal fusion for improving multi-label skin lesion classification — Zuo, Wang & Wang (Artificial Intelligence in Medicine) | Not yet captured — read full text | Combines clinical images, dermoscopy images, and metadata via uncertainty-based hybrid/adaptive fusion | Not yet captured — read full text | Not yet captured — read full text | Relevant for multi-class framing and adaptive-fusion design ideas |
@@ -113,16 +113,38 @@ dataset creators**:
    Transformer-style attention) was verified from the paper's official code
    repository (`github.com/paaatcha/MetaBlock`) plus a secondary paper's
    description of the same method, which independently agreed — high
-   confidence, but not equivalent to reading the primary text. If the thesis
-   needs to quote specific numeric results (accuracy/balanced-accuracy
-   tables) or cite methodology details beyond the mechanism itself, the
-   primary PDF should still be obtained (e.g. via institutional access) and
-   read before those specific claims are finalized.
+   confidence, but not equivalent to reading the primary text. **Re-checked
+   2026-07-28: no free full text exists anywhere** (arXiv has no preprint of
+   this paper; ResearchGate's copy returned HTTP 403; the author's own
+   publications page (`pachecoandre.com.br/research`) links only to the
+   paywalled IEEE Xplore page, not a self-hosted PDF) — still blocked on
+   institutional access. If the thesis needs to quote specific numeric
+   results (accuracy/balanced-accuracy tables) or cite methodology details
+   beyond the mechanism itself, the primary PDF should still be obtained
+   (e.g. via institutional access) and read before those specific claims are
+   finalized.
 2. **Pacheco & Krohling (2020)** — *The impact of patient clinical
-   information on automated skin cancer detection* (row #11). Foundational
-   justification for the multimodal premise this thesis is built on — a
-   thesis using PAD-UFES-20 that doesn't engage this pair of papers is an
-   easily-flagged gap in a viva.
+   information on automated skin cancer detection* (row #11). **Full text
+   read 2026-07-28** via the free arXiv preprint (arXiv:1909.12912) — see
+   the reconciled table above for full methodology/results/limitations.
+   Foundational justification for the multimodal premise this thesis is
+   built on — a thesis using PAD-UFES-20 that doesn't engage this pair of
+   papers is an easily-flagged gap in a viva.
+
+**New finding, 2026-07-28 (not yet in the 16-paper table, not literature-review
+material — a dataset citation):** while reading row #11, its dataset was
+identified as the direct precursor to the public PAD-UFES-20 dataset this
+thesis uses (1,612 images / 6 classes / 8 raw clinical fields here, vs. the
+public release's 2,298 images / 6 classes / richer metadata). The public
+dataset's own citation paper — **Pacheco et al., "PAD-UFES-20: A skin lesion
+dataset composed of patient data and clinical images collected from
+smartphones," *Data in Brief*** — is the correct reference for the dataset
+itself (distinct from either of the two priority papers above, which are
+about *methods*, not the dataset release). **This paper is not yet cited
+anywhere in this project's literature review and should be added as the
+mandatory dataset citation**, separate from the 16-paper comparative table
+(dataset citations aren't "related work" to compare against, but omitting it
+would be a citation gap in the Methodology chapter's dataset section).
 
 Recommended order after these two: "Comparative analysis of multimodal
 architectures" (row #13, broad fusion-strategy context) and "Evaluation of
