@@ -6,27 +6,36 @@ a readable summary generated from that spreadsheet — if the two ever
 disagree, the xlsx is authoritative; update the xlsx first, then regenerate
 this summary.
 
-**Reconciliation (2026-07-17):** 16 unique papers, combining the 3 papers
-already tracked in `Project_Tracking.md` (Mridha & Islam 2026; Suresh et al.
-2026 TG-CAVNet; Watson et al. 2026), 8 papers the user reviewed in a working
-Excel sheet, and 8 new candidates found via web search. This is **not**
-3 + 8 + 8 = 19 — one duplicate was found and resolved (see below), so the
-Excel's 8 rows contribute 6 net-new papers, giving 3 + 6 + 8 = 16 unique
-papers total, not 19.
+**Reconciliation (2026-07-17, arithmetic corrected 2026-07-28):** 16 unique
+papers, combining the 3 papers already tracked in `Project_Tracking.md`
+(Mridha & Islam 2026; Suresh et al. 2026 TG-CAVNet; Watson et al. 2026),
+6 net-new papers from the user's working Excel sheet (rows 4-9 below — one
+Excel duplicate was found and resolved, see "Duplicate Resolution" below),
+and 7 new candidates found via web search (rows 10-16 below). **Correction:**
+the original 2026-07-17 write-up stated this as "8 new candidates found via
+web search," which doesn't reconcile (3+6+8=17, not 16); the table itself
+has always had exactly 7 web-search-sourced rows (10-16) — 3 + 6 + 7 = 16,
+consistent with the actual row count. This was a wording slip in the prose
+summary only, not a missing/extra paper; caught while resolving the row #5
+duplicate check below.
 
-**Status:** 8 of the 16 papers (rows 10–16, minus row 12 which duplicates
-into that count — effectively rows 10, 11, 12, 13, 14, 15, 16, i.e. all the
-web-search-found candidates) are abstract-only and still need a full-text
-read before the Literature Review chapter can be written. See
+**Status (2026-07-28):** all 16 rows now have at least abstract-level
+coverage; 6 have been read in full (rows 1, 3 already full-text at
+reconciliation; rows 11, 13, 15 read in full this session). Rows 10, 12,
+14, 16 remain abstract-level only — genuinely paywalled with no free full
+text found anywhere (checked arXiv, Unpaywall, Semantic Scholar's OA index,
+ResearchGate, publisher/author sites; see each row's entry and the
+"Priority Full-Text Reads" section for the specific dead ends checked).
+Row 2 (TG-CAVNet) and row 6-9 still need their own full-text pass. See
 `Project_Tracking.md`'s Phase 2 status entry.
 
-**Row #10 (MetaBlock) update (2026-07-18):** its core mechanism is now
-confirmed (see the reconciled table and "Priority Full-Text Reads" below),
-via the paper's official code repository plus an independently-agreeing
-secondary source — not via reading the primary IEEE PDF, which is paywalled
-and still unread. Treat row #10 as mechanism-confirmed but not fully
-full-text-read; the remaining 7 rows (11, 12, 13, 14, 15, 16, and the
-still-open row #11 read) are unchanged, still abstract-only.
+**Row #10 (MetaBlock) update (2026-07-18, re-confirmed 2026-07-28):** its
+core mechanism is confirmed (see the reconciled table and "Priority
+Full-Text Reads" below) via the paper's official code repository plus an
+independently-agreeing secondary source — not via reading the primary IEEE
+PDF, which is paywalled with no free copy anywhere (re-checked 2026-07-28
+via Unpaywall and Semantic Scholar's OA index, both return no open-access
+location). Treat row #10 as mechanism-confirmed but not full-text-read.
 
 ---
 
@@ -43,13 +52,20 @@ author match. It is row #1 in the reconciled table below.
 **Net effect:** the Excel's 8 rows contribute only 6 new unique papers, not
 8 — do not recount this as a fresh duplicate-check task later.
 
-**Still open, not yet resolved (flagged, not a duplicate finding):** row #5
-("Multimodal Skin Lesion Classification Using Deep Learning", ISIC Archive,
-2018) is a *possible* match to Yap, Yolland & Tschandl (2018, Experimental
-Dermatology), found independently via the web search. This has **not** been
-confirmed — needs a full-text author check. If confirmed identical, the
-paper count drops to 15; if different, it stays at 16 and a 17th distinct
-paper may exist.
+**Row #5 identity check — RESOLVED 2026-07-28.** "Multimodal Skin Lesion
+Classification Using Deep Learning" (Excel row 4, previously described as
+"ISIC Archive," ~93-96% accuracy) is **confirmed to be Yap, Yolland &
+Tschandl (2018, *Experimental Dermatology* 27(11):1261-1267, DOI
+10.1111/exd.13777, PubMed 30187575)** — exact title match, same year, same
+combine-modalities-for-diagnosis topic; a second unrelated paper sharing
+this exact title in the same year is not a plausible coincidence.
+**This does not reduce the paper count from 16 to 15** — unlike the
+Mridha & Islam case above, there was never a second table row duplicating
+this paper; row #5 simply needed its factual description corrected in
+place (dataset was a custom 2,917-case tri-modal set, not "ISIC Archive";
+reported metrics were AUC 0.866/mAP 0.729, not "~93-96% accuracy" — see the
+reconciled table's row #5 for full detail). **Final count: 16 unique
+papers, confirmed, not 15.**
 
 ---
 
@@ -61,7 +77,7 @@ paper may exist.
 | 2 | 2026 | TG-CAVNet — Suresh et al. | Not fully captured — verify on next read | TG-CAVNet architecture (text-guided cross-attention variant) | Not fully captured — verify on next read | Not fully captured — verify on next read | Primary architectural reference for Phase 7 Stage 2 cross-attention fusion design |
 | 3 | 2026 | (Leakage/shortcut-feature warning paper) — Watson et al. | Not fully captured — verify on next read | Methodological caution: post-diagnosis fields cause data leakage | N/A (methodological) | N/A | Direct inspiration for this thesis's entire leakage-audit methodology (22 excluded columns) — cite prominently in Methodology chapter |
 | 4 | 2025 | MM-Skin: A Vision-Language Model for Dermatology (SkinVL) | Large VL dermatology dataset (custom) | Large vision-language dermatology dataset; SkinVL model combines image+text via VQA, supervised fine-tuning, zero-shot learning | ~90–94% accuracy | High compute need, dataset not fully clinical, limited real-world validation | Different modality (free text vs. structured metadata) — useful contrast in Related Work, not directly comparable architecture |
-| 5 | 2018 | Multimodal Skin Lesion Classification Using Deep Learning (possible match: Yap, Yolland & Tschandl 2018 — unconfirmed) | ISIC Archive | Combines dermoscopic images, clinical images, and patient metadata; per-modality features merged for classification | ~93–96% accuracy | Small/less diverse dataset, no symptom-level info, limited real-world variability | Early foundational multimodal paper — good for Related Work historical framing |
+| 5 | 2018 | **Duplicate — confirmed 2026-07-28.** Multimodal Skin Lesion Classification Using Deep Learning = Yap, Yolland & Tschandl, *Experimental Dermatology* 27(11):1261-1267 (DOI 10.1111/exd.13777, PubMed 30187575). Exact title match, same year, same combine-modalities-for-diagnosis topic — a coincidental second unrelated paper with this exact title in the same year is not plausible. Authors affiliated with MetaOptima Technology Inc. (Vancouver) and Medical University of Vienna (Tschandl — also a HAM10000 co-creator). | **Correction:** a custom 2,917-case tri-modal dataset (dermatoscopic image + macroscopic photo + patient metadata per case) — **not** "ISIC Archive" as the Excel review recorded; that dataset label was inaccurate, caught the same way row 14's "JI-ADF" mislabel was. | Two-tower CNN feature extraction (one tower per image modality: dermatoscopic, macroscopic) + patient metadata vector, all concatenated (late fusion) and passed through an embedding network for final classification. | **Correction:** binary melanoma AUC 0.866 (multimodal) vs. 0.784 (macroscopic-image-only baseline); multiclass mean average precision 0.729 (multimodal) vs. 0.598 (image-only). **Not** "~93-96% accuracy" as the Excel review recorded — that figure doesn't match any metric this paper actually reports; likely an imprecise paraphrase in the original review, not a citable number. | Early (2018), foundational three-modality (not just image+metadata) fusion paper — useful for Related Work historical framing, but any numbers cited from it must use the corrected AUC/mAP figures above, not the erroneous accuracy percentage. |
 | 6 | 2024 | Explainable AI for Skin Disease Classification | HAM10000 | Multiple CNN transfer-learning models + Grad-CAM visualization | ~91–93% accuracy | Image-only, no metadata/symptom integration, limited to visual explanation | Relevant for Discussion/Future Work (explainability is a natural extension of this thesis) |
 | 7 | 2024 | A Multimodal Approach to Skin Disease Detection Using Patient Symptoms | DermNet Dataset | Image model gives initial prediction; LLM-based reasoning (Chain of Options) refines using symptom text | ~90–92% accuracy | Symptom data partially synthetic/non-standardized, weak clinical reliability | Different fusion paradigm (LLM reasoning vs. learned cross-attention) — contrast point in Related Work |
 | 8 | 2024 | Skin Lesion Classification Using EfficientNet | HAM10000 | EfficientNet-B0/B1 transfer learning, dermoscopic images only | ~90–94% accuracy | No metadata/symptoms, purely image-based | Directly validates this thesis's own architecture choice (EfficientNet-B0) as a reasonable image-branch baseline |
