@@ -1,10 +1,15 @@
 # Literature Review
 
 **Source of record:** `docs/Literature_Review_Master.xlsx` ("Master Literature
-Review" sheet, 16 rows, and "Gap Analysis & Next Steps" sheet). This file is
+Review" sheet, 19 rows, and "Gap Analysis & Next Steps" sheet). This file is
 a readable summary generated from that spreadsheet — if the two ever
 disagree, the xlsx is authoritative; update the xlsx first, then regenerate
 this summary.
+
+**Update (2026-07-28):** 3 papers added specifically for the previously-flagged
+Fitzpatrick/skin-tone fairness gap (rows 17-19 below), bringing the total from
+16 to **19 unique papers**. See "Literature Gap: Fitzpatrick/Skin-Tone
+Fairness" below — that section is no longer describing an unfilled gap.
 
 **Reconciliation (2026-07-17, arithmetic corrected 2026-07-28):** 16 unique
 papers, combining the 3 papers already tracked in `Project_Tracking.md`
@@ -27,7 +32,9 @@ text found anywhere (checked arXiv, Unpaywall, Semantic Scholar's OA index,
 ResearchGate, publisher/author sites; see each row's entry and the
 "Priority Full-Text Reads" section for the specific dead ends checked).
 Row 2 (TG-CAVNet) and row 6-9 still need their own full-text pass. See
-`Project_Tracking.md`'s Phase 2 status entry.
+`Project_Tracking.md`'s Phase 2 status entry. **Rows 17-19 (added 2026-07-28,
+see "Update" note above) are all full-text-read already** — 2 free full texts
+(rows 17, 18) plus 1 free preprint (row 19); none are abstract-only.
 
 **Row #10 (MetaBlock) update (2026-07-18, re-confirmed 2026-07-28):** its
 core mechanism is confirmed (see the reconciled table and "Priority
@@ -69,7 +76,7 @@ papers, confirmed, not 15.**
 
 ---
 
-## Reconciled Table (16 papers)
+## Reconciled Table (19 papers)
 
 | # | Year | Title | Dataset(s) | Methodology Summary | Reported Metric | Limitation | Relevance to This Thesis |
 |---|---|---|---|---|---|---|---|
@@ -89,6 +96,9 @@ papers, confirmed, not 15.**
 | 14 | 2025 | **Title correction (2026-07-28): "A multi-stage multi-modal learning algorithm with adaptive multimodal fusion for improving multi-label skin lesion classification"** — Lihan Zuo, Zizhou Wang, Yan Wang (Artificial Intelligence in Medicine). *The "JI-ADF" name previously recorded here was wrong — that title belongs to a completely different, unrelated paper (Phan Nguyen et al., arXiv:2604.27343, evaluated on the MILK10k benchmark) that happens to address a similar problem. Caught while searching for this row's full text; do not conflate the two going forward.* | Not fully captured — abstract-level only, paywalled (ScienceDirect HTTP 403, no arXiv preprint; PubMed/GitHub repo README give abstract-depth detail only) | **Abstract-level only (2026-07-28).** "CosCatNet" — a two-stage hybrid fusion: (1) image-fusion stage combining clinical photos + dermoscopy images via an intermediate fusion using cosine similarity (captures correlated cross-image information) plus concatenation (captures complementary information); (2) multimodal fusion stage combining the fused image representation with metadata via an uncertainty-based adaptive late fusion (dynamically weights modality contributions per-sample based on estimated confidence). Code at `github.com/Zuo-Lihan/CosCatNet-Adaptive_Fusion_Algorithm`. | Abstract states "experiments demonstrate the effectiveness of our proposed method" on "a popular publicly available skin disease diagnosis dataset" — likely a trimodal (clinical + dermoscopy + metadata) dataset such as Derm7pt given the three-modality setup, but not confirmed; no specific quantitative metrics available without the paywalled full text. | Not yet captured — full text needed for dataset confirmation, quantitative results, and comparison methodology. | Relevant for multi-label/multi-modal framing and adaptive (uncertainty-weighted) fusion design ideas — a third distinct fusion paradigm in this literature set (cosine-similarity/concatenation hybrid + uncertainty-weighted late fusion), contrasted with MetaBlock's channel-gating (row 10) and this thesis's own cross-attention. Uses clinical + dermoscopy image pairs (a modality this thesis's datasets don't have — PAD-UFES-20/HAM10000/ISIC are single-image), so architecturally it's not directly reproducible here, but the uncertainty-based adaptive weighting idea is a citable alternative to this thesis's own fixed cross-attention mechanism for Future Work. |
 | 15 | 2026 | Advancing skin cancer detection through deep learning and fusion of patient metadata and skin lesion images — Islam, Wishart, Walls, Hall, Seco de Herrera, Gan & Raza (Scientific Reports) | Check4Cancer (UK private teledermatology network), 2015–2022: 79,246 images (39,623 dermoscopic + 39,623 DSLR pairs), 39,623 unique lesions, 19,295 patients; 22 metadata features (7 core "C4C risk factors": lesion pinkness/size/colour/inflammation/shape/age, natural hair colour; plus age, sex, body location, itch/bleed/pain/growth/pattern-change/elevation, BMI, ethnicity, family history) | **Full text read 2026-07-28** (freely available via PMC — Scientific Reports is fully open access). EfficientNet-B2 backbone, hair removed via a variational-autoencoder method, images resized to 1024×1024, 16-technique Albumentations augmentation pipeline. Six model variants tested (DER-only, DSLR-only, DER+meta, DSLR+meta, DER+DSLR, DER+DSLR+meta) — fusion is simple feature concatenation (image vector ⊕ metadata vector) + Swish activation + 0.5-ratio dropout, not attention-based. Final system uses **decision-level majority-vote fusion** across two of the six trained variants, not a single end-to-end model. Patient-wise 80/20 split, 5-fold CV. | Best single model (DER+DSLR+meta, tested on DER+metadata): 88.77% accuracy, 92.98% AUC, sens 99.83%/spec 77.71%. Best majority-vote fusion: **91.11% accuracy, 94.06% AUC, sens 99.50%/spec 82.72%** — beats every single-modality/single-model variant. Image-only baseline (DER alone): 81.28% accuracy — so metadata fusion adds ~10 points of accuracy here, mostly by lifting *specificity* (63%→78-83%) while sensitivity was already near-ceiling image-only. Benchmarked against real teledermatology clinical performance (Cochrane systematic review, 96% sensitivity in-person; a competing commercial system "Skin Analytics," 95-98%) and reports beating both at matched specificity. | **Ground-truth caveat, self-acknowledged:** primary training/eval ground truth is *expert visual triage rating*, not biopsy-confirmed diagnosis — only 10% of lesions were ever biopsied, and using only those would cut the dataset by 90%. This is the **opposite risk profile from this thesis's own leakage concern** (we worry a *biopsy-confirmed* field like `biopsed` leaks the malignancy answer; this paper instead worries its *labels themselves* are unconfirmed expert opinion, not ground truth) — worth citing as a contrasting methodological trade-off. **Also self-acknowledged: Fitzpatrick skin type wasn't even collected**, and the patient population is predominantly types I-IV — directly parallel to this thesis's own Phase 8 finding (PAD-UFES-20's test split has only 2-3 patients in Fitzpatrick V/VI, too few to report) — this is independent evidence from a much larger (79K-image) UK cohort that the same skin-tone-representation gap recurs across datasets, strengthening this thesis's fairness-analysis contribution claim. | Large-scale precedent (79,246 images vs. this thesis's leakage-audited, deliberately smaller 2,298-image PAD-UFES-20) with a genuinely strong result, but built on a simpler concatenation fusion + decision-level majority voting rather than a jointly-trained attention mechanism — a useful contrast point for framing this thesis's cross-attention as architecturally more sophisticated even at smaller scale. **Two citable parallels:** (1) its unconfirmed-ground-truth limitation is a mirror image of this thesis's `biopsed`-leakage concern, both examples of how clinical confirmation status shapes what a label actually means; (2) its independent finding of Fitzpatrick V/VI under-representation (in a completely different country/cohort/dataset) is strong corroborating evidence for this thesis's own Phase 8 fairness finding and argument that this is a systemic gap in the field, not an artifact of PAD-UFES-20 specifically — cite both in the Related Work/fairness framing. |
 | 16 | 2025 | Evaluation of the importance of metadata in skin lesion classification — Garib, Mery & Navarrete-Dechent (Signal, Image and Video Processing) | PAD-UFES-20 (clinical images) + ISIC 2019 (dermoscopic images) | **Abstract-level only (2026-07-28) — paywalled, no free full text found** (Springer redirects to institutional login; ResearchGate blocked 403; author's personal site unreachable; no OA copy indexed by any aggregator checked). 17 deep learning models tested across 3 fusion methods on both datasets; separately trained models on different metadata subsets to isolate each feature's individual contribution to performance. | Image+metadata beat image-only baseline by **+10.43% balanced accuracy on PAD-UFES-20**, **+2.22% on ISIC 2019** (PAD-UFES-20's much larger gain is consistent with this thesis's own experience — its rich clinical metadata carries more signal than a dermoscopy-only archive's sparser tags). Per-feature importance ranking: **age most useful**, then body/anatomical location, then sex. | Not yet captured — full text needed to assess methodology details, exact model list, and statistical rigor of the per-feature importance ranking. | **Directly parallels this thesis's own `feature_whitelist.md` exercise** — the age > location > sex ranking is a useful comparison point for our own feature set (PAD-UFES-20's 21 whitelisted features vs. HAM10000's 3). Same PAD-UFES-20 dataset as this thesis, so its reported image+metadata gain (+10.43% BACC) is a direct external benchmark for our own Phase 6→7 fusion improvement, worth citing even at abstract-only depth — but any specific number should be flagged as "per abstract, not full-text-verified" until/unless full text becomes available. |
+| 17 | 2022 | Disparities in Dermatology AI Performance on a Diverse, Curated Clinical Image Set — Daneshjou et al. (*Science Advances*) | DDI (Diverse Dermatology Images) — 656 images, pathologically confirmed, curated for diverse Fitzpatrick skin-tone representation | **Full text freely available** (arXiv:2203.08807). Introduces the DDI dataset and benchmarks existing SOTA dermatology classifiers (trained on standard datasets) against it; separately compares dermatologist diagnostic performance across the same skin-tone/disease splits; also tests fine-tuning models on DDI itself. **Date exception, logged:** published 2022, outside this project's preferred 2023-2025 fairness-search window — included anyway because it is the field's foundational fairness-benchmark paper and the closest methodological analogue to this thesis's own Phase 8.3 analysis. | **27–36 percentage-point ROC-AUC drop** for SOTA models vs. their originally reported test performance, concentrated on dark skin tones and uncommon diseases; dermatologists also perform worse on dark-skin/uncommon-disease images; fine-tuning on DDI narrows but does not eliminate the light/dark performance gap. | DDI itself is relatively small (656 images); disparity demonstrated at the model-benchmark level, not root-caused to a single mechanism. | **Near-mandatory citation for Phase 8.3.** Direct methodological analogue — an external, pathologically-confirmed test set built specifically to expose skin-tone performance gaps, exactly the kind of evaluation this thesis's own Fitzpatrick fairness analysis performs (albeit within-dataset on PAD-UFES-20 rather than via a dedicated external benchmark). Cite when framing/motivating Phase 8.3 and when discussing why the fairness analysis matters as a contribution. |
+| 18 | 2024 | Skin Type Diversity in Skin Lesion Datasets: A Review — Alipour, Burke & Courtney (*Current Dermatology Reports*, DOI 10.1007/s13671-024-00440-0) | Systematic review across multiple public skin lesion datasets (not a single dataset) | **Full text freely available** (PMC11343783). Reviews publicly available skin lesion datasets and their metadata; evaluates both whether Fitzpatrick skin type is reported at all and, separately, how diverse/representative that reporting actually is — explicitly notes prior work does one or the other but not both together. | Review paper, no single quantitative headline metric; core finding is that under-representation of darker skin types is a **systemic, field-wide dataset problem**, not an isolated instance in any one dataset. | Review-level (not a new dataset or model); scope limited to skin lesion datasets with publicly available metadata. | **Strongest citation for the "Literature Gap: Fitzpatrick/Skin-Tone Fairness" section below** — independently confirms under-representation is systemic across the field, directly corroborating this thesis's own Phase 8.3 finding (PAD-UFES-20 test split: only 3 rows total across Fitzpatrick V/VI, 38% missing entirely). Cite this paper wherever this thesis states that the fairness gap it addresses is field-wide, not an artifact of PAD-UFES-20 specifically. |
+| 19 | 2024 | A Framework for Evaluating the Efficacy of Foundation Embedding Models in Healthcare — Xu, Gui, Rotemberg, Wang, Chen & Daneshjou (medRxiv 2024.04.17.24305983) | Google Health's Derm Foundation Model pretrained embeddings, evaluated on dermatology image classification tasks (not a new dataset) | **Free preprint**, posted 2024-04-19. Proposes and pilots a 3-axis framework (general performance / bias-fairness / confounders) for evaluating medical foundation models, applied to dermatology; evaluates Derm Foundation Model embeddings plus general-purpose CLIP embeddings across all 3 axes; measures per-Fitzpatrick-group sensitivity directly on the pretrained embedding space. | Foundation-model embeddings exceed SOTA classification accuracy; general-purpose CLIP embeddings are also informative for medical tasks; **lower sensitivity for darker Fitzpatrick tones (4–6)**, present even at the pretrained-embedding level before any task-specific fine-tuning; image quality also significantly affects performance. | Single foundation-model family evaluated in depth (Derm Foundation Model); the 3-axis framework is proposed/piloted, not yet an established field standard. | Confirms skin-tone-linked bias exists even inside pretrained foundation-model embeddings, not just end-task classifiers — relevant caution if future work on this thesis ever considers a foundation-model backbone. **The 3-axis evaluation framework (general performance / bias-fairness / confounders) is a citable structure for organizing this thesis's own Phase 8.3 write-up** in the Discussion/Results chapter — worth adopting explicitly rather than presenting the fairness results as a standalone table. |
 
 ---
 
@@ -117,25 +127,38 @@ following must be stated together, not left implicit:**
 
 ---
 
-## Literature Gap: Fitzpatrick/Skin-Tone Fairness
+## Literature Gap: Fitzpatrick/Skin-Tone Fairness — RESOLVED 2026-07-28
 
-**None of the 16 papers above focus on Fitzpatrick/skin-tone fairness in
-dermatology AI.** This is a genuine gap in the current literature-review
-table, not just an unread-paper issue — it held even after the 8 new
-web-search candidates were added.
+**Originally, none of the first 16 papers focused on Fitzpatrick/skin-tone
+fairness in dermatology AI.** This has been addressed: 3 targeted papers
+were added (rows 17–19 above), specifically to fill this gap ahead of
+Phase 9 (Thesis Writing Support):
 
-This is directly relevant because `PROJECT_PLAN.md`'s Phase 8 (Experiments &
-Evaluation) already includes a dedicated Fitzpatrick fairness analysis. The
-absence of prior work specifically on skin-tone bias in dermatology AI means
-this thesis's own fairness analysis is a citable contribution, not just a
-routine evaluation step — worth stating explicitly in the thesis (e.g. in
-the Related Work or Contributions section) rather than leaving implicit.
+- **Row 17 (Daneshjou et al. 2022, DDI dataset)** — quantifies dermatology
+  AI performance disparity across skin tones directly, the closest
+  methodological analogue to this thesis's own Phase 8.3 analysis. Included
+  despite being outside the 2023-2025 window preferred for this search — see
+  its row for the logged date-exception justification.
+- **Row 18 (Alipour, Burke & Courtney 2024)** — a systematic review
+  confirming that Fitzpatrick under-representation in public skin lesion
+  datasets is a **systemic, field-wide problem**, not specific to
+  PAD-UFES-20. This is now the primary citation for the claim below.
+- **Row 19 (Xu, Gui, Rotemberg, Wang, Chen & Daneshjou 2024)** — finds
+  skin-tone-linked bias even inside pretrained foundation-model embeddings,
+  and contributes a citable 3-axis evaluation framework (general
+  performance / bias-fairness / confounders) worth adopting when writing up
+  Phase 8.3.
 
-**Recommended action (not yet done):** search for 2–3 papers specifically on
-skin-tone/Fitzpatrick bias in dermatology AI before Phase 9 (Thesis Writing
-Support) begins, both to properly situate this contribution and to see
-whether any existing fairness-evaluation methodology should inform Phase 8's
-design.
+This remains directly relevant because `PROJECT_PLAN.md`'s Phase 8
+(Experiments & Evaluation) includes a dedicated Fitzpatrick fairness
+analysis (see `Phase8_Fitzpatrick_Fairness_Results.md`). With rows 17–19 now
+in hand, this thesis's own fairness analysis should be framed as **both** a
+routine evaluation step **and** a contribution that extends a small but
+real prior-work base (rather than the earlier framing of "no prior work
+exists at all," which understated the field while the gap was genuinely
+unfilled) — cite row 18 specifically when stating that skin-tone
+under-representation is a systemic issue this thesis's dataset also
+exhibits, not an artifact of PAD-UFES-20.
 
 ---
 

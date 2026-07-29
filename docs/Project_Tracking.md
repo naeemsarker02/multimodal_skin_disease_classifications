@@ -181,6 +181,7 @@ sections below are unchanged and remain the source of truth.*
 22. [HAM10000 Stage 1 — COMPLETE (2026-07-16)](#ham10000-stage-1-complete)
 23. [Phase 7 Stage 1 — Late Fusion Scope Approved, PAD-UFES-20 Only (2026-07-16)](#phase-7-stage-1-scope-approved)
 24. [Literature Review Reconciliation — 16 Papers (2026-07-17)](#literature-review-reconciliation)
+24a. [Literature Review — Fairness Papers Added, 19 Total (2026-07-28)](#lit-review-fairness-papers-added)
 25. [Phase 7 Stage 1 — COMPLETE (2026-07-18)](#phase-7-stage-1-complete)
 26. [MetaBlock Mechanism Confirmed; Phase 7 Stage 2 Proposal — APPROVED (2026-07-18)](#phase-7-stage-2-proposal)
 27. [Phase 7 Stage 2 — COMPLETE (2026-07-18)](#phase-7-stage-2-complete)
@@ -225,7 +226,7 @@ sections below are unchanged and remain the source of truth.*
 | Phase | Status | Completion Date | Description |
 |---|---|---|---|
 | 1. Planning | ✅ Completed | 2026-06-29 | README, Research_Plan, Dataset_Strategy, AI_Assistant_Instructions authored (Research_Plan.md since archived to `_archive/`, superseded by this file) |
-| 2. Literature Review | 🟡 In Progress | — | 16 papers reconciled; row #11 full-text read 2026-07-28 (free arXiv preprint), row #10 (MetaBlock) mechanism-confirmed but primary text still paywalled with no free alternative found — see "Literature Review — Priority Full-Text Reads, Progress" below and `docs/Literature_Review.md`. Not yet complete: rows 12-16 still abstract-only, plus a dataset-citation gap (PAD-UFES-20's own Data in Brief paper) newly found and not yet added. |
+| 2. Literature Review | 🟡 In Progress | — | 19 papers reconciled (16 + 3 fairness-focused papers added 2026-07-28, rows 17-19 — see "Literature Review — Fairness Papers Added" below); row #11 full-text read 2026-07-28 (free arXiv preprint), row #10 (MetaBlock) mechanism-confirmed but primary text still paywalled with no free alternative found — see "Literature Review — Priority Full-Text Reads, Progress" below and `docs/Literature_Review.md`. Not yet complete: rows 12, 14, 16 still abstract-only, plus a dataset-citation gap (PAD-UFES-20's own Data in Brief paper) newly found and not yet added. |
 | 3. Dataset Collection | ✅ Completed | — | PAD-UFES-20, HAM10000, ISIC Archive 1 & 2 acquired into `data/raw/` |
 | 4. Dataset Preparation — PAD-UFES-20 | ✅ Completed | 2026-07-07 | Full audit (12 modules) + cleaning (schema standardization, label mapping, patient-wise stratified split, documentation) |
 | 4. Dataset Preparation — HAM10000 | ✅ Completed | 2026-07-07 | Audit (11 modules) + cleaning (schema standardization, label mapping shared with PAD-UFES-20 where diseases overlap, lesion-wise stratified split, documentation) |
@@ -995,6 +996,9 @@ contribution in its own right, not just a routine evaluation step, and
 should be stated explicitly as such in the thesis (e.g. Related Work or
 Contributions section). Recommend a targeted search for 2-3
 fairness-specific papers before Phase 9 (Thesis Writing Support) begins.
+**RESOLVED 2026-07-28 — see "Literature Review — Fairness Papers Added, 19
+Total" below; this gap description is left here only as a historical
+record of the 2026-07-17 state.**
 
 **Two priority full-text reads flagged for the user**, both by PAD-UFES-20's
 own dataset creators and near-mandatory citations for a thesis using their
@@ -2323,3 +2327,57 @@ Full project status audit run this session (comprehensive re-check of all 10 pha
 **Row #5 duplicate check — RESOLVED 2026-07-28.** Confirmed "Multimodal Skin Lesion Classification Using Deep Learning" = Yap, Yolland & Tschandl (2018, Experimental Dermatology) via exact title/year/topic match. **This does not reduce the paper count to 15** — there was no second table row duplicating this paper to merge away, only row #5's factual description needed correcting (dataset and reported metrics were both wrong in the original Excel summary). **Final reconciled count: 16 unique papers, confirmed.** While resolving this, also caught and fixed a pre-existing arithmetic error in `Literature_Review.md`'s intro paragraph (claimed 3+6+8=16, which doesn't reconcile; corrected to 3+6+7=16, matching the table's actual row composition).
 
 **Not yet done:** row 2 (TG-CAVNet) and rows 6-9 still need a full-text pass (currently at abstract/secondary-source depth from the 2026-07-17 reconciliation), and the Fitzpatrick-fairness-literature search recommended 2026-07-17 (next up).
+
+---
+
+<a id="lit-review-fairness-papers-added"></a>
+## Literature Review — Fairness Papers Added, 19 Total (2026-07-28)
+
+The Fitzpatrick-fairness-literature search recommended above (and at
+2026-07-17) was run this session. 3 papers added to `docs/Literature_Review.md`
+and `docs/Literature_Review_Master.xlsx` as rows 17-19, bringing the
+reconciled total from **16 to 19 unique papers**. Arithmetic: 3
+(`Project_Tracking.md`-tracked) + 6 (net-new from user's Excel) + 7
+(web-search, original round) + 3 (fairness-focused, this round) = 19 —
+double-checked given the earlier 3+6+8 slip caught and corrected on
+2026-07-28 (see "Row #5 duplicate check" above).
+
+1. **Daneshjou et al. (2022)** — *Disparities in Dermatology AI Performance
+   on a Diverse, Curated Clinical Image Set* (*Science Advances*;
+   arXiv:2203.08807, free full text). Introduces the DDI dataset (656
+   images, pathologically confirmed, diverse Fitzpatrick representation) and
+   benchmarks SOTA dermatology classifiers against it: **27-36 percentage-point
+   ROC-AUC drop**, concentrated on dark skin tones and uncommon diseases;
+   dermatologists show the same pattern; fine-tuning on DDI narrows but
+   doesn't close the gap. **Included despite being outside the 2023-2025
+   preferred window** — logged exception: it's the field's foundational
+   fairness-benchmark paper and the closest methodological analogue to this
+   thesis's own Phase 8.3 analysis (external, pathologically-confirmed test
+   set built specifically to expose skin-tone gaps).
+2. **Alipour, Burke & Courtney (2024)** — *Skin Type Diversity in Skin
+   Lesion Datasets: A Review* (*Current Dermatology Reports*; PMC11343783,
+   free full text). Systematic review confirming Fitzpatrick
+   under-representation is a **systemic, field-wide dataset problem**, not
+   specific to PAD-UFES-20 or any single dataset. **This is now the primary
+   citation for the "Literature Gap: Fitzpatrick/Skin-Tone Fairness"
+   section in `Literature_Review.md`**, replacing the prior framing that the
+   gap was entirely unaddressed in prior work — it directly corroborates
+   this thesis's own Phase 8.3 finding (PAD-UFES-20 test split: only 3 rows
+   across Fitzpatrick V/VI, 38% missing).
+3. **Xu, Gui, Rotemberg, Wang, Chen & Daneshjou (2024)** — *A Framework for
+   Evaluating the Efficacy of Foundation Embedding Models in Healthcare*
+   (medRxiv 2024.04.17.24305983, free preprint). Evaluates Google's Derm
+   Foundation Model; finds lower sensitivity for darker Fitzpatrick tones
+   (4-6) even in the pretrained embedding space before fine-tuning.
+   Contributes a **3-axis evaluation framework (general performance /
+   bias-fairness / confounders)** worth citing as a structure for this
+   thesis's own Phase 8.3 write-up in the Discussion/Results chapter.
+
+All three are full-text-read already (2 open-access journal articles, 1 free
+preprint) — none are abstract-only, unlike several rows in the original
+16-paper set.
+
+**Updated elsewhere for consistency:** Progress Tracker table (Phase 2 row,
+above), TOC (new entry after "Literature Review Reconciliation — 16
+Papers"), and the "Literature gap" paragraph in the 2026-07-17 reconciliation
+section (marked resolved, left in place as historical record).
