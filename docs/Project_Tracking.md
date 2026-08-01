@@ -3620,3 +3620,54 @@ size, not a bug or accidental loss. Noted here so it isn't mistaken for
 a mystery by a future session.
 
 ---
+
+## Pre-Registered Prediction — Dataset-Expansion-Only Ablation (Original Architecture) (2026-08-01)
+
+**Ablation being run (approved, not yet trained as of this entry):**
+train the ORIGINAL Phase 7 Stage 2 architecture (`CrossAttentionFusionModel`,
+EfficientNet-B0 image embedder) on PAD-UFES-20, warm-starting the image
+embedder from Step 3's **expanded**-dataset EfficientNet-B0 checkpoint
+(`logs/PAD_UFES20_Expanded/checkpoints/image_seed{N}_best.pt`) instead
+of the original (unexpanded) Stage 1 image checkpoint, metadata embedder
+warm-started as usual from PAD-UFES-20's own Stage 1 checkpoint. Fusion
+fine-tuning itself still runs on PAD-UFES-20's original, unexpanded
+train/val split (expanded rows have no metadata - same pattern as Step
+4). Purpose: isolate the dataset-expansion effect from the
+backbone-architecture-change effect already observed in Step 4, holding
+architecture constant at EfficientNet-B0. New files:
+`train_cross_attention_efficientnet_expanded.py`,
+`cross_attention_efficientnet_expanded_seed{0,1,2}_best.pt` - verified
+non-colliding with the locked `cross_attention_seed{0,1,2}_best.pt`
+(0.6977) or Step 4's `cross_attention_backbone_*` checkpoints before any
+training started (see naming-collision safety check, this session).
+Test split **not** touched (val-only; also still blocked twice-over by
+`test_split_guard.py` even if mistakenly attempted).
+
+**Prediction, logged before seeing any result from this run:**
+
+- **Expected val macro-F1 range: 0.61-0.66**, likely landing near or
+  modestly above the original locked headline's val macro-F1
+  (0.6209±0.0143), and clearly below Step 4's backbone-driven fusion
+  results (ConvNeXt-Tiny 0.6542-0.6856, DenseNet121 0.6363-0.6714,
+  ensemble test 0.7321).
+- **Reasoning:** Step 3's image-only ablation isolated the
+  dataset-expansion effect at only **+0.018** for EfficientNet-B0 alone
+  (0.5703->0.5882, architecture held constant, no fusion/fine-tuning
+  involved) - much smaller than the architecture-change effect inferred
+  for ConvNeXt-Tiny (~+0.033 over the original headline, per "Future
+  Ablation" entry above). Since this run's fusion fine-tuning loop
+  re-trains on the *original* unexpanded train set (identical to how
+  Step 4's own warm-started backbones were fine-tuned), some but not
+  necessarily all of the expanded initialization's benefit should
+  survive fine-tuning - hence "near or modestly above" 0.6209 rather
+  than "no different from" it.
+  **Working hypothesis: architecture (backbone choice) is the dominant
+  driver of Step 4's gains, not dataset expansion alone** - this run is
+  the direct test of that hypothesis, not a formality, and could
+  disconfirm it if the result lands materially higher than 0.66.
+
+**Status:** prediction logged 2026-08-01, before training starts.
+Actual result to be logged in a follow-up entry once the 3 Kaggle seed
+runs complete, compared explicitly against this range.
+
+---

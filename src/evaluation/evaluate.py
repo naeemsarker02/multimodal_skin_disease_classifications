@@ -9,6 +9,7 @@ Usage:
     python -m src.evaluation.evaluate --dataset PAD_UFES20 --branch cross_attention --ensemble-seeds 0,1,2 --split val
     python -m src.evaluation.evaluate --dataset PAD_UFES20 --branch cross_attention_backbone --backbone convnext_tiny --seed 0 --split val
     python -m src.evaluation.evaluate --dataset PAD_UFES20 --branch cross_attention_backbone_ensemble --seed 0 --split val
+    python -m src.evaluation.evaluate --dataset PAD_UFES20 --branch cross_attention_efficientnet_expanded --seed 0 --split val
 
 This is the only script that reads metadata_test.csv. Evaluating against
 --split test requires --confirm-final, a deliberate friction point so the
@@ -31,6 +32,16 @@ fixed role - train fits the base models, val selects/early-stops them,
 test is locked - so a parameter-free combination step is the only one
 that doesn't need a new place to be fit without leaking one of those
 roles).
+
+cross_attention_efficientnet_expanded (dataset-expansion-only ablation,
+approved 2026-08-01, PAD_UFES20 only) evaluates the ORIGINAL
+CrossAttentionFusionModel (EfficientNet-B0) architecture, warm-started
+from PAD_UFES20_Expanded's image checkpoint instead of PAD_UFES20's own
+- isolates the dataset-expansion effect from Step 4's backbone-change
+effect. Validation-only by design: --split test is refused for this
+branch unconditionally (see Project_Tracking.md 'Pre-Registered
+Prediction'), independent of PAD_UFES20's test_split_guard.py marker
+(already twice-consumed regardless).
 """
 
 import argparse
@@ -77,7 +88,7 @@ def load_model(branch: str, checkpoint_path, ds_config, device, preprocessor=Non
         model = FusionModel(
             metadata_input_dim=preprocessor.output_dim, num_classes=ds_config.num_classes
         )
-    elif branch in ("cross_attention", "cross_attention_improved"):
+    elif branch in ("cross_attention", "cross_attention_improved", "cross_attention_efficientnet_expanded"):
         model = CrossAttentionFusionModel(
             metadata_input_dim=preprocessor.output_dim, num_classes=ds_config.num_classes
         )
@@ -108,7 +119,10 @@ def build_eval_dataset(branch: str, csv_path, ds_config, preprocessor=None):
         return ImageDataset(csv_path, ds_config, train=False)
     if branch == "metadata":
         return MetadataDataset(csv_path, ds_config, preprocessor)
-    if branch in ("fusion", "cross_attention", "cross_attention_improved", "cross_attention_backbone"):
+    if branch in (
+        "fusion", "cross_attention", "cross_attention_improved",
+        "cross_attention_backbone", "cross_attention_efficientnet_expanded",
+    ):
         return FusionDataset(csv_path, ds_config, preprocessor, train=False)
     raise ValueError(f"Unknown branch: {branch}")
 
@@ -121,6 +135,7 @@ def evaluate(
     if branch in (
         "fusion", "cross_attention", "cross_attention_improved",
         "backbone_fusion", "cross_attention_backbone",
+        "cross_attention_efficientnet_expanded",
     ) and dataset_name != "PAD_UFES20":
         raise ValueError(
             "Fusion/cross-attention/backbone_fusion checkpoints only exist for "
@@ -152,7 +167,7 @@ def evaluate(
     preprocessor = None
     if branch in (
         "metadata", "fusion", "cross_attention", "cross_attention_improved",
-        "cross_attention_backbone",
+        "cross_attention_backbone", "cross_attention_efficientnet_expanded",
     ):
         preprocessor = MetadataPreprocessor(ds_config).fit(pd.read_csv(ds_config.train_csv))
 
@@ -165,7 +180,10 @@ def evaluate(
     all_preds, all_labels = [], []
     with torch.no_grad():
         for batch in loader:
-            if branch in ("fusion", "cross_attention", "cross_attention_backbone"):
+            if branch in (
+                "fusion", "cross_attention", "cross_attention_backbone",
+                "cross_attention_efficientnet_expanded",
+            ):
                 images, metadata, labels = batch
                 outputs = model(images.to(device), metadata.to(device))
             else:
@@ -387,6 +405,7 @@ def main():
             "image", "metadata", "fusion", "cross_attention",
             "cross_attention_improved", "backbone_fusion",
             "cross_attention_backbone", "cross_attention_backbone_ensemble",
+            "cross_attention_efficientnet_expanded",
         ],
         required=True,
     )
@@ -442,6 +461,7 @@ def main():
     if args.branch in (
         "fusion", "cross_attention", "cross_attention_improved", "backbone_fusion",
         "cross_attention_backbone", "cross_attention_backbone_ensemble",
+        "cross_attention_efficientnet_expanded",
     ) and args.dataset != "PAD_UFES20":
         raise SystemExit(
             f"--branch {args.branch} is only valid with --dataset PAD_UFES20 "
@@ -452,6 +472,15 @@ def main():
     if args.branch == "cross_attention_backbone" and args.backbone not in SPATIAL_BACKBONE_NAMES:
         raise SystemExit(
             f"--branch cross_attention_backbone requires --backbone in {SPATIAL_BACKBONE_NAMES}."
+        )
+    if args.branch == "cross_attention_efficientnet_expanded" and args.split == "test":
+        raise SystemExit(
+            "--branch cross_attention_efficientnet_expanded is a validation-only "
+            "exploratory ablation (dataset-expansion-only, approved 2026-08-01 - "
+            "see Project_Tracking.md 'Pre-Registered Prediction'). It is not "
+            "scoped to touch the test split at all, regardless of "
+            "--confirm-final - PAD_UFES20's test split is also already "
+            "twice-consumed and locked by test_split_guard.py."
         )
 
     if args.split == "test" and not args.confirm_final:
@@ -521,6 +550,8 @@ def main():
             reports_dir = ds_config.fusion_reports_dir.parent / "backbone_fusion"
         elif args.branch == "cross_attention_backbone":
             reports_dir = ds_config.fusion_reports_dir.parent / "cross_attention_backbone"
+        elif args.branch == "cross_attention_efficientnet_expanded":
+            reports_dir = ds_config.fusion_reports_dir.parent / "cross_attention_efficientnet_expanded"
         else:
             reports_dir = ds_config.baseline_reports_dir
 
