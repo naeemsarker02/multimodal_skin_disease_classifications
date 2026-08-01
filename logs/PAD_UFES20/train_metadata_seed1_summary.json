@@ -1,6 +1,0 @@
-{
-  "branch": "metadata",
-  "seed": 1,
-  "best_val_macro_f1": 0.5693950300496021,
-  "checkpoint_path": "/kaggle/working/logs/PAD_UFES20/checkpoints/metadata_seed1_best.pt"
-}

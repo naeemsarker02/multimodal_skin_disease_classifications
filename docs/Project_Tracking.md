@@ -188,6 +188,18 @@ sections below are unchanged and remain the source of truth.*
 28. [Phase 8 Experiment 1 — Anatomical-Site Mapping Approved; Reduced-Feature Models + Eval Script Implemented (2026-07-18)](#phase-8-experiment-1-implementation)
 29. [Negative Result — Improved Cross-Attention Variant Underperforms Original (2026-07-23)](#negative-result-improved-cross-attention)
 30. [Phase 8, Experiment 1 — Cross-Dataset Generalization Scope, Final Model Confirmed (2026-07-23)](#phase-8-experiment-1-scope-final-model)
+31. [Phase 8B+8C — Master Plan Adopted; Step 0 Backup — COMPLETE (2026-07-29)](#phase8bc-step0-backup)
+32. [Phase 8C, Step 1 — Dataset Expansion Candidate Research (2026-07-29)](#phase8bc-step1-dataset-candidates)
+33. [Phase 8C, Step 1 — Source Verification: DERM12345, MED-NODE, DDI (2026-07-29)](#phase8bc-step1-verification)
+34. [Imbalance-Ablation WIP Folded In as Step 3a; Naming Collision Fixed (2026-07-29)](#step3a-fold-in-and-rename)
+35. [Step 2 Binding Rule — Locked Test Split Frozen (2026-07-29)](#step2-binding-test-split-rule)
+36. [Forward-Reference Note for Step 4 — `backbone_fusion_model.py` WIP (2026-07-29)](#step4-forward-reference-backbone-fusion-wip)
+37. [Step 2 — Dataset Integration Plan (PROPOSED) (2026-07-29)](#step2-integration-plan-proposed)
+38. [Lesion Segmentation/Cropping — Reasoned Through, Recommend Defer (2026-07-29)](#segmentation-cropping-reasoning)
+39. [Step 2 Integration Plan — FINAL APPROVAL (2026-07-29)](#step2-plan-final-approval)
+40. [Step 2 — PAD-UFES-20-Expanded Built — COMPLETE (2026-07-29)](#step2-implementation-complete)
+41. [Pre-Step-3 Wiring Verification — Real Bug Found and Fixed (2026-07-29)](#step3-wiring-verification-and-bug-fix)
+42. [Phase 8B Step 3 — Backbone Comparison Kaggle Notebook Generated (2026-07-29)](#step3-kaggle-notebook-generated)
 
 ---
 
@@ -242,6 +254,8 @@ sections below are unchanged and remain the source of truth.*
 | 8. Experiments & Evaluation | ✅ Completed | 2026-07-27 | PAD-UFES-20<->HAM10000 cross-dataset generalization: ✅ complete 2026-07-25 (bootstrap significance included — note: only cross_attention vs. metadata is statistically significant; cross_attention's edge over image-only and late-fusion is **not** significant in this transfer direction, see "Phase 8, Experiment 1 ... COMPLETE" entry). Fitzpatrick fairness analysis: ✅ complete 2026-07-25, also stands as PAD-UFES-20's official final Stage 1 test-set result (see "Test-Split Single-Use Safeguard Added"). Both dataset's test splits now locked. Ensemble/TTA on cross-attention explored and permanently rejected (Melanoma F1 collapses 0.364->0.20 under ensemble+TTA — disqualifying, not just "no improvement" — see "Ensemble/TTA Exploration" entry). HAM10000->ISIC external validation: ✅ complete 2026-07-27, all 9 combinations run (image seeds0-2 x Archive1, image+metadata seeds0-2 x Archive2), bootstrap significance included (image vs. metadata on Archive 2: +0.2502, 95% CI [+0.2368,+0.2641], p<0.001, significant) — see "Phase 8.2 — ISIC External Validation — COMPLETE" entry and `docs/Phase8_ISIC_External_Validation_Results.md`. All 4 planned Phase 8 components now complete. |
 | 9. Thesis Writing Support | ⏳ Pending | — | |
 | 10. arXiv preprint / submission | ⏳ Pending | — | |
+| **8B. Backbone Comparison** (new, 2026-07-29) | 🟡 In Progress — Step 4 (Option B) complete | — | 5-backbone image-only comparison, extends Phase 8. Step 4 Option B (ConvNeXt-Tiny + DenseNet121 cross-attention fusion models, val-selected, one-time test-evaluated, paired-bootstrapped against the locked 0.6977 headline) complete 2026-08-01 — see "Step 4 (Option B) — Final Test Results and Bootstrap Comparison — COMPLETE". Best result: dual-backbone ensemble, test macro-F1 0.7321 (+0.0343 vs. locked headline, **not** statistically significant, p=0.062). Locked 0.6977 (EfficientNet-B0) remains the thesis headline. Next: Phase 8E (Option A, single joint three-way fusion), not yet started. |
+| **8C. Dataset Expansion** (new, 2026-07-29) | 🟡 In Progress — Steps 1-2 done | — | `PAD_UFES20_Expanded` built 2026-07-29: DERM12345 (Melanoma 400 + SCC 266, ISIC-overlap check clean) + MED-NODE (Melanoma 70) added to TRAIN only; VAL/TEST verified byte-identical to original PAD-UFES-20 (never touched). Melanoma 38→508, SCC 135→401 in the image-only training file. New rows have no compatible clinical metadata — image-branch-only, never joint fusion training (`metadata_train_image_only.csv` vs. `metadata_train.csv`, see feature_whitelist.md). See "Step 2 — PAD-UFES-20-Expanded Built — COMPLETE". Next: Step 3 (5-backbone comparison, using Phase 8B's WIP). |
 
 ---
 
@@ -2381,3 +2395,1228 @@ preprint) — none are abstract-only, unlike several rows in the original
 above), TOC (new entry after "Literature Review Reconciliation — 16
 Papers"), and the "Literature gap" paragraph in the 2026-07-17 reconciliation
 section (marked resolved, left in place as historical record).
+
+---
+
+<a id="phase8bc-step0-backup"></a>
+## Phase 8B+8C — Master Plan Adopted; Step 0 Backup — COMPLETE (2026-07-29)
+
+**Scope adopted this session:** a combined Phase 8B (backbone comparison)
++ Phase 8C (dataset expansion) roadmap, 6 steps, user-directed, with
+explicit user review/approval gates before Steps 0, 1, 2, and 4. Phase 8
+(Experiments & Evaluation, closed 2026-07-27) is **not reopened** by this
+— 8B/8C are new, additional phases, and the existing Phase 8 result
+(cross-attention fusion, val macro-F1 0.6209±0.0143, test macro-F1
+**0.6977**, locked 2026-07-25) remains the presentable thesis result
+unless and until 8B/8C produce something that beats it *and* is shown
+statistically significant (see Step 5/6 below, not yet reached).
+`docs/PROJECT_PLAN.md` future-phases list updated accordingly (this
+entry).
+
+**Naming collision flagged, not yet resolved:** pre-existing uncommitted
+code (`src/models/config.py`, `dataset.py`) already used the label
+"Phase 8B" for a *different*, undocumented piece of work — a
+class-imbalance ablation (`WeightedRandomSampler` + a `strong=True`
+augmentation path gated to Melanoma/SCC via
+`STRONG_AUGMENT_TARGET_CLASSES`), citing "docs/PROJECT_PLAN.md Phase 8B
+scoping" for its rationale. No such scoping exists in `PROJECT_PLAN.md`
+or anywhere in this file — the citation is currently a dangling
+reference. Per user instruction (2026-07-29), this ablation work is left
+in place as-is (not reverted) but is **out of scope for the Phase
+8B/8C plan below**; "Phase 8B" from this point forward in project docs
+refers exclusively to the 5-backbone comparison. **Open item for a
+future session:** either retire the class-imbalance ablation's "Phase
+8B" labeling (rename in code comments to avoid collision) or fold it
+into this plan as an explicit Step 3a — not decided yet, flagged so it
+isn't silently lost.
+
+**Step 0 — Backup — COMPLETE, verified restorable:**
+
+1. **Git tag:** `pre-phase8bc-baseline-2026-07-29`, on commit `c81c85d`
+   (annotated, message states the locked val/test numbers). Everything
+   under `logs/`, `reports/`, `docs/` was already clean/committed at
+   this commit — the tag is an exact, ordinary-git-history snapshot of
+   every locked checkpoint and result file, not a special copy.
+2. **Physical archive** (belt-and-suspenders, outside the working tree,
+   protects against repo corruption — not just git):
+   `D:\Naeem\thesis-v2\backups\pre-phase8bc-baseline-2026-07-29.tar.gz`
+   (357,573,414 bytes, MD5 `9f394b9b3fbfc44b175931bf6a118f83`, 550
+   files). Contains `docs/`, `logs/` (all checkpoints, both datasets),
+   `reports/` (all result JSON/CSV/figures), `data/processed/`,
+   `data/interim/`, `src/`, `scripts/`, `notebooks/`. Deliberately
+   excludes `data/raw/` (untouched originals, re-obtainable from source)
+   and `.venv/`/`__pycache__` (regenerable). Verified: archive entry
+   list includes `logs/PAD_UFES20/checkpoints/cross_attention_seed0_best.pt`,
+   `docs/Project_Tracking.md`, `docs/Phase8_ISIC_External_Validation_Results.md`.
+   **Note:** this archive also captured the uncommitted Phase 8B-labeled
+   WIP files present in the working tree at backup time (both the
+   backbone-comparison code and the class-imbalance ablation code above)
+   — intentional, so nothing in flight is lost, but it means the archive
+   is *not* a purely clean baseline the way the git tag is.
+3. **`D:\Naeem\thesis-v2\backups\RESTORE_INSTRUCTIONS.md`** written:
+   two restore paths (git tag for a guaranteed-clean baseline restore;
+   archive for full disaster recovery), and explicit steps to confirm a
+   restore reproduces 0.6209 val / 0.6977 test (checkpoint presence,
+   `Project_Tracking.md` line citation, and a deterministic
+   re-evaluation check against the locked test-set prediction CSVs).
+
+**Verification shown to user before proceeding (2026-07-29):** `git
+tag -l -n5` output confirming the tag and its message; archive folder
+listing (`tar.gz` + `RESTORE_INSTRUCTIONS.md` present); `tar -tzf` spot
+check confirming the checkpoint, tracking doc, and results doc are
+inside the archive. User reviewed and approved proceeding to Step 1
+before this doc-logging pass.
+
+---
+
+<a id="phase8bc-step1-dataset-candidates"></a>
+## Phase 8C, Step 1 — Dataset Expansion Candidate Research (scoping only) (2026-07-29)
+
+Web research run (background fork, 9 tool calls) per the approved Step 1
+scope: real, license-clear, non-ISIC/HAM10000/PAD-UFES-20-overlapping
+public dermatology sources to expand PAD-UFES-20's weakest classes
+(Melanoma: 38 train images; SCC: 135 train images). **No integration or
+code written — research/reporting only, pending user approval before
+Step 2.**
+
+**Ranked candidates:**
+
+1. **DERM12345** (Harvard Dataverse, DOI 10.7910/DVN/DAXZ7P) — 12,345
+   dermatoscopic images, 1,627 patients (Turkey, 2008–2021), 40
+   subclasses. **Melanoma: 400 images, SCC: 266 images** — by far the
+   strongest class-relevant counts of any candidate found. Malignant
+   labels biopsy-confirmed; benign labels by two dermatologists
+   (20+ yrs experience) where no histology/follow-up existed. License:
+   **CC BY 4.0**. Has patient ID, modality, 3-level taxonomic labels,
+   malignancy status, and an official train/test split.
+   **⚠️ BLOCKING RISK, not yet resolved:** per the dataset's own
+   secondary coverage (PMC11604664), DERM12345 is independently
+   collected from three Turkish institutions but **"also accessible
+   through ISIC Archive."** If our existing ISIC Archive 1/2 pulls
+   include this mirrored copy, using DERM12345 as new training data
+   could silently reinsert images we currently hold out as
+   cross-dataset validation targets (Phase 8.1/8.2) — this would
+   invalidate those already-locked results, not just this new work.
+   **Must be checked against our actual ISIC Archive 1/2 image
+   lists/hashes before this source can be approved**, not assumed safe
+   from the license/label quality alone.
+2. **MED-NODE** (Univ. Medical Center Groningen) — 170 macroscopic
+   (non-dermoscopic) clinical images: 70 melanoma, 100 nevi, no SCC.
+   License: **CC BY 4.0**, direct download, no registration. Confirmed
+   independent origin (no ISIC/HAM10000 derivation found). Notably,
+   modality-matched to PAD-UFES-20 (both macroscopic/clinical photos,
+   not dermoscopic like ISIC/HAM10000) — a genuine compatibility point
+   the other candidates don't share. Image-only, no tabular metadata.
+   Too small to be a primary source; a clean, low-risk melanoma-only
+   supplement.
+3. **DDI — Diverse Dermatology Images** (Stanford AIMI; also the source
+   of Daneshjou et al. 2022, already in this project's literature
+   review — see "Literature Review — Fairness Papers Added" above,
+   corroborates the 656-image, pathologically-confirmed description
+   independently). 656 images (+ 665 more via a DDI-2 extension,
+   self-identified-Asian patients). All pathologically/biopsy
+   confirmed. License: **signed Research Use Agreement**, non-commercial
+   — not a clean CC license, needs citation care. Built explicitly for
+   Fitzpatrick-skin-tone diversity, directly relevant to re-running our
+   own Phase 8.3 fairness analysis on an expanded set (see Step 2's
+   open question below). Melanoma/SCC-specific per-class counts not
+   yet confirmed from the dataset's own tables — needed before ranking
+   this above MED-NODE with confidence.
+4. **Fitzpatrick17k** — not recommended: labels are atlas/clinical-
+   diagnosis based, not biopsy-confirmed (below this project's stated
+   bar); melanoma coverage unclear/likely minimal; license unconfirmed
+   in research.
+
+**Excluded — confirmed overlap:** BCN20000 (confirmed part of the ISIC
+Challenge 2019/2020 aggregate, served through the ISIC Archive itself —
+excluded outright, no further evaluation needed).
+
+**Deprioritized — overlap/provenance unconfirmed, not excluded outright:**
+PH2 (200 images, too small to matter at this project's scale regardless
+of overlap status), Derm7pt (license terms and ISIC-family overlap both
+unconfirmed in research).
+
+**Recommendation given to user:** pursue DERM12345 first, *contingent
+on* the ISIC-overlap blocking check above, paired with MED-NODE as a
+zero-risk melanoma supplement; treat DDI as a strong third option
+pending its per-class counts and Research Use Agreement terms being
+confirmed directly from the dataset page. Fitzpatrick17k and the
+deprioritized items not recommended without further verification.
+
+**Not yet done (as of first pass, 2026-07-29):** user approval of
+specific sources; the DERM12345/ISIC-overlap check; DDI's exact
+Melanoma/SCC counts and RUA terms. **All actioned same day — see next
+entry.**
+
+---
+
+<a id="phase8bc-step1-verification"></a>
+## Phase 8C, Step 1 — Source Verification: DERM12345 Overlap Check, MED-NODE, DDI (2026-07-29)
+
+Per explicit user direction: DERM12345's ISIC-overlap risk treated as a
+hard blocker (reject outright if found, not "exclude with a workaround"
+— avoids adding a second exclusion-list mechanism to maintain). Also
+renamed the pre-existing imbalance-ablation WIP's "Phase 8B" labeling to
+avoid collision with this plan's Phase 8B (backbone comparison) — see
+next entry.
+
+**DERM12345 vs. ISIC Archive 1/2 — exact ID-match check, not pixel
+hashing.** Reused the same method as the original HAM10000↔ISIC Archive
+1/2 overlap discovery (`src/data_cleaning/cross_dataset_leakage_filter.py`
+— exact `image_id` string matching across full train+val+test, not
+perceptual/file hashing of pixel data). Chose this over a real pixel-hash
+comparison because (a) it's the literal precedent method already used
+and trusted for this exact class of decision, (b) DERM12345's images
+aren't downloaded and pixel-hashing would require pulling all 12,345+
+images for a check that ID-matching answers definitively if the ID
+namespaces are what they claim to be, which was verified first, not
+assumed.
+
+- Downloaded DERM12345's own metadata files directly from Harvard
+  Dataverse (`derm12345_metadata_{train,test}.tab`, via the Dataverse
+  API, `doi:10.7910/DVN/DAXZ7P` file IDs 10736043/10736044) — 12,345
+  rows, confirmed `image_id` format is `DERM_XXXXXX` (verified by direct
+  inspection of the downloaded file, not the paper's prose, which doesn't
+  document the exact scheme).
+- Loaded every `image_id` from `data/processed/ISIC_Archive_1/metadata_{train,val,test}.csv`
+  and `data/processed/ISIC_Archive_2/metadata_{train,val,test}.csv`
+  (2,047 + 25,076 = 27,123 combined) — confirmed both use `ISIC_XXXXXXX`
+  format by direct inspection.
+- **Result: 0 overlapping `image_id`s against ISIC_Archive_1, 0 against
+  ISIC_Archive_2** (exact set-intersection over the full 12,345 DERM12345
+  IDs vs. the full 27,123 combined ISIC Archive IDs). Disjoint ID
+  namespaces by construction (`DERM_*` vs `ISIC_*`) makes accidental
+  collision structurally implausible, and the exhaustive check confirms
+  it directly rather than relying on the namespace argument alone.
+- **Corroborating context, not the basis for the decision:** the
+  DERM12345 paper (PMC11604664) states *"This dataset will also be
+  accessible from the ISIC archive..."* — future tense, describing a
+  planned distribution channel as of publication (2024), not a claim
+  that the images were already merged into any existing ISIC Archive
+  snapshot. Our `ISIC_Archive_1`/`ISIC_Archive_2` pulls are both
+  pre-2024 (Archive 2 = the `andrewmvd/isic-2019` Kaggle mirror), so
+  even absent the ID check, temporal precedence alone makes inclusion
+  implausible — the ID check turns "implausible" into "confirmed absent."
+- **Verdict: DERM12345 APPROVED.** Zero overlap found, per the user's
+  binding rule this is a clean pass, not a workaround-and-proceed.
+
+**MED-NODE — partially confirmed, one gap flagged honestly.**
+- License: **CC BY 4.0** — confirmed via a secondary source (Papers with
+  Code / dataset aggregator listing), not found stated on the dataset's
+  own page (`cs.rug.nl/~imaging/databases/melanoma_naevi/`, which lists
+  download links but no explicit license text) or in the freely
+  accessible parts of the original paper (Giotis et al. 2015,
+  ScienceDirect — abstract-only, full text paywalled).
+- Image counts: confirmed **70 melanoma, 100 nevus, 170 total**, from
+  the dataset's own page.
+- **Gap, not resolved:** the exact labeling methodology (histopathology/
+  biopsy-confirmed vs. clinical/visual diagnosis) could **not** be
+  confirmed from any freely accessible source — the primary paper is
+  paywalled and no secondary source found states this explicitly. Given
+  MED-NODE is a hospital dermatology department dataset (University
+  Medical Center Groningen), biopsy-confirmation for the melanoma cases
+  specifically would be clinically typical, but this is an inference,
+  not a verified fact, and is reported as such rather than overclaimed.
+- Overlap: no evidence found connecting MED-NODE to ISIC Archive or
+  HAM10000 in any source checked; independent single-institution origin,
+  2015 publication, non-dermoscopic clinical photography (distinct
+  modality from both ISIC-family archives). No ID-based check was
+  possible/needed (no shared ID namespace question — different
+  imaging modality and pre-dates the datasets it would need to overlap
+  with by original collection method, not just ID scheme).
+- **Verdict: MED-NODE conditionally approved** — license and non-overlap
+  are reasonably confirmed; the labeling-methodology gap is disclosed to
+  the user as unresolved rather than silently assumed favorable.
+
+**DDI — RUA terms and biopsy-confirmation now confirmed; exact
+Melanoma/SCC counts still not obtainable without dataset registration.**
+- License: confirmed via `ddi-dataset.github.io` — a **signed Research
+  Use Agreement**, explicitly: personal/non-commercial research only, no
+  redistribution, no sharing the download link, and explicitly **"data or
+  images generated through the use of the... Dataset [may not] be used
+  or relied upon in the diagnosis or provision of patient care."** Access
+  requires individual registration via the Stanford AIMI portal.
+- Labeling: confirmed via the full paper (Daneshjou et al. 2022, *Science
+  Advances*, arXiv:2203.08807, read in full) — every lesion biopsy-proven,
+  reviewed by a board-certified dermatologist and dermatopathologist;
+  **Supplemental Table 1** gives the only breakdown available in the
+  public paper: 656 images total, 171 malignant / 485 benign, split by
+  Fitzpatrick group (FST I-II: 49 malignant/159 benign; FST III-IV: 74/167;
+  FST V-VI: 48/159). **No per-diagnosis (Melanoma vs. SCC vs. BCC, etc.)
+  breakdown appears anywhere in the paper's main text, tables, or
+  supplement** — only the aggregate malignant/benign counts and the
+  common-vs-uncommon diagnosis name lists (which confirm Melanoma and SCC
+  are both present among the "common malignant" category, but not their
+  individual counts).
+- Overlap: no statement found connecting DDI to ISIC/HAM10000; DDI is
+  explicitly built from Stanford Clinics EHR-sourced biopsy records
+  (2010-2020), an independent origin.
+- **Verdict: still not approved or rejected, per user instruction.**
+  Getting exact Melanoma/SCC counts requires registering for and
+  downloading the actual RUA-gated dataset (its metadata file, not the
+  images, would likely suffice) — this is a real next step, not a dead
+  end, but wasn't done here since it requires creating an account under
+  the user's identity/institution, which needs the user's go-ahead.
+
+**Open decision for user:** register for DDI access to get the exact
+counts (who registers — user, given institutional affiliation may
+matter for RUA terms), or proceed with DERM12345 + MED-NODE now and
+treat DDI as a possible later addition once counts are in hand.
+
+---
+
+<a id="step3a-fold-in-and-rename"></a>
+## Imbalance-Ablation WIP Folded In as Step 3a; "Phase 8B" Naming Collision Fixed in Code (2026-07-29)
+
+Per user instruction: the pre-existing uncommitted class-imbalance
+ablation WIP (flagged as a dangling-citation naming collision in the
+"Phase 8B+8C — Master Plan Adopted" entry above) is now formally **Step
+3a** of the Phase 8B/8C plan — runs alongside/before Step 3's 5-backbone
+comparison, on EfficientNet-B0 only, as originally scoped in the code
+comments themselves (isolate the sampler/strong-augment ablations before
+stacking them onto the 5-backbone runs). This is a scope decision, not
+new work — the ablation code itself is unchanged, still uncommitted, and
+still unrun.
+
+**Renamed in code (comments/help text only, no logic changed) to stop
+saying "Phase 8B" for ablation-specific content:**
+- `src/models/config.py`: `STRONG_AUGMENT_TARGET_CLASSES` block header
+  and citation now say "Step 3a" and point at this doc entry (was citing
+  a nonexistent `PROJECT_PLAN.md` "Phase 8B scoping" section — that
+  citation was already dangling before this rename; now fixed to point
+  somewhere real).
+- `src/models/dataset.py`: `build_image_transform`'s `strong=True`
+  docstring and `ImageDataset`'s `strong_augment_classes` docstring.
+- `src/models/train.py`: the `sampler == "weighted"` inline comment, and
+  both `--sampler`/`--strong-augment` CLI help strings (`main()`).
+- `src/evaluation/evaluate.py`: the matching `--sampler`/`--strong-augment`
+  CLI help strings.
+- `src/models/train_backbone_fusion.py`: one cross-reference in the
+  module docstring ("If Phase 8B's imbalance ablations..." →
+  "If Step 3a's imbalance ablations...").
+
+**Left as "Phase 8B" (correct, unchanged) — these genuinely are the
+backbone comparison:** `src/models/backbones.py`, `backbone_fusion_model.py`,
+the `--backbone`/`--backbone-a`/`--backbone-b` CLI help text in
+`train.py`/`evaluate.py`, and `_image_run_name`'s general "Phase 8B's
+5-backbone runs" reference (train.py). Also fixed `backbones.py`'s own
+dangling citation (was pointing at the same nonexistent `PROJECT_PLAN.md`
+"Phase 8B scoping" section; now points at the "Phase 8B+8C — Master Plan
+Adopted" entry).
+
+**Discovery made while reading this code for the rename, flagged for
+Step 4 (not acted on yet):** `backbone_fusion_model.py`'s own docstring
+describes it as fusing **two image backbones together, with no metadata
+branch at all** — this matches neither of the two Step 4 fusion designs
+(A: three-way image+image+metadata; B: two full backbone+metadata models
+then ensembled) proposed for your decision. It's a third, narrower thing
+(image-only two-backbone fusion) that may have been an earlier/exploratory
+step by whoever wrote this WIP, not a finished answer to Step 4. Not
+touched — flagging so it isn't mistaken for a pre-made Step 4 decision
+when we reach that step.
+
+**Progress Tracker (8B row) updated** to reflect Step 3a fold-in.
+
+---
+
+<a id="step2-binding-test-split-rule"></a>
+## Step 2 Binding Rule — Locked Test Split Frozen, Expansion Train/Val-Only (2026-07-29)
+
+**Formalized as the binding design principle for Step 2's dataset
+integration plan, before that plan is written:**
+
+- PAD-UFES-20's original, already-locked **TEST split stays
+  byte-for-byte identical, forever** — never touched, never expanded,
+  never re-split. This is the same file (`data/processed/PAD_UFES20/metadata_test.csv`)
+  already spent under "Test-Split Single-Use Safeguard Added"
+  (2026-07-25) for the existing 0.6977 result.
+- Any approved external source (DERM12345, MED-NODE, and DDI if
+  approved later) is added **only to TRAIN, and optionally VAL** — never
+  to TEST.
+- **Rationale (raised as a rigor concern by the assistant, accepted by
+  the user 2026-07-29):** this is what makes a valid *paired* bootstrap
+  comparison possible between the Phase 8C expanded-dataset model and
+  the existing locked 0.6977 test result — same method already used for
+  cross_attention vs. metadata and the PAD→HAM comparisons (resampling
+  matched predictions on identical test instances). A new, re-split test
+  set for the expanded dataset would make that comparison invalid (or at
+  best an unpaired, weaker-evidence comparison) without any offsetting
+  benefit, since protecting the existing result was already this
+  project's stated top priority for this phase.
+- This rule is now also recorded in `docs/PROJECT_PLAN.md`'s "Confirmed
+  design decisions" section (this entry cross-referenced there) so it
+  carries the same "do not re-litigate" status as this project's other
+  locked methodology choices (patient/lesion-wise splitting, no
+  image-copying, etc.).
+
+**Not yet done:** the Step 2 integration plan itself (how DERM12345/
+MED-NODE's images get mapped to the 6-class taxonomy, how the new
+combined TRAIN/VAL splits are built patient/lesion-wise, whether
+DERM12345's metadata columns need their own leakage audit) — next, once
+DDI's status is resolved per the open decision above, or the user says
+to proceed without waiting on DDI.
+
+**Update (2026-07-29, same day):** User approved proceeding with
+DERM12345 + MED-NODE now; DDI deferred as a parallel, possible-future
+addition (user registering under their own identity, not blocking Step
+2). **MED-NODE's conditional approval accepted as final**, with the
+label-acquisition-method gap to be disclosed explicitly in the thesis
+Methodology/Limitations section (exact language agreed): *"MED-NODE's
+exact label-confirmation method could not be independently verified due
+to the source publication being paywalled; the dataset's label quality
+is accepted based on its established use in prior peer-reviewed
+dermatology-AI literature."* This is a documented limitation, not a
+disqualifying gap — flagged here so it isn't forgotten before the
+Methodology chapter is written.
+
+**Approved sources for Step 2, final: DERM12345 (clean, verified 2026-07-29) + MED-NODE (conditional, caveat above).**
+
+---
+
+<a id="step4-forward-reference-backbone-fusion-wip"></a>
+## Forward-Reference Note for Step 4 — Existing `backbone_fusion_model.py` WIP (2026-07-29)
+
+Per user instruction: `src/models/backbone_fusion_model.py` (pre-existing
+uncommitted WIP, discovered during the Step 3a rename pass — see
+"Imbalance-Ablation WIP Folded In as Step 3a" above) is left **untouched**
+for now — not extended, not decided as anyone's Step 4 answer yet.
+
+**When Step 4 is reached, present this file explicitly as a third
+consideration alongside options A and B:** this pre-existing
+dual-image-backbone fusion (concatenates two backbones' penultimate
+embeddings, no metadata branch) could serve as the **foundation for
+building Option A** (three-way image+image+metadata fusion) by adding a
+metadata branch and a cross-attention mechanism to it, rather than
+building Option A from scratch. Logged now specifically so this isn't
+forgotten by the time Step 4 discussion happens (per user: "good catch,
+thank you for flagging rather than silently repurposing it").
+
+---
+
+<a id="step2-integration-plan-proposed"></a>
+## Step 2 — Dataset Integration Plan (PROPOSED, pending user review) (2026-07-29)
+
+Full integration plan for merging DERM12345 + MED-NODE into a new
+`PAD-UFES-20-Expanded` variant, per the master plan's Step 2 scope.
+**Not yet approved or implemented** — presented for review per the
+project's two-stage process.
+
+**1. New variant, originals untouched.** New CSVs written under
+`data/processed/PAD_UFES20_Expanded/` (mirroring the existing
+`metadata_{train,val,test}.csv` / `label_mapping.csv` /
+`feature_whitelist.md` / `dataset_description.md` convention).
+`data/processed/PAD_UFES20/` is never modified. `image_path` for new
+rows points back to `data/raw/DERM12345/` / `data/raw/MED-NODE/`
+(new raw folders, added read-only, same no-copy convention as the
+existing 4 datasets) — new images are not copied into `data/raw/PAD_UFES20/`.
+
+**2. Taxonomy mapping — Melanoma/SCC only, everything else excluded on
+purpose, not by omission.** DERM12345's own `main_class_1`/`sub_class`
+breakdown (verified directly from its downloaded metadata) does have
+clean mappings available for other PAD-UFES-20 classes too (e.g.
+`keratinocytic/basal_cell_carcinoma`, n=423 → Basal Cell Carcinoma;
+`keratinocytic/seborrheic_keratosis`, n=607 → Seborrheic Keratosis), but
+**this plan proposes using only the two priority classes**, matching the
+plan's own stated goal (Melanoma: 38 train images; SCC: 135) rather than
+opportunistically pulling in classes PAD-UFES-20 is already reasonably
+supported on. Reason, not just scope discipline: pulling in
+dermoscopic images for well-supported classes too would mean *every*
+class gets some modality-mixed data, which actually would have been the
+*safer* choice re: point 3 below — restricting to 2 of 6 classes is a
+deliberate tradeoff (see risk flagged in point 3), open for
+reconsideration if the user prefers the safer/broader alternative.
+
+| Source | `main_class_1` / `sub_class` | Count | → PAD-UFES-20 class |
+|---|---|---|---|
+| DERM12345 | `melanoma` (all 5 sub_classes: `melanoma`, `lentigo_maligna`, `acral_nodular`, `acral_lentiginious`, `lentigo_maligna_melanoma`) | 400 | Melanoma |
+| DERM12345 | `keratinocytic`/`squamous_cell_carcinoma` | 266 | Squamous Cell Carcinoma |
+| MED-NODE | `melanoma` (binary label) | 70 | Melanoma |
+
+**Excluded from this mapping, flagged not guessed:** DERM12345's
+`bowen_disease` (n=37, keratinocytic) — Bowen's disease is SCC-in-situ
+in some taxonomies, but this is a medical-judgment call PAD-UFES-20's
+own SCC label definition doesn't resolve for us; excluded per the
+"don't guess" precedent (same treatment as the anatomical-site mapping
+work) unless the user confirms it should be folded into SCC.
+`cutaneous_horn` (n=12) — a morphological descriptor, not a specific
+diagnosis (can indicate ACK, SCC, or benign lesions); excluded, same
+reasoning. MED-NODE has no SCC images at all (melanoma/nevus only).
+
+**Combined effect on Melanoma/SCC train supply:** Melanoma 38 → 508
+(38 + 400 + 70); SCC 135 → 401 (135 + 266). Both remain PAD-UFES-20's
+two smallest classes relative to Basal Cell Carcinoma (586) and Actinic
+Keratosis (513), but the gap narrows substantially.
+
+**3. Real risk found while drafting this — modality confound between
+malignancy-priority classes and image source, needs a decision.**
+DERM12345 is **dermoscopic** (specialized magnified/polarized-light
+imaging); PAD-UFES-20 is **macroscopic** (smartphone clinical photos);
+MED-NODE is macroscopic (modality-matched). If DERM12345 is added, then
+**after expansion, Melanoma and SCC are the only two classes with
+mixed-modality training images — every other class (BCC, ACK, SEK,
+Nevus) stays 100% macroscopic.** A backbone could learn "dermoscopic-style
+texture/vignette → malignant-priority class" as a shortcut correlated
+with, but not equivalent to, real lesion morphology. This is
+structurally the same *category* of risk as the already-documented
+"ISIC Archive 2 sparse-field = institution proxy" leakage pattern (Phase
+6 pre-condition decision), just in image-pixel-statistics space instead
+of metadata-column space, so it's flagged with the same seriousness.
+**Concretely, this risk would show up as:** inflated Melanoma/SCC
+val-set F1 (if new data touches val) or apparent train-time
+learnability that doesn't transfer to the **frozen, macro-only** locked
+test set — i.e., exactly the failure mode where a claimed improvement
+turns out to be a shortcut, not real generalization.
+**Mitigation proposed (see point 4): new data goes to TRAIN ONLY,
+never VAL** — this doesn't remove the shortcut risk during training,
+but it means model *selection* (checkpoint choice via val macro-F1)
+and *evaluation* both stay on pure macro-only PAD-UFES-20 data, so the
+shortcut can't inflate the numbers we actually report or use for
+early stopping. It also sets up a specific check for Step 6 (below).
+
+**4. Split discipline — proposal: new data is TRAIN-ONLY, not
+train+val (tightens the already-agreed "train/val, never test" rule).**
+Original binding rule (already agreed, still holds): TEST never
+touched. This plan proposes going one step further for VAL too, for
+three reasons: (a) directly limits the modality-shortcut risk above to
+training data only, keeping the val-based model-selection signal
+faithful to the real target distribution; (b) simpler — no need to
+patient-wise split DERM12345's `patient_id` (1,627 patients) or figure
+out MED-NODE's (undocumented) patient linkage, since 100% of approved
+new images go to one bucket; (c) more conservative, consistent with
+this phase's "protect existing results first" priority. **If approved,
+this becomes the binding rule going forward, superseding the "train
+and optionally val" wording from the earlier Step 2 binding-rule entry.**
+
+**5. Leakage-audit process for new columns — applied, result: moot by
+design, documented anyway.** DERM12345's own metadata
+(`patient_id`, `image_type`, `copyright-license`, `split`, `super_class`,
+`malignancy`, `main_class_1`, `main_class_2`, `sub_class`, `label`) has
+**no overlap with PAD-UFES-20's 21-feature clinical whitelist** (age,
+sex, itch, grew, hurt, changed, bleed, elevation, anatomical_site,
+fitspatrick, family/personal cancer history, etc. — DERM12345 simply
+doesn't collect this kind of clinical-history data). **This means the
+fusion/cross-attention model's metadata branch cannot be trained on the
+new images at all — there is no compatible metadata to give it.**
+Proposed resolution (not imputation — see reasoning below):
+- **New images (DERM12345 Melanoma/SCC subset + MED-NODE Melanoma)
+  train the IMAGE branch only** — used in Step 3's backbone comparison
+  and Step 3a's ablations (image-only training), and to strengthen the
+  image embedder that Step 5's fusion model warm-starts from (same
+  warm-start pattern already used for every existing fusion model in
+  this project).
+- **The fusion/cross-attention model's own joint (image+metadata)
+  training in Step 5 uses PAD-UFES-20's ORIGINAL multimodal train
+  rows only** — every row needs a real image+metadata pair, so rows
+  without compatible metadata can't participate in joint training
+  regardless of the val/test question above.
+- **Why not impute placeholder metadata + a missingness flag for the
+  new rows instead:** rejected on the same reasoning as the already-locked
+  "ISIC Archive 2 sparse-field exclusion" decision — missingness would be
+  a near-perfect proxy for "which dataset this row came from," which is
+  exactly the kind of source-identity leakage this project has already
+  established a precedent against. This isn't a new principle, it's the
+  same one reapplied to a new situation.
+- `malignancy` (DERM12345) is, as expected, a 1:1 derivation of the
+  class label (same category as `diagnostic_code`/`biopsed`) — verified,
+  documented, **never used as model input**, matching this project's
+  standard treatment of label-source columns. No other DERM12345/MED-NODE
+  column is a candidate for model input under this plan, since none of
+  them get used at all (image-only usage, per above).
+
+**6. Fitzpatrick fairness — no rerun needed for the reason expected,
+but a new check recommended.** Because the locked TEST split never
+changes (point 4), Phase 8.3's existing fairness numbers on that split
+remain exactly as valid as before — nothing to rerun there. **New
+recommendation, not part of the original Step 2 scope:** once Step 5
+produces the expanded-training fusion model, run Fitzpatrick-stratified
+per-class F1 for *that* model on the same frozen test set as a genuinely
+new analysis (not a rerun of old numbers) — this checks whether
+training on DERM12345 (Turkish population, likely different Fitzpatrick
+distribution than PAD-UFES-20's Brazilian cohort) shifts the new
+model's fairness profile, for better or worse, relative to the existing
+locked model's already-documented fairness result.
+
+**Open decisions for user before implementation:**
+1. Approve or reject the "train-only, not train+val" tightening in
+   point 4.
+2. Approve or reject excluding `bowen_disease` from the SCC mapping
+   (point 2).
+3. Approve or reject restricting to Melanoma/SCC only vs. also pulling
+   in DERM12345's other clean-mapping classes (point 2's tradeoff note).
+4. Approve the image-branch-only / warm-start integration design
+   (point 5) as the resolution to the metadata-incompatibility problem.
+
+---
+
+<a id="segmentation-cropping-reasoning"></a>
+## Lesion Segmentation/Cropping — Reasoned Through, Recommendation: Defer (2026-07-29)
+
+User raised segmentation/cropping as an additional improvement lever,
+explicitly asking for it to be reasoned through, not assumed. Assistant
+recommendation: **defer, do not add to the current Phase 8B/8C plan.**
+
+**1. Augmentation (Step 3a) — confirmed unchanged.** No new scope; the
+existing class-targeted augmentation ablation for Melanoma/SCC stands as
+already designed.
+
+**2a. Isolation risk — confirmed, agrees with user's own framing.**
+Adding segmentation at the same time as dataset expansion (Step 2) and
+the 5-backbone comparison (Step 3) would make any score change
+unattributable to a single cause — the same failure mode already lived
+through once in this project (the "Improved Cross-Attention Variant"
+negative result, 2026-07-23, where stacked changes made the regression
+uninterpretable until unwound). **Recommendation: segmentation must be
+its own separate, later, single-variable experiment**, applied only
+after Step 5's fusion result is in, not bundled into Steps 2-5.
+
+**2b. Feasibility — a real caveat, not just a green light.** A
+legitimate pretrained option exists: U-Net-style lesion-segmentation
+models trained on the ISIC 2018 Task 1 segmentation challenge data are
+publicly available (multiple pretrained implementations) — training a
+segmentation model from scratch would not be necessary. **However**,
+those models are trained on **dermoscopic** images (ISIC), while
+PAD-UFES-20 is macroscopic smartphone photos — the same modality
+mismatch already flagged for DERM12345 (see Step 2 plan above). Applying
+an ISIC-pretrained segmentation model to PAD-UFES-20's images is itself
+a domain-shift application (different framing, background skin/clothing,
+lighting, capture distance) that may segment unreliably without
+fine-tuning — this needs its own feasibility check (e.g. visually
+spot-checking segmentation output on a sample of PAD-UFES-20 images)
+before being trusted, not assumed to transfer cleanly just because a
+pretrained model exists. A simpler alternative (heuristic center-crop,
+since PAD-UFES-20 photos are typically already lesion-centered
+close-ups) may capture much of the benefit at far lower risk and should
+be considered as a first, cheaper thing to try if this is ever pursued.
+
+**2c. Test-set validity — agrees with user's concern, recommends option
+(i) over (ii) if/when this is pursued.** If segmentation/cropping is
+ever applied to the locked test set's images, that changes the pixel
+input those images present, which breaks a fair single-variable
+bootstrap comparison against the existing 0.6977 result (computed on
+uncropped images) unless handled deliberately. Between the user's two
+proposed options: **(i) re-evaluate the existing, already-trained
+cross-attention checkpoint on cropped versions of the same locked test
+images** is recommended over **(ii) treat segmentation as fully out of
+scope for any comparison against 0.6977**. Reason: (i) is cheap (no
+retraining — same frozen model weights, just different test-time
+preprocessing, direct paired comparison) and it's the only option that
+lets a future segmentation experiment actually claim segmentation
+helped or didn't; (ii) would make the experiment's own results
+permanently uncomparable to anything, which defeats the point of
+running it.
+
+**Overall recommendation given to user:** lesion segmentation is a
+legitimate future lever but should **not** be added to the current
+Phase 8B/8C plan. Propose it as a distinct future phase (tentatively
+"Phase 8D"), sequenced strictly after Steps 2-6 complete, applied on top
+of whichever configuration Phase 8B/8C lands on, using recommendation
+(2c)(i)'s comparison methodology, and starting with a feasibility
+spot-check (2b) before committing resources to it.
+
+**User decision (2026-07-29): APPROVED as scoped — deferred.** "Phase
+8D: Lesion Segmentation (Deferred)" is now a placeholder future phase
+(see `PROJECT_PLAN.md`). Confirmed plan for when it starts: sequenced
+strictly after Phase 8B/8C completes; feasibility spot-check of an
+ISIC-pretrained segmentation model against PAD-UFES-20's macroscopic
+images first; comparison methodology is option (i) — re-evaluate the
+existing frozen cross-attention checkpoint on cropped versions of the
+same locked test images, not a fresh out-of-scope claim. **No
+implementation work started — placeholder only.**
+
+---
+
+<a id="step2-plan-final-approval"></a>
+## Step 2 Integration Plan — FINAL APPROVAL (2026-07-29)
+
+All 4 open items from the proposed plan approved by user, as scoped:
+
+1. **Train-only (not train+val) domain-shift mitigation — APPROVED.**
+   Val and test both stay pure, untouched, original PAD-UFES-20. This is
+   now the binding rule for Step 2, superseding the earlier "train and
+   optionally val" wording.
+2. **Bowen's disease / cutaneous horn exclusion — APPROVED.**
+3. **Restrict to Melanoma/SCC only this pass, do NOT pull DERM12345's
+   other clean-mapping classes — APPROVED.** Explicit reasoning
+   (user's own): this expansion's stated purpose is fixing the two
+   identified bottleneck classes; pulling additional classes expands
+   scope/QC surface/domain-shift risk to more of the dataset without a
+   clearly stated need. Other clean-mapping classes (BCC n=423, SEK
+   n=607, ACK n=58 — all identified during Step 2 planning) are
+   explicitly deferred as a **separate, future, separately-evaluated
+   addition**, not bundled into this pass.
+4. **Image-branch-only / warm-start integration design — APPROVED.**
+
+**Final integration spec locked in:** DERM12345 melanoma-family (400) +
+SCC (266), MED-NODE melanoma (70) → `PAD_UFES20_Expanded` TRAIN only.
+VAL/TEST = PAD-UFES-20's original files, byte-for-byte, untouched. New
+images used for image-branch training (Step 3/3a) and fusion warm-start
+pretraining only — never for joint image+metadata training, which stays
+restricted to original PAD-UFES-20 rows.
+
+**Proceeding to implementation.**
+
+---
+
+<a id="step2-implementation-complete"></a>
+## Step 2 — PAD-UFES-20-Expanded Built — COMPLETE (2026-07-29)
+
+**Image acquisition.** DERM12345's own metadata (`derm12345_metadata_{train,test}.tab`)
+confirmed the authoritative row set for the approved mapping: labels
+`{mel, lm, lmm, alm, anm}` (main_class_1="melanoma", all 5 sub_classes)
+→ 400 rows; label `scc` → 266 rows; 666 total, cross-checked against the
+group-by counts from the original Step 1 research (400/266 — exact
+match). Rather than downloading the full DERM12345 archive (3 zips,
+~6.6GB, to get 666 of 12,345 images — impractical given this machine's
+~23GB free disk), used the `remotezip` package to fetch only the 666
+needed JPEGs directly via HTTP range requests against Harvard
+Dataverse's zip files (`test.zip` 136, `train_part_1.zip` 108,
+`train_part_2.zip` 422 — zip-membership determined empirically by
+listing each remote zip's folder contents, not assumed). All 666
+extracted successfully, 0 missing, saved to `data/raw/DERM12345/images/`
+(502MB). MED-NODE's full zip (26MB) downloaded directly (small enough
+not to need the range-request approach); 70 melanoma images used from
+its `melanoma/` folder (the `naevus/` folder, 100 images, extracted but
+unused — out of scope per the approved Melanoma/SCC-only restriction).
+
+**Dataset build.** `src/data_cleaning/pad_ufes20_expanded/c01_build_expanded_dataset.py`
+(run via `src/data_cleaning/run_build_pad_ufes20_expanded.py`) built
+`data/processed/PAD_UFES20_Expanded/`. Verified directly (not assumed):
+- `metadata_train.csv`, `metadata_val.csv`, `metadata_test.csv` are
+  byte-for-byte identical to `data/processed/PAD_UFES20/`'s originals
+  (`DataFrame.equals()` check, all 3 True) — the frozen-split rule
+  holds by direct verification, not just by construction.
+- `metadata_train_image_only.csv`: 2,342 rows = 1,606 original + 666
+  DERM12345 + 70 MED-NODE. `dataset_source` value_counts confirms the
+  exact split. Class counts: **Melanoma 38→508, SCC 135→401** (both
+  exactly matching the plan's predicted totals), all other 4 classes
+  unchanged (Basal Cell Carcinoma 586, Actinic Keratosis 513, Nevus 167,
+  Seborrheic Keratosis 167).
+- 0 missing-image warnings (every `image_path` for all 736 new rows
+  resolves to a real file).
+- Spot-checked 5 random new-row images load correctly via PIL (RGB,
+  varied resolutions from 576×768 to 3024×4032 — consistent with
+  DERM12345 being dermoscopic/high-resolution vs. PAD-UFES-20's
+  smartphone photos, the documented modality difference).
+
+**Docs written:** `data/processed/PAD_UFES20_Expanded/dataset_description.md`,
+`feature_whitelist.md` (explicitly warns `dataset_source` is a leakage
+risk in this variant specifically, not just an identifier — ties back to
+the modality-confound flag), `label_mapping.csv`.
+
+**Not yet done:** actually training anything on this dataset (Step 3 —
+5-backbone comparison — is next, once scoped/approved to proceed).
+
+---
+
+<a id="step3-wiring-verification-and-bug-fix"></a>
+## Pre-Step-3 Wiring Verification — Real Bug Found and Fixed (2026-07-29)
+
+Per user instruction, before starting the 15 backbone-comparison runs:
+verified the train-only-not-val mitigation is actually wired into the
+training code, not just true by file-naming convention. **This surfaced
+a real, would-have-crashed-on-first-run bug**, not just a
+confirmation.
+
+**Bug found:** `c01_build_expanded_dataset.py` wrote `image_path` for
+all 736 new rows as **absolute Windows paths**
+(`D:\Naeem\thesis-v2\...\data\raw\DERM12345\images\mel\DERM_602864.jpg`),
+not the `"data/raw/<Dataset>/..."` relative format every other row in
+this project uses. `src/models/config.py`'s `resolve_image_path()`
+unconditionally requires that relative format (checks
+`parts[0]=="data", parts[1]=="raw"` before even checking
+`IS_KAGGLE`) — confirmed via direct test that the old CSV would raise
+`ValueError: Unexpected image_path format` the moment training touched
+any new-source row, locally or on Kaggle. Caught before any training
+run, not after.
+
+**Fixed:** `_image_path()`/`_load_mednode_rows()` now write
+`Path.relative_to(PROJECT_ROOT).as_posix()` — same format as every
+other row. Rebuilt `PAD_UFES20_Expanded`; re-verified: **736/736 new
+rows resolve via the real `resolve_image_path()` function and exist on
+disk** (not just string-format-checked — actually resolved and
+`.exists()`-checked).
+
+**Dataset wiring added (didn't exist before — `PAD_UFES20_Expanded` had
+no entry in `src/models/config.py`'s `DATASETS` registry at all):**
+- New `DatasetConfig(name="PAD_UFES20_Expanded", ..., train_csv_name="metadata_train_image_only.csv", image_branch_only=True)`.
+  `train_csv` now correctly points at the image-only file;
+  `val_csv`/`test_csv` point at this variant's own copies (verified
+  byte-identical to the original in the prior entry).
+- **`image_branch_only=True` is a hard guard, not documentation**:
+  `train.py`'s `train_one_run()` and `evaluate.py`'s `main()` both now
+  raise (`ValueError`/`SystemExit`) if anyone requests `--branch`
+  other than `image` for this dataset — makes the
+  metadata-incompatibility problem (flagged in the Step 2 plan) fail
+  loudly instead of silently training on all-NaN rows. Verified: calling
+  `train_one_run('PAD_UFES20_Expanded', 'metadata', seed=0)` raises with
+  a clear message pointing back to this decision.
+- `KAGGLE_DATASET_SLUGS["DERM12345"]`, `["MED-NODE"]`, and
+  `KAGGLE_PROCESSED_SLUGS["PAD_UFES20_Expanded"]` added as
+  `REPLACE_WITH_*` placeholders (same convention as every other
+  not-yet-uploaded Kaggle dataset in this file) — **the user must upload
+  `data/raw/DERM12345/`, `data/raw/MED-NODE/`, and
+  `data/processed/PAD_UFES20_Expanded/` as 3 new private Kaggle
+  datasets before the Step 3 notebook can actually run**, same as every
+  prior phase's Kaggle-migration step. Not done yet — flagged, not
+  silently assumed.
+
+**End-to-end smoke test (not just unit-level):** built a real
+`ImageDataset` from `PAD_UFES20_Expanded`'s `train_csv` (2,342 rows),
+pulled a real batch through a `DataLoader` (`torch.Size([8, 3, 224, 224])`,
+labels present) — confirms the whole load path works, not just that
+files exist. Separately loaded `val_csv` directly and confirmed **all
+338 rows have `dataset_source == "PAD_UFES20"`, zero contamination** —
+the train-only-not-val rule verified by inspecting the actual data, not
+inferred from the build script's logic alone.
+
+---
+
+<a id="step3-kaggle-notebook-generated"></a>
+## Phase 8B Step 3 — Backbone Comparison Kaggle Notebook Generated (2026-07-29)
+
+`scripts/generate_backbone_comparison_kaggle_notebook.py` (new, mirrors
+every prior notebook generator's structure exactly — reads real
+`src/models/` source into `%%writefile` cells, never hand-typed) →
+`notebooks/pad_ufes20_expanded_backbone_comparison_kaggle_notebook.md`.
+24 cells: folder verification, setup, 5 `%%writefile` cells
+(`config.py`, `dataset.py`, `backbones.py`, `metadata_model.py`,
+`train.py`), a sanity-check cell, a full model/GPU/dependency check
+cell, and 15 training cells (5 backbones × 3 seeds,
+`--dataset PAD_UFES20_Expanded --branch image`).
+
+**Verified before presenting:**
+- All 5 `%%writefile` cells have `%%writefile` as the exact first line
+  (checked programmatically, not by eye — this exact class of mistake
+  has silently broken a cell in a past session).
+- The embedded `config.py` content includes today's `image_branch_only`
+  fix and the `PAD_UFES20_Expanded` entry — confirmed by grepping the
+  generated notebook, not assumed from "the generator reads the current
+  file" alone.
+- Sanity-check cell (Cell 8) asserts `val_df["dataset_source"]` is
+  exactly `{"PAD_UFES20"}` and fails loudly if not — the train-only-not-val
+  rule gets re-verified on Kaggle itself, every run, not just locally
+  once.
+- Full-check cell (Cell 9) forward-passes a real batch through all 5
+  backbones AND calls `train_one_run("PAD_UFES20_Expanded", "metadata", seed=0)`
+  to confirm the `image_branch_only` guard fires on Kaggle too, before
+  any of the 15 real training runs start.
+
+**Blocking, not yet done — 3 Kaggle "Add Data" uploads required before
+this notebook can run:** `data/raw/DERM12345/`, `data/raw/MED-NODE/`,
+and `data/processed/PAD_UFES20_Expanded/` all need to be zipped and
+uploaded as new private Kaggle datasets (this assistant has no Kaggle
+upload capability). `src/models/config.py`'s `KAGGLE_DATASET_SLUGS["DERM12345"]`,
+`["MED-NODE"]`, and `KAGGLE_PROCESSED_SLUGS["PAD_UFES20_Expanded"]` are
+`REPLACE_WITH_OWNER/REPLACE_WITH_SLUG` placeholders until then — Cell 1
+will fail loudly (not silently) if run before this is done. Notebook
+header spells out the exact 3 uploads needed.
+
+## Phase 8B backbone normalization verified (2026-07-29)
+
+`src/models/backbones.py` builds all 5 comparison backbones with a
+single hardcoded `IMAGENET_MEAN`/`IMAGENET_STD` (defined in
+`src/models/dataset.py`) applied uniformly. This was flagged for
+explicit confirmation rather than assumption: different
+`torchvision` pretrained-weights enums can in principle ship
+different per-weights normalization stats.
+
+**Verified, not assumed** — queried `weights.transforms().mean/std`
+directly (project `.venv`, `torchvision==0.28.0+cpu`) for the exact
+5 weights enums used in `backbones.py`:
+- `EfficientNet_B0_Weights.IMAGENET1K_V1`
+- `MobileNet_V3_Large_Weights.IMAGENET1K_V2`
+- `DenseNet121_Weights.IMAGENET1K_V1`
+- `ResNet50_Weights.IMAGENET1K_V2`
+- `ConvNeXt_Tiny_Weights.IMAGENET1K_V1`
+
+All 5 resolve to identical `mean=[0.485, 0.456, 0.406]`,
+`std=[0.229, 0.224, 0.225]` — the standard ImageNet1K recipe. (Their
+`resize_size`/`crop_size` differ slightly per weights enum, but the
+dataset pipeline here uses its own fixed `ResizePad` + resize, not
+`weights.transforms()`, so that variation doesn't apply.) No fix
+needed. Citation comment added at `src/models/dataset.py`'s
+`IMAGENET_MEAN`/`IMAGENET_STD` definition pointing back to this
+entry, so this doesn't silently drift into "assumed" territory in a
+future session.
+
+Notebook `notebooks/pad_ufes20_expanded_backbone_comparison_kaggle_notebook.md`
+is approved to paste into Kaggle.
+
+## Kaggle Commit Ran, Zero Training Happened — Stale Notebook `--dataset` Choices — Fixed (2026-07-29)
+
+**Symptom:** the Kaggle commit "succeeded" (no crash reported by the
+runner) but all 15 training cells (Cell 10–24) individually failed with
+`train.py: error: argument --dataset: invalid choice: 'PAD_UFES20_Expanded'
+(choose from PAD_UFES20, HAM10000)`. A "successful" commit with silently
+failed subprocess cells — same failure shape as the earlier slug-wiring
+bug (Pre-Step-3 Wiring Verification entry above): looks done, isn't.
+
+**Root cause, checked not assumed:** `src/models/train.py`'s and
+`src/evaluation/evaluate.py`'s live `main()` already build `--dataset`
+choices as `choices=list(DATASETS)` — derived from the registry, not a
+separate literal list — confirmed by reading both files directly. The
+bug was **not** in the source; it was that
+`notebooks/pad_ufes20_expanded_backbone_comparison_kaggle_notebook.md`
+had been generated from an *older* `train.py` snapshot with a
+hand-written `choices=["PAD_UFES20", "HAM10000"]`, before that file was
+switched to derive from `DATASETS` — the notebook generator embeds
+`%%writefile` cells from `src/models/` at generation time, so a stale
+notebook silently drifts from current source until regenerated.
+
+**Fix applied:**
+1. Confirmed `train.py`/`evaluate.py`'s `--dataset` argparse already
+   reads `choices=list(DATASETS)` — the registry-derived form item 3
+   asked for was already in place; no separate literal list exists in
+   either file to drift again.
+2. Grepped every other CLI script's `choices=` for a hardcoded dataset
+   list. `train_backbone_fusion.py`, `train_fusion.py`,
+   `train_fusion_reduced.py`, `train_cross_attention_fusion.py`,
+   `train_cross_attention_fusion_reduced.py`,
+   `train_cross_attention_improved.py`, `train_metadata_reduced.py` all
+   hardcode `choices=["PAD_UFES20"]` — but that's intentional and
+   correct (fusion/cross-attention are PAD_UFES20-only per Phase 7/8B
+   scope, enforced elsewhere too), not the same bug class. No other
+   drifted list found.
+3. Re-ran `scripts/generate_backbone_comparison_kaggle_notebook.py` to
+   re-embed current source. Verified via grep that the regenerated
+   notebook's Cell 10 (`train.py`) now reads
+   `choices=list(DATASETS)`, not the stale hardcoded list.
+4. Smoke-tested locally before reporting ready:
+   `python -m src.models.train --help` shows
+   `--dataset {PAD_UFES20,HAM10000,PAD_UFES20_Expanded}`; passing a
+   bogus `--dataset` value correctly raises
+   `SystemExit 2` listing all three; `evaluate.py --help` shows the
+   same three-way choice.
+
+**Lesson for future notebook generators:** a `%%writefile`-embedding
+notebook generator is only as current as the last time it was run —
+regenerate it as the final step of any change to an embedded file, not
+just when first creating the notebook.
+
+## Step 4 — Cross-Attention Backbone Fusion (ConvNeXt-Tiny + DenseNet121) Implemented (2026-07-31)
+
+Approved plan: Option B (two full multimodal models via the existing
+Phase 7 Stage 2 cross-attention mechanism, one per Phase 8B top-2
+backbone, then an unweighted-probability-averaging ensemble) — not
+Option A (a novel three-way joint model), and not extending
+`backbone_fusion_model.py`'s concatenation pattern, which would have
+reproduced the exact raw-dimension-dominance flaw Stage 2's
+cross-attention was built to fix.
+
+**New files:**
+- `src/models/spatial_backbone_embedder.py` — `SpatialBackboneEmbedder`
+  for `convnext_tiny`/`densenet121` only (the existing EfficientNet-B0
+  `SpatialImageEmbedder` in `cross_attention_fusion_model.py` stays
+  untouched for Phase 7 Stage 2 reproducibility). Per-backbone pre-pool
+  extraction verified directly against torchvision's real `forward`
+  source, not assumed: `convnext_tiny`'s `.features(x)` is already the
+  natural pre-pool representation (`LayerNorm2d` sits inside
+  `classifier[0]`, applied *after* pooling); `densenet121` requires an
+  explicit `F.relu(.features(x))` before treating the map as spatial
+  tokens, since `DenseNet.forward` applies that ReLU *outside*
+  `.features` (which ends in a bare `norm5` BatchNorm) — omitting it
+  would feed the cross-attention un-activated, possibly-negative
+  BatchNorm output, which is not what the pretrained/warm-started
+  weights were ever trained to have pooled.
+- `src/models/cross_attention_backbone_fusion_model.py` —
+  `CrossAttentionBackboneFusionModel(backbone_name, ...)`, structurally
+  identical to `CrossAttentionFusionModel` (reuses `MetadataEmbedder`
+  and `MetadataChannelGate` unchanged), parameterized over the image
+  side via `SpatialBackboneEmbedder`.
+- `src/models/train_cross_attention_backbone_fusion.py` — dataset is
+  fixed to `PAD_UFES20` (not a CLI choice): `PAD_UFES20_Expanded` is
+  `image_branch_only=True` and structurally has no usable metadata for
+  its DERM12345/MED-NODE rows. Cross-dataset warm start, verified
+  against what's actually on disk: image embedder loads
+  `logs/PAD_UFES20_Expanded/checkpoints/image_{backbone}_seed{N}_best.pt`
+  (Step 3/Phase 8B — confirmed these exist there and nowhere under
+  `logs/PAD_UFES20/checkpoints/`), metadata embedder loads
+  `ds_config.stage1_checkpoints_dir/metadata_seed{N}_best.pt` (Phase 7
+  Stage 1, PAD_UFES20's own). The train/val fine-tuning loop itself runs
+  entirely on PAD_UFES20's original `metadata_train.csv`/`metadata_val.csv`
+  — zero expanded rows are directly seen in this step; their only
+  influence is indirect, already baked into the warm-started image
+  weights.
+- `src/evaluation/evaluate.py` extended (additive only) with
+  `--branch cross_attention_backbone` (single checkpoint,
+  `--backbone {convnext_tiny,densenet121} --seed N`) and
+  `--branch cross_attention_backbone_ensemble` (`evaluate_dual_backbone_ensemble`
+  — unweighted softmax-probability averaging between the two
+  seed-matched checkpoints, no training, no learned combiner: every
+  split already has a fixed role in this project's discipline — train
+  fits the base models, val selects/early-stops them, test is locked —
+  so a parameter-free combination step is the only one that doesn't
+  need a new place to be fit without leaking one of those roles).
+
+**Smoke-tested locally on a real 12-row train / 12-row val PAD-UFES-20
+subset (2 rows per class, all 6 classes present) via `.venv` (CPU), for
+both backbones:** confirmed strict-mode warm-start checkpoint loading
+(both the Step 3 image checkpoint and the Stage 1 metadata checkpoint),
+single-sample and batch-of-4 forward passes with correct output shapes,
+one real train epoch + one real eval epoch via
+`run_epoch_cross_attention_backbone`, a checkpoint save/reload round
+trip, and the dual-backbone ensemble's softmax-averaging path on the
+12-row val subset — all passed. (Metadata preprocessor was fit on the
+*real* full PAD_UFES20 train CSV, not the 12-row subset — fitting on the
+tiny subset produces a smaller one-hot vocabulary and a dimension
+mismatch against the warm-started metadata checkpoint, which expects the
+full 89-dim encoding.)
+
+**Kaggle notebook generated, not hand-assembled:**
+`scripts/generate_cross_attention_backbone_fusion_kaggle_notebook.py`
+reads the real `src/models/*.py` file contents at generation time and
+writes
+`notebooks/pad_ufes20_cross_attention_backbone_fusion_kaggle_notebook.md`.
+Requires **four** Kaggle "Add Data" sources, one more than Stage 2's
+notebook: the usual raw mirror, processed metadata, and
+`pad-ufes20-stage1-checkpoints`, plus a **new, not-yet-published**
+private dataset holding this machine's
+`logs/PAD_UFES20_Expanded/checkpoints/image_{convnext_tiny,densenet121}_seed{0,1,2}_best.pt`
+(6 files) — `PAD_UFES20_Expanded` has no Kaggle-slug indirection in
+`config.py` the way `PAD_UFES20`/`HAM10000`'s `stage1_checkpoints_dir`
+does, so the notebook's Cell 2 copies those 6 files into
+`/kaggle/working/logs/PAD_UFES20_Expanded/checkpoints/` itself before
+training starts. The generator script's
+`EXPANDED_BACKBONE_CHECKPOINTS_SLUG` constant is a `REPLACE_WITH_*`
+placeholder (same convention as `config.py`'s
+`KAGGLE_STAGE1_CHECKPOINT_SLUGS`) — **must be edited to the real slug
+after uploading**, then the notebook regenerated. 19 cells total: folder
+verification → setup/copy → 9 `%%writefile` cells (config, dataset,
+backbones, fusion_model, cross_attention_fusion_model,
+spatial_backbone_embedder, cross_attention_backbone_fusion_model, train,
+train_cross_attention_backbone_fusion) → sanity check → full
+model/GPU check → 6 training cells (2 backbones × 3 seeds).
+
+---
+
+## Step 4 Scope Gap Found and Resolved — Option B vs. Option A, Phase 8E Added (2026-07-31)
+
+**Gap identified:** the supervisor's literal instruction for Step 4 was
+"build ONE final fusion model from the top-2 backbones, then
+train/val/test that single model" — a genuine three-way joint
+architecture, both image backbones (ConvNeXt-Tiny, DenseNet121) and
+metadata fused into one trainable model ("Option A"). What was actually
+scoped and implemented (see "Step 4 — Cross-Attention Backbone Fusion
+Implemented" above) is "Option B": two independent, full
+backbone+metadata cross-attention models (one per backbone), combined
+only at prediction time via unweighted softmax-probability averaging —
+no joint training, no shared parameters across backbones. Option B was
+chosen earlier for lower technical risk (reuses the already-validated
+Phase 7 Stage 2 cross-attention mechanism as-is, rather than requiring
+new joint-architecture design), but it does not literally satisfy "one
+final fusion model."
+
+**Decision (senior-researcher risk/reward assessment, both options
+weighed on time, risk, defensibility, and novelty):**
+
+1. **Finish Option B first, uninterrupted.** It is already training on
+   Kaggle (partial results in — see live log, epoch 1 of
+   `convnext_tiny` seed 0: `val_macroF1=0.1385`, warm-start and sanity
+   checks all passed). This becomes a primary, safe, well-documented
+   result on its own: two independently-reportable multimodal models
+   (ConvNeXt-Tiny+metadata, DenseNet121+metadata cross-attention
+   fusion) plus their prediction-time ensemble, compared against the
+   existing locked headline (val 0.6209±0.0143, test 0.6977) via paired
+   bootstrap on the frozen test split. Final results to be logged in a
+   new `docs/Phase8B_Backbone_Fusion_Results.md` (or similarly named
+   file) once all 6 runs + ensemble + bootstrap are complete.
+2. **Then start Option A as a new, separately-scoped phase: "Phase
+   8E — Single Joint Three-Way Fusion."** This is what directly
+   fulfills the supervisor's literal instruction. Framed explicitly as
+   an exploratory, higher-risk/higher-reward addition — NOT a
+   replacement for Option B's result, and NOT the thesis's
+   make-or-break outcome. `src/models/backbone_fusion_model.py` (the
+   existing WIP concatenation-based dual-backbone model, image-only —
+   see "Forward-Reference Note for Step 4" above) is a possible
+   starting point to revisit, but the actual joint architecture (how
+   metadata interacts with two image modalities simultaneously) is to
+   be proposed and justified before any code is written for this phase
+   — not assumed to be a straightforward extension of the existing
+   cross-attention mechanism to a third input.
+3. **Presentation:** Option B's and Option A's results will be
+   presented together in the thesis as a comparison/ablation.
+   Whichever performs better becomes the reported "improved" result —
+   but only if it beats 0.6977 test *and* that improvement is
+   statistically significant per paired bootstrap. If neither does, the
+   original locked cross-attention (EfficientNet-B0, test 0.6977)
+   remains the headline result, and both Option A and Option B become
+   documented exploratory findings rather than the thesis's primary
+   claim.
+
+**Status:** Option B (already in progress) continues uninterrupted —
+no action taken on Option A/Phase 8E yet beyond this scoping and
+documentation. Phase 8E added to `PROJECT_PLAN.md`'s future-phases list
+as a new, clearly-scoped, not-yet-started phase.
+
+---
+
+## Future Ablation — Isolating Dataset-Expansion Effect from Backbone-Change Effect (2026-07-31)
+
+**Observation:** EfficientNet-B0 on the expanded dataset (image-only)
+scored 0.5882±0.0059 vs. 0.5703±0.0130 on the original dataset — a
+modest +0.018 gain from dataset expansion alone (architecture held
+constant). This suggests most of ConvNeXt-Tiny's larger improvement
+(0.6542 val on seed 0, a +0.033 gain over the original headline's
+0.6209) is likely attributable to the backbone architecture change, not
+the expanded dataset alone.
+
+**Caveat — not yet rigorously isolated:** this is an inference from
+comparing 2 different image-only ablation numbers, not a controlled
+same-architecture-different-dataset cross-attention comparison. Treat
+as a hypothesis, not a confirmed finding.
+
+**Proposed follow-up (if time allows later):** train the ORIGINAL
+cross-attention architecture (EfficientNet-B0 + metadata) on the
+EXPANDED dataset — same warm-start pattern as Step 4, just swapping
+which backbone checkpoint gets loaded — and compare directly against
+both the 0.6209 original and whichever final Option A/B result (see
+"Step 4 Scope Gap Found and Resolved" above) is landed on. This would
+cleanly separate "dataset helped" from "backbone helped" as two
+distinct, individually-cited findings for the thesis Discussion
+chapter.
+
+**Status:** not blocking anything currently in progress — flagged here
+so this research idea isn't lost. Not scheduled as a phase; revisit
+after Option B (and, if pursued, Phase 8E) are complete.
+
+---
+
+## PAD-UFES-20 Test-Split Guard Reopened for Step 4 — Second Sanctioned Read Authorized (2026-08-01)
+
+**Context:** Step 4 (Option B) training completed — all 6
+`cross_attention_backbone` checkpoints (ConvNeXt-Tiny + DenseNet121, 3
+seeds each) verified on disk against their summary JSONs (val macro-F1
+0.6542/0.6731/0.6856 and 0.6363/0.6714/0.6601 respectively, matching
+exactly). Val-split dual-backbone ensemble evaluated
+(`--branch cross_attention_backbone_ensemble`): seed0 0.6661, seed1
+0.6952, seed2 0.6956 (mean 0.6856). Per the "Step 4 Scope Gap
+Found and Resolved" entry above, the approved plan requires comparing
+these against the existing locked headline (val 0.6209±0.0143, test
+0.6977) via paired bootstrap **on the frozen test split** — which
+requires a second read of PAD-UFES-20's `metadata_test.csv`.
+
+**Conflict found:** `src/evaluation/test_split_guard.py`'s
+dataset-scoped marker
+(`data/processed/PAD_UFES20/TEST_SPLIT_CONSUMED.json`) already recorded
+PAD-UFES-20's test split as consumed on 2026-07-25 by
+`evaluate_fairness.py` (the run producing the locked 0.6977). The guard
+blocks *any* further script from reading that file, by design (see
+"Test-Split Single-Use Safeguard Added", 2026-07-25) — "deleting it to
+re-run would itself have to be a logged, user-approved decision to
+reopen decision 4 for that dataset, not a code change." This entry is
+that logged decision.
+
+**Decision (explicit, user-approved 2026-08-01):** reopen the guard for
+exactly one additional, sanctioned read — the Step 4 backbone-fusion
+evaluation set (`cross_attention_backbone` convnext_tiny x3 seeds,
+densenet121 x3 seeds, `cross_attention_backbone_ensemble` x3 seeds; 9
+evaluation runs total) — immediately followed by paired bootstrap
+comparison against the already-existing, unchanged
+`predictions_cross_attention_seed{0,1,2}_test.csv` files from the
+original 2026-07-25 run (those files are read-only reused, not
+regenerated). This does **not** reopen decision 4 generally or permit
+arbitrary future re-reads: the marker is updated (not deleted) to
+record both consumption events, so a third, unsanctioned read is still
+blocked by the same mechanism afterward.
+
+**Rationale:** this is the specific comparison the Step 4 plan already
+called for (2026-07-31, before this gap was noticed), not a new or
+expanded use of the test split, and not a tuning decision — the 6
+backbone-fusion checkpoints and the ensemble combination rule were
+already fully fixed (via val-split selection only) before this test
+read happens, satisfying the same "no test-set influence on model
+selection" discipline decision 4 was written to protect.
+
+**Mechanics:** `data/processed/PAD_UFES20/TEST_SPLIT_CONSUMED.json`
+updated from a single consumed_by record to a `consumption_events` list
+containing both the original 2026-07-25 entry and this session's new
+entry (dataset/test CSV file itself never modified, never re-split —
+only the marker's bookkeeping changes). `test_split_guard.py`'s error
+message updated to read the latest event from either marker schema, so
+it still names the correct consumer/date/reference instead of `None`.
+
+---
+
+## Step 4 (Option B) — Final Test Results and Bootstrap Comparison — COMPLETE (2026-08-01)
+
+**Verification (from disk, not trusted from printed numbers alone):**
+all 6 `cross_attention_backbone` checkpoints and summary JSONs
+(`logs/PAD_UFES20/checkpoints/cross_attention_backbone_{backbone}_seed{N}_best.pt`,
+`logs/PAD_UFES20/train_cross_attention_backbone_{backbone}_seed{N}_summary.json`)
+confirmed present and exactly matching the reported numbers:
+
+| backbone | seed0 | seed1 | seed2 |
+|---|---|---|---|
+| convnext_tiny (val) | 0.654151 | 0.673132 | 0.685567 |
+| densenet121 (val) | 0.636304 | 0.671400 | 0.660099 |
+
+Checkpoint sizes sane and internally consistent (convnext_tiny ~113.7MB
+x3, densenet121 ~31.2MB x3, matching each backbone's parameter count).
+
+**Val-split dual-backbone ensemble** (`--branch
+cross_attention_backbone_ensemble`, unweighted softmax-probability
+averaging, seed-matched): seed0 0.6661, seed1 0.6952, seed2 0.6956
+(mean 0.6856).
+
+**Test-split guard reopened** (see entry above) for one additional
+sanctioned read, then all 9 final test evaluations run with
+`--confirm-final`:
+
+| variant | seed0 | seed1 | seed2 | mean |
+|---|---|---|---|---|
+| cross_attention_backbone (convnext_tiny) | 0.6897 | 0.6994 | 0.7425 | **0.7105** |
+| cross_attention_backbone (densenet121) | 0.6630 | 0.6946 | 0.6980 | **0.6852** |
+| cross_attention_backbone_ensemble | 0.7081 | 0.7338 | 0.7542 | **0.7321** |
+| cross_attention (original, locked 2026-07-25, re-used unchanged) | 0.6862 | 0.6721 | 0.7349 | 0.6977 |
+
+Per-row test predictions written to
+`reports/PAD_UFES20/cross_attention_backbone/predictions_*_test.csv`
+(new `evaluate.py` capability, additive only - `_predictions_df` built
+in `evaluate()`/`evaluate_dual_backbone_ensemble()` and written to CSV
+in `main()` only when `--split test`, mirroring
+`evaluate_fairness.py`'s existing predictions-CSV convention so row
+order/schema pairs directly against
+`reports/PAD_UFES20/fairness/predictions_cross_attention_seed{N}_test.csv`).
+
+**Paired bootstrap significance** (new
+`src/evaluation/bootstrap_significance_backbone_fusion.py`, same method
+as `bootstrap_significance.py`: 1,000 resamples, row-level paired,
+seed-averaged, all 6 classes since this is PAD-UFES-20's own test split,
+not a cross-dataset shared-class comparison). Recomputed anchor
+(0.697746) matched the locked 0.6977 exactly, confirming correct
+row-pairing:
+
+| comparison | observed diff | 95% CI | p (two-sided) | significant (α=0.05) | significant (Bonferroni α=0.0167) |
+|---|---|---|---|---|---|
+| convnext_tiny vs. original | +0.0128 | [-0.0251, +0.0506] | 0.470 | No | No |
+| densenet121 vs. original | -0.0126 | [-0.0689, +0.0509] | 0.656 | No | No |
+| **ensemble vs. original** | **+0.0343** | **[-0.0020, +0.0771]** | **0.062** | **No** | No |
+
+**Conclusion:** the dual-backbone ensemble (0.7321 test macro-F1) is the
+numerically best result to date, +0.0343 over the locked headline, and
+closest to significance of the three comparisons — but its 95% CI still
+crosses zero (barely: -0.0020) and p=0.062 exceeds even the
+uncorrected alpha=0.05, so **it is not statistically significant** at
+n=354 test rows. Per the "Step 4 Scope Gap Found and Resolved" decision
+(2026-07-31), since no Option B variant beats 0.6977 significantly, the
+**original locked cross-attention (EfficientNet-B0, test 0.6977)
+remains the thesis headline result**; Option B (both single-backbone
+models and their ensemble) is documented here as a positive but
+not-yet-significant exploratory finding, to be presented alongside
+Option A (Phase 8E, not yet started) once that is also complete.
+
+**Status:** Step 4 Option B fully complete (training, val selection,
+one-time test evaluation, bootstrap significance). Next: Phase 8E
+(Option A, single joint three-way fusion) remains not-yet-started, per
+existing scope.
+
+---
+
+**Low-priority note (2026-08-01):** commit `070a034` deleted several
+`.zip` files under `data/processed/` (Kaggle-upload staging copies,
+redundant duplicates of already-present `data/raw/`/`data/processed/`
+data) — intentional, done directly by the user to reduce repo/push
+size, not a bug or accidental loss. Noted here so it isn't mistaken for
+a mystery by a future session.
+
+---

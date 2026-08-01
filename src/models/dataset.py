@@ -17,6 +17,12 @@ from torchvision.transforms import functional as TF
 
 from src.models.config import IMAGE_INPUT_SIZE, DatasetConfig, resolve_image_path
 
+# Verified 2026-07-29 (not assumed): for all 5 Phase 8B backbones
+# (EfficientNet_B0_Weights.IMAGENET1K_V1, MobileNet_V3_Large_Weights.IMAGENET1K_V2,
+# DenseNet121_Weights.IMAGENET1K_V1, ResNet50_Weights.IMAGENET1K_V2,
+# ConvNeXt_Tiny_Weights.IMAGENET1K_V1), weights.transforms().mean/std were
+# queried directly and all resolve to this same mean/std. See
+# docs/Project_Tracking.md, "Phase 8B backbone normalization verified".
 IMAGENET_MEAN = [0.485, 0.456, 0.406]
 IMAGENET_STD = [0.229, 0.224, 0.225]
 
@@ -45,14 +51,28 @@ class ResizePad:
         return TF.pad(img, [pad_left, pad_top, pad_right, pad_bottom], fill=0)
 
 
-def build_image_transform(train: bool) -> transforms.Compose:
+def build_image_transform(train: bool, strong: bool = False) -> transforms.Compose:
+    """strong=True (Step 3a ablation (b)): more aggressive rotation/crop/
+    color-jitter, applied only to per-sample classes an ImageDataset caller
+    opts into via strong_augment_classes - never the default path, so
+    every existing call site (train=True, strong left at its default) is
+    unaffected.
+    """
     ops = [ResizePad(IMAGE_INPUT_SIZE)]
     if train:
-        ops += [
-            transforms.RandomHorizontalFlip(),
-            transforms.RandomRotation(20),
-            transforms.ColorJitter(brightness=0.15, contrast=0.15),
-        ]
+        if strong:
+            ops += [
+                transforms.RandomHorizontalFlip(),
+                transforms.RandomRotation(35),
+                transforms.RandomResizedCrop(IMAGE_INPUT_SIZE, scale=(0.75, 1.0)),
+                transforms.ColorJitter(brightness=0.25, contrast=0.25),
+            ]
+        else:
+            ops += [
+                transforms.RandomHorizontalFlip(),
+                transforms.RandomRotation(20),
+                transforms.ColorJitter(brightness=0.15, contrast=0.15),
+            ]
     ops += [
         transforms.ToTensor(),
         transforms.Normalize(mean=IMAGENET_MEAN, std=IMAGENET_STD),
@@ -61,12 +81,25 @@ def build_image_transform(train: bool) -> transforms.Compose:
 
 
 class ImageDataset(Dataset):
-    """Image-only branch: returns (image_tensor, label_idx)."""
+    """Image-only branch: returns (image_tensor, label_idx).
 
-    def __init__(self, csv_path: Path, dataset_config: DatasetConfig, train: bool):
+    strong_augment_classes (optional, Step 3a ablation (b)): disease_label
+    values that get build_image_transform(train, strong=True) instead of
+    the normal train transform. Only consulted when train=True. Default
+    None reproduces the exact pre-Step-3a behavior (single transform for
+    every sample).
+    """
+
+    def __init__(self, csv_path: Path, dataset_config: DatasetConfig, train: bool,
+                 strong_augment_classes: set = None):
         self.df = pd.read_csv(csv_path)
         self.label_to_idx = dataset_config.label_to_idx
+        self.train = train
         self.transform = build_image_transform(train)
+        self.strong_augment_classes = strong_augment_classes or set()
+        self.strong_transform = (
+            build_image_transform(train, strong=True) if self.strong_augment_classes else None
+        )
 
     def __len__(self) -> int:
         return len(self.df)
@@ -75,8 +108,12 @@ class ImageDataset(Dataset):
         row = self.df.iloc[idx]
         image_path = resolve_image_path(row["image_path"])
         image = Image.open(image_path).convert("RGB")
-        image = self.transform(image)
-        label = self.label_to_idx[row["disease_label"]]
+        label_name = row["disease_label"]
+        if self.train and label_name in self.strong_augment_classes:
+            image = self.strong_transform(image)
+        else:
+            image = self.transform(image)
+        label = self.label_to_idx[label_name]
         return image, label
 
 

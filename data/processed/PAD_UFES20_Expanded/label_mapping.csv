@@ -1,0 +1,8 @@
+source,source_label,diagnostic_code,disease_label
+DERM12345,mel,MEL,Melanoma
+DERM12345,lm,MEL,Melanoma
+DERM12345,lmm,MEL,Melanoma
+DERM12345,alm,MEL,Melanoma
+DERM12345,anm,MEL,Melanoma
+DERM12345,scc,SCC,Squamous Cell Carcinoma
+MED-NODE,melanoma,MEL,Melanoma

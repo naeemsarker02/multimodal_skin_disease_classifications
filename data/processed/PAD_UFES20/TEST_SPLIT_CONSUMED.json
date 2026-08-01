@@ -1,21 +1,45 @@
 {
   "dataset": "PAD_UFES20",
-  "consumed_on": "2026-07-25",
-  "consumed_by": "evaluate_fairness.py",
-  "reference": "docs/Project_Tracking.md#phase-8-fitzpatrick-fairness-complete, docs/Phase8_Fitzpatrick_Fairness_Results.md",
-  "detail": {
-    "variants": [
-      "image",
-      "metadata",
-      "fusion",
-      "cross_attention"
-    ],
-    "seeds": [
-      0,
-      1,
-      2
-    ],
-    "n_runs": 12,
-    "note": "also stands as PAD-UFES-20 official final Stage 1 test-set result"
-  }
+  "consumption_events": [
+    {
+      "dataset": "PAD_UFES20",
+      "consumed_on": "2026-07-25",
+      "consumed_by": "evaluate_fairness.py",
+      "reference": "docs/Project_Tracking.md#phase-8-fitzpatrick-fairness-complete, docs/Phase8_Fitzpatrick_Fairness_Results.md",
+      "detail": {
+        "variants": [
+          "image",
+          "metadata",
+          "fusion",
+          "cross_attention"
+        ],
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "n_runs": 12,
+        "note": "also stands as PAD-UFES-20 official final Stage 1 test-set result"
+      }
+    },
+    {
+      "consumed_on": "2026-08-01",
+      "consumed_by": "evaluate.py (Step 4 backbone-fusion evaluation set)",
+      "reference": "docs/Project_Tracking.md#pad-ufes-20-test-split-guard-reopened-for-step-4, docs/Phase8B_Backbone_Comparison_Results.md",
+      "detail": {
+        "variants": [
+          "cross_attention_backbone_convnext_tiny",
+          "cross_attention_backbone_densenet121",
+          "cross_attention_backbone_ensemble"
+        ],
+        "seeds": [
+          0,
+          1,
+          2
+        ],
+        "n_runs": 9,
+        "note": "Step 4 Option B - two per-backbone cross-attention fusion models plus their prediction-time ensemble, compared against the original locked cross_attention (EfficientNet-B0) test result (0.6977) via paired bootstrap. Guard reopened for this single additional sanctioned read, user-approved 2026-08-01; marker updated (not deleted) to keep blocking further reads."
+      }
+    }
+  ]
 }

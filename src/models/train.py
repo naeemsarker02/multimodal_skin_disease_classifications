@@ -30,19 +30,21 @@ import numpy as np
 import pandas as pd
 import torch
 from sklearn.metrics import f1_score
-from torch.utils.data import DataLoader
+from torch.utils.data import DataLoader, WeightedRandomSampler
 
+from src.models.backbones import BACKBONE_NAMES, build_backbone
 from src.models.config import (
     BATCH_SIZE,
+    DATASETS,
     EARLY_STOPPING_PATIENCE,
     LEARNING_RATE_IMAGE,
     LEARNING_RATE_METADATA,
     NUM_EPOCHS,
+    STRONG_AUGMENT_TARGET_CLASSES,
     WEIGHT_DECAY,
     get_dataset,
 )
 from src.models.dataset import ImageDataset, MetadataDataset, MetadataPreprocessor
-from src.models.image_model import build_efficientnet_b0
 from src.models.metadata_model import MetadataMLP
 
 
@@ -85,16 +87,59 @@ def run_epoch(model, loader, criterion, optimizer, device, train: bool):
     return avg_loss, macro_f1
 
 
-def train_one_run(dataset_name: str, branch: str, seed: int) -> None:
+def _image_run_name(seed: int, backbone: str, sampler: str, strong_augment: str) -> str:
+    """image_seed{N} for the pre-Phase-8B/Step-3a default (backbone=
+    efficientnet_b0, sampler=shuffle, strong_augment=none), so every
+    existing checkpoint/log filename (and Phase 7 fusion's warm-start path)
+    keeps working unchanged. Non-default choices are appended so Phase 8B's
+    5-backbone runs and Step 3a's imbalance-ablation runs never collide on
+    disk.
+    """
+    parts = ["image"]
+    if backbone != "efficientnet_b0":
+        parts.append(backbone)
+    if sampler != "shuffle":
+        parts.append(sampler)
+    if strong_augment != "none":
+        parts.append(strong_augment)
+    parts.append(f"seed{seed}")
+    return "_".join(parts)
+
+
+def train_one_run(
+    dataset_name: str,
+    branch: str,
+    seed: int,
+    backbone: str = "efficientnet_b0",
+    sampler: str = "shuffle",
+    strong_augment: str = "none",
+) -> None:
     set_seed(seed)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     ds_config = get_dataset(dataset_name)
 
+    if ds_config.image_branch_only and branch != "image":
+        raise ValueError(
+            f"{dataset_name!r} is image_branch_only=True (its train_csv includes "
+            f"rows with no compatible clinical metadata - see "
+            f"Project_Tracking.md, 'Step 2 Integration Plan', 2026-07-29). "
+            f"--branch {branch!r} would silently train on all-NaN metadata for "
+            f"those rows. Use --branch image, or --dataset PAD_UFES20 for "
+            f"metadata/fusion training."
+        )
+
     if branch == "image":
-        train_ds = ImageDataset(ds_config.train_csv, ds_config, train=True)
+        strong_augment_classes = (
+            set(STRONG_AUGMENT_TARGET_CLASSES) if strong_augment == "minority" else None
+        )
+        train_ds = ImageDataset(
+            ds_config.train_csv, ds_config, train=True,
+            strong_augment_classes=strong_augment_classes,
+        )
         val_ds = ImageDataset(ds_config.val_csv, ds_config, train=False)
-        model = build_efficientnet_b0(num_classes=ds_config.num_classes).to(device)
+        model = build_backbone(backbone, num_classes=ds_config.num_classes).to(device)
         lr = LEARNING_RATE_IMAGE
+        run_name = _image_run_name(seed, backbone, sampler, strong_augment)
     elif branch == "metadata":
         preprocessor = MetadataPreprocessor(ds_config).fit(pd.read_csv(ds_config.train_csv))
         train_ds = MetadataDataset(ds_config.train_csv, ds_config, preprocessor)
@@ -103,21 +148,37 @@ def train_one_run(dataset_name: str, branch: str, seed: int) -> None:
             input_dim=preprocessor.output_dim, num_classes=ds_config.num_classes
         ).to(device)
         lr = LEARNING_RATE_METADATA
+        run_name = f"{branch}_seed{seed}"
     else:
         raise ValueError(f"Unknown branch: {branch}")
-
-    train_loader = DataLoader(train_ds, batch_size=BATCH_SIZE, shuffle=True)
-    val_loader = DataLoader(val_ds, batch_size=BATCH_SIZE, shuffle=False)
 
     class_weights = compute_class_weights(
         ds_config.train_csv, ds_config.class_names
     ).to(device)
+
+    if branch == "image" and sampler == "weighted":
+        # Step 3a ablation (a): oversample rare classes via inverse
+        # train-class-frequency weights (same numbers compute_class_weights
+        # already derives for the loss) - reused here as per-sample sampling
+        # weights instead. Mutually exclusive with shuffle=True per
+        # DataLoader's own constraint.
+        train_df = pd.read_csv(ds_config.train_csv)
+        sample_weights = train_df["disease_label"].map(
+            lambda name: class_weights[ds_config.label_to_idx[name]].item()
+        ).to_numpy()
+        train_sampler = WeightedRandomSampler(
+            weights=sample_weights, num_samples=len(sample_weights), replacement=True
+        )
+        train_loader = DataLoader(train_ds, batch_size=BATCH_SIZE, sampler=train_sampler)
+    else:
+        train_loader = DataLoader(train_ds, batch_size=BATCH_SIZE, shuffle=True)
+    val_loader = DataLoader(val_ds, batch_size=BATCH_SIZE, shuffle=False)
+
     criterion = torch.nn.CrossEntropyLoss(weight=class_weights)
     optimizer = torch.optim.Adam(model.parameters(), lr=lr, weight_decay=WEIGHT_DECAY)
 
     ds_config.checkpoints_dir.mkdir(parents=True, exist_ok=True)
     ds_config.logs_dir.mkdir(parents=True, exist_ok=True)
-    run_name = f"{branch}_seed{seed}"
     checkpoint_path = ds_config.checkpoints_dir / f"{run_name}_best.pt"
     metrics_csv_path = ds_config.logs_dir / f"train_{run_name}.csv"
 
@@ -151,18 +212,20 @@ def train_one_run(dataset_name: str, branch: str, seed: int) -> None:
             if val_macro_f1 > best_val_macro_f1:
                 best_val_macro_f1 = val_macro_f1
                 epochs_without_improvement = 0
-                torch.save(
-                    {
-                        "model_state_dict": model.state_dict(),
-                        "dataset": dataset_name,
-                        "branch": branch,
-                        "seed": seed,
-                        "epoch": epoch,
-                        "val_macro_f1": val_macro_f1,
-                        "num_classes": ds_config.num_classes,
-                    },
-                    checkpoint_path,
-                )
+                checkpoint = {
+                    "model_state_dict": model.state_dict(),
+                    "dataset": dataset_name,
+                    "branch": branch,
+                    "seed": seed,
+                    "epoch": epoch,
+                    "val_macro_f1": val_macro_f1,
+                    "num_classes": ds_config.num_classes,
+                }
+                if branch == "image":
+                    checkpoint["backbone"] = backbone
+                    checkpoint["sampler"] = sampler
+                    checkpoint["strong_augment"] = strong_augment
+                torch.save(checkpoint, checkpoint_path)
             else:
                 epochs_without_improvement += 1
                 if epochs_without_improvement >= EARLY_STOPPING_PATIENCE:
@@ -176,6 +239,10 @@ def train_one_run(dataset_name: str, branch: str, seed: int) -> None:
         "best_val_macro_f1": best_val_macro_f1,
         "checkpoint_path": str(checkpoint_path),
     }
+    if branch == "image":
+        summary["backbone"] = backbone
+        summary["sampler"] = sampler
+        summary["strong_augment"] = strong_augment
     summary_path = ds_config.logs_dir / f"train_{run_name}_summary.json"
     with open(summary_path, "w") as f:
         json.dump(summary, f, indent=2)
@@ -186,12 +253,29 @@ def train_one_run(dataset_name: str, branch: str, seed: int) -> None:
 
 
 def main():
-    parser = argparse.ArgumentParser(description="Phase 6 Stage 1 training")
-    parser.add_argument("--dataset", choices=["PAD_UFES20", "HAM10000"], required=True)
+    parser = argparse.ArgumentParser(description="Phase 6 Stage 1 / Phase 8B / Step 3a training")
+    parser.add_argument("--dataset", choices=list(DATASETS), required=True)
     parser.add_argument("--branch", choices=["image", "metadata"], required=True)
     parser.add_argument("--seed", type=int, required=True)
+    parser.add_argument(
+        "--backbone", choices=BACKBONE_NAMES, default="efficientnet_b0",
+        help="Phase 8B 5-backbone comparison (image branch only). Ignored for --branch metadata.",
+    )
+    parser.add_argument(
+        "--sampler", choices=["shuffle", "weighted"], default="shuffle",
+        help="Step 3a imbalance ablation (a): WeightedRandomSampler (image branch only).",
+    )
+    parser.add_argument(
+        "--strong-augment", choices=["none", "minority"], default="none",
+        dest="strong_augment",
+        help="Step 3a imbalance ablation (b): stronger augmentation for "
+             "STRONG_AUGMENT_TARGET_CLASSES only (image branch only).",
+    )
     args = parser.parse_args()
-    train_one_run(args.dataset, args.branch, args.seed)
+    train_one_run(
+        args.dataset, args.branch, args.seed,
+        backbone=args.backbone, sampler=args.sampler, strong_augment=args.strong_augment,
+    )
 
 
 if __name__ == "__main__":

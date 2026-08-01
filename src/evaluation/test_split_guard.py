@@ -29,11 +29,22 @@ def check_test_split_available(ds_config, caller: str) -> None:
     if not marker.exists():
         return
     info = json.loads(marker.read_text())
+    # Two marker schemas coexist: the original single-event schema
+    # (consumed_on/consumed_by/reference at top level) and the
+    # consumption_events list schema (added 2026-08-01 when PAD_UFES20's
+    # guard was reopened for a second sanctioned read - see
+    # Project_Tracking.md "PAD-UFES-20 Test-Split Guard Reopened for Step
+    # 4"). Report the most recent event either way, most-severe/most-recent
+    # first is not needed here - just show what most recently locked it.
+    if "consumption_events" in info:
+        latest = info["consumption_events"][-1]
+    else:
+        latest = info
     raise SystemExit(
         f"Refusing to let {caller} read {ds_config.name}'s test split "
         f"({ds_config.test_csv}): already consumed on "
-        f"{info.get('consumed_on')} by {info.get('consumed_by')} "
-        f"(see {info.get('reference')}). The test split is single-use per "
+        f"{latest.get('consumed_on')} by {latest.get('consumed_by')} "
+        f"(see {latest.get('reference')}). The test split is single-use per "
         "Project_Tracking.md decision 4 and is now locked for this "
         f"dataset. Marker file: {marker}. Do not delete this marker to "
         "work around this check - if the user explicitly wants to reopen "

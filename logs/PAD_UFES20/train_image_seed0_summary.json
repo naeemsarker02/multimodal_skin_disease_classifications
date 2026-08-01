@@ -1,6 +1,0 @@
-{
-  "branch": "image",
-  "seed": 0,
-  "best_val_macro_f1": 0.5529340306150242,
-  "checkpoint_path": "/kaggle/working/logs/PAD_UFES20/checkpoints/image_seed0_best.pt"
-}

@@ -1,7 +1,0 @@
-{
-  "dataset": "HAM10000",
-  "branch": "metadata",
-  "seed": 1,
-  "best_val_macro_f1": 0.26566119227850093,
-  "checkpoint_path": "/kaggle/working/logs/HAM10000/checkpoints/metadata_seed1_best.pt"
-}

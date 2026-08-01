@@ -57,6 +57,14 @@ scholarship portfolio.
   `Project_Tracking.md`'s Phase 5 summary).
 - **Reproducibility:** fixed seeds (3–5 per experiment), results reported
   as mean ± std.
+- **Phase 8C dataset expansion — locked test split is never touched**
+  (added 2026-07-29): PAD-UFES-20's existing, already-spent test split
+  (`data/processed/PAD_UFES20/metadata_test.csv`) stays byte-for-byte
+  identical through any dataset-expansion work — new external sources
+  are added to TRAIN (and optionally VAL) only, never TEST. This is what
+  keeps a valid paired-bootstrap comparison possible against the locked
+  0.6977 result. See `Project_Tracking.md`, "Step 2 Binding Rule —
+  Locked Test Split Frozen" (2026-07-29).
 
 ---
 
@@ -130,7 +138,64 @@ above are done and I've reviewed them.**
 7. Multimodal fusion — late fusion, then cross-attention.
 8. Experiments — PAD-UFES-20↔HAM10000 generalization (headline result),
    HAM10000→ISIC external validation (with exclusions applied), Fitzpatrick
-   fairness analysis, bootstrap significance testing.
+   fairness analysis, bootstrap significance testing. **Closed 2026-07-27**
+   — see `Project_Tracking.md`.
+8B. Backbone comparison (added 2026-07-29) — 5 pretrained image
+   backbones (EfficientNet-B0 baseline + MobileNetV3-Large, DenseNet121,
+   ResNet50, ConvNeXt-Tiny), image-only, 3 seeds each, ranked by val
+   macro-F1, each backbone's own pretrained normalization verified (not
+   assumed identical to EfficientNet-B0's). Full scope, decision log, and
+   step-by-step approval gates: `Project_Tracking.md`, "Phase 8B+8C —
+   Master Plan Adopted" (2026-07-29) onward. Results:
+   `docs/Phase8B_Backbone_Comparison_Results.md` (not yet written).
+8C. Dataset expansion (added 2026-07-29) — vetted external dermatology
+   sources merged into a new `PAD-UFES-20-Expanded` variant (original
+   `data/processed/PAD_UFES20/` never overwritten), targeting Melanoma/SCC
+   under-representation; top-2 backbones from 8B + metadata fused (design
+   TBD, see Step 4 of the plan — three-way fusion vs. two-model ensemble,
+   not yet decided); trained/evaluated on a new patient-wise split; bootstrap
+   significance vs. the locked 0.6977 test result. Full scope:
+   `Project_Tracking.md`, same entry as 8B. Results:
+   `docs/Phase8C_Expanded_Dataset_Results.md` (not yet written).
+   **Neither 8B nor 8C supersedes Phase 8** — the existing locked
+   cross-attention result (val 0.6209±0.0143, test 0.6977) remains the
+   presentable thesis result unless 8B/8C produce a significantly better one.
+8D. Lesion segmentation/cropping (placeholder, added 2026-07-29,
+   **deferred — no implementation started**) — reasoned through and
+   explicitly sequenced strictly *after* Phase 8B/8C completes, not
+   bundled in now (isolation-risk precedent: the 2026-07-23 "Improved
+   Cross-Attention Variant" negative result, where stacked changes made
+   a regression unattributable). Plan for when it starts: (1) a
+   feasibility spot-check of an ISIC-pretrained (dermoscopic-trained)
+   segmentation model against PAD-UFES-20's macroscopic images, since
+   that's an unverified domain-shift application, not an assumed fit;
+   (2) if pursued, any test-set comparison must use option (i) —
+   re-evaluate the existing frozen cross-attention checkpoint on cropped
+   versions of the same locked test images — never a fresh, unpaired
+   claim against 0.6977. Full reasoning: `Project_Tracking.md`, "Lesion
+   Segmentation/Cropping — Reasoned Through" (2026-07-29).
+8E. Single Joint Three-Way Fusion (added 2026-07-31, **not yet
+   started — Step 4/Option B below must finish first**) — a genuine
+   single trainable model jointly fusing both top-2 Phase 8B backbones
+   (ConvNeXt-Tiny, DenseNet121) and metadata ("Option A"), directly
+   fulfilling the supervisor's literal Step 4 instruction ("build ONE
+   final fusion model... then train/val/test that single model"), as
+   distinct from Step 4's actual implementation ("Option B": two
+   independent per-backbone cross-attention models combined only via
+   prediction-time ensemble averaging — lower-risk, reuses the existing
+   Phase 7 Stage 2 mechanism unchanged). Framed as exploratory,
+   higher-risk/higher-reward — not a replacement for Option B's result.
+   `src/models/backbone_fusion_model.py` is a possible starting point
+   to revisit, but the actual three-way joint architecture (how
+   metadata interacts with two image modalities simultaneously) must be
+   proposed and justified before any code is written, not assumed.
+   Option A and Option B results will be presented together as a
+   comparison/ablation; whichever beats the locked 0.6977 test result
+   (with bootstrap significance) becomes the reported "improved"
+   result, otherwise both remain documented exploratory findings and
+   0.6977 stays the headline. Full scope and reasoning:
+   `Project_Tracking.md`, "Step 4 Scope Gap Found and Resolved — Option
+   B vs. Option A, Phase 8E Added" (2026-07-31).
 9. Thesis writing support.
 10. arXiv preprint → workshop/journal submission.
 

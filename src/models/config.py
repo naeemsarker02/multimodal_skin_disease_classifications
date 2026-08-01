@@ -77,12 +77,32 @@ KAGGLE_DATASET_SLUGS = {
     # own processed CSV already carries that from Phase 4's audit).
     # Mounted at /kaggle/input/datasets/andrewmvd/isic-2019/.
     "ISIC_Archive_2": ("andrewmvd", "isic-2019"),
+    # Phase 8C dataset expansion (2026-07-29) - unlike the above 4, no
+    # existing public Kaggle mirror was verified for these, since they
+    # were pulled directly from Harvard Dataverse / cs.rug.nl (see
+    # Project_Tracking.md, "Step 2 - PAD-UFES-20-Expanded Built"). Must
+    # be uploaded as your OWN private Kaggle dataset (zip
+    # data/raw/DERM12345/ as-is) before any PAD_UFES20_Expanded image
+    # branch training run on Kaggle - REPLACE_WITH_* is a deliberate
+    # placeholder (resolve_image_path() raises a clear RuntimeError
+    # rather than silently misresolving if this isn't set).
+    # Uploaded and published 2026-07-29
+    # (https://www.kaggle.com/datasets/naeemsarkertracer/derm12345-skin-lesion-images).
+    "DERM12345": ("naeemsarkertracer", "derm12345-skin-lesion-images"),
+    # Same as above - upload data/raw/MED-NODE/ (only the melanoma/
+    # subset is used, but the naevus/ folder can be included harmlessly
+    # since it's simply never referenced by any image_path). Uploaded and
+    # published 2026-07-29
+    # (https://www.kaggle.com/datasets/naeemsarkertracer/med-node-skin-lesion-images).
+    "MED-NODE": ("naeemsarkertracer", "med-node-skin-lesion-images"),
 }
 KAGGLE_DATASET_SUBPATH = {
     "PAD_UFES20": "",
     "HAM10000": "",
     "ISIC_Archive_1": "Skin cancer ISIC The International Skin Imaging Collaboration",
     "ISIC_Archive_2": "",
+    "DERM12345": "",
+    "MED-NODE": "",
 }
 
 # Per-dataset top-level rest-folder rename, Kaggle-only: our own local
@@ -126,6 +146,25 @@ KAGGLE_FILENAME_FALLBACK_SUFFIX = {
     "ISIC_Archive_2": "_downsampled",
 }
 
+# Per-dataset leading-segment strip, Kaggle-only: the opposite quirk class
+# from KAGGLE_REST_FOLDER_RENAME/the doubling check above (which both add
+# an extra folder level) - here a folder level our own image_path values
+# expect is simply ABSENT on this specific mount, because the uploader
+# zipped from inside that folder rather than including it. Distinct from
+# KAGGLE_DATASET_SUBPATH (which shifts the whole dataset root, applied
+# before rest_parts is even computed) - this strips a segment out of
+# rest_parts itself, dataset by dataset.
+KAGGLE_REST_STRIP_PREFIX = {
+    # naeemsarkertracer/med-node-skin-lesion-images - confirmed via Cell 1's
+    # raw folder-listing diagnostic 2026-07-30: melanoma/ and naevus/ sit
+    # directly at the mount root, with no complete_mednode_dataset/ folder
+    # at all. Our own image_path values (and local data/raw/MED-NODE/
+    # layout) still say ".../complete_mednode_dataset/melanoma/..." - only
+    # this specific Kaggle mount is missing the segment, so it's stripped
+    # here rather than in the CSV or locally.
+    "MED-NODE": "complete_mednode_dataset",
+}
+
 RAW_ROOT = PROJECT_ROOT / "data" / "raw"  # local only; unused on Kaggle
 
 
@@ -163,33 +202,69 @@ def resolve_image_path(image_path: str) -> Path:
     if rest_parts and rest_parts[0] in rename_map:
         rest_parts = (rename_map[rest_parts[0]],) + rest_parts[1:]
 
+    flat_candidate = dataset_root / Path(*rest_parts)
+
     # PAD-UFES-20's Kaggle mirror double-nests imgs_part_N/ folders:
     # verified via direct listing that imgs_part_1, imgs_part_2, and
     # imgs_part_3 are ALL doubled the same way (each contains a
-    # subfolder of the identical name). Still checked with .exists()
-    # per-call rather than hardcoded, so the fix keeps working even if a
-    # future dataset version changes the packaging for only some parts,
-    # and so it's a no-op (never matches) for datasets without
-    # imgs_part_N/ folders, e.g. HAM10000. Generalized to also cover a
-    # freshly-renamed folder (e.g. ISIC_2019_Training_Input/) rather than
-    # just the imgs_part_ prefix - nesting-depth was never independently
-    # confirmed for that renamed folder (only that it exists at the top
-    # level), so this checks rather than assumes a flat layout.
+    # subfolder of the identical name). Checked with .exists() per-call
+    # rather than hardcoded, so the fix keeps working even if a future
+    # dataset version changes the packaging for only some parts, and so
+    # it's a no-op (never matches) for datasets without this quirk, e.g.
+    # HAM10000. Generalized 2026-07-30 to try for ANY top_dir (not just
+    # imgs_part_*/renamed_targets) after hitting a FileNotFoundError for
+    # MED-NODE's complete_mednode_dataset/ folder that this narrower
+    # condition didn't catch - safe to widen because each candidate is an
+    # exact .exists() check, so there's no risk of a false match for
+    # datasets that don't actually have this quirk.
     candidates = []
     if rest_parts:
         top_dir = rest_parts[0]
-        renamed_targets = set(rename_map.values())
-        if top_dir.startswith("imgs_part_") or top_dir in renamed_targets:
-            candidates.append(dataset_root / top_dir / top_dir / Path(*rest_parts[1:]))
-    candidates.append(dataset_root / Path(*rest_parts))
+        candidates.append(dataset_root / top_dir / top_dir / Path(*rest_parts[1:]))
 
-    # For each candidate location (doubled first if applicable, then
-    # flat), try the plain filename, then this dataset's filename-suffix
-    # fallback (if any) at that same location - e.g. ISIC Archive 2's
-    # "_downsampled" quirk. Returns the first that actually exists;
-    # falls back to the primary (first) candidate, unresolved, if none
-    # do, so the caller's eventual FileNotFoundError still names a
-    # sensible expected path rather than a silently-wrong guess.
+    # Whole-dataset wrapping: the mount wraps everything in an extra
+    # "<dataset_dir>/" folder - same "wrapped vs flat" ambiguity
+    # _processed_dir()/KAGGLE_PROCESSED_WRAPPED already handle for the
+    # processed-metadata datasets (depends on whether the uploader zipped
+    # the folder itself or just its contents), not previously handled
+    # here for raw-image datasets. Added 2026-07-30 after a
+    # FileNotFoundError for a MED-NODE row whose expected flat path
+    # (dataset_root/complete_mednode_dataset/melanoma/...) matches our
+    # own local data/raw/MED-NODE/ layout exactly (verified - not a CSV
+    # bug), meaning the Kaggle-side mount must be nested differently.
+    # Checked via .exists() like every other candidate here - never
+    # assumed for MED-NODE or any other dataset.
+    candidates.append(dataset_root / dataset_dir / Path(*rest_parts))
+
+    candidates.append(flat_candidate)
+
+    # Missing-wrapping-folder quirk (KAGGLE_REST_STRIP_PREFIX): rest_parts
+    # still starts with a segment (e.g. "complete_mednode_dataset") that
+    # isn't present on this particular Kaggle mount at all - the opposite
+    # problem from the doubled/wrapped candidates above, which all ADD a
+    # folder level. Appended in addition to, not instead of, every
+    # candidate above, since this only fires when the configured prefix
+    # actually matches, and every candidate here is still checked via
+    # .exists() before being trusted - never assumed.
+    strip_prefix = KAGGLE_REST_STRIP_PREFIX.get(dataset_dir)
+    if strip_prefix and rest_parts and rest_parts[0] == strip_prefix:
+        stripped_parts = rest_parts[1:]
+        if stripped_parts:
+            stripped_top = stripped_parts[0]
+            candidates.append(
+                dataset_root / stripped_top / stripped_top / Path(*stripped_parts[1:])
+            )
+            candidates.append(dataset_root / dataset_dir / Path(*stripped_parts))
+            candidates.append(dataset_root / Path(*stripped_parts))
+
+    # For each candidate location (doubled, dataset-wrapped, flat, then any
+    # prefix-stripped variants), try the plain filename, then this
+    # dataset's filename-suffix fallback (if any) at that same location -
+    # e.g. ISIC Archive 2's
+    # "_downsampled" quirk. Returns the first that actually exists; falls
+    # back to the flat (un-doubled, un-wrapped) candidate, unresolved, if
+    # none do, so the caller's eventual FileNotFoundError still names the
+    # most legible expected path rather than a guessed nested one.
     filename_suffix = KAGGLE_FILENAME_FALLBACK_SUFFIX.get(dataset_dir)
     for candidate in candidates:
         if candidate.exists():
@@ -199,7 +274,7 @@ def resolve_image_path(image_path: str) -> Path:
             if suffixed.exists():
                 return suffixed
 
-    return candidates[0]
+    return flat_candidate
 
 
 # --- Our processed metadata (train/val/test CSVs, feature_whitelist.md) -
@@ -218,6 +293,11 @@ KAGGLE_PROCESSED_SLUGS = {
     # naeemsarkertracer/isic-archive2-processed - uploaded and published
     # 2026-07-27 (https://www.kaggle.com/datasets/naeemsarkertracer/isic-archive2-processed).
     "ISIC_Archive_2": ("naeemsarkertracer", "isic-archive2-processed"),
+    # Phase 8C (2026-07-29) - data/processed/PAD_UFES20_Expanded/ uploaded
+    # and published 2026-07-29 as its own private Kaggle dataset, same
+    # pattern as the 4 above
+    # (https://www.kaggle.com/datasets/naeemsarkertracer/pad-ufes20-expanded-processed).
+    "PAD_UFES20_Expanded": ("naeemsarkertracer", "pad-ufes20-expanded-processed"),
 }
 # Whether that Kaggle dataset was zipped from the dataset folder itself
 # (True -> mounted root wraps everything in an extra "<Dataset>/"
@@ -236,6 +316,9 @@ KAGGLE_PROCESSED_WRAPPED = {
     # Confirmed FLAT via folder-verification cell 2026-07-27 (metadata_train.csv
     # found directly at dataset root, not under an ISIC_Archive_2/ subfolder).
     "ISIC_Archive_2": False,
+    # Auto-detection handles this regardless (see _processed_dir below);
+    # this fallback value only matters before the dataset is uploaded/mounted.
+    "PAD_UFES20_Expanded": True,
 }
 
 
@@ -352,6 +435,18 @@ LEARNING_RATE_FUSION = 1e-5
 LEARNING_RATE_CROSS_ATTENTION = 1e-5
 WEIGHT_DECAY = 1e-4
 
+# --- Step 3a (Phase 8B/8C plan): class-imbalance ablation (a)/(b) -------
+# Classes targeted by the WeightedRandomSampler and class-targeted
+# augmentation ablations - PAD-UFES-20's two worst-supported classes
+# (Melanoma: 38 train images; Squamous Cell Carcinoma: 135). Both ablations
+# are tested in isolation on EfficientNet-B0 first (train.py --sampler /
+# --strong-augment flags) before being adopted or rejected for the
+# 5-backbone comparison and fusion runs - see docs/Project_Tracking.md,
+# "Phase 8B+8C — Master Plan Adopted" (2026-07-29), "isolate before
+# stacking" (train_cross_attention_improved.py's earlier
+# confounded-experiment lesson).
+STRONG_AUGMENT_TARGET_CLASSES = ["Melanoma", "Squamous Cell Carcinoma"]
+
 
 # --- Phase 8: reduced-feature schema for PAD-UFES-20 -> HAM10000 -------
 # cross-dataset generalization. HAM10000's own metadata whitelist has only
@@ -449,16 +544,26 @@ class DatasetConfig:
     """
 
     def __init__(self, name: str, class_names: list, numeric_features: list,
-                 categorical_features: list):
+                 categorical_features: list, train_csv_name: str = "metadata_train.csv",
+                 image_branch_only: bool = False):
         self.name = name
         self.class_names = class_names
         self.label_to_idx = {n: i for i, n in enumerate(class_names)}
         self.num_classes = len(class_names)
         self.numeric_features = numeric_features
         self.categorical_features = categorical_features
+        # Phase 8C (2026-07-29): True only for PAD_UFES20_Expanded. When
+        # True, train.py/evaluate.py must refuse any branch other than
+        # "image" - this dataset's train_csv (metadata_train_image_only.csv)
+        # includes DERM12345/MED-NODE rows with no compatible clinical
+        # metadata (all whitelist columns NaN), so metadata/fusion training
+        # would silently train on garbage rather than erroring, which is
+        # exactly the failure mode this flag exists to prevent. See
+        # Project_Tracking.md, "Step 2 Integration Plan" (2026-07-29).
+        self.image_branch_only = image_branch_only
 
         processed_dir = _processed_dir(name)
-        self.train_csv = processed_dir / "metadata_train.csv"
+        self.train_csv = processed_dir / train_csv_name
         self.val_csv = processed_dir / "metadata_val.csv"
         self.test_csv = processed_dir / "metadata_test.csv"
 
@@ -542,9 +647,31 @@ HAM10000 = DatasetConfig(
     categorical_features=["sex", "anatomical_site"],
 )
 
+# Phase 8C (2026-07-29) - PAD-UFES-20 + DERM12345 (Melanoma/SCC) +
+# MED-NODE (Melanoma) for the Phase 8B 5-backbone comparison's image
+# branch only. Same 6-class taxonomy and metadata feature lists as
+# PAD_UFES20 (unused by image-only training, kept identical only for
+# documentation consistency), same processed-dir resolution
+# (_processed_dir("PAD_UFES20_Expanded")), but train_csv_name points at
+# metadata_train_image_only.csv - not metadata_train.csv, which also
+# exists in this dataset's processed dir (byte-identical to PAD_UFES20's)
+# but is deliberately not what this DatasetConfig reads.
+# image_branch_only=True hard-blocks metadata/fusion training in
+# train.py/evaluate.py. val/test are untouched byte-for-byte copies of
+# PAD_UFES20's - see dataset_description.md.
+PAD_UFES20_EXPANDED = DatasetConfig(
+    name="PAD_UFES20_Expanded",
+    class_names=PAD_UFES20.class_names,
+    numeric_features=PAD_UFES20.numeric_features,
+    categorical_features=PAD_UFES20.categorical_features,
+    train_csv_name="metadata_train_image_only.csv",
+    image_branch_only=True,
+)
+
 DATASETS = {
     "PAD_UFES20": PAD_UFES20,
     "HAM10000": HAM10000,
+    "PAD_UFES20_Expanded": PAD_UFES20_EXPANDED,
 }
 
 
