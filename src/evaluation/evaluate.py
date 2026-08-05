@@ -42,6 +42,17 @@ effect. Validation-only by design: --split test is refused for this
 branch unconditionally (see Project_Tracking.md 'Pre-Registered
 Prediction'), independent of PAD_UFES20's test_split_guard.py marker
 (already twice-consumed regardless).
+
+cross_attention_joint (Phase 8E Option A, plan approved 2026-08-02,
+PAD_UFES20 only) evaluates CrossAttentionJointFusionModel - a single
+model jointly fusing BOTH Step 4 backbones (ConvNeXt-Tiny, DenseNet121)
+and metadata, unlike cross_attention_backbone_ensemble's late,
+prediction-time-only averaging of two independently-trained models.
+Validation-only by design, same pattern as
+cross_attention_efficientnet_expanded above: --split test is refused
+for this branch unconditionally until a separate, explicit decision is
+made per Project_Tracking.md's Phase 8E entry (gated on validation
+clearly and meaningfully exceeding 0.6710).
 """
 
 import argparse
@@ -58,6 +69,7 @@ from src.models.backbones import BACKBONE_NAMES, build_backbone
 from src.models.config import BATCH_SIZE, DATASETS, get_dataset
 from src.models.cross_attention_backbone_fusion_model import CrossAttentionBackboneFusionModel
 from src.models.cross_attention_fusion_model import CrossAttentionFusionModel
+from src.models.cross_attention_joint_fusion_model import CrossAttentionJointFusionModel
 from src.models.dataset import (
     FusionDataset,
     ImageDataset,
@@ -106,6 +118,10 @@ def load_model(branch: str, checkpoint_path, ds_config, device, preprocessor=Non
             checkpoint["backbone"], metadata_input_dim=preprocessor.output_dim,
             num_classes=ds_config.num_classes,
         )
+    elif branch == "cross_attention_joint":
+        model = CrossAttentionJointFusionModel(
+            metadata_input_dim=preprocessor.output_dim, num_classes=ds_config.num_classes,
+        )
     else:
         raise ValueError(f"Unknown branch: {branch}")
     model.load_state_dict(checkpoint["model_state_dict"])
@@ -122,6 +138,7 @@ def build_eval_dataset(branch: str, csv_path, ds_config, preprocessor=None):
     if branch in (
         "fusion", "cross_attention", "cross_attention_improved",
         "cross_attention_backbone", "cross_attention_efficientnet_expanded",
+        "cross_attention_joint",
     ):
         return FusionDataset(csv_path, ds_config, preprocessor, train=False)
     raise ValueError(f"Unknown branch: {branch}")
@@ -135,7 +152,7 @@ def evaluate(
     if branch in (
         "fusion", "cross_attention", "cross_attention_improved",
         "backbone_fusion", "cross_attention_backbone",
-        "cross_attention_efficientnet_expanded",
+        "cross_attention_efficientnet_expanded", "cross_attention_joint",
     ) and dataset_name != "PAD_UFES20":
         raise ValueError(
             "Fusion/cross-attention/backbone_fusion checkpoints only exist for "
@@ -161,6 +178,11 @@ def evaluate(
         checkpoint_path = (
             ds_config.checkpoints_dir / f"cross_attention_backbone_{backbone}_seed{seed}_best.pt"
         )
+    elif branch == "cross_attention_joint":
+        checkpoint_path = (
+            ds_config.checkpoints_dir
+            / f"cross_attention_joint_convnext_densenet_seed{seed}_best.pt"
+        )
     else:
         checkpoint_path = ds_config.checkpoints_dir / f"{branch}_seed{seed}_best.pt"
 
@@ -168,6 +190,7 @@ def evaluate(
     if branch in (
         "metadata", "fusion", "cross_attention", "cross_attention_improved",
         "cross_attention_backbone", "cross_attention_efficientnet_expanded",
+        "cross_attention_joint",
     ):
         preprocessor = MetadataPreprocessor(ds_config).fit(pd.read_csv(ds_config.train_csv))
 
@@ -182,7 +205,7 @@ def evaluate(
         for batch in loader:
             if branch in (
                 "fusion", "cross_attention", "cross_attention_backbone",
-                "cross_attention_efficientnet_expanded",
+                "cross_attention_efficientnet_expanded", "cross_attention_joint",
             ):
                 images, metadata, labels = batch
                 outputs = model(images.to(device), metadata.to(device))
@@ -405,7 +428,7 @@ def main():
             "image", "metadata", "fusion", "cross_attention",
             "cross_attention_improved", "backbone_fusion",
             "cross_attention_backbone", "cross_attention_backbone_ensemble",
-            "cross_attention_efficientnet_expanded",
+            "cross_attention_efficientnet_expanded", "cross_attention_joint",
         ],
         required=True,
     )
@@ -461,7 +484,7 @@ def main():
     if args.branch in (
         "fusion", "cross_attention", "cross_attention_improved", "backbone_fusion",
         "cross_attention_backbone", "cross_attention_backbone_ensemble",
-        "cross_attention_efficientnet_expanded",
+        "cross_attention_efficientnet_expanded", "cross_attention_joint",
     ) and args.dataset != "PAD_UFES20":
         raise SystemExit(
             f"--branch {args.branch} is only valid with --dataset PAD_UFES20 "
@@ -481,6 +504,15 @@ def main():
             "scoped to touch the test split at all, regardless of "
             "--confirm-final - PAD_UFES20's test split is also already "
             "twice-consumed and locked by test_split_guard.py."
+        )
+    if args.branch == "cross_attention_joint" and args.split == "test":
+        raise SystemExit(
+            "--branch cross_attention_joint is validation-only for now "
+            "(Phase 8E Option A, plan approved 2026-08-02 - see "
+            "Project_Tracking.md). A third test-split consumption is a "
+            "separate, explicitly-approved decision, gated on validation "
+            "clearly and meaningfully exceeding 0.6710 - not automatic, "
+            "regardless of --confirm-final."
         )
 
     if args.split == "test" and not args.confirm_final:
@@ -552,6 +584,8 @@ def main():
             reports_dir = ds_config.fusion_reports_dir.parent / "cross_attention_backbone"
         elif args.branch == "cross_attention_efficientnet_expanded":
             reports_dir = ds_config.fusion_reports_dir.parent / "cross_attention_efficientnet_expanded"
+        elif args.branch == "cross_attention_joint":
+            reports_dir = ds_config.fusion_reports_dir.parent / "cross_attention_joint"
         else:
             reports_dir = ds_config.baseline_reports_dir
 

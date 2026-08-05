@@ -1,15 +1,15 @@
-# PAD-UFES-20 Kaggle Notebook — Step 4 (Cross-Attention Backbone Fusion)
+# PAD-UFES-20 Kaggle Notebook — Phase 8E Option A (Cross-Attention Joint Three-Way Fusion)
 
 > **WARNING - read before pasting any cell into Kaggle:** for every `%%writefile` cell below, `%%writefile <path>` MUST be the exact first line of the Kaggle cell, with absolutely nothing above it - no blank line, no comment, no stray character. Kaggle (like Jupyter) only treats a line as a cell magic if it is the first line of the cell; anything preceding it turns `%%writefile` into a plain, non-magic line and the file silently never gets written. **After pasting each `%%writefile` cell, re-open it and visually confirm `%%writefile` is line 1 before running it.**
 
-Trains CrossAttentionBackboneFusionModel for the two Phase 8B top-2 backbones (ConvNeXt-Tiny, DenseNet121) x 3 seeds = 6 runs, all on PAD_UFES20 (never PAD_UFES20_Expanded - image_branch_only=True blocks metadata/fusion training there; see Project_Tracking.md's Step 2 Integration Plan). Warm-starts are deliberately cross-dataset: the image embedder loads a Step 3 (Phase 8B) PAD_UFES20_Expanded backbone checkpoint, the metadata embedder loads the existing Phase 7 Stage 1 PAD_UFES20 metadata checkpoint - see train_cross_attention_backbone_fusion.py's docstring for the full reasoning.
+Trains `CrossAttentionJointFusionModel` - a single model jointly fusing BOTH Phase 8B top-2 backbones (ConvNeXt-Tiny, DenseNet121) and metadata into one trainable graph, unlike Step 4 Option B's two independently-trained per-backbone models combined only at prediction time (`cross_attention_backbone_ensemble`) - x 3 seeds = 3 runs, all on PAD_UFES20 (never PAD_UFES20_Expanded - image_branch_only=True blocks metadata/fusion training there). Warm-starts reuse the SAME checkpoints Step 4 already used: both image embedders load Step 3's (Phase 8B) PAD_UFES20_Expanded backbone checkpoints (`image_convnext_tiny_seed{N}_best.pt`, `image_densenet121_seed{N}_best.pt`), the metadata embedder loads the existing Phase 7 Stage 1 PAD_UFES20 metadata checkpoint - see `train_cross_attention_joint_fusion.py`'s docstring and Project_Tracking.md's "Phase 8E (Option A) - Genuine Joint Three-Way Fusion" entry (predicted val macro-F1 range: 0.66-0.71, logged BEFORE this run) for the full reasoning. **Validation-only** by design: no test-split code path exists anywhere in this notebook, and `evaluate.py` additionally refuses `--split test` for `--branch cross_attention_joint` unconditionally - a third test-split consumption is a separate, explicitly-approved decision, gated on validation clearly and meaningfully exceeding Step 4's best single-backbone val result (0.6710), not automatic.
 
-Requires **four** Kaggle "Add Data" sources attached before running (one more than Phase 7 Stage 2's notebook):
+Requires the **same four** Kaggle "Add Data" sources Step 4 already used - no new upload needed:
 
 - `mahdavi1202/skin-cancer` (raw PAD-UFES-20 image mirror)
 - `naeemsarkertracer/pad-ufes20-processed` (our processed metadata CSVs)
 - `naeemsarkertracer/pad-ufes20-stage1-checkpoints` (Phase 7 Stage 1 checkpoints - only `metadata_seed{0,1,2}_best.pt` are used here, for the metadata embedder warm start)
-- `naeemsarkertracer/pad-ufes20-expanded-backbone-checkpoints` (a private dataset containing this machine's `logs/PAD_UFES20_Expanded/checkpoints/image_convnext_tiny_seed{0,1,2}_best.pt` and `image_densenet121_seed{0,1,2}_best.pt` - 6 files total, the Step 3/Phase 8B backbone checkpoints. Attach this as its own "Add Data" source before running this notebook; there is no other way for this Kaggle session to see them, since `/kaggle/working` from the backbone-comparison notebook that produced them was already wiped.)
+- `naeemsarkertracer/pad-ufes20-expanded-backbone-checkpoints` (the same private dataset Step 4 used, containing `image_convnext_tiny_seed{0,1,2}_best.pt` and `image_densenet121_seed{0,1,2}_best.pt` - 6 files total, both image embedders' warm start.)
 
 Paste each cell below into a separate Kaggle notebook cell, in order.
 
@@ -101,10 +101,11 @@ else:
             break
 
 assert resolved_expanded_dir is not None, (
-    "Step 3 PAD_UFES20_Expanded backbone checkpoints not found - image "
-    "embedder warm-start cannot proceed. Re-check the uploaded dataset's "
-    "contents/packaging, and that EXPANDED_BACKBONE_CHECKPOINTS_SLUG in "
-    "this notebook matches the real uploaded slug."
+    "Step 3 PAD_UFES20_Expanded backbone checkpoints not found - both "
+    "image embedders' warm-start cannot proceed. Re-check the uploaded "
+    "dataset's contents/packaging, and that "
+    "EXPANDED_BACKBONE_CHECKPOINTS_SLUG in this notebook matches the "
+    "real uploaded slug."
 )
 
 print("\nOK: raw images present, processed dataset wrapped as expected, "
@@ -131,7 +132,7 @@ sys.path.insert(0, "/kaggle/working")
 # PAD_UFES20/HAM10000's stage1_checkpoints_dir) - its checkpoints_dir is a
 # plain /kaggle/working/logs/PAD_UFES20_Expanded/checkpoints path, so the
 # 6 Step 3 backbone checkpoints must be copied there manually before
-# train_cross_attention_backbone_fusion.py's warm-start lookup can find them.
+# train_cross_attention_joint_fusion.py's warm-start lookup can find them.
 expanded_ckpt_dst = "/kaggle/working/logs/PAD_UFES20_Expanded/checkpoints"
 os.makedirs(expanded_ckpt_dst, exist_ok=True)
 for b in ("convnext_tiny", "densenet121"):
@@ -1597,30 +1598,26 @@ class SpatialBackboneEmbedder(nn.Module):
 
 ---
 
-## Cell 11 — `%%writefile /kaggle/working/src/models/cross_attention_backbone_fusion_model.py`
+## Cell 11 — `%%writefile /kaggle/working/src/models/cross_attention_joint_fusion_model.py`
 
 ```python
-%%writefile /kaggle/working/src/models/cross_attention_backbone_fusion_model.py
-"""Step 4 fusion model - cross-attention fusion (Phase 7 Stage 2's
-mechanism, not FusionModel/BackboneFusionModel's concatenation) between
-metadata and one of the two Phase 8B top-2 backbones (ConvNeXt-Tiny,
-DenseNet121), parameterized by backbone name.
+%%writefile /kaggle/working/src/models/cross_attention_joint_fusion_model.py
+"""Phase 8E (Option A) - genuine single joint three-way fusion: both
+Phase 8B top-2 backbones (ConvNeXt-Tiny, DenseNet121) AND metadata fused
+into one trainable model, unlike Step 4 (Option B)'s two independent
+per-backbone models combined only at prediction time via
+`evaluate_dual_backbone_ensemble`.
 
-Deliberately NOT built on backbone_fusion_model.py's BackboneFusionModel:
-that model concatenates raw embeddings before a shallow head - the same
-pattern cross_attention_fusion_model.py's docstring identifies as letting
-one branch numerically dominate (there, image:metadata was 1280:64).
-Extending it to a third concatenated metadata vector would reproduce that
-already-diagnosed flaw. This module instead reuses the validated
-cross-attention mechanism itself (metadata queries the image branch's
-spatial tokens via multi-head attention, both projected into a shared
-d_model first), applied per-backbone via SpatialBackboneEmbedder.
-
-Structurally identical to CrossAttentionFusionModel
-(cross_attention_fusion_model.py), which stays unchanged (hardcoded to
-EfficientNet-B0) for Phase 7 Stage 2 reproducibility. MetadataEmbedder
-and MetadataChannelGate are reused unmodified from there / from
-fusion_model.py.
+Reuses cross_attention_backbone_fusion_model.py's mechanism (metadata
+Query cross-attends over image Key/Value spatial tokens via
+nn.MultiheadAttention, both projected into a shared d_model first) - the
+only new step is running SpatialBackboneEmbedder for BOTH backbones,
+projecting each backbone's tokens into the shared d_model with its OWN
+kv_proj (768->d_model for ConvNeXt-Tiny, 1024->d_model for DenseNet121,
+since the two backbones' raw token dims differ and cannot be
+concatenated directly), and concatenating the two projected 49-token
+sequences into a single 98-token Key/Value sequence before the same
+attention module Step 4 already validated. No new attention variant.
 """
 
 import torch
@@ -1628,19 +1625,20 @@ import torch.nn as nn
 
 from src.models.cross_attention_fusion_model import MetadataChannelGate
 from src.models.fusion_model import MetadataEmbedder
-from src.models.spatial_backbone_embedder import SpatialBackboneEmbedder
+from src.models.spatial_backbone_embedder import SPATIAL_BACKBONE_NAMES, SpatialBackboneEmbedder
+
+JOINT_BACKBONE_NAMES = ("convnext_tiny", "densenet121")
 
 
-class CrossAttentionBackboneFusionModel(nn.Module):
-    """Metadata (Query) cross-attends over one Phase 8B backbone's 49
-    spatial image tokens (Key/Value), same mechanism as
-    CrossAttentionFusionModel, with the image side generalized to any
-    backbone in SPATIAL_BACKBONE_NAMES via SpatialBackboneEmbedder.
+class CrossAttentionJointFusionModel(nn.Module):
+    """Metadata (Query) cross-attends over the concatenation of
+    ConvNeXt-Tiny's and DenseNet121's 49 spatial image tokens each
+    (98 combined Key/Value tokens), each backbone's tokens projected into
+    the shared d_model by its own kv_proj before concatenation.
     """
 
     def __init__(
         self,
-        backbone_name: str,
         metadata_input_dim: int,
         num_classes: int,
         d_model: int = 256,
@@ -1649,19 +1647,28 @@ class CrossAttentionBackboneFusionModel(nn.Module):
         dropout: float = 0.3,
     ):
         super().__init__()
-        self.backbone_name = backbone_name
-        self.image_embedder = SpatialBackboneEmbedder(backbone_name, num_classes)
+        for name in JOINT_BACKBONE_NAMES:
+            if name not in SPATIAL_BACKBONE_NAMES:
+                raise ValueError(f"Unknown spatial backbone {name!r}")
+
+        self.image_embedder_a = SpatialBackboneEmbedder("convnext_tiny", num_classes)
+        self.image_embedder_b = SpatialBackboneEmbedder("densenet121", num_classes)
         self.metadata_embedder = MetadataEmbedder(metadata_input_dim, num_classes)
 
         self.use_channel_gate = use_channel_gate
         if use_channel_gate:
-            self.channel_gate = MetadataChannelGate(
+            self.channel_gate_a = MetadataChannelGate(
                 metadata_dim=self.metadata_embedder.embed_dim,
-                num_channels=self.image_embedder.embed_dim,
+                num_channels=self.image_embedder_a.embed_dim,
+            )
+            self.channel_gate_b = MetadataChannelGate(
+                metadata_dim=self.metadata_embedder.embed_dim,
+                num_channels=self.image_embedder_b.embed_dim,
             )
 
         self.query_proj = nn.Linear(self.metadata_embedder.embed_dim, d_model)
-        self.kv_proj = nn.Linear(self.image_embedder.embed_dim, d_model)
+        self.kv_proj_a = nn.Linear(self.image_embedder_a.embed_dim, d_model)
+        self.kv_proj_b = nn.Linear(self.image_embedder_b.embed_dim, d_model)
         self.attention = nn.MultiheadAttention(
             embed_dim=d_model, num_heads=num_heads, dropout=0.1, batch_first=True
         )
@@ -1676,26 +1683,35 @@ class CrossAttentionBackboneFusionModel(nn.Module):
         )
 
     def load_warm_start_checkpoints(
-        self, image_checkpoint_path, metadata_checkpoint_path, device: torch.device
+        self,
+        image_checkpoint_a_path,
+        image_checkpoint_b_path,
+        metadata_checkpoint_path,
+        device: torch.device,
     ) -> None:
-        # image_checkpoint_path: Step 3 (Phase 8B) PAD_UFES20_Expanded
-        # backbone checkpoint. metadata_checkpoint_path: Phase 7 Stage 1
-        # PAD_UFES20 metadata checkpoint. Deliberately not named
-        # "load_stage1_checkpoints" (CrossAttentionFusionModel's name for
-        # this method) - the image checkpoint here is a Step 3 artifact
-        # from a different dataset, not a Stage 1 one.
-        self.image_embedder.load_checkpoint(image_checkpoint_path, device)
+        # image_checkpoint_a_path: Step 3 (Phase 8B) PAD_UFES20_Expanded
+        # convnext_tiny checkpoint. image_checkpoint_b_path: same for
+        # densenet121. metadata_checkpoint_path: Phase 7 Stage 1
+        # PAD_UFES20 metadata checkpoint. Same warm-start pattern as
+        # Step 4, just applied to both backbones.
+        self.image_embedder_a.load_checkpoint(image_checkpoint_a_path, device)
+        self.image_embedder_b.load_checkpoint(image_checkpoint_b_path, device)
         self.metadata_embedder.load_stage1(metadata_checkpoint_path, device)
 
     def forward(self, image: torch.Tensor, metadata: torch.Tensor) -> torch.Tensor:
-        image_tokens = self.image_embedder(image)  # [B, 49, embed_dim]
+        tokens_a = self.image_embedder_a(image)  # [B, 49, 768]
+        tokens_b = self.image_embedder_b(image)  # [B, 49, 1024]
         metadata_embedding = self.metadata_embedder(metadata)  # [B, 64]
 
         if self.use_channel_gate:
-            image_tokens = self.channel_gate(image_tokens, metadata_embedding)
+            tokens_a = self.channel_gate_a(tokens_a, metadata_embedding)
+            tokens_b = self.channel_gate_b(tokens_b, metadata_embedding)
+
+        proj_a = self.kv_proj_a(tokens_a)  # [B, 49, d_model]
+        proj_b = self.kv_proj_b(tokens_b)  # [B, 49, d_model]
+        key_value = torch.cat([proj_a, proj_b], dim=1)  # [B, 98, d_model]
 
         query = self.query_proj(metadata_embedding).unsqueeze(1)  # [B, 1, d_model]
-        key_value = self.kv_proj(image_tokens)  # [B, 49, d_model]
         attended, _ = self.attention(query, key_value, key_value)  # [B, 1, d_model]
         attended = attended.squeeze(1)  # [B, d_model]
 
@@ -1995,45 +2011,42 @@ if __name__ == "__main__":
 
 ---
 
-## Cell 13 — `%%writefile /kaggle/working/src/models/train_cross_attention_backbone_fusion.py`
+## Cell 13 — `%%writefile /kaggle/working/src/models/train_cross_attention_joint_fusion.py`
 
 ```python
-%%writefile /kaggle/working/src/models/train_cross_attention_backbone_fusion.py
-"""Step 4 training entrypoint - cross-attention fusion between metadata
-and one of the two Phase 8B top-2 backbones (ConvNeXt-Tiny, DenseNet121).
+%%writefile /kaggle/working/src/models/train_cross_attention_joint_fusion.py
+"""Phase 8E (Option A) training entrypoint - genuine single joint
+three-way fusion of both Phase 8B top-2 backbones (ConvNeXt-Tiny,
+DenseNet121) and metadata into one trainable model.
 
 Usage:
-    python -m src.models.train_cross_attention_backbone_fusion \\
-        --backbone convnext_tiny --seed 0
-    python -m src.models.train_cross_attention_backbone_fusion \\
-        --backbone densenet121 --seed 0
+    python -m src.models.train_cross_attention_joint_fusion --seed 0
 
-Dataset is NOT a CLI choice, unlike train_backbone_fusion.py - it is
-always PAD_UFES20 (never PAD_UFES20_Expanded, which is
-image_branch_only=True and structurally has no usable metadata for its
-DERM12345/MED-NODE rows; see src/models/config.py's PAD_UFES20_EXPANDED
-and Project_Tracking.md's "Step 2 Integration Plan").
+Unlike Step 4 (Option B, train_cross_attention_backbone_fusion.py),
+there is no --backbone choice: both backbones are always fused jointly
+in a single model per seed. Dataset is always PAD_UFES20 (never
+PAD_UFES20_Expanded, same reasoning as Step 4 - see that module's
+docstring).
 
-Cross-dataset warm start, deliberately asymmetric:
-  - image embedder <- PAD_UFES20_Expanded's Step 3 (Phase 8B) backbone
-    checkpoint (logs/PAD_UFES20_Expanded/checkpoints/image_{backbone}_
-    seed{N}_best.pt) - the larger image-only training set's benefit is
-    already baked into these weights.
-  - metadata embedder <- PAD_UFES20's own Phase 7 Stage 1 metadata
-    checkpoint (ds_config.stage1_checkpoints_dir / metadata_seed{N}_
-    best.pt) - the only dataset with real, non-NaN clinical metadata.
-  - the train/val fine-tuning loop itself runs entirely on PAD_UFES20's
-    original metadata_train.csv/metadata_val.csv - expanded rows are
-    never seen here (they have no metadata to feed the metadata branch
-    or the cross-attention mechanism), so this step sees zero expanded
-    rows directly; their only influence is indirect, via the warm-started
-    image weights.
+Cross-dataset warm start, same asymmetric pattern as Step 4, applied to
+both backbones:
+  - image_embedder_a (convnext_tiny) <- PAD_UFES20_Expanded's Step 3
+    checkpoint (image_convnext_tiny_seed{N}_best.pt)
+  - image_embedder_b (densenet121) <- PAD_UFES20_Expanded's Step 3
+    checkpoint (image_densenet121_seed{N}_best.pt)
+  - metadata_embedder <- PAD_UFES20's own Phase 7 Stage 1 metadata
+    checkpoint (metadata_seed{N}_best.pt)
+  - the train/val fine-tuning loop runs entirely on PAD_UFES20's
+    original metadata_train.csv/metadata_val.csv, identical to Step 4.
 
 Same loss/metric/seed/split discipline as every prior stage:
 class-weighted CrossEntropyLoss, macro-F1 for model selection/early
 stopping, SEEDS = [0, 1, 2], identical train/val split files. The test
 split is never loaded here - only src/evaluation/evaluate.py reads it,
-later, with --confirm-final.
+later, with --confirm-final. Per Project_Tracking.md's Phase 8E
+pre-registered-prediction entry (2026-08-02), this round is val-only;
+a third test-split consumption is a separate, explicitly-approved
+decision, not automatic.
 """
 
 import argparse
@@ -2054,13 +2067,12 @@ from src.models.config import (
     WEIGHT_DECAY,
     get_dataset,
 )
-from src.models.cross_attention_backbone_fusion_model import CrossAttentionBackboneFusionModel
+from src.models.cross_attention_joint_fusion_model import CrossAttentionJointFusionModel
 from src.models.dataset import FusionDataset, MetadataPreprocessor
-from src.models.spatial_backbone_embedder import SPATIAL_BACKBONE_NAMES
 from src.models.train import _image_run_name, compute_class_weights, set_seed
 
 
-def run_epoch_cross_attention_backbone(model, loader, criterion, optimizer, device, train: bool):
+def run_epoch_cross_attention_joint(model, loader, criterion, optimizer, device, train: bool):
     model.train() if train else model.eval()
     total_loss = 0.0
     all_preds, all_labels = [], []
@@ -2085,7 +2097,7 @@ def run_epoch_cross_attention_backbone(model, loader, criterion, optimizer, devi
     return avg_loss, macro_f1
 
 
-def train_one_run(backbone: str, seed: int) -> None:
+def train_one_run(seed: int) -> None:
     set_seed(seed)
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     ds_config = get_dataset("PAD_UFES20")
@@ -2095,24 +2107,27 @@ def train_one_run(backbone: str, seed: int) -> None:
     train_ds = FusionDataset(ds_config.train_csv, ds_config, preprocessor, train=True)
     val_ds = FusionDataset(ds_config.val_csv, ds_config, preprocessor, train=False)
 
-    model = CrossAttentionBackboneFusionModel(
-        backbone_name=backbone,
+    model = CrossAttentionJointFusionModel(
         metadata_input_dim=preprocessor.output_dim,
         num_classes=ds_config.num_classes,
     ).to(device)
 
-    image_run_name = _image_run_name(seed, backbone, sampler="shuffle", strong_augment="none")
-    image_checkpoint = expanded_ds_config.checkpoints_dir / f"{image_run_name}_best.pt"
+    image_run_name_a = _image_run_name(seed, "convnext_tiny", sampler="shuffle", strong_augment="none")
+    image_run_name_b = _image_run_name(seed, "densenet121", sampler="shuffle", strong_augment="none")
+    image_checkpoint_a = expanded_ds_config.checkpoints_dir / f"{image_run_name_a}_best.pt"
+    image_checkpoint_b = expanded_ds_config.checkpoints_dir / f"{image_run_name_b}_best.pt"
     metadata_checkpoint = ds_config.stage1_checkpoints_dir / f"metadata_seed{seed}_best.pt"
-    for path in (image_checkpoint, metadata_checkpoint):
+    for path in (image_checkpoint_a, image_checkpoint_b, metadata_checkpoint):
         if not path.exists():
             raise FileNotFoundError(
-                f"Warm-start checkpoint not found: {path} - Step 4 requires "
-                f"both the Step 3 (Phase 8B) PAD_UFES20_Expanded backbone "
-                f"checkpoint and the Phase 7 Stage 1 PAD_UFES20 metadata "
-                f"checkpoint to exist first."
+                f"Warm-start checkpoint not found: {path} - Phase 8E requires "
+                f"both Step 3 (Phase 8B) PAD_UFES20_Expanded backbone "
+                f"checkpoints (convnext_tiny, densenet121) and the Phase 7 "
+                f"Stage 1 PAD_UFES20 metadata checkpoint to exist first."
             )
-    model.load_warm_start_checkpoints(image_checkpoint, metadata_checkpoint, device)
+    model.load_warm_start_checkpoints(
+        image_checkpoint_a, image_checkpoint_b, metadata_checkpoint, device
+    )
 
     train_loader = DataLoader(train_ds, batch_size=BATCH_SIZE, shuffle=True)
     val_loader = DataLoader(val_ds, batch_size=BATCH_SIZE, shuffle=False)
@@ -2127,7 +2142,7 @@ def train_one_run(backbone: str, seed: int) -> None:
 
     ds_config.checkpoints_dir.mkdir(parents=True, exist_ok=True)
     ds_config.logs_dir.mkdir(parents=True, exist_ok=True)
-    run_name = f"cross_attention_backbone_{backbone}_seed{seed}"
+    run_name = f"cross_attention_joint_convnext_densenet_seed{seed}"
     checkpoint_path = ds_config.checkpoints_dir / f"{run_name}_best.pt"
     metrics_csv_path = ds_config.logs_dir / f"train_{run_name}.csv"
 
@@ -2142,10 +2157,10 @@ def train_one_run(backbone: str, seed: int) -> None:
 
         for epoch in range(1, NUM_EPOCHS + 1):
             start = time.time()
-            train_loss, train_macro_f1 = run_epoch_cross_attention_backbone(
+            train_loss, train_macro_f1 = run_epoch_cross_attention_joint(
                 model, train_loader, criterion, optimizer, device, train=True
             )
-            val_loss, val_macro_f1 = run_epoch_cross_attention_backbone(
+            val_loss, val_macro_f1 = run_epoch_cross_attention_joint(
                 model, val_loader, criterion, optimizer, device, train=False
             )
             writer.writerow([epoch, train_loss, train_macro_f1, val_loss, val_macro_f1])
@@ -2165,8 +2180,8 @@ def train_one_run(backbone: str, seed: int) -> None:
                     {
                         "model_state_dict": model.state_dict(),
                         "dataset": "PAD_UFES20",
-                        "branch": "cross_attention_backbone",
-                        "backbone": backbone,
+                        "branch": "cross_attention_joint",
+                        "backbones": ["convnext_tiny", "densenet121"],
                         "seed": seed,
                         "epoch": epoch,
                         "val_macro_f1": val_macro_f1,
@@ -2183,12 +2198,13 @@ def train_one_run(backbone: str, seed: int) -> None:
 
     summary = {
         "dataset": "PAD_UFES20",
-        "branch": "cross_attention_backbone",
-        "backbone": backbone,
+        "branch": "cross_attention_joint",
+        "backbones": ["convnext_tiny", "densenet121"],
         "seed": seed,
         "best_val_macro_f1": best_val_macro_f1,
         "checkpoint_path": str(checkpoint_path),
-        "warm_start_image_checkpoint": str(image_checkpoint),
+        "warm_start_image_checkpoint_a": str(image_checkpoint_a),
+        "warm_start_image_checkpoint_b": str(image_checkpoint_b),
         "warm_start_metadata_checkpoint": str(metadata_checkpoint),
     }
     summary_path = ds_config.logs_dir / f"train_{run_name}_summary.json"
@@ -2202,12 +2218,11 @@ def train_one_run(backbone: str, seed: int) -> None:
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Step 4 cross-attention backbone fusion training (PAD_UFES20 only)"
+        description="Phase 8E cross-attention joint three-way fusion training (PAD_UFES20 only)"
     )
-    parser.add_argument("--backbone", choices=SPATIAL_BACKBONE_NAMES, required=True)
     parser.add_argument("--seed", type=int, required=True)
     args = parser.parse_args()
-    train_one_run(args.backbone, args.seed)
+    train_one_run(args.seed)
 
 
 if __name__ == "__main__":
@@ -2274,7 +2289,7 @@ print("\nSANITY CHECK PASSED")
 
 ---
 
-## Cell 15 — Full model/GPU/dependency check (cross-attention backbone model, warm-start, one real batch)
+## Cell 15 — Full model/GPU/dependency check (joint fusion model, both backbones warm-started, one real batch)
 
 ```python
 import torch, sys
@@ -2286,7 +2301,7 @@ if torch.cuda.is_available():
 
 from src.models.config import get_dataset
 from src.models.dataset import FusionDataset, MetadataPreprocessor
-from src.models.cross_attention_backbone_fusion_model import CrossAttentionBackboneFusionModel
+from src.models.cross_attention_joint_fusion_model import CrossAttentionJointFusionModel
 from src.models.train import _image_run_name
 import pandas as pd
 
@@ -2295,19 +2310,20 @@ expanded_ds_config = get_dataset("PAD_UFES20_Expanded")
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 preprocessor = MetadataPreprocessor(ds_config).fit(pd.read_csv(ds_config.train_csv))
-model = CrossAttentionBackboneFusionModel(
-    backbone_name="convnext_tiny",
+model = CrossAttentionJointFusionModel(
     metadata_input_dim=preprocessor.output_dim,
     num_classes=ds_config.num_classes,
 )
 
-image_run_name = _image_run_name(0, "convnext_tiny", sampler="shuffle", strong_augment="none")
-image_ckpt = expanded_ds_config.checkpoints_dir / f"{image_run_name}_best.pt"
+image_run_name_a = _image_run_name(0, "convnext_tiny", sampler="shuffle", strong_augment="none")
+image_run_name_b = _image_run_name(0, "densenet121", sampler="shuffle", strong_augment="none")
+image_ckpt_a = expanded_ds_config.checkpoints_dir / f"{image_run_name_a}_best.pt"
+image_ckpt_b = expanded_ds_config.checkpoints_dir / f"{image_run_name_b}_best.pt"
 metadata_ckpt = ds_config.stage1_checkpoints_dir / "metadata_seed0_best.pt"
-model.load_warm_start_checkpoints(image_ckpt, metadata_ckpt, device)
+model.load_warm_start_checkpoints(image_ckpt_a, image_ckpt_b, metadata_ckpt, device)
 model.to(device)
 model.eval()  # single-sample batch below - BatchNorm1d needs eval mode, not train mode, to run on batch size 1
-print("Step 3 backbone + Stage 1 metadata checkpoints (seed 0, convnext_tiny) loaded OK")
+print("Step 3 backbone (convnext_tiny+densenet121) + Stage 1 metadata checkpoints (seed 0) loaded OK")
 
 train_ds = FusionDataset(ds_config.train_csv, ds_config, preprocessor, train=True)
 image, metadata, label = train_ds[0]
@@ -2317,56 +2333,32 @@ assert metadata.shape == (preprocessor.output_dim,)
 with torch.no_grad():
     out = model(image.unsqueeze(0).to(device), metadata.unsqueeze(0).to(device))
 assert out.shape == (1, ds_config.num_classes)
-print("cross-attention backbone model forward pass OK, output shape:", out.shape)
+print("cross-attention joint fusion model forward pass OK, output shape:", out.shape)
 
 print("\nALL CHECKS PASSED - ready to train")
 ```
 
 ---
 
-## Cell 16 — Train: cross-attention backbone fusion, backbone=convnext_tiny, seed 0
+## Cell 16 — Train: cross-attention joint three-way fusion (ConvNeXt-Tiny + DenseNet121 + metadata), seed 0
 
 ```python
-!python -m src.models.train_cross_attention_backbone_fusion --backbone convnext_tiny --seed 0
+!python -m src.models.train_cross_attention_joint_fusion --seed 0
 ```
 
 ---
 
-## Cell 17 — Train: cross-attention backbone fusion, backbone=convnext_tiny, seed 1
+## Cell 17 — Train: cross-attention joint three-way fusion (ConvNeXt-Tiny + DenseNet121 + metadata), seed 1
 
 ```python
-!python -m src.models.train_cross_attention_backbone_fusion --backbone convnext_tiny --seed 1
+!python -m src.models.train_cross_attention_joint_fusion --seed 1
 ```
 
 ---
 
-## Cell 18 — Train: cross-attention backbone fusion, backbone=convnext_tiny, seed 2
+## Cell 18 — Train: cross-attention joint three-way fusion (ConvNeXt-Tiny + DenseNet121 + metadata), seed 2
 
 ```python
-!python -m src.models.train_cross_attention_backbone_fusion --backbone convnext_tiny --seed 2
-```
-
----
-
-## Cell 19 — Train: cross-attention backbone fusion, backbone=densenet121, seed 0
-
-```python
-!python -m src.models.train_cross_attention_backbone_fusion --backbone densenet121 --seed 0
-```
-
----
-
-## Cell 20 — Train: cross-attention backbone fusion, backbone=densenet121, seed 1
-
-```python
-!python -m src.models.train_cross_attention_backbone_fusion --backbone densenet121 --seed 1
-```
-
----
-
-## Cell 21 — Train: cross-attention backbone fusion, backbone=densenet121, seed 2
-
-```python
-!python -m src.models.train_cross_attention_backbone_fusion --backbone densenet121 --seed 2
+!python -m src.models.train_cross_attention_joint_fusion --seed 2
 ```
 

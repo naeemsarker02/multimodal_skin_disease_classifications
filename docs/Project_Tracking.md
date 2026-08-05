@@ -3671,3 +3671,212 @@ Actual result to be logged in a follow-up entry once the 3 Kaggle seed
 runs complete, compared explicitly against this range.
 
 ---
+
+## Phase 8E (Option A) — Genuine Joint Three-Way Fusion — Plan Approved, Prediction Logged (2026-08-02)
+
+**Scientific rationale (updated given new evidence):** the
+dataset-expansion-only ablation (see prior entry) confirmed
+architecture change is the dominant driver of Step 4's improvement
+(0.6186 dataset-alone vs. 0.6710 architecture-change). This makes
+Option A's real question: does JOINTLY fusing two good backbones (not
+late-ensembling two separately-trained models, which is what Step 4
+Option B's `cross_attention_backbone_ensemble` already did) capture
+complementary signal beyond Step 4's ensemble (0.7321 test)? This is a
+genuine hypothesis test, not a formality, per the "Step 4 Scope Gap
+Found and Resolved" decision (2026-07-31) that scoped Phase 8E
+separately from Option B.
+
+**Naming collision check (repeated per established safety drill):**
+verified by reading `spatial_backbone_embedder.py`,
+`cross_attention_backbone_fusion_model.py`,
+`train_cross_attention_backbone_fusion.py`, `src/evaluation/evaluate.py`,
+and directory listings of `logs/PAD_UFES20/checkpoints/`,
+`logs/PAD_UFES20/*.csv`, `reports/PAD_UFES20/**` directly (not assumed).
+New prefix chosen: **`cross_attention_joint_convnext_densenet_seed{N}`**
+- confirmed non-colliding with `cross_attention_seed{N}` (locked
+headline), `cross_attention_backbone_convnext_tiny_seed{N}` /
+`cross_attention_backbone_densenet121_seed{N}` (Step 4 Option B),
+`cross_attention_backbone_ensemble_convnext_tiny_densenet121_seed{N}`
+(Step 4 Option B ensemble, eval-only), and
+`cross_attention_efficientnet_expanded_seed{N}` (dataset-effect
+ablation). New files: `cross_attention_joint_fusion_model.py`,
+`train_cross_attention_joint_fusion.py`,
+`cross_attention_joint_convnext_densenet_seed{0,1,2}_best.pt`, plus a
+new `--branch cross_attention_joint` case in `src/evaluation/evaluate.py`.
+
+**Design (dimension-mismatch explicitly solved):** ConvNeXt-Tiny's
+spatial tokens are `[B,49,768]`, DenseNet121's are `[B,49,1024]` -
+verified from `spatial_backbone_embedder.py`, both reused unchanged.
+Each backbone's tokens are projected by its own `kv_proj` Linear
+(768->256 and 1024->256 respectively, `d_model=256`) into the *shared*
+space **before** concatenation along the token axis, producing a
+combined 98-token (49+49) Key/Value sequence; metadata's `query_proj`
+(64->256) supplies the single Query token. This feeds the same
+`nn.MultiheadAttention` module and downstream head structure already
+validated in `CrossAttentionBackboneFusionModel` (Step 4) - the only
+new mechanism is the per-backbone projection + token-concatenation
+step, no new attention variant.
+
+**Reuse:** `SpatialImageEmbedder`/`SpatialBackboneEmbedder` and
+`MetadataEmbedder` reused unchanged. Warm-start: image embedders from
+Step 3's `image_convnext_tiny_seed{N}_best.pt` /
+`image_densenet121_seed{N}_best.pt`
+(`logs/PAD_UFES20_Expanded/checkpoints/`), metadata embedder from
+PAD-UFES-20's own Phase 7 Stage 1 `metadata_seed{N}_best.pt` - identical
+warm-start pattern to Step 4.
+
+**Test-split discipline (explicit, before training):** this round
+evaluates on **validation only**. The locked test split has already
+been consumed twice (Stage 1 final result; Step 4 Option B's sanctioned
+second read). A third consumption is **not automatic** - it will only
+be considered as a separate, explicitly-approved decision if validation
+clearly and meaningfully exceeds Step 4's best single-backbone val
+result (0.6710, ConvNeXt-Tiny), not a marginal beat.
+
+**Prediction, logged before seeing any result from this run:**
+
+- **Expected val macro-F1 range: 0.66-0.71.**
+- **Reasoning:** Step 4's ensemble (0.7321 test) gains from decorrelated
+  errors between two *independently*-trained models, softmax-averaged
+  at prediction time. A joint model instead compresses both backbones'
+  signal through one shared 256-dim attention bottleneck and one
+  Query - in principle it can learn backbone-specific weighting a fixed
+  average can't, but joint training typically captures less
+  complementary diversity than late averaging of independently-optimized
+  models. Genuinely uncertain whether this clears the single-backbone
+  0.6710 val bar at all, let alone Step 4's ensemble - this is a real
+  experiment, not a foregone conclusion.
+
+**Status:** plan and prediction approved 2026-08-02, before any code is
+written. Next: implement `cross_attention_joint_fusion_model.py` and
+`train_cross_attention_joint_fusion.py`, then a local smoke test (real
+small subset, verify shapes/warm-start/forward-pass) before generating
+the Kaggle notebook.
+
+**Implementation + local smoke test (2026-08-02):**
+`cross_attention_joint_fusion_model.py`, `train_cross_attention_joint_fusion.py`,
+and evaluate.py's new `--branch cross_attention_joint` case (val-only,
+refuses `--split test` unconditionally) written per the approved design
+above. End-to-end smoke test (not just unit-level, per this project's
+established drill) run on CPU against real data: a real `FusionDataset`
+batch pulled from PAD-UFES-20's actual `train_csv` via `DataLoader`
+(`images=(8,3,224,224)`, `metadata=(8,89)`, `labels=(8,)`); all three
+seed-0 warm-start checkpoints (`image_convnext_tiny_seed0_best.pt`,
+`image_densenet121_seed0_best.pt` from `PAD_UFES20_Expanded`,
+`metadata_seed0_best.pt` from PAD-UFES-20's own Stage 1) confirmed to
+exist and load without error; forward pass produced the expected
+`(8, 6)` output shape; a real `loss.backward()` confirmed non-zero
+gradient norms reached `kv_proj_a`, `kv_proj_b`, `query_proj`, and the
+final head layer specifically (not just that `.backward()` didn't
+throw) - confirms both backbones' projections and the metadata query
+path are actually wired into the trainable graph. `optimizer.step()`
+completed without error. Smoke test script was scratch-only, not
+committed. Next: generate the Kaggle notebook and run the 3 seeds.
+
+---
+
+## Phase 8E (Option A) — Joint Fusion Val Results — Condition for Test Read Not Met (2026-08-03)
+
+**Result (Kaggle run, 3 seeds, `cross_attention_joint_convnext_densenet_seed{0,1,2}`,
+val split only):**
+
+| seed | best val macro-F1 |
+|---|---|
+| 0 | 0.6575 |
+| 1 | 0.6927 |
+| 2 | 0.6660 |
+| **mean** | **0.6721** |
+
+Falls inside the pre-registered prediction range (0.66-0.71, logged
+2026-08-02).
+
+**Checked against the pre-registered test-split-read condition** (from
+the same 2026-08-02 entry: "a third consumption is not automatic - it
+will only be considered ... if validation clearly and meaningfully
+exceeds Step 4's best single-backbone val result (0.6710,
+ConvNeXt-Tiny), not a marginal beat"): the joint model's mean
+(0.6721) exceeds 0.6710 by only **+0.0011** - not a clear or
+meaningful margin - and remains **below** Step 4's dual-backbone
+ensemble val mean (0.6856). Seed 1 alone (0.6927) does clearly clear
+0.6710, but the plan's comparison point is the 3-seed mean, not a
+single favorable seed.
+
+**Decision (2026-08-03):** the pre-registered condition for a third
+test-split read is **not met**. No test-split evaluation is performed
+for Phase 8E. The locked headline (original cross-attention,
+EfficientNet-B0, test 0.6977) and Step 4 Option B's ensemble (test
+0.7321, not statistically significant vs. the headline) remain the
+project's reportable results; Option A is documented as a completed,
+val-only exploratory result that did not clear its own pre-registered
+bar for further evaluation.
+
+**Interpretation:** consistent with the 2026-08-02 working hypothesis -
+joint training through a single shared attention bottleneck captures
+less complementary signal than late softmax-averaging of two
+independently-trained backbones (Step 4's ensemble). Phase 8E is
+complete; no further training or evaluation planned for this variant
+unless a future decision explicitly reopens it.
+
+---
+
+## Limitation, Honestly Documented — Val-to-Test Gap Pattern and the Un-Chased Marginal Miss (2026-08-03)
+
+**Observation (not a mistake, not a reason to reopen the test split):**
+every variant in this project that has gone through both a val and a
+locked test-split evaluation has scored **higher on test than on val**:
+
+| variant | val | test | gap |
+|---|---|---|---|
+| Cross-attention (headline, §3.4) | 0.6209 | 0.6977 | **+0.0768** |
+| Step 4 dual-backbone ensemble | 0.6856 | 0.7321 | **+0.0465** |
+
+Phase 8E's joint-fusion val mean (0.6721) missed the pre-registered
+0.6710 decision-rule bar by only **+0.0011**. Under the pattern above,
+if Phase 8E were carried through to a test-split evaluation, its test
+score would plausibly also land higher than its val score - possibly
+enough to beat the 0.6977 headline.
+
+**We are explicitly NOT reopening the test split for this.** Deciding
+to re-test specifically because of a post-hoc "it might score higher"
+observation would defeat the entire purpose of the pre-registered
+0.6710 bar (set 2026-08-02, before any Phase 8E result existed) -
+which exists precisely to prevent rationalized re-testing driven by a
+result that came in close but didn't clear the bar. Acting on this
+observation now would be exactly the kind of decision the
+pre-registration was designed to rule out, regardless of how
+plausible the reasoning sounds in isolation.
+
+**Documented honestly as a limitation/future-work point, not chased
+this thesis cycle:** a disciplined choice to preserve test-set
+integrity, at the possible cost of a marginal improvement we chose not
+to chase. A legitimate future-work path (not a re-read of this
+project's already-twice-consumed PAD-UFES-20 test split) would be a
+fresh, independently held-out evaluation set, pre-registered before
+looking at it, specifically to test whether Phase 8E's val-test gap
+follows the same pattern observed here.
+
+**Caveat on the pattern itself:** n=2 prior val/test pairs is a small
+basis for a "pattern" - both existing gaps are consistent in direction
+and roughly similar in magnitude (+0.077, +0.047), but this is
+observational, not a statistically established property of this
+project's split/training pipeline. Framed as an honest observation
+worth disclosing, not a proven effect.
+
+---
+
+## Phase 8E — Local Verification of the 3 Summary JSONs (2026-08-03)
+
+User placed the 3 `cross_attention_joint` summary JSONs at
+`logs/PAD_UFES20/`. Confirmed present and read directly:
+`train_cross_attention_joint_convnext_densenet_seed{0,1,2}_summary.json`
+- `best_val_macro_f1` = 0.657466 (seed0) / 0.692674 (seed1) / 0.665969
+(seed2), mean **0.672036** (rounds to 0.6721) - matches the previously
+reported numbers exactly, same verification standard used for the
+dataset-expansion ablation's 0.6186 (§3.7 of
+`THESIS_OWNERSHIP_MASTER.md`). `THESIS_OWNERSHIP_MASTER.md` updated to
+remove the "not yet locally verified" caveat on Phase 8E throughout
+(intro, §3.8, §8.5). No change to the decision outcome - the mean
+still misses the 0.6710 bar's "clear and meaningful" threshold by only
++0.0011, so the test split remains unread for this variant.
+
+---

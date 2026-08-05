@@ -450,5 +450,5 @@ error ছাড়া তৈরি হয়েছে কিনা দেখো�
 এই document-টা তোমার existing ফাইলগুলো (2026-07-09 পর্যন্ত পড়া অবস্থা)
 ভিত্তি করে বানানো। যদি এরপর কোনো নতুন কাজ (যেমন Kaggle training result,
 sparse-field check-এর বাকি ৩টা column) হয়ে থাকে, সেগুলো এখানে নাই —
-Claude Code-কে জিজ্ঞেস করে `Project_Tracking.md`-এর সবচেয়ে উপরের
-"Session Handoff" অংশ পড়ে latest status নিশ্চিত করে নাও।
+`Project_Tracking.md`-এর সবচেয়ে উপরের "Session Handoff" অংশ পড়ে latest
+status নিশ্চিত করে নাও।
