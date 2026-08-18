@@ -3880,3 +3880,21 @@ still misses the 0.6710 bar's "clear and meaningful" threshold by only
 +0.0011, so the test split remains unread for this variant.
 
 ---
+
+## TODO (2026-08-14): `Literature_Review_Master.xlsx` out of sync with `Literature_Review.md`
+
+During the paper-writing QA pass on `docs/main.tex`, row #20 (Shrestha
+& Palit, 2026, DOI 10.1088/2057-1976/ae4eeb) was added to the
+reconciled table in `docs/Literature_Review.md` (table header updated
+from "19 papers" to "20 papers"). **`docs/Literature_Review_Master.xlsx`
+was NOT updated** - no tool access to edit the spreadsheet directly in
+this session. The `.md` and `.xlsx` are now out of sync (`.md` has 20
+rows, `.xlsx` still has 19).
+
+**Action needed:** user to manually mirror row #20 into
+`Literature_Review_Master.xlsx` - copy the row-#20 content verbatim
+from `Literature_Review.md`'s reconciled table (title, authors,
+journal, DOI, dataset, methodology summary, reported metric,
+limitation, relevance-to-thesis columns already filled in there).
+
+---

@@ -35,7 +35,7 @@
 | `docs/PROJECT_OWNERSHIP.md` | Earlier-scoped ownership doc, Phase 1–5 only (superseded in scope by this document, not deleted — historical record). |
 | `docs/Phase8_*.md`, `docs/Phase8B_*.md` | Standalone results write-ups per Phase 8 sub-experiment (cross-dataset generalization, fairness, ISIC external validation, backbone comparison). |
 | `docs/Dataset_Strategy.md`, `docs/Dataset_Preparation_Final_Report.md` | Earlier dataset-scoped reports, kept as historical record. |
-| `docs/Literature_Review.md` (+ `.xlsx`) | 19-paper literature review log. |
+| `docs/Literature_Review.md` (+ `.xlsx`) | 20-paper literature review log (row #20, Shrestha & Palit, added 2026-08-14 — `.xlsx` not yet updated to match, see §9.3). |
 | `_archive/` | `MASTER_PROJECT_DOCUMENT.md` (superseded, flagged in-file), `Project_Cleanup_Review.md`, `Research_Plan.md`, plus new `pre_final_cleanup/` (this session's cleanup — see `MOVED_ITEMS.md`). |
 | `papers/1.pdf,2.pdf,3.pdf` | Reference papers, non-descriptive filenames (flagged, not renamed this pass). |
 
@@ -228,7 +228,7 @@ Baseline (non-expanded, EfficientNet-B0): 0.5703±0.0130 — all 5 expanded-data
 
 ## 6. Current Final Status
 
-- **LOCKED, final, thesis headline as of 2026-08-03**: Cross-Attention Fusion (§3.4), PAD-UFES-20 test macro-F1 **0.6977 ± 0.0269** (mean of seeds 0.6862/0.6721/0.7349). This is final and will only change if Phase 8E's result clears the pre-committed bar below.
+- **LOCKED, final, thesis headline as of 2026-08-03**: Cross-Attention Fusion (§3.4), PAD-UFES-20 test macro-F1 **0.6977 ± 0.0269** (mean of seeds 0.6862/0.6721/0.7349). This is final and will only change if Phase 8E's result clears the pre-committed bar below. **Note: the same 3-seed test predictions also give mean accuracy 0.763 ± ~0.024 (seeds 0.7712/0.7345/0.7825) — accuracy and macro-F1 are both legitimate, both computed on the exact same predictions, but are not interchangeable (macro-F1 is unweighted across the 6 imbalanced classes, accuracy is dominated by the majority classes BCC/AK); macro-F1 (0.6977) is the reported headline metric per this project's metrics discipline, accuracy is reference-only.**
 - **Complete, documented, exploratory (not headline)**: Step 4 Option B backbone-fusion ensemble, test 0.7321, +0.0343 over headline, **not statistically significant** (p=0.062, 95% CI crosses zero by 0.002). Stands as a positive finding to present alongside the headline, not a replacement for it.
 - **COMPLETE, val-only, did not clear its own bar**: Phase 8E (Option A, genuine joint three-way fusion, §3.8) — val macro-F1 mean 0.6721 (seeds 0.6575/0.6927/0.6660), exceeds the pre-registered 0.6710 bar by only +0.0011, not the "clear and meaningful" margin required. **No third test-split read performed.** Reported as a val-only exploratory result, not a headline candidate.
 - **VERIFIED 2026-08-03**: the dataset-expansion-only ablation's 0.6186 figure (§3.7) — confirmed against local summary JSONs, mean of seeds 0.6210/0.6023/0.6324.
@@ -309,6 +309,13 @@ val-only, metadata-only numbers without this caveat stated explicitly.
 (2411.08701) as given — full title/author citation not independently
 looked up in this pass; confirm exact citation details before final
 submission.
+
+**Class-count claim, verified (2026-08-13):** TRACE's evaluation on
+PAD-UFES-20 uses the dataset's native 6-class taxonomy (same 6 classes
+this thesis uses), confirmed by direct inspection of Table II in the
+TRACE paper (arXiv:2411.08701). Previously flagged as an unverified
+"6 classes" claim not documented in tracked notes — now sourced and no
+longer flagged.
 
 ### Cross-dataset transfer (val/test as noted)
 - PAD→HAM (3 shared classes): image 0.4658, metadata 0.2920, late-fusion 0.4597, cross-attention 0.4654 — statistically indistinguishable except metadata (significantly worse, p<0.001).
@@ -398,4 +405,60 @@ Adam, weight_decay=1e-4, class-weighted CE (inverse train-split frequency), batc
 
 ---
 
+## 9. Paper-Writing Session Addendum (2026-08-13)
+
+Cross-check performed 2026-08-14 against `docs/Phase8_ConfusionMatrix.csv` and `docs/Literature_Review.md` directly (not transcribed from the paper-writing session summary without verification). One number from that session did not reproduce and is corrected below rather than recorded as-is.
+
+### 9.1 Confusion matrix (headline cross_attention_fusion, PAD-UFES-20 test, `SUMMED_3_SEEDS_n1062` row)
+
+Full 6×6 matrix, rows = true label, columns = predicted (AK/BCC/MEL/NEV/SEK/SCC):
+
+| True \ Pred | AK | BCC | MEL | NEV | SEK | SCC | Row total |
+|---|---|---|---|---|---|---|---|
+| AK | 268 | 22 | 0 | 0 | 17 | 20 | 327 |
+| BCC | 30 | 328 | 0 | 4 | 3 | 34 | 399 |
+| MEL | 0 | 0 | 16 | 8 | 0 | 0 | 24 |
+| NEV | 1 | 8 | 1 | 87 | 8 | 0 | 105 |
+| SEK | 3 | 4 | 2 | 12 | 89 | 1 | 111 |
+| SCC | 15 | 51 | 1 | 0 | 7 | 22 | 96 |
+
+Total misclassifications (all off-diagonal cells, summed over 3 seeds, n=1,062 test-set reads): **252**.
+
+**AK/BCC/SCC error-cluster finding — verified, with one correction.** Confusions strictly among {AK, BCC, SCC} (off-diagonal cells where both true and predicted label are in this set): AK→BCC 22, AK→SCC 20, BCC→AK 30, BCC→SCC 34, SCC→AK 15, SCC→BCC 51 = **172 of 252 misclassifications (68.3%)**, not the 187/252 (74%) figure from the paper-writing session summary — that number did not reproduce from the CSV under any grouping I tried (cluster-only, true-in-cluster-only, or union-with-predicted-in-cluster all gave different totals, none landing on 187). Use **172/252 = 68.3%** going forward; if 187/74% is the number actually printed in the submitted paper, that discrepancy needs resolving before further citation.
+**SCC→BCC = 51 is confirmed** as the single largest off-diagonal confusion in the entire matrix (next-largest: BCC→SCC 34, BCC→AK 30).
+
+### 9.2 Test-set per-class distribution (derived: row totals ÷ 3 seeds)
+
+| Class | Row total (3 seeds) | ÷3 |
+|---|---|---|
+| AK | 327 | 109 |
+| BCC | 399 | 133 |
+| MEL | 24 | 8 |
+| NEV | 105 | 35 |
+| SEK | 111 | 37 |
+| SCC | 96 | 32 |
+| **Sum** | **1,062** | **354** |
+
+Matches §2.1's known PAD-UFES-20 test split count of 354 rows exactly. All six per-class figures confirmed against the user's summary (AK 109, BCC 133, MEL 8, NEV 35, SEK 37, SCC 32).
+
+### 9.3 Shrestha & Palit (2026) citation — RESOLVED 2026-08-14
+
+Added as row #20 in `docs/Literature_Review.md`'s reconciled table (title/authors/journal/DOI verified via direct publisher lookup: *Biomedical Physics & Engineering Express*, vol. 12, no. 2, art. 025043, DOI 10.1088/2057-1976/ae4eeb). Table header updated from "19 papers" to "20 papers". **`docs/Literature_Review_Master.xlsx` was NOT updated** — no tool access to edit the spreadsheet in this session; the `.md` and `.xlsx` are now out of sync until someone manually mirrors row #20 into the Excel file. Flag this the next time the `.xlsx` is opened.
+
+### 9.4 Final IEEE paper — structural choices (for consistency in future edits)
+
+Recorded from the paper-writing session; **not independently verifiable from this repo** since no paper source file (`.tex` or otherwise) was found locally (§9.5). Treat as the user's own report of the submitted structure until a source file can be checked against it:
+- **Related Work** split into four subsections: ML-Based, DL-Based, Fusion-Mechanisms, Fairness.
+- **Discussion** contains an explicit **Limitations** subsection.
+- A standalone **Reproducibility Statement** section.
+- **Acknowledgment** deliberately scoped to dataset credit only — no AI-tool-usage disclosure included (a conscious choice, not an omission).
+
+### 9.5 Final paper file location — NOT FOUND, unresolved
+
+Searched the full repo (`**/*.tex`, `**/main_FINAL*.tex`) and a broader disk search for `main_FINAL*`/`*final*` — **no paper source file exists locally**. Asked the user directly (2026-08-14): confirmed the final paper file is **not saved on this machine** (written/held elsewhere — e.g. Overleaf — or not yet saved locally). §1's file map is **not** updated with a row for it; this stays an open item until the user provides an actual local path, at which point add it to §1 as `papers/` or wherever it lands.
+
+---
+
 *This document supersedes nothing — `Project_AZ_Reference.md` and `Project_Tracking.md` remain the underlying source of truth and should be consulted directly for anything not covered here or flagged as unverified above.*
+
+
