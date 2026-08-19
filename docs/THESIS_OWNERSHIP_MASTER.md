@@ -413,7 +413,7 @@ Cross-check performed 2026-08-14 against `docs/Phase8_ConfusionMatrix.csv` and `
 
 Full 6×6 matrix, rows = true label, columns = predicted (AK/BCC/MEL/NEV/SEK/SCC):
 
-| True \ Pred | AK | BCC | MEL | NEV | SEK | SCC | Row total |
+| True | Pred | AK | BCC | MEL | NEV | SEK | SCC | Row total |
 |---|---|---|---|---|---|---|---|
 | AK | 268 | 22 | 0 | 0 | 17 | 20 | 327 |
 | BCC | 30 | 328 | 0 | 4 | 3 | 34 | 399 |
