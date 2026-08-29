@@ -8,6 +8,11 @@
 \definecolor{diagcolor}{RGB}{29,158,117}
 \definecolor{offdiagcolor}{RGB}{216,90,48}
 \pagestyle{plain}
+\setlength{\textfloatsep}{4pt plus 2pt minus 2pt}
+\setlength{\intextsep}{4pt plus 2pt minus 2pt}
+\setlength{\floatsep}{4pt plus 2pt minus 2pt}
+\setlength{\abovecaptionskip}{3pt}
+\setlength{\belowcaptionskip}{0pt}
 
 \begin{document}
 
@@ -102,7 +107,7 @@ Figure \ref{fig:overview} presents an overview of our dataset preparation pipeli
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.85\columnwidth]{workflow_overview.pdf}
+\includegraphics[width=0.78\columnwidth]{workflow_overview.png}
 \caption{Dataset preparation pipeline: data sourcing, quality audit, statistical leakage audit, patient-wise splitting, real-data class-imbalance correction, and the resulting processed dataset.}
 \label{fig:overview}
 \end{figure}
@@ -133,7 +138,7 @@ To address severe class imbalance in the two rarest PAD-UFES-20 categories, we i
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.85\columnwidth]{class_imbalance_correction.png}
+\includegraphics[width=0.78\columnwidth]{class_imbalance_correction.png}
 \caption{Targeted, real-data class-imbalance correction for the two rarest PAD-UFES-20 classes, used only in later ablation experiments.}
 \label{fig:imbalance}
 \end{figure}
@@ -149,7 +154,7 @@ Figure \ref{fig:arch} details our proposed hierarchical architecture as a nine-s
 
 \begin{figure}[t]
 \centering
-\includegraphics[width=0.85\columnwidth]{Architecture_Diagram.pdf}
+\includegraphics[width=0.78\columnwidth]{architecture_diagram_cropped.png}
 \caption{Proposed hierarchical cross-attention fusion architecture. Image tokens pass through a metadata-conditioned channel gate before image and metadata paths are projected into a shared 256-dimensional space, fused via an 8-head cross-attention block (Q=metadata, K=V=gated image tokens), and classified through a joint head.}
 \label{fig:arch}
 \end{figure}
@@ -311,6 +316,7 @@ All datasets used are publicly available under their respective original license
 \section*{Acknowledgment}
 The authors thank the creators of PAD-UFES-20, HAM10000, and the ISIC Archive for making their datasets publicly available, enabling this study's cross-dataset and external validation experiments.
 
+\vspace{-4pt}
 \footnotesize
 \begin{thebibliography}{00}
 \bibitem{pacheco2020} A. G. C. Pacheco et al., ``PAD-UFES-20: A skin lesion dataset composed of patient data and clinical images collected from smartphones,'' \emph{Data in Brief}, vol. 32, 2020.
@@ -323,5 +329,4 @@ The authors thank the creators of PAD-UFES-20, HAM10000, and the ISIC Archive fo
 \bibitem{alipour2024} N. Alipour et al., ``Diversity in skin lesion datasets: A review,'' \emph{Current Dermatology Reports}, 2024.
 \end{thebibliography}
 
-\vspace{-0pt}
 \end{document}

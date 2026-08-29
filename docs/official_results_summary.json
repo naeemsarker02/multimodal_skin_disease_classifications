@@ -1,0 +1,71 @@
+{
+  "dataset": "PAD-UFES-20",
+  "split": "test (official, locked, single sanctioned use per TEST_SPLIT_CONSUMED.json)",
+  "n_test_rows": 354,
+  "metric": "macro-F1, 6-class",
+  "seeds": [0, 1, 2],
+  "sources": {
+    "val_macro_f1": "logs/PAD_UFES20/train_{image,metadata,fusion,cross_attention}_seed{0,1,2}_summary.json -> best_val_macro_f1",
+    "test_macro_f1": "recomputed directly (sklearn f1_score, average='macro') from reports/PAD_UFES20/fairness/predictions_{model}_seed{seed}_test.csv (true_label_idx vs pred_label_idx); means verified to exactly match reports/PAD_UFES20/fairness/bootstrap_significance_primary.json's observed_macro_f1_mean_across_seeds",
+    "significance": "reports/PAD_UFES20/fairness/bootstrap_significance_primary.json"
+  },
+  "results": {
+    "image": {
+      "architecture": "EfficientNet-B0, ImageNet-pretrained, fully fine-tuned",
+      "val_macro_f1_per_seed": [0.5529, 0.5741, 0.584],
+      "val_macro_f1_mean_std": [0.5703, 0.013],
+      "test_macro_f1_per_seed": [0.601894, 0.638172, 0.6123],
+      "test_macro_f1_mean_std": [0.617456, 0.015209]
+    },
+    "metadata": {
+      "architecture": "MLP (input_dim=89 -> 128 -> 64 -> 6)",
+      "val_macro_f1_per_seed": [0.5861, 0.5694, 0.5732],
+      "val_macro_f1_mean_std": [0.5762, 0.0072],
+      "test_macro_f1_per_seed": [0.589712, 0.597468, 0.635952],
+      "test_macro_f1_mean_std": [0.607711, 0.02016]
+    },
+    "late_fusion": {
+      "architecture": "ImageEmbedder(1280d) + MetadataEmbedder(64d), concat -> MLP head",
+      "val_macro_f1_per_seed": [0.5723, 0.576, 0.5711],
+      "val_macro_f1_mean_std": [0.5731, 0.0021],
+      "test_macro_f1_per_seed": [0.626063, 0.683031, 0.660578],
+      "test_macro_f1_mean_std": [0.656557, 0.023407]
+    },
+    "cross_attention": {
+      "architecture": "Cross-attention fusion, d_model=256, 8-head MultiheadAttention, metadata-conditioned channel gate -- THESIS HEADLINE MODEL",
+      "val_macro_f1_per_seed": [0.6049, 0.6182, 0.6397],
+      "val_macro_f1_mean_std": [0.6209, 0.0143],
+      "test_macro_f1_per_seed": [0.686181, 0.672121, 0.734936],
+      "test_macro_f1_mean_std": [0.697746, 0.026886],
+      "note": "locked, official, single sanctioned Stage-1 test-set use"
+    }
+  },
+  "significance_tests": {
+    "method": "paired bootstrap, row-level resampling (native PAD-UFES-20 test rows), seed-averaged (3 seeds) per iteration, percentile-method 95% CI, two-sided p",
+    "n_resamples": 1000,
+    "rng_seed": 42,
+    "alpha_uncorrected": 0.05,
+    "alpha_bonferroni": 0.016666666666666666,
+    "anchor": "cross_attention",
+    "comparisons": {
+      "cross_attention_vs_image": {
+        "observed_diff": 0.080291,
+        "ci_95": [0.050879, 0.116821],
+        "p_value_two_sided": 0.0,
+        "significant_bonferroni": true
+      },
+      "cross_attention_vs_metadata": {
+        "observed_diff": 0.090035,
+        "ci_95": [0.03133, 0.150942],
+        "p_value_two_sided": 0.006,
+        "significant_bonferroni": true
+      },
+      "cross_attention_vs_late_fusion": {
+        "observed_diff": 0.041189,
+        "ci_95": [0.017656, 0.066552],
+        "p_value_two_sided": 0.002,
+        "significant_bonferroni": true
+      }
+    }
+  }
+}

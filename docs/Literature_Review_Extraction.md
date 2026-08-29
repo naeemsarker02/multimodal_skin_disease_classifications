@@ -11,10 +11,18 @@ actually reading it):
   as "per abstract," not verified against primary text
 - 🔵 **Mechanism-confirmed via secondary source** (code repo + independent paper), not primary PDF
 
-**Citation completeness warning:** several rows are missing pieces of a full citation (author list,
-DOI, venue detail) in the source project's own notes — these are marked `[INCOMPLETE CITATION]`
-below. Do not fabricate the missing piece when writing the thesis; either track it down from the
-publisher/DOI or cite it exactly as the source project has it, flagged as needing verification.
+**Citation-verification pass (2026-08-27):** every row previously marked `[INCOMPLETE CITATION]`
+was re-searched (web search + crossref/arXiv/publisher API lookups). Status:
+- **6 fully verified** with complete author list, venue, and DOI/arXiv ID: #2, #3, #4, #7, #12, #16
+  (plus the separately-added PAD-UFES-20 dataset paper, see new section after #19).
+- **2 moderate-confidence**: #6 and #8 — title, method, and venue confirmed via publisher/crossref
+  lookup, but the specific dataset/accuracy claims recorded in this table were **not** independently
+  re-confirmed against the primary text in this pass. Any number cited from these two rows in the
+  thesis must carry an explicit hedge (e.g. "reportedly ~90–94%"), not be stated as fact.
+- **1 dropped**: #9 — could not be re-located under any plausible title/method/dataset combination
+  after four independent search passes; see its entry below for the full explanation.
+- Remaining rows still carrying a minor gap (e.g. one missing DOI, not re-searched this pass since
+  not requested): #14, #15. Flagged individually where they remain.
 
 ---
 
@@ -39,52 +47,98 @@ generalization, neither of which this paper attempts.
 
 ---
 
-## 2. TG-CAVNet 🟡 `[INCOMPLETE CITATION — high priority to fix]`
-**Citation:** Suresh et al. (2026). *TG-CAVNet* [full title, venue, DOI all unrecorded in source —
-**this paper has never had its bibliographic details captured** despite being called a "primary
-architectural reference"].
+## 2. TG-CAVNet 🟡 — **CITATION VERIFIED 2026-08-27**
+**Citation:** Suresh, P., Keerthika, P., & Nitesh Kumar, A. R. (2026). *Text guided cross attentive
+multimodal learning with visual feature modulation for automated skin lesion detection.*
+**Scientific Reports**, 16. **DOI: 10.1038/s41598-026-47271-6**.
 
-**Method:** Text-guided cross-attention variant ("TG-CAVNet" architecture) — mechanism details not
-yet captured.
+**Method:** Bio-ClinicalBERT clinical-text encoder + EfficientNet-B4 visual feature extractor,
+combined via three components: (1) text-guided **channel-wise feature modulation**, (2)
+text-queried cross-attention for semantic-spatial alignment, (3) adaptive multi-stream fusion.
+Evaluated on a custom multimodal dermoscopic dataset of **6,194 aligned image-text samples**
+(not yet confirmed which public archive, if any, this derives from).
 
-**Strength / Limitation:** Not fully captured — the source project explicitly flags this row as
-needing a re-read before it can be cited with specifics.
+**Strength:** 90.75% accuracy, macro Jaccard score 0.82 (per abstract/search-summary — not yet
+read from primary text). Ablation studies reported to confirm separate and synergistic
+contributions of each component; attention visualizations used for interpretability.
 
-**Relation to our gap:** Currently used as "primary architectural reference for cross-attention
-fusion design," but **this claim cannot be substantiated without re-finding and reading the actual
-paper** — do not cite specific numbers or mechanism claims from this row in the thesis until that
-happens.
+**Limitation:** Still only abstract/summary-depth for us — the full methodology (exact formula for
+the channel-wise modulation step, dataset provenance, training details) has not been read from the
+primary PDF. Retain the 🟡 tag until that happens.
 
-⚠️ **Action needed before thesis writing:** this is flagged in your own source docs as
-under-verified. If TG-CAVNet is going to anchor part of your Related Work section, it needs a
-literature search pass to even confirm it exists under that name/venue.
+**Abstract-only claim for thesis prose:** "TG-CAVNet reportedly achieves 90.75% accuracy and a macro
+Jaccard score of 0.82 on a custom 6,194-sample image-text dermoscopic dataset (Suresh et al., 2026,
+per the paper's abstract)."
+
+**Relation to our gap:** ⚠️ **Flagging doubt, per your instruction, rather than assuming.** Your
+`MetadataChannelGate` module (`src/models/cross_attention_fusion_model.py:63-84`) is documented in
+its own docstring as "Suresh et al. TG-CAVNet-inspired... kept as a secondary, optional mechanism...
+not a primary design input pending its own full-text read." What I verified this pass is that
+TG-CAVNet's abstract-level description ("text-guided channel-wise feature modulation") is
+**consistent in spirit** with your gate's design (a metadata-conditioned sigmoid gate over image
+channels, applied before cross-attention) — but I have **not** obtained TG-CAVNet's actual
+modulation formula, so I cannot confirm your implementation reproduces or even closely approximates
+their specific mechanism. **Recommend keeping the citation as "TG-CAVNet-inspired" (as the code
+already correctly hedges) rather than upgrading to a stronger claim of architectural correspondence,
+until the primary paper's methodology section is read.**
 
 ---
 
-## 3. (Leakage/shortcut-feature warning paper) — Watson et al. 🟡 `[INCOMPLETE CITATION — same problem as #2]`
-**Citation:** Watson et al. (year unrecorded). Title unrecorded — referred to only as "the
-leakage/shortcut-feature warning paper."
+## 3. Multimodal Models for Skin Cancer Classification Using Clinical Freetext and Dermatoscopic Images — Watson et al. 🟡 — **CITATION VERIFIED 2026-08-27**
+**Citation:** Watson, M., Winterbottom, T., Hudson, T., Jones, B., Shum, H. P. H.,
+Atapour-Abarghouei, A., Breckon, T., Harmsworth King, J., & Al Moubayed, N. (2026). *Multimodal
+models for skin cancer classification using clinical freetext and dermatoscopic images.*
+**Communications Medicine**, 6. **DOI: 10.1038/s43856-026-01456-2**.
 
-**Method:** Methodological — identifies that post-diagnosis fields in clinical metadata cause data
-leakage in model evaluation.
+**Method:** Multimodal ML models combining dermatoscopic images, clinical free-text notes, and
+patient metadata for benign/malignant classification. Dataset: 5,481 dermatoscopic images from
+4,538 patients, binary labels (7% malignant). Investigates how **"leading language"** in clinical
+free-text (i.e., diagnostic language physicians wrote into notes that effectively states or implies
+the answer) inflates model performance, and develops a preprocessing pipeline (regex + LLM) to
+strip it out.
 
-**Strength / Limitation:** N/A (methodological caution paper, not an empirical benchmark).
+**Strength:** Free-text improves classification performance even after the leading/diagnostic
+language is removed — i.e., free-text carries genuine signal beyond the leakage artifact.
 
-**Relation to our gap:** Cited as "direct inspiration for this thesis's entire leakage-audit
-methodology (22 excluded columns)" — but again, **the actual title/venue/DOI is missing**. This is
-a load-bearing citation for your Methodology chapter's leakage-audit section and currently cannot
-be placed in a bibliography. This needs to be re-found before the thesis is finalized.
+**Limitation/gap found by this paper:** Confirms that clinical free-text notes can contain
+diagnosis-leaking language that inflates apparent model performance if not explicitly detected and
+removed — a shortcut-learning risk that would otherwise go unnoticed.
+
+**Abstract-only claim for thesis prose:** "Watson et al. (2026) report, per their abstract, that
+free-text clinical notes continue to improve multimodal skin-cancer classification performance even
+after diagnosis-leaking 'leading language' is stripped out — an analogous free-text leakage finding
+to this thesis's own tabular-metadata leakage audit."
+
+**Relation to our gap — ⚠️ REFRAMED (as you requested):** The original source note described this as
+"post-diagnosis fields cause data leakage," implying tabular/structured metadata fields analogous to
+this thesis's own excluded `biopsed`-style columns. What is actually confirmed is a **structurally
+different but conceptually analogous** leakage mechanism: **diagnosis-leaking language embedded in
+free-text clinical notes**, not structured tabular fields. When citing this paper in your
+Methodology chapter's leakage-audit section, frame it as **"an analogous free-text leakage finding
+from a different modality"** — evidence that the general phenomenon (models exploiting
+post-diagnosis information that leaked into an input feature) recurs across modalities — rather than
+claiming it demonstrates the exact same tabular-field leakage mechanism your 22-column audit
+addresses.
 
 ---
 
-## 4. MM-Skin: A Vision-Language Model for Dermatology (SkinVL) 🟡
-**Citation:** (2025). *MM-Skin: A Vision-Language Model for Dermatology (SkinVL).*
-`[INCOMPLETE CITATION — authors, venue, DOI all unrecorded]`
+## 4. MM-Skin: Enhancing Dermatology Vision-Language Model with an Image-Text Dataset Derived from Textbooks 🟡 — **CITATION VERIFIED 2026-08-27**
+**Citation:** Zeng, W., Sun, Y., Ma, C., Tan, W., & Yan, B. (2025). *MM-Skin: Enhancing Dermatology
+Vision-Language Model with an Image-Text Dataset Derived from Textbooks.* **arXiv:2505.06152**
+(submitted 2025-05-09). Note: real title differs from the placeholder title previously recorded
+("A Vision-Language Model for Dermatology (SkinVL)") — SkinVL is the *model* introduced by this
+paper, not its title.
 
-**Method:** Large custom vision-language dermatology dataset; SkinVL model combines image + free
-text via VQA, supervised fine-tuning, and zero-shot learning.
+**Method:** MM-Skin dataset (3 imaging modalities — clinical, dermoscopic, pathological; ~10K
+image-text pairs from professional textbooks; 27K+ VQA samples). SkinVL model built on this data,
+evaluated on VQA, supervised fine-tuning, and zero-shot classification across 8 datasets.
 
-**Strength:** ~90–94% accuracy (per abstract-level source note).
+**Strength:** ~90–94% accuracy (per abstract-level source note — treat as "reportedly," not
+verified against primary text).
+
+**Abstract-only claim for thesis prose:** "MM-Skin's SkinVL model reportedly achieves ~90–94%
+accuracy across VQA/SFT/zero-shot dermatology benchmarks (Zeng et al., 2025, per abstract-level
+sourcing)."
 
 **Limitation:** High compute requirement; dataset not fully clinical; limited real-world
 validation.
@@ -117,64 +171,127 @@ not real; use only the corrected AUC 0.866 / mAP 0.729 figures above.
 
 ---
 
-## 6. Explainable AI for Skin Disease Classification 🟡
-**Citation:** (2024). *Explainable AI for Skin Disease Classification.*
-`[INCOMPLETE CITATION — authors, venue, DOI all unrecorded]`
+## 6. Explainable AI for Skin Disease Classification Using Gradient-Weighted Class Activation Mapping and Transfer Learning in Digital Health to Identify Contours 🟡 — **MODERATE CONFIDENCE**
+**Citation:** Badhon, S. M. S. I., Khushbu, S. A., Shaqib, S. M., Ali, M. A., Anik, A. H., &
+Hossain, K. S. M. T. (2025). *Explainable AI for skin disease classification using
+gradient-weighted class activation mapping and transfer learning in digital health to identify
+contours.* **DIGITAL HEALTH**, 11. **DOI: 10.1177/20552076251404523**. (An August 2024 preprint of
+this became the May 2025 journal version — explains the year discrepancy in the original note.)
 
-**Method:** Multiple CNN transfer-learning models + Grad-CAM visualization. Dataset: HAM10000.
+⚠️ **Moderate confidence, not full verification:** title, authors, venue, and DOI are confirmed via
+crossref. The dataset (HAM10000) and "multiple CNN transfer-learning models" claims below are
+**carried over from the original source note and were NOT independently re-confirmed** this pass
+(publisher page returned HTTP 403 on fetch attempts) — treat as plausible, not verified.
 
-**Strength:** ~91–93% accuracy (per abstract-level source note).
+**Method:** Multiple CNN transfer-learning models + Grad-CAM visualization (per original source
+note, unconfirmed this pass). Dataset: HAM10000 (per original source note, unconfirmed this pass).
 
-**Limitation:** Image-only, no metadata/symptom integration; explanation limited to visual (Grad-CAM).
+**Strength:** Reportedly ~91–93% accuracy — **do not state as a confirmed fact in the thesis; use a
+hedge such as "reportedly ~91–93% accuracy" per abstract-level sourcing.**
+
+**Limitation:** Image-only, no metadata/symptom integration; explanation limited to visual (Grad-CAM)
+— per original source note, unconfirmed this pass.
+
+**Abstract-only claim for thesis prose:** "Badhon et al. (2025) reportedly achieve ~91–93% accuracy
+using Grad-CAM-explained CNN transfer learning on HAM10000, per the original source note's
+abstract-level summary (dataset and CNN-model details not independently re-confirmed in this
+review)."
 
 **Relation to our gap:** Relevant for Discussion/Future Work — explainability is a natural
 extension beyond this thesis's scope.
 
 ---
 
-## 7. A Multimodal Approach to Skin Disease Detection Using Patient Symptoms 🟡
-**Citation:** (2024). `[INCOMPLETE CITATION — authors, venue, DOI all unrecorded]`
+## 7. A Multimodal Approach to The Detection and Classification of Skin Diseases 🟡 — **CITATION VERIFIED 2026-08-27**
+**Citation:** Yang, A., & Yang, E. (2024). *A Multimodal Approach to The Detection and
+Classification of Skin Diseases.* arXiv preprint **arXiv:2411.13855** (submitted 2024-11-21).
+No DOI — unpublished preprint, not yet in a peer-reviewed venue as far as could be confirmed.
+Full author list confirmed via arXiv's own Atom API (`export.arxiv.org/api/query`): **only two
+authors, Allen Yang (Mission San Jose High School, Fremont, CA) and Edward Yang (Yale University,
+New Haven, CT)** — the abstract-page UI text suggesting "9 total authors" in an earlier fetch was a
+misread of generic page chrome, not real metadata; arXiv's authoritative API confirms 2 authors.
+Real title differs from the placeholder previously recorded ("A Multimodal Approach to Skin Disease
+Detection Using Patient Symptoms").
 
-**Method:** Image model produces an initial prediction; an LLM-based reasoning step ("Chain of
-Options") refines the prediction using symptom text. Dataset: DermNet Dataset.
+**Method:** ResNet-50 initial image-based prediction (baseline 70% accuracy, improved to 80% via
+optimization), refined via a novel LLM fine-tuning strategy, **"Chain of Options"**, which breaks a
+complex reasoning task into intermediate steps at training time rather than inference time, using
+the patient's symptom narrative text.
 
-**Strength:** ~90–92% accuracy (per abstract-level source note).
+**Strength:** 91% accuracy (confirmed from the paper's own abstract, not a secondary summary) for
+diagnosing patient skin disease from image + symptom description.
 
-**Limitation:** Symptom data partially synthetic/non-standardized; weak clinical reliability.
+**Abstract-only claim for thesis prose:** "Yang & Yang (2024) report, per their own abstract, 91%
+accuracy diagnosing skin disease from image plus patient symptom narrative using their 'Chain of
+Options' LLM fine-tuning strategy, on a custom 37K-image dataset (not DermNet)."
+
+**Limitation (as noted):** ⚠️ **Dataset correction:** the original source note recorded this
+paper's dataset as "DermNet Dataset" — that is **incorrect**. The confirmed abstract states this
+paper introduces its **own custom dataset**: 26 skin disease types, 37K images with associated
+patient narratives, not DermNet. Symptom data partially synthetic/non-standardized; weak clinical
+reliability (carried over from original note, consistent with a custom/narrative-based dataset).
 
 **Relation to our gap:** Different fusion paradigm (LLM reasoning vs. this thesis's learned
 cross-attention) — a contrast point, not a direct precedent.
 
 ---
 
-## 8. Skin Lesion Classification Using EfficientNet 🟡
-**Citation:** (2024). `[INCOMPLETE CITATION — authors, venue, DOI all unrecorded]`
+## 8. Skin Lesion Classification Using EfficientNet B0 and B1 via Transfer Learning for Computer Aided Diagnosis 🟡 — **MODERATE CONFIDENCE**
+**Citation:** Frederich, J., Himawan, J., & Rizkinia, M. (2024). *Skin lesion classification using
+EfficientNet B0 and B1 via transfer learning for computer aided diagnosis.* AIP Conference
+Proceedings, 3080, article 110002 (7th Biomedical Engineering's Recent Progress in Biomaterials,
+Drugs Development, and Medical Devices, ACB-ISBE 2022). **DOI: 10.1063/5.0200741**.
 
-**Method:** EfficientNet-B0/B1 transfer learning on dermoscopic images only. Dataset: HAM10000.
+⚠️ **Moderate confidence, not full verification:** title, authors, venue, and DOI confirmed via
+crossref, and the method (EfficientNet-B0/B1 transfer learning) matches closely. The **HAM10000
+dataset** and the **~90–94% accuracy figure** below are carried over from the original source note
+and were **NOT independently re-confirmed** this pass (publisher page returned HTTP 403).
 
-**Strength:** ~90–94% accuracy (per abstract-level source note).
+**Method:** EfficientNet-B0/B1 transfer learning on dermoscopic images only (per original source
+note, dataset unconfirmed this pass).
 
-**Limitation:** No metadata/symptoms; purely image-based.
+**Strength:** Reportedly ~90–94% accuracy — **use a hedge such as "reportedly ~90–94% accuracy" in
+the thesis, not a stated fact.**
+
+**Limitation:** No metadata/symptoms; purely image-based (per original source note).
+
+**Abstract-only claim for thesis prose:** "Frederich et al. (2024) reportedly achieve ~90–94%
+accuracy using EfficientNet-B0/B1 transfer learning on HAM10000, per the original source note's
+abstract-level summary (dataset detail not independently re-confirmed in this review)."
 
 **Relation to our gap:** Validates this thesis's own choice of EfficientNet-B0 as a reasonable
 image-branch backbone/baseline.
 
 ---
 
-## 9. Multimodal Learning with Clinical Metadata for Skin Cancer Diagnosis 🟡
-**Citation:** (2025). `[INCOMPLETE CITATION — authors, venue, DOI all unrecorded]`
+## 9. Multimodal Learning with Clinical Metadata for Skin Cancer Diagnosis — **DROPPED 2026-08-27, DO NOT CITE**
 
-**Method:** Dual-branch architecture — CNN for image, TabNet for clinical metadata — fused
-representations. Dataset: PAD-UFES-20.
+**Status: excluded from the formal bibliography.** This row's citation could not be verified and is
+being removed from the 19-paper reference set rather than carried forward with a shaky citation.
 
-**Strength:** ~94–97% accuracy (per abstract-level source note).
+**Why it was dropped:** four independent, differently-worded searches were run (TabNet+PAD-UFES-20;
+dual-branch+TabNet+skin-cancer; "Multimodal Learning with Clinical Metadata for Skin Cancer
+Diagnosis" as an exact phrase; general PAD-UFES-20+TabNet metadata-fusion searches). All four turned
+up other, genuinely-published PAD-UFES-20 multimodal papers (MetaBlock/MetaNet, a "TabFusion"
+GCN-based architecture, Swin Transformer + gated attention, EfficientNetB3+ResNet50 concatenation,
+etc.) but **none use TabNet specifically**, and none match this row's exact title. The specific
+combination recorded here — "dual-branch CNN + TabNet, PAD-UFES-20, ~94–97% accuracy" — could not be
+traced to any real, existing paper.
 
-**Limitation:** Skin-cancer-focused only; limited disease variety; structured metadata only.
+**Most likely explanation:** a transcription or conflation error in the original Excel-based
+literature review — this entry may have merged details from two or more different real papers (e.g.
+a dual-branch PAD-UFES-20 paper's architecture description bleeding into a different paper's
+reported accuracy range), or "TabNet" may have been a misremembering of one of the several other
+tabular-metadata architectures found during this search (e.g. TabFusion, or a Tabular Embedding
+Network variant). **If anyone asks later why row #9 disappeared from the bibliography:** this is
+the reason — not an oversight, a deliberate exclusion after failed re-verification, per an explicit
+decision on 2026-08-27 to prioritize a fully-verified 19-paper set over a 20-paper set carrying one
+unconfirmable entry.
 
-**Relation to our gap:** Closest prior-art comparison for this thesis's own PAD-UFES-20
-image+metadata baseline — but note the accuracy figure is abstract-level/unverified, so treat any
-head-to-head comparison in Results with the same caution the source project applies elsewhere
-(accuracy vs. macro-F1 mismatch risk — see Paper #13's standing caveat).
+**If a PAD-UFES-20 dual-branch fusion comparison point is still needed for Results/Discussion**, the
+"TabFusion" paper surfaced during this search (GCN-enhanced multimodal architecture, reportedly
+91.74% accuracy / 92.30% F1 on PAD-UFES-20) is a real, findable candidate — but it has **not** been
+verified or added here, since you asked not to chase a replacement.
 
 ---
 
@@ -240,16 +357,17 @@ fusion is a direct historical precursor to this thesis's own late-fusion Stage 1
 note:** this paper's dataset is the direct precursor to the public PAD-UFES-20 release — the
 correct citation for the *dataset itself* is a separate paper (Pacheco et al., "PAD-UFES-20: A skin
 lesion dataset composed of patient data and clinical images collected from smartphones," *Data in
-Brief*), which is **not yet in this 20-paper table** and should be added as the mandatory dataset
-citation in your Methodology chapter.
+Brief*) — **now added as its own verified entry** in the "Dataset Citation" section after #19,
+separate from this Related Work table, per your instruction that it belongs in the
+Methodology/Dataset chapter.
 
 ---
 
-## 12. A Multimodal Skin Lesion Classification Through Cross-Attention Fusion and Collaborative Edge Computing 🟡
-**Citation:** (2025). *A Multimodal Skin Lesion Classification Through Cross-Attention Fusion and
-Collaborative Edge Computing.* **Computerized Medical Imaging and Graphics**, vol. 124, article
-102588. `[INCOMPLETE CITATION — author names unrecorded; DOI not captured, only volume/page]`
-Paywalled (ScienceDirect HTTP 403), no arXiv preprint found.
+## 12. A Multimodal Skin Lesion Classification Through Cross-Attention Fusion and Collaborative Edge Computing 🟡 — **CITATION VERIFIED 2026-08-27**
+**Citation:** Tran-Van, N.-Y., & Le, K.-H. (2025). *A multimodal skin lesion classification through
+cross-attention fusion and collaborative edge computing.* **Computerized Medical Imaging and
+Graphics**, 124, article 102588. **DOI: 10.1016/j.compmedimag.2025.102588**. Paywalled
+(ScienceDirect HTTP 403), no arXiv preprint found — remains abstract-level for us.
 
 **Method:** Three-module architecture — modality-wise feature extraction, cross-attention-based
 feature fusion (dermoscopic images + patient metadata), multimodal classifier — paired with a
@@ -263,6 +381,11 @@ accuracy — **dataset/task not yet confirmed**, treat with caution).
 **Limitation:** Full text not read — dataset, exact metric definitions, and edge-computing
 evaluation details all unconfirmed. The very high accuracy figure with no macro-F1 reported is
 flagged in the source as worth scrutinizing.
+
+**Abstract-only claim for thesis prose:** "Tran-Van & Le (2025) report, per their abstract,
+cross-attention and Hadamard-product fusion both reaching ~98.8% accuracy, though the exact
+dataset/task and metric definition remain unconfirmed against the primary text — this figure should
+not be compared directly to this thesis's own macro-F1 numbers without that caveat."
 
 **Relation to our gap:** Structurally similar cross-attention precedent, but the edge-computing/
 privacy motivation differs from this thesis's generalization/fairness motivation — useful contrast
@@ -330,6 +453,11 @@ not confirmed. No specific quantitative metrics available without full text.
 **Limitation:** Full text needed for dataset confirmation, quantitative results, and comparison
 methodology.
 
+**Abstract-only claim for thesis prose:** "Zuo, Wang & Wang (2025) state, per their abstract, that
+their CosCatNet two-stage fusion method is effective on 'a popular publicly available skin disease
+diagnosis dataset,' but report no specific quantitative results in the portion available to us —
+no numeric claim from this paper should be cited in the thesis without full-text access."
+
 **Relation to our gap:** A third distinct fusion paradigm in this literature set (cosine-similarity/
 concatenation hybrid + uncertainty-weighted late fusion), contrasted with MetaBlock's channel-gating
 (#10) and this thesis's cross-attention. Uses clinical+dermoscopy image pairs — a modality this
@@ -372,11 +500,11 @@ fairness finding that the gap is systemic, not PAD-UFES-20-specific.
 
 ---
 
-## 16. Evaluation of the Importance of Metadata in Skin Lesion Classification 🟡
-**Citation:** Garib, Mery, & Navarrete-Dechent (2025). *Evaluation of the Importance of Metadata in
-Skin Lesion Classification.* **Signal, Image and Video Processing** (Springer).
-`[INCOMPLETE CITATION — DOI not recorded]` Paywalled (Springer institutional login required;
-ResearchGate blocked; author site unreachable; no OA copy found).
+## 16. Evaluation of the Importance of Metadata in Skin Lesion Classification 🟡 — **CITATION VERIFIED 2026-08-27**
+**Citation:** Garib, G., Mery, D., & Navarrete-Dechent, C. (2025). *Evaluation of the importance of
+metadata in skin lesion classification.* **Signal, Image and Video Processing (SIViP)**, 19(11),
+article 887. **DOI: 10.1007/s11760-025-04498-6**. Paywalled (Springer institutional login required;
+ResearchGate blocked; author site unreachable; no OA copy found) — remains abstract-level for us.
 
 **Method:** 17 deep learning models tested across 3 fusion methods on two datasets; separately
 trained models on different metadata subsets to isolate each feature's individual contribution.
@@ -389,6 +517,10 @@ importance ranking: **age most useful**, then body/anatomical location, then sex
 
 **Limitation:** Full text needed to assess exact model list and statistical rigor of the
 per-feature ranking.
+
+**Abstract-only claim for thesis prose:** "Garib, Mery & Navarrete-Dechent (2025) report, per their
+abstract, that image+metadata fusion improves balanced accuracy by +10.43% on PAD-UFES-20 and +2.22%
+on ISIC 2019 versus image-only baselines, with age ranked as the most important metadata feature."
 
 **Relation to our gap:** Directly parallels this thesis's own `feature_whitelist.md` exercise — the
 age > location > sex ranking is a comparison point for your own feature set. Same PAD-UFES-20
@@ -497,6 +629,11 @@ curated ISIC 2024 subset, image+text+metadata.
 this thesis's 6-class, macro-F1-based evaluation. Full text not yet read for methodology depth
 (fusion architecture details, dataset split discipline, leakage-audit presence/absence unconfirmed).
 
+**Abstract-only claim for thesis prose:** "Shrestha & Palit (2026) report 96% accuracy and AUROC
+0.987 on a binary skin-disease classification task using vision-language captioning plus metadata
+fusion on a curated ISIC 2024 subset — not directly comparable to this thesis's 6-class, macro-F1
+evaluation without stating that caveat."
+
 **Relation to our gap:** Already cited in `docs/main.tex` (Related Work — Deep Learning-Based
 Approaches, and the litcompare table) as the vision-language-fusion comparator; illustrates the
 value of combining vision-language representations with metadata, contrasted with this thesis's
@@ -504,18 +641,64 @@ structured-metadata-only cross-attention design.
 
 ---
 
-## Summary: what still needs work before this table is fully thesis-ready
+## Dataset Citation (separate from the Related-Work table — belongs in Methodology/Dataset chapter) 🟢 — **CITATION VERIFIED 2026-08-27**
 
-1. **Papers #2, #3, #6, #7, #8, #9, #12, #16 have incomplete citations** (missing authors, venue,
-   and/or DOI) — several of these (#2 TG-CAVNet, #3 the leakage paper) are load-bearing citations
-   for your Methodology chapter and currently cannot be placed in a bibliography as-is.
-2. **Abstract-only papers (🟡: #2, #3, #4, #6, #7, #8, #9, #12, #14, #16, #20)** — any quantitative
-   number pulled from these must be flagged "per abstract" in the thesis, not stated as verified
-   fact, per the source project's own discipline.
-3. **The dataset citation for PAD-UFES-20 itself** (Pacheco et al., *Data in Brief*, "PAD-UFES-20: A
-   skin lesion dataset composed of patient data and clinical images collected from smartphones") is
-   **not in this 20-paper table at all** and should be added as a separate mandatory dataset
-   citation in your Methodology chapter — it's distinct from papers #10/#11, which are about
-   *methods*, not the dataset release.
-4. **Paper #13's standing caveat** (accuracy vs. macro-F1 — see its entry above) must be repeated
-   verbatim wherever it's cited in the Discussion chapter, per the source project's own instruction.
+**This entry is not part of the 19-paper Related Work comparison set.** It is the mandatory citation
+for the dataset itself, distinct from papers #10 (MetaBlock) and #11 (Pacheco & Krohling 2020),
+which are about *methods applied to* PAD-UFES-20/its precursor, not the dataset release.
+
+**Citation:** Pacheco, A. G. C., Lima, G. R., Salomão, A. S., Krohling, B., Biral, I. P., de Angelo,
+G. G., Alves Jr., F. C. R., Esgario, J. G. M., Simora, A. C., Castro, P. B. C., Rodrigues, F. B.,
+Frasson, P. H. L., Krohling, R. A., Knidel, H., Santos, M. C. S., do Espírito Santo, R. B., Macedo,
+T. L. S. G., Canuto, T. R. P., & de Barros, L. F. S. (2020). *PAD-UFES-20: A skin lesion dataset
+composed of patient data and clinical images collected from smartphones.* **Data in Brief**, 32,
+article 106221. **DOI: 10.1016/j.dib.2020.106221**. Also on arXiv:2007.00478 (free preprint).
+
+**What it is:** The data-descriptor paper introducing the public PAD-UFES-20 dataset this thesis
+uses: 2,298 clinical images from 1,641 skin lesions across 1,373 patients, up to 22 clinical
+features per case, 6 diagnostic classes (3 skin diseases + 3 skin cancers), 58.4% of lesions
+biopsy-proven (100% of the cancers). Collected via the Dermatological and Surgical Assistance
+Program (PAD) at the Federal University of Espírito Santo (UFES, Brazil).
+
+**Use in the thesis:** Cite this paper (not #10 or #11) whenever describing or introducing the
+PAD-UFES-20 dataset itself in the Methodology/Dataset chapter.
+
+---
+
+## Final Status Summary (as of 2026-08-27 citation-verification pass)
+
+**Bibliography size: 19 papers** (20 original entries minus #9, dropped as unverifiable) **+ 1
+separate dataset citation** (PAD-UFES-20 / Pacheco et al., *Data in Brief*, in its own section
+above, not counted in the 19).
+
+**Read-depth / confidence breakdown of the 19:**
+- 🟢 **Full text read (8):** #1, #5, #11, #13, #15, #17, #18, #19
+- 🔵 **Mechanism confirmed via secondary source (1):** #10
+- 🟡 **Abstract-level only, citation fully verified (8):** #2, #3, #4, #7, #12, #14, #16, #20
+- 🟡 **Abstract-level only, MODERATE CONFIDENCE — title/venue/DOI verified but dataset/accuracy
+  claims not independently re-confirmed (2):** #6, #8
+
+**Every quantitative claim drawn from an abstract-only row now carries an explicit "Abstract-only
+claim for thesis prose" sentence in its entry**, pre-phrased with the "reportedly"/"per abstract"
+hedge so it can be copied directly into thesis text without further rewriting.
+
+**Outstanding items still worth resolving before the bibliography is fully final:**
+1. **#2 (TG-CAVNet):** citation is now fully verified, but the specific claim that your Channel Gate
+   module reproduces or closely approximates TG-CAVNet's channel-modulation mechanism is **flagged
+   as unconfirmed, not assumed** — the primary paper's methodology section (specifically its
+   modulation formula) should be read before the Methodology chapter asserts architectural
+   correspondence beyond "inspired by."
+2. **#3 (Watson et al.):** citation fully verified; reframed per your instruction as an analogous
+   free-text leakage finding, not a direct structural match to this thesis's tabular leakage audit.
+3. **#6 and #8:** citations verified at the bibliographic level (title/authors/venue/DOI), but the
+   dataset and accuracy figures originally recorded for them were not independently re-confirmed
+   against primary text in this pass — both are marked MODERATE CONFIDENCE and carry hedged
+   thesis-prose sentences.
+4. **#9 dropped** — see its entry for the full explanation (kept in place, marked DROPPED, so the
+   reasoning is preserved rather than silently deleted).
+5. **Paper #13's standing caveat** (accuracy vs. macro-F1 — see its entry above) must still be
+   repeated verbatim wherever it's cited in the Discussion chapter, per the source project's own
+   instruction — unchanged by this pass.
+6. **#14 and #15** still carry one minor citation gap each (a missing DOI/page number) that was not
+   in scope for this verification pass — flag for a future pass if their citations need to appear
+   with full precision.
