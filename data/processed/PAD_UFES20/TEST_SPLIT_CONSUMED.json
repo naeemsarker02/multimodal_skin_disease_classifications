@@ -40,6 +40,18 @@
         "n_runs": 9,
         "note": "Step 4 Option B - two per-backbone cross-attention fusion models plus their prediction-time ensemble, compared against the original locked cross_attention (EfficientNet-B0) test result (0.6977) via paired bootstrap. Guard reopened for this single additional sanctioned read, user-approved 2026-08-01; marker updated (not deleted) to keep blocking further reads."
       }
+    },
+    {
+      "consumed_on": "2026-09-03",
+      "consumed_by": "src/evaluation/logit_adjustment.py (post-hoc logit adjustment, Menon et al. ICLR 2021)",
+      "reference": "User-approved 2026-09-03, this session - third sanctioned read.",
+      "detail": {
+        "variants": ["cross_attention"],
+        "seeds": [0, 1, 2],
+        "n_runs": 3,
+        "pre_registered_rule": "Decision rule fixed in advance: tau will be selected using ONLY the validation set (grid: 0.0/0.25/0.5/0.75/1.0/1.25/1.5/2.0), picking the tau that maximizes mean validation macro-F1 across 3 seeds. That single pre-selected tau will then be applied to the test set exactly once, with no further tau tuning on test, and the result will be reported honestly regardless of whether it improves on the 0.6977 headline.",
+        "note": "Inference-time-only post-hoc logit adjustment on the already-trained, already-locked cross_attention (EfficientNet-B0) model - no retraining, no model/training-pipeline changes. Per-sample logits for val and test (all 3 seeds) cached to reports/logit_cache/ so no future related post-hoc analysis needs a 4th test read; guard remains locked afterward regardless."
+      }
     }
   ]
 }
