@@ -1,0 +1,71 @@
+[
+  {
+    "seed": 0,
+    "stage1_val_macro_f1": 0.6049487883762859,
+    "stage1_val_per_class_f1": {
+      "Actinic Keratosis": 0.8186528497409327,
+      "Basal Cell Carcinoma": 0.7769230769230769,
+      "Melanoma": 0.2857142857142857,
+      "Nevus": 0.7586206896551724,
+      "Seborrheic Keratosis": 0.676056338028169,
+      "Squamous Cell Carcinoma": 0.3137254901960784
+    },
+    "stage2_val_macro_f1": 0.592038119669264,
+    "stage2_val_per_class_f1": {
+      "Actinic Keratosis": 0.8207547169811321,
+      "Basal Cell Carcinoma": 0.7829457364341085,
+      "Melanoma": 0.25,
+      "Nevus": 0.7560975609756098,
+      "Seborrheic Keratosis": 0.6567164179104478,
+      "Squamous Cell Carcinoma": 0.2857142857142857
+    },
+    "stage1_checkpoint": "D:\\Naeem\\thesis-v2\\Multimodal_Skin_Disease_Research\\logs\\PAD_UFES20\\checkpoints\\cross_attention_crt_stage1_seed0_best.pt",
+    "stage2_checkpoint": "D:\\Naeem\\thesis-v2\\Multimodal_Skin_Disease_Research\\logs\\PAD_UFES20\\checkpoints\\cross_attention_crt_stage2_seed0_best.pt"
+  },
+  {
+    "seed": 1,
+    "stage1_val_macro_f1": 0.618178468749245,
+    "stage1_val_per_class_f1": {
+      "Actinic Keratosis": 0.7945205479452054,
+      "Basal Cell Carcinoma": 0.75,
+      "Melanoma": 0.4,
+      "Nevus": 0.7407407407407407,
+      "Seborrheic Keratosis": 0.6666666666666666,
+      "Squamous Cell Carcinoma": 0.35714285714285715
+    },
+    "stage2_val_macro_f1": 0.5962782951018245,
+    "stage2_val_per_class_f1": {
+      "Actinic Keratosis": 0.8378378378378378,
+      "Basal Cell Carcinoma": 0.7607843137254902,
+      "Melanoma": 0.2857142857142857,
+      "Nevus": 0.7777777777777778,
+      "Seborrheic Keratosis": 0.6933333333333334,
+      "Squamous Cell Carcinoma": 0.2222222222222222
+    },
+    "stage1_checkpoint": "D:\\Naeem\\thesis-v2\\Multimodal_Skin_Disease_Research\\logs\\PAD_UFES20\\checkpoints\\cross_attention_crt_stage1_seed1_best.pt",
+    "stage2_checkpoint": "D:\\Naeem\\thesis-v2\\Multimodal_Skin_Disease_Research\\logs\\PAD_UFES20\\checkpoints\\cross_attention_crt_stage2_seed1_best.pt"
+  },
+  {
+    "seed": 2,
+    "stage1_val_macro_f1": 0.6396616287586523,
+    "stage1_val_per_class_f1": {
+      "Actinic Keratosis": 0.8121827411167513,
+      "Basal Cell Carcinoma": 0.7710843373493976,
+      "Melanoma": 0.5,
+      "Nevus": 0.7073170731707317,
+      "Seborrheic Keratosis": 0.6944444444444444,
+      "Squamous Cell Carcinoma": 0.35294117647058826
+    },
+    "stage2_val_macro_f1": 0.6904101924246914,
+    "stage2_val_per_class_f1": {
+      "Actinic Keratosis": 0.8768472906403941,
+      "Basal Cell Carcinoma": 0.8253968253968254,
+      "Melanoma": 0.5,
+      "Nevus": 0.7848101265822784,
+      "Seborrheic Keratosis": 0.7246376811594203,
+      "Squamous Cell Carcinoma": 0.4307692307692308
+    },
+    "stage1_checkpoint": "D:\\Naeem\\thesis-v2\\Multimodal_Skin_Disease_Research\\logs\\PAD_UFES20\\checkpoints\\cross_attention_crt_stage1_seed2_best.pt",
+    "stage2_checkpoint": "D:\\Naeem\\thesis-v2\\Multimodal_Skin_Disease_Research\\logs\\PAD_UFES20\\checkpoints\\cross_attention_crt_stage2_seed2_best.pt"
+  }
+]
