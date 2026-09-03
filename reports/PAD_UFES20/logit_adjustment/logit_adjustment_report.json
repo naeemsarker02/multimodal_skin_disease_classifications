@@ -1,0 +1,302 @@
+{
+  "tau_grid": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    2.0
+  ],
+  "selected_tau": 0.0,
+  "class_prior": {
+    "Actinic Keratosis": 0.3194271481942715,
+    "Basal Cell Carcinoma": 0.36488169364881695,
+    "Melanoma": 0.023661270236612703,
+    "Nevus": 0.10398505603985056,
+    "Seborrheic Keratosis": 0.10398505603985056,
+    "Squamous Cell Carcinoma": 0.08405977584059776
+  },
+  "val": {
+    "per_seed_original_macro_f1": {
+      "0": 0.6049487883762859,
+      "1": 0.618178468749245,
+      "2": 0.6396616287586523
+    },
+    "per_seed_per_tau_macro_f1": {
+      "0": {
+        "0.0": 0.6049487883762859,
+        "0.25": 0.5128100040388855,
+        "0.5": 0.32641964497096326,
+        "0.75": 0.2990272982810296,
+        "1.0": 0.3026079297801136,
+        "1.25": 0.26992935832178183,
+        "1.5": 0.2330760923605402,
+        "2.0": 0.18347158218125958
+      },
+      "1": {
+        "0.0": 0.618178468749245,
+        "0.25": 0.5536896060198994,
+        "0.5": 0.49136583088335195,
+        "0.75": 0.3149806731404307,
+        "1.0": 0.2786638444344853,
+        "1.25": 0.25410246718324664,
+        "1.5": 0.2239963629468749,
+        "2.0": 0.15817149307715345
+      },
+      "2": {
+        "0.0": 0.6396616287586523,
+        "0.25": 0.5773901984817393,
+        "0.5": 0.39964387322007955,
+        "0.75": 0.3007982989035009,
+        "1.0": 0.2715180507717821,
+        "1.25": 0.2533308257529798,
+        "1.5": 0.23814380381886102,
+        "2.0": 0.2006104738224089
+      }
+    },
+    "mean_macro_f1_per_tau": {
+      "0.0": 0.6209296286280611,
+      "0.25": 0.547963269513508,
+      "0.5": 0.40580978302479825,
+      "0.75": 0.30493542344165375,
+      "1.0": 0.28426327499546034,
+      "1.25": 0.25912088375266945,
+      "1.5": 0.23173875304209202,
+      "2.0": 0.18075118302694063
+    },
+    "std_macro_f1_per_tau": {
+      "0.0": 0.014304357899186246,
+      "0.25": 0.026673877057369857,
+      "0.5": 0.06747999651526872,
+      "0.75": 0.007139766192917089,
+      "1.0": 0.013295622365865609,
+      "1.25": 0.007649235234435233,
+      "1.5": 0.005852570839445202,
+      "2.0": 0.017432100664065232
+    }
+  },
+  "test": {
+    "original_headline_mean": 0.6977,
+    "original_headline_std": 0.0269,
+    "adjusted_mean": 0.6977460804595482,
+    "adjusted_std": 0.026916640799979335,
+    "per_seed": {
+      "0": {
+        "original_test_macro_f1_recomputed": 0.6861807934155405,
+        "original_test_macro_f1_recorded": 0.6862,
+        "adjusted_test_macro_f1": 0.6861807934155405,
+        "adjusted_per_class_f1": {
+          "Actinic Keratosis": 0.8431372549019608,
+          "Basal Cell Carcinoma": 0.8197879858657244,
+          "Melanoma": 0.625,
+          "Nevus": 0.8,
+          "Seborrheic Keratosis": 0.7272727272727273,
+          "Squamous Cell Carcinoma": 0.3018867924528302
+        },
+        "original_per_class_f1": {
+          "Actinic Keratosis": 0.8431372549019608,
+          "Basal Cell Carcinoma": 0.8197879858657244,
+          "Melanoma": 0.625,
+          "Nevus": 0.8,
+          "Seborrheic Keratosis": 0.7272727272727273,
+          "Squamous Cell Carcinoma": 0.3018867924528302
+        },
+        "adjusted_confusion_matrix": [
+          [
+            86,
+            12,
+            0,
+            0,
+            7,
+            4
+          ],
+          [
+            6,
+            116,
+            0,
+            1,
+            1,
+            9
+          ],
+          [
+            0,
+            0,
+            5,
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            2,
+            1,
+            30,
+            2,
+            0
+          ],
+          [
+            0,
+            2,
+            1,
+            6,
+            28,
+            0
+          ],
+          [
+            3,
+            18,
+            1,
+            0,
+            2,
+            8
+          ]
+        ]
+      },
+      "1": {
+        "original_test_macro_f1_recomputed": 0.6721210588403012,
+        "original_test_macro_f1_recorded": 0.6721,
+        "adjusted_test_macro_f1": 0.6721210588403012,
+        "adjusted_per_class_f1": {
+          "Actinic Keratosis": 0.8296943231441049,
+          "Basal Cell Carcinoma": 0.7644787644787645,
+          "Melanoma": 0.8,
+          "Nevus": 0.7761194029850746,
+          "Seborrheic Keratosis": 0.7142857142857143,
+          "Squamous Cell Carcinoma": 0.14814814814814814
+        },
+        "original_per_class_f1": {
+          "Actinic Keratosis": 0.8296943231441049,
+          "Basal Cell Carcinoma": 0.7644787644787645,
+          "Melanoma": 0.8,
+          "Nevus": 0.7761194029850746,
+          "Seborrheic Keratosis": 0.7142857142857143,
+          "Squamous Cell Carcinoma": 0.14814814814814814
+        },
+        "adjusted_confusion_matrix": [
+          [
+            95,
+            5,
+            0,
+            0,
+            5,
+            4
+          ],
+          [
+            17,
+            99,
+            0,
+            1,
+            2,
+            14
+          ],
+          [
+            0,
+            0,
+            6,
+            2,
+            0,
+            0
+          ],
+          [
+            1,
+            3,
+            0,
+            26,
+            5,
+            0
+          ],
+          [
+            2,
+            1,
+            1,
+            3,
+            30,
+            0
+          ],
+          [
+            5,
+            18,
+            0,
+            0,
+            5,
+            4
+          ]
+        ]
+      },
+      "2": {
+        "original_test_macro_f1_recomputed": 0.734936389122803,
+        "original_test_macro_f1_recorded": 0.7349,
+        "adjusted_test_macro_f1": 0.734936389122803,
+        "adjusted_per_class_f1": {
+          "Actinic Keratosis": 0.8246445497630331,
+          "Basal Cell Carcinoma": 0.837037037037037,
+          "Melanoma": 0.7692307692307693,
+          "Nevus": 0.8378378378378378,
+          "Seborrheic Keratosis": 0.8378378378378378,
+          "Squamous Cell Carcinoma": 0.30303030303030304
+        },
+        "original_per_class_f1": {
+          "Actinic Keratosis": 0.8246445497630331,
+          "Basal Cell Carcinoma": 0.837037037037037,
+          "Melanoma": 0.7692307692307693,
+          "Nevus": 0.8378378378378378,
+          "Seborrheic Keratosis": 0.8378378378378378,
+          "Squamous Cell Carcinoma": 0.30303030303030304
+        },
+        "adjusted_confusion_matrix": [
+          [
+            87,
+            5,
+            0,
+            0,
+            5,
+            12
+          ],
+          [
+            7,
+            113,
+            0,
+            2,
+            0,
+            11
+          ],
+          [
+            0,
+            0,
+            5,
+            3,
+            0,
+            0
+          ],
+          [
+            0,
+            3,
+            0,
+            31,
+            1,
+            0
+          ],
+          [
+            1,
+            1,
+            0,
+            3,
+            31,
+            1
+          ],
+          [
+            7,
+            15,
+            0,
+            0,
+            0,
+            10
+          ]
+        ]
+      }
+    }
+  },
+  "test_split_read_note": "This is the 3rd sanctioned read of PAD_UFES20's test split (see data/processed/PAD_UFES20/TEST_SPLIT_CONSUMED.json), performed once per the pre-registered rule: tau selected on validation only, applied to test exactly once, no further tau tuning on test."
+}
