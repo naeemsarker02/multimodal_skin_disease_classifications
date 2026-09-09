@@ -136,7 +136,9 @@ class CrossAttentionFusionModel(nn.Module):
         self.image_embedder.load_stage1(image_checkpoint_path, device)
         self.metadata_embedder.load_stage1(metadata_checkpoint_path, device)
 
-    def forward(self, image: torch.Tensor, metadata: torch.Tensor) -> torch.Tensor:
+    def forward(
+        self, image: torch.Tensor, metadata: torch.Tensor, return_features: bool = False
+    ):
         image_tokens = self.image_embedder(image)  # [B, 49, 1280]
         metadata_embedding = self.metadata_embedder(metadata)  # [B, 64]
 
@@ -148,5 +150,8 @@ class CrossAttentionFusionModel(nn.Module):
         attended, _ = self.attention(query, key_value, key_value)  # [B, 1, d_model]
         attended = attended.squeeze(1)  # [B, d_model]
 
-        joint = torch.cat([attended, metadata_embedding], dim=1)
-        return self.head(joint)
+        joint = torch.cat([attended, metadata_embedding], dim=1)  # [B, 320] - pre-classifier fused feature
+        logits = self.head(joint)
+        if return_features:
+            return logits, joint
+        return logits

@@ -3898,3 +3898,51 @@ journal, DOI, dataset, methodology summary, reported metric,
 limitation, relevance-to-thesis columns already filled in there).
 
 ---
+
+## Negative Result — Cross-Attention + SupCon (lambda=0.1) Inconclusive, Test Split Not Read (2026-09-06)
+
+Cross-attention fusion model retrained on PAD-UFES-20 with an added
+supervised contrastive loss term (SupCon, lambda=0.1) on top of the
+existing cross-entropy loss, 3 seeds, same val/test discipline as every
+other variant. Val macro-F1: 0.6482 / 0.6074 / 0.6705, mean **0.6420 +/-
+0.0261**, vs. the locked headline cross-attention model's val macro-F1
+0.6209 +/- 0.0143 (seed-level per-seed: 0.6049 / 0.6182 / 0.6397).
+
+**Significance check (seed-level bootstrap, not row-level):** our
+standard bootstrap methodology (`bootstrap_significance*.py`) resamples
+at the row level using per-row prediction CSVs - not available here,
+since the SupCon run only exists as Kaggle training logs (aggregate
+per-seed macro-F1, no per-row predictions downloaded) and the headline
+model only has row-level predictions saved for the **test** split
+locally, not val. Re-generating row-level val predictions for both
+variants would be a new inference run, out of scope for this check.
+Ran a lower-power seed-level paired bootstrap instead (resampling the 3
+per-seed diffs with replacement, 10,000 iterations, RNG seed 42):
+observed mean diff **+0.0211**, 95% CI **[-0.0108, +0.0433]**, two-sided
+**p=0.074**. CI includes 0; not significant even before any Bonferroni
+correction for multiple comparisons (which our row-level tests apply
+when comparing several variants against one anchor).
+
+**Decision: inconclusive, not adopted, no test-split read performed.**
+Per-seed scores overlap with the headline's std range and seed1
+(0.6074) actually falls *below* the headline mean - consistent with the
+non-significant result, not an outlier to explain away. Not pursuing
+additional seeds or row-level validation for this variant (compute/
+token budget) - closing this line of investigation as-is rather than
+extending it to chase significance.
+
+**Closing this line of investigation alongside cRT and logit
+adjustment** (`reports/PAD_UFES20/cross_attention_crt/`,
+`reports/PAD_UFES20/logit_adjustment/`) - all three architecture/
+loss-level interventions on top of the locked cross-attention headline
+tested negative or inconclusive. Combined with this and the Step 4
+backbone-fusion result above (test macro-F1 +0.0343 vs. headline, also
+not significant, p=0.062) and Phase 8E's joint-fusion val result
+(missed its pre-registered bar by +0.0011), the pattern across every
+architecture/loss variant tried past the headline model suggests the
+remaining headroom is **data-limited** (Squamous Cell Carcinoma and
+Melanoma sample counts are the weakest classes throughout, not any
+particular architecture or loss choice) rather than **method-limited**.
+No further training runs planned for this line of work.
+
+---
