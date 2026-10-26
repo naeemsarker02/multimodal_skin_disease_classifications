@@ -10,6 +10,9 @@ drift from the source-of-truth .py files).
 Run: python scripts/generate_backbone_comparison_kaggle_notebook.py
 """
 
+import utils.http_session
+import utils.transport
+import utils.session
 import sys
 from pathlib import Path
 
